@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: 25da6262e93be3e3749aabaf4950e2fbcd91ff5c
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: f3545065d4879830a5051ef687f210c7fbd1251e
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93199237"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860654"
 ---
 # Invoke-WebRequest
 
@@ -122,7 +121,7 @@ Cmdlet 登录 `Invoke-WebRequest` 到 facebook 后，变量中的 web 响应对�
 ```powershell
 try
 {
-    $response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost"
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
 }
@@ -137,7 +136,7 @@ $StatusCode
 404
 ```
 
-第一条命令调用 `Invoke-WebRequest` ， **ErrorAction** 为 **Stop** ，这会强制 `Invoke-WebRequest` 引发任何失败请求时的终止错误。 终止错误由 `catch` 从 **异常** 对象检索 **StatusCode** 的块捕获。
+终止错误由 `catch` 块捕获，后者从 **异常** 对象中检索 **StatusCode** 。
 
 ## PARAMETERS
 
@@ -233,7 +232,7 @@ Accept wildcard characters: False
 
 指定有权发送请求的用户帐户。 默认为当前用户。
 
-键入用户名（如 **User01** 或 **Domain01\User01** ），或输入 cmdlet 生成的 **PSCredential** 对象 `Get-Credential` 。
+键入用户名（如 **User01** 或 **Domain01\User01**），或输入 cmdlet 生成的 **PSCredential** 对象 `Get-Credential` 。
 
 凭据存储在 [PSCredential](/dotnet/api/system.management.automation.pscredential) 对象中，密码存储为 [SecureString](/dotnet/api/system.security.securestring)。
 
@@ -254,7 +253,7 @@ Accept wildcard characters: False
 
 ### -DisableKeepAlive
 
-指示该 cmdlet 将 HTTP 头中的 **KeepAlive** 值设置为 **False** 。 默认情况下， **KeepAlive** 为 **True** 。 **KeepAlive** 建立到服务器的持续性连接，以促进后续请求。
+指示该 cmdlet 将 HTTP 头中的 **KeepAlive** 值设置为 **False**。 默认情况下， **KeepAlive** 为 **True**。 **KeepAlive** 建立到服务器的持续性连接，以促进后续请求。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -447,7 +446,7 @@ Accept wildcard characters: False
 
 与远程会话不同，Web 请求会话不是持续性连接。 它是一个包含有关连接和请求的信息的对象，包括 Cookie、凭据、最大重定向值和用户代理字符串。 可用于共享 Web 请求之间的状态和数据。
 
-若要在后续的 Web 请求中使用 Web 请求会话，请在 **WebSession** 参数的值中指定会话变量。 PowerShell 在建立新连接时使用 web 请求会话对象中的数据。 若要在 Web 请求会话中重写某个值，请使用 cmdlet 参数，如 **UserAgent** 或 **Credential** 。 参数值优先于 Web 请求会话中的值。
+若要在后续的 Web 请求中使用 Web 请求会话，请在 **WebSession** 参数的值中指定会话变量。 PowerShell 在建立新连接时使用 web 请求会话对象中的数据。 若要在 Web 请求会话中重写某个值，请使用 cmdlet 参数，如 **UserAgent** 或 **Credential**。 参数值优先于 Web 请求会话中的值。
 
 不能在同一命令中使用 **SessionVariable** 和 **WebSession** 参数。
 
@@ -576,7 +575,7 @@ Accept wildcard characters: False
 
 指定一个 Web 请求会话。 输入变量名称，包括美元符号 (`$`) 。
 
-若要在 Web 请求会话中重写某个值，请使用 cmdlet 参数，如 **UserAgent** 或 **Credential** 。 参数值优先于 Web 请求会话中的值。
+若要在 Web 请求会话中重写某个值，请使用 cmdlet 参数，如 **UserAgent** 或 **Credential**。 参数值优先于 Web 请求会话中的值。
 
 与远程会话不同，Web 请求会话不是持续性连接。 它是一个包含有关连接和请求的信息的对象，包括 Cookie、凭据、最大重定向值和用户代理字符串。 可用于共享 Web 请求之间的状态和数据。
 

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Variable
-ms.openlocfilehash: c175fce3df41a3860a54ccb13a280955dce4a55c
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: c90a2f49c95333e45893e186d6e1f1da4b3fe41a
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239888"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771830"
 ---
 # Set-Variable
 
@@ -53,13 +53,13 @@ desc                           A description
 此示例将创建一个包含系统上所有进程的全局只读变量，然后显示该变量的所有属性。
 
 ```powershell
-Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru |
+Set-Variable -Name "processes" -Value (Get-Process) -Option Constant -Scope global -Description "All processes" -PassThru |
     Format-List -Property *
 ```
 
 该命令使用 `Set-Variable` cmdlet 来创建变量。 它使用 **PassThru** 参数来创建表示新变量的对象，并使用管道运算符 (`|`) 将对象传递给 `Format-List` cmdlet。 它使用的 **属性** 参数，其 `Format-List` 值为 all (`*`) ，以显示新创建的变量的所有属性。
 
-值 `(Get-Process)` 括在括号中，以确保在将其存储在变量之前执行。 否则，变量将包含单词 " **get-help** "。
+值 `(Get-Process)` 括在括号中，以确保在将其存储在变量之前执行。 否则，变量将包含单词 "**get-help**"。
 
 ### 示例 3：了解公共与私有变量
 
@@ -230,9 +230,9 @@ Accept wildcard characters: False
 指定变量的作用域。此参数可接受的值包括：
 
 - 全球
-- Local
-- 脚本
-- Private
+- 本地
+- Script
+- 专用
 - 一个相对于当前作用域的数字（0 到作用域数，其中 0 是指当前作用域，1 是指其父作用域）。
 
 默认值为 Local。

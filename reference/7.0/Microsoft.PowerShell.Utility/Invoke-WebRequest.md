@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: b81074e14461b0bf481232553b614e06c23b90b6
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: 07c10f33b0cffd56d84ddf6aab3553a0b71e4017
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93199285"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860705"
 ---
 # Invoke-WebRequest
 
@@ -143,7 +142,7 @@ $ProfileResponse
 
 ### 示例3：获取网页中的链接
 
-此示例将获取网页中的链接。 它使用 `Invoke-WebRequest` cmdlet 来获取网页内容。 然后，它使用 **Links** 返回的的 Links `BasicHtmlWebResponseObject` 属性 `Invoke-WebRequest` 和每个链接的 **Href** 属性。
+此示例将获取网页中的链接。 它使用 `Invoke-WebRequest` cmdlet 来获取网页内容。 然后，它使用返回的的 Links `BasicHtmlWebResponseObject` 属性 `Invoke-WebRequest` 和每个链接的 **Href** 属性。
 
 ```powershell
 (Invoke-WebRequest -Uri "https://aka.ms/pscore6-docs").Links.Href
@@ -227,7 +226,7 @@ $Result = Invoke-WebRequest -Uri $Uri -Method Post -Form $Form
 ```powershell
 try
 {
-    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost"
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
 }
@@ -242,7 +241,7 @@ $StatusCode
 404
 ```
 
-命令调用的 `Invoke-WebRequest` **ErrorAction** 为 **Stop** ，这会强制 `Invoke-WebRequest` 对任何失败的请求引发终止错误。 终止错误由 `catch` 从 **异常** 对象检索 **StatusCode** 的块捕获。
+终止错误由 `catch` 块捕获，后者从 **异常** 对象中检索 **StatusCode** 。
 
 ## PARAMETERS
 
@@ -274,10 +273,10 @@ Accept wildcard characters: False
 
 可用的身份验证选项：
 
-- **无** ：这是未提供 **身份验证** 时的默认选项;不使用显式身份验证。
-- **基本** ：需要 **凭据** 。 凭据以的格式在 RFC 7617 基本身份验证标头中发送 `base64(user:password)` 。
-- **持有** 者：需要 **标记** 。 `Authorization: Bearer`使用提供的令牌发送 RFC 6750 标头。 这是 **OAuth** 的别名
-- **OAuth** ：需要 **标记** 。 `Authorization: Bearer`使用提供的令牌发送 RFC 6750 标头。 这是 **持有** 者的别名
+- **无**：这是未提供 **身份验证** 时的默认选项;不使用显式身份验证。
+- **基本**：需要 **凭据**。 凭据以的格式在 RFC 7617 基本身份验证标头中发送 `base64(user:password)` 。
+- **持有** 者：需要 **标记**。 `Authorization: Bearer`使用提供的令牌发送 RFC 6750 标头。 这是 **OAuth** 的别名
+- **OAuth**：需要 **标记**。 `Authorization: Bearer`使用提供的令牌发送 RFC 6750 标头。 这是 **持有** 者的别名
 
 提供 **身份验证** `Authorization` 将覆盖提供给 **标头** 或包含在 **WebSession** 中的任何标头。
 
@@ -305,7 +304,7 @@ Accept wildcard characters: False
 
 如果输入是 GET 请求且正文是 `IDictionary` (通常是) 哈希表，则会将正文作为查询参数添加到 URI 中。 对于其他请求类型 (如 POST) ，主体将设置为标准格式的请求正文的值 `name=value` 。
 
-**Body** 参数还可以接受一个 `System.Net.Http.MultipartFormDataContent` 对象。 这便于 `multipart/form-data` 请求。 为 **正文** 提供 **MultipartFormDataContent** 对象时，提供给 **ContentType** 、 **标头** 或 **WebSession** 参数的任何相关标题的任何内容都将被 **MultipartFormDataContent** 对象的内容标头重写。 此功能已添加到 PowerShell 6.0.0。
+**Body** 参数还可以接受一个 `System.Net.Http.MultipartFormDataContent` 对象。 这便于 `multipart/form-data` 请求。 为 **正文** 提供 **MultipartFormDataContent** 对象时，提供给 **ContentType**、**标头** 或 **WebSession** 参数的任何相关标题的任何内容都将被 **MultipartFormDataContent** 对象的内容标头重写。 此功能已添加到 PowerShell 6.0.0。
 
 ```yaml
 Type: System.Object
@@ -384,7 +383,7 @@ Accept wildcard characters: False
 
 指定有权发送请求的用户帐户。 默认为当前用户。
 
-键入用户名（如 **User01** 或 **Domain01\User01** ），或输入 cmdlet 生成的 **PSCredential** 对象 `Get-Credential` 。
+键入用户名（如 **User01** 或 **Domain01\User01**），或输入 cmdlet 生成的 **PSCredential** 对象 `Get-Credential` 。
 
 **凭据** 可以单独使用，也可以与某些 **身份验证** 参数选项一起使用。 当远程服务器发送身份验证质询请求时，它仅向远程服务器提供凭据。 与 **身份验证** 选项一起使用时，会显式发送凭据。
 
@@ -407,7 +406,7 @@ Accept wildcard characters: False
 
 ### -CustomMethod
 
-指定用于 web 请求的自定义方法。 如果终结点所需的请求方法不可用于 **方法** ，则可以使用此方法。 **方法** 和 **CustomMethod** 不能一起使用。
+指定用于 web 请求的自定义方法。 如果终结点所需的请求方法不可用于 **方法**，则可以使用此方法。 **方法** 和 **CustomMethod** 不能一起使用。
 
 此示例 `TEST` 向 API 发出 HTTP 请求：
 
@@ -429,7 +428,7 @@ Accept wildcard characters: False
 
 ### -DisableKeepAlive
 
-指示该 cmdlet 将 HTTP 头中的 **KeepAlive** 值设置为 **False** 。 默认情况下， **KeepAlive** 为 **True** 。 **KeepAlive** 建立到服务器的持续性连接，以促进后续请求。
+指示该 cmdlet 将 HTTP 头中的 **KeepAlive** 值设置为 **False**。 默认情况下， **KeepAlive** 为 **True**。 **KeepAlive** 建立到服务器的持续性连接，以促进后续请求。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -674,7 +673,7 @@ Accept wildcard characters: False
 
 指定有权使用由 **Proxy** 参数指定的代理服务器的用户帐户。 默认为当前用户。
 
-键入用户名（如 **User01** 或 **Domain01\User01** ）， **User@Domain.Com** 或输入一个 `PSCredential` 对象，例如由 cmdlet 生成的对象 `Get-Credential` 。
+键入用户名（如 **User01** 或 **Domain01\User01**）， **User@Domain.Com** 或输入一个 `PSCredential` 对象，例如由 cmdlet 生成的对象 `Get-Credential` 。
 
 仅当命令中还使用了 **代理** 参数时，此参数才有效。 不能在同一命令中使用 **ProxyCredential** 和 **ProxyUseDefaultCredentials** 参数。
 
@@ -710,7 +709,7 @@ Accept wildcard characters: False
 
 ### -Resume
 
-尽力尝试恢复下载部分文件。 **Resume** 需要 **OutFile** 。
+尽力尝试恢复下载部分文件。 **Resume** 需要 **OutFile**。
 
 **Resume** 仅对本地文件和远程文件的大小进行操作，并且不执行本地文件和远程文件相同的其他验证。
 
@@ -763,7 +762,7 @@ Accept wildcard characters: False
 
 与远程会话不同，Web 请求会话不是持续性连接。 它是一个包含有关连接和请求的信息的对象，包括 cookie、凭据、最大重定向值和用户代理字符串。 可用于共享 Web 请求之间的状态和数据。
 
-若要在后续的 Web 请求中使用 Web 请求会话，请在 **WebSession** 参数的值中指定会话变量。 PowerShell 在建立新连接时使用 web 请求会话对象中的数据。 若要在 Web 请求会话中重写某个值，请使用 cmdlet 参数，如 **UserAgent** 或 **Credential** 。 参数值优先于 Web 请求会话中的值。
+若要在后续的 Web 请求中使用 Web 请求会话，请在 **WebSession** 参数的值中指定会话变量。 PowerShell 在建立新连接时使用 web 请求会话对象中的数据。 若要在 Web 请求会话中重写某个值，请使用 cmdlet 参数，如 **UserAgent** 或 **Credential**。 参数值优先于 Web 请求会话中的值。
 
 不能在同一命令中使用 **SessionVariable** 和 **WebSession** 参数。
 
@@ -807,7 +806,7 @@ Accept wildcard characters: False
 此开关适用于需要不符合标准的标头值的站点。
 如果指定此开关，则将禁用验证以允许取消选中值。 指定时，将添加所有标头，而不进行验证。
 
-此开关将对传递给 **ContentType** 、 **标头** 和 **UserAgent** 参数的值禁用验证。
+此开关将对传递给 **ContentType**、 **标头** 和 **UserAgent** 参数的值禁用验证。
 
 此功能已添加到 PowerShell 6.0.0。
 
@@ -849,7 +848,7 @@ Accept wildcard characters: False
 **SslProtocol** 使用 **WebSslProtocol** 标志枚举。 可以使用标志表示法来提供多个协议，或将多个 **WebSslProtocol** 选项与 **bor** 结合使用，但不支持在所有平台上提供多个协议。
 
 > [!NOTE]
-> 在非 Windows 平台上，可能无法将其 `'Tls, Tls12'` 作为选项提供。
+> 在非 Windows 平台上，可能无法提供 `Tls` 或 `Tls12` 作为选项。
 
 此功能已添加到 PowerShell 6.0.0。
 
@@ -886,7 +885,7 @@ Accept wildcard characters: False
 
 ### -Token
 
-要包含在请求中的 OAuth 或持有者令牌。 某些 **身份验证** 选项需要 **标记** 。 不能单独使用。
+要包含在请求中的 OAuth 或持有者令牌。 某些 **身份验证** 选项需要 **标记**。 不能单独使用。
 
 **令牌** 采用 `SecureString` 包含标记的。 若要手动提供令牌，请使用以下内容：
 
@@ -1009,7 +1008,7 @@ Accept wildcard characters: False
 
 指定一个 Web 请求会话。 输入变量名称，包括美元符号 (`$`) 。
 
-若要在 Web 请求会话中重写某个值，请使用 cmdlet 参数，如 **UserAgent** 或 **Credential** 。 参数值优先于 Web 请求会话中的值。 为 `Content-Type` **正文** 提供 **MultipartFormDataContent** 对象时，也会重写与内容相关的标头（例如）。
+若要在 Web 请求会话中重写某个值，请使用 cmdlet 参数，如 **UserAgent** 或 **Credential**。 参数值优先于 Web 请求会话中的值。 为 `Content-Type` **正文** 提供 **MultipartFormDataContent** 对象时，也会重写与内容相关的标头（例如）。
 
 与远程会话不同，web 请求会话不是持续性连接。 它是一个包含有关连接和请求的信息的对象，包括 cookie、凭据、最大重定向值和用户代理字符串。 可用于共享 Web 请求之间的状态和数据。
 
@@ -1053,9 +1052,9 @@ Accept wildcard characters: False
 
 此属性的值由您的平台确定：
 
-- **对于 Windows** ：从环境变量读取代理配置。 如果未定义这些变量，则将从用户的代理设置派生属性。
-- **对于 macOS** ：从环境变量读取代理配置。 如果未定义这些变量，则属性派生自系统的代理设置。
-- **对于 Linux** ：从环境变量读取代理配置。 如果未定义这些变量，则属性初始化将绕过所有地址的非配置实例。
+- **对于 Windows**：从环境变量读取代理配置。 如果未定义这些变量，则将从用户的代理设置派生属性。
+- **对于 macOS**：从环境变量读取代理配置。 如果未定义这些变量，则属性派生自系统的代理设置。
+- **对于 Linux**：从环境变量读取代理配置。 如果未定义这些变量，则属性初始化将绕过所有地址的非配置实例。
 
 用于 `DefaultProxy` 在 Windows 和基于 Unix 的平台上进行初始化的环境变量包括：
 

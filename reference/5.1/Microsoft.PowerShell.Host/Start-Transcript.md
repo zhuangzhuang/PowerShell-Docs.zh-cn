@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.ConsoleHost.dll-help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 04/22/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
-ms.openlocfilehash: c7e95988c385a32802c93f92216710746d268e5e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4f90dd8e3080d393e50fb8f48133c74909ec2b80
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93197415"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860739"
 ---
 # Start-Transcript
 
 ## 摘要
 创建与文本文件的全部或部分 PowerShell 会话的记录。
 
-## SYNTAX
+## 语法
 
 ### ByPath（默认值）
 
@@ -42,13 +42,15 @@ Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber] [
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 `Start-Transcript`Cmdlet 可在文本文件中创建所有或部分 PowerShell 会话的记录。 该脚本包括用户键入的所有命令和在控制台上显示的所有输出。
 
 从 Windows PowerShell 5.0 开始，在 `Start-Transcript` 所有脚本的生成文件名中包含主机名。 这在集中处理企业的日志记录时尤其有用。
 Cmdlet 创建的文件 `Start-Transcript` 在名称中包含随机字符，以防止在两个或多个脚本同时启动时可能覆盖或重复。
 这还可以防止未经授权地发现存储在集中文件共享中的脚本。
+
+使用 **Append** 参数时，如果目标文件没有字节顺序标记 (BOM) `Start-Transcript` 默认为 `ASCII` 目标文件中的编码。 此行为可能会导致脚本中的 mulitbyte 字符编码不正确。
 
 ## 示例
 
@@ -66,9 +68,9 @@ Start-Transcript
 Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
 ```
 
-此命令启动中文件中的脚本 `Transcript0.txt` `C:\transcripts` 。 因为使用了 NoClobber  参数，所以此命令可防止覆盖任何现有文件。 如果 `Transcript0.txt` 文件已存在，则该命令将失败。
+此命令启动中文件中的脚本 `Transcript0.txt` `C:\transcripts` 。 因为使用了 NoClobber 参数，所以此命令可防止覆盖任何现有文件。 如果 `Transcript0.txt` 文件已存在，则该命令将失败。
 
-## PARAMETERS
+## 参数
 
 ### -Append
 
@@ -120,7 +122,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-指定脚本文件的位置。 与 **Path** 参数不同， **LiteralPath** 参数的值严格按照所键入的形式使用。 不会将任何字符解释为通配符。 如果路径包括转义符，请将其括在单引号中。 单引号通知 PowerShell 不要将任何字符解释为转义序列。
+指定脚本文件的位置。 与 **Path** 参数不同，**LiteralPath** 参数的值严格按照所键入的形式使用。 不会将任何字符解释为通配符。 如果路径包括转义符，请将其括在单引号中。 单引号通知 PowerShell 不要将任何字符解释为转义序列。
 
 ```yaml
 Type: System.String
@@ -235,7 +237,7 @@ Accept wildcard characters: False
 
 此 cmdlet 将返回一个字符串，包含一条确认消息和输出文件的路径。
 
-## 注释
+## 说明
 
 若要停止脚本，请使用 `Stop-Transcript` cmdlet。
 

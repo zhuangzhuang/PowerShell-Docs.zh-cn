@@ -3,12 +3,12 @@ title: 关于 PSCustomObject 的各项须知内容
 description: PSCustomObject 是创建结构化数据的一种简单方法。
 ms.date: 10/05/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: ccbdcdae5ad38f555233dffbed7e8a6ec2b0726b
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 8086541bf93b4d3f878c9a3f7ca4300dc452a80b
+ms.sourcegitcommit: 08c63095f54916013634d6703f2523779815f4b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "91772314"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99424468"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>关于 PSCustomObject 的各项须知内容
 
@@ -74,7 +74,7 @@ $myObject = New-Object -TypeName PSObject -Property $myHashtable
 我发现将哈希表保存到文件的最佳方法是将其保存为 JSON。 可以将其导入回 `[PSCustomObject]`
 
 ```powershell
-$myObject | ConvertTo-Json -depth 1- | Set-Content -Path $Path
+$myObject | ConvertTo-Json -depth 1 | Set-Content -Path $Path
 $myObject = Get-Content -Path $Path | ConvertFrom-Json
 ```
 
@@ -87,7 +87,7 @@ $myObject = Get-Content -Path $Path | ConvertFrom-Json
 你仍可以使用 `Add-Member` 将新属性添加到 `PSCustomObject`。
 
 ```powershell
-$myObject | Add-Member -MemberType NoteProperty -Name `ID` -Value 'KevinMarquette'
+$myObject | Add-Member -MemberType NoteProperty -Name 'ID' -Value 'KevinMarquette'
 
 $myObject.ID
 ```

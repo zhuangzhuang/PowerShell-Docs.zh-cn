@@ -2,16 +2,16 @@
 description: 描述可与任何 cmdlet 一起使用的参数。
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 11/26/2019
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_CommonParameters
-ms.openlocfilehash: 949fabca6052a75d2cc4f8cf71e0a88b170a3b36
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 0b303590aab756aaa7dd55683e114a20c2b2a12c
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200010"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860804"
 ---
 # <a name="about-commonparameters"></a>关于 CommonParameters
 
@@ -83,13 +83,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-默认情况下，调试消息不会显示，因为变量的值 `$DebugPreference` 为 **SilentlyContinue** 。
+默认情况下，调试消息不会显示，因为变量的值 `$DebugPreference` 为 **SilentlyContinue**。
 
-在交互模式下， **Debug** 参数会重写 `$DebugPreference` 当前命令的变量值，并将的值设置 `$DebugPreference` 为 **Inquire** 。
+在交互模式下， **Debug** 参数会重写 `$DebugPreference` 当前命令的变量值，并将的值设置 `$DebugPreference` 为 **Inquire**。
 
-在非交互模式下， **Debug** 参数会重写 `$DebugPreference` 当前命令的变量值，并将的值设置 `$DebugPreference` 为 **Continue** 。
+在非交互模式下， **Debug** 参数会重写 `$DebugPreference` 当前命令的变量值，并将的值设置 `$DebugPreference` 为 **Continue**。
 
-`-Debug:$true` 与的效果相同 `-Debug` 。 用于 `-Debug:$false` 禁止在 `$DebugPreference` 不 **SilentlyContinue** （这是默认值）时显示调试消息。
+`-Debug:$true` 与的效果相同 `-Debug` 。 用于 `-Debug:$false` 禁止在 `$DebugPreference` 不 **SilentlyContinue**（这是默认值）时显示调试消息。
 
 #### <a name="erroraction"></a>ErrorAction
 
@@ -108,7 +108,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-**ErrorAction** 参数将重写 `$ErrorActionPreference` 当前命令的变量值。 由于变量的默认值 `$ErrorActionPreference` 为 **Continue** ，将显示错误消息并继续执行，除非使用 **ErrorAction** 参数。
+**ErrorAction** 参数将重写 `$ErrorActionPreference` 当前命令的变量值。 由于变量的默认值 `$ErrorActionPreference` 为 **Continue**，将显示错误消息并继续执行，除非使用 **ErrorAction** 参数。
 
 **ErrorAction** 参数不会影响终止错误 (如缺少数据、无效的参数或权限不足) 阻止命令成功完成。
 
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 `-ErrorAction:Suspend` 仅适用于 PowerShell 6 和更高版本中不支持的工作流。
 
 > [!NOTE]
-> 当 **ErrorAction** 在 `$ErrorAction` 命令中使用参数来运行脚本或函数时，ErrorAction 参数将重写，但不会替换首选项变量的值。
+> 当在 `$ErrorAction` 命令中使用参数来运行脚本或函数时，ErrorAction 参数将重写，但不会替换首选项变量的值。
 
 #### <a name="errorvariable"></a>ErrorVariable
 
@@ -169,7 +169,7 @@ $a
 
 #### <a name="informationaction"></a>InformationAction
 
-在 PowerShell 5.0 中引入。 在使用该参数的命令或脚本内， **InformationAction** common 参数将覆盖 `$InformationPreference` 首选项变量的值，默认情况下，该参数设置为 **SilentlyContinue** 。 `Write-Information`在带有 **InformationAction** 的脚本中使用时， `Write-Information` 会根据 **InformationAction** 参数的值来显示值。 有关的详细信息 `$InformationPreference` ，请参阅 [about_Preference_Variables](./about_Preference_Variables.md)。
+在 PowerShell 5.0 中引入。 在使用该参数的命令或脚本内， **InformationAction** common 参数将覆盖 `$InformationPreference` 首选项变量的值，默认情况下，该参数设置为 **SilentlyContinue**。 `Write-Information`在带有 **InformationAction** 的脚本中使用时， `Write-Information` 会根据 **InformationAction** 参数的值来显示值。 有关的详细信息 `$InformationPreference` ，请参阅 [about_Preference_Variables](./about_Preference_Variables.md)。
 
 ```yaml
 Type: ActionPreference
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 `-InformationAction:SilentlyContinue` 不会影响信息性消息 (默认) 显示，脚本会继续而不会中断。
 
 > [!NOTE]
-> 当 **InformationAction** 在 `$InformationAction` 命令中使用参数来运行脚本或函数时，InformationAction 参数将重写，但不会替换首选项变量的值。
+> 当在 `$InformationAction` 命令中使用参数来运行脚本或函数时，InformationAction 参数将重写，但不会替换首选项变量的值。
 
 #### <a name="informationvariable"></a>InformationVariable
 
@@ -295,6 +295,10 @@ $out
 
 当任何命名命令流过管道时， **PipelineVariable** 将当前管道元素的值存储为变量。
 
+>[!NOTE]
+> 高级函数最多可以有三个脚本块： `begin` 、 `process` 和 `end` 。 使用带有高级函数的 **PipelineVariable** 参数时，只有第一个定义的脚本块中的值会在函数运行时分配给该变量。 有关详细信息，请参阅 [高级函数](./about_functions_advanced.md)。
+> PowerShell 7.2 更正了此行为。
+
 ```yaml
 Type: String
 Aliases: pv
@@ -329,7 +333,7 @@ Accept wildcard characters: False
 ...
 ```
 
-#### <a name="verbose"></a>“详细”
+#### <a name="verbose"></a>详细
 
 显示有关命令所执行操作的详细信息。 此信息类似于跟踪或事务日志中的信息。 仅当命令生成详细消息时，此参数才有效。 例如，当命令包含 cmdlet 时，此参数有效 `Write-Verbose` 。
 
@@ -344,7 +348,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-**Verbose** 参数重写 `$VerbosePreference` 当前命令的变量值。 由于变量的默认值 `$VerbosePreference` 为 **SilentlyContinue** ，因此默认情况下不显示详细消息。
+**Verbose** 参数重写 `$VerbosePreference` 当前命令的变量值。 由于变量的默认值 `$VerbosePreference` 为 **SilentlyContinue**，因此默认情况下不显示详细消息。
 
 `-Verbose:$true` 具有与相同的效果 `-Verbose`
 
@@ -366,7 +370,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-**WarningAction** 参数将重写 `$WarningPreference` 当前命令的变量值。 由于变量的默认值 `$WarningPreference` 为 **Continue** ，将显示警告，并且执行将继续，除非使用 **WarningAction** 参数。
+**WarningAction** 参数将重写 `$WarningPreference` 当前命令的变量值。 由于变量的默认值 `$WarningPreference` 为 **Continue**，将显示警告，并且执行将继续，除非使用 **WarningAction** 参数。
 
 `-WarningAction:Continue` 显示警告消息并继续执行命令。 `Continue` 为默认值。
 
@@ -377,7 +381,7 @@ Accept wildcard characters: False
 `-WarningAction:Stop` 显示警告消息，并停止执行命令。
 
 > [!NOTE]
-> 当 **WarningAction** 在 `$WarningAction` 命令中使用参数来运行脚本或函数时，WarningAction 参数将重写，但不会替换首选项变量的值。
+> 当在 `$WarningAction` 命令中使用参数来运行脚本或函数时，WarningAction 参数将重写，但不会替换首选项变量的值。
 
 #### <a name="warningvariable"></a>WarningVariable
 
@@ -557,6 +561,6 @@ about_Common_Parameters
 
 [Write-Warning](xref:Microsoft.PowerShell.Utility.Write-Warning)
 
-[写入错误](xref:Microsoft.PowerShell.Utility.Write-Error)
+[Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
 
 [Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)

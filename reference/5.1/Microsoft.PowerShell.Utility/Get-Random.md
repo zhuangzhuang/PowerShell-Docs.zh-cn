@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/08/2020
+ms.date: 02/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-random?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Random
-ms.openlocfilehash: 6aa7d6db9e8c2fb8a3001c8ddb9593a7ceafe2ab
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 97576832ea851f01b463f63948fbd80028c9a6fb
+ms.sourcegitcommit: fa1a84c81e15f1ffac962110b0b4c850c1b173a0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93197919"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99495836"
 ---
 # Get-Random
 
@@ -37,9 +36,16 @@ Get-Random [-SetSeed <Int32>] [-InputObject] <Object[]> [-Count <Int32>] [<Commo
 
 `Get-Random`Cmdlet 将获取随机选择的数字。 如果将对象的集合提交到 `Get-Random` ，则它将从集合中获取一个或多个随机选择的对象。
 
-如果不使用参数或输入，则 `Get-Random` 命令将返回 0 (零) 和 () 之间随机选择的 **Int32.MaxValue** 32 位无符号 `0x7FFFFFFF` 整数 `2,147,483,647` 。
+如果不使用参数或输入，则 `Get-Random` 命令将返回 0 (零) 和 () 之间随机选择的 32 位无符号 `0x7FFFFFFF` 整数 `2,147,483,647` 。
 
-您可以使用的参数 `Get-Random` 指定种子数、最小值和最大值，以及从已提交的集合中返回的对象数。
+默认情况下， `Get-Random` 使用 [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) 类生成加密型安全随机性。
+
+您可以使用的参数 `Get-Random` 来指定最小值和最大值、从集合中返回的对象数或种子数字。
+
+> [!CAUTION]
+> 特意设置种子会导致非随机、可重复的行为。 只应在尝试重现行为时（例如在调试或分析包含命令的脚本时）使用 `Get-Random` 。
+>
+> 此种子值用于当前命令和当前会话中的所有后续 `Get-Random` 命令，直到再次使用 **SetSeed** 或关闭会话。 不能将种子重置为其默认值。
 
 ## 示例
 
@@ -117,7 +123,7 @@ Get-Random -Minimum 10.7 -Maximum 20.93
 
 此命令将按随机顺序返回整个集合。
 
-**Count** 参数的值是 **整数的一个静态属性** 。
+**Count** 参数的值是 **整数的一个静态属性**。
 
 若要按随机顺序返回整个集合，请输入任一大于或等于该集合中的对象数的数字。
 
@@ -206,7 +212,7 @@ $Sample = $Files | Get-Random -Count 50
 
 ### 示例11：滚动公平骰子
 
-此示例将一个公平片1200次，并对结果进行计数。 第一个命令 `For-EachObject` `Get-Random` 从数字 (1-6) 中的数字中重复对的调用。 结果按其值进行分组 `Group-Object` ，并将设置为带有的表格式 `Select-Object` 。
+此示例将一个公平片1200次，并对结果进行计数。 第一个命令 `ForEach-Object` `Get-Random` 从数字 (1-6) 中的数字中重复对的调用。 结果按其值进行分组 `Group-Object` ，并将设置为带有的表格式 `Select-Object` 。
 
 ```powershell
 1..1200 | ForEach-Object {
@@ -265,11 +271,11 @@ Accept wildcard characters: False
 
 指定随机数的最大值。 `Get-Random` 返回小于 (不等于) 的最大值。 输入一个整数和一个双精度浮点数，或一个可以转换为整数或双精度的对象，如数值字符串 ( "100" ) 。
 
-**Maximum** 值必须大于（不等于） **Minimum** 值。 如果 **最大** 值或 **最小** 值为浮点数，则 `Get-Random` 返回随机选择的浮点数。
+**Maximum** 值必须大于（不等于）**Minimum** 值。 如果 **最大** 值或 **最小** 值为浮点数，则 `Get-Random` 返回随机选择的浮点数。
 
 在64位计算机上，如果 **最小** 值为32位整数，则 **最大** 值的默认 **值为 int32.maxvalue。**
 
-如果 " **最小** 值" 为 double (浮点数) ，则 **最大** 值的默认值为 2 **。** 否则，默认 **值为 int32.maxvalue。**
+如果 "**最小** 值" 为 double (浮点数) ，则 **最大** 值的默认值为 2 **。** 否则，默认 **值为 int32.maxvalue。**
 
 ```yaml
 Type: System.Object
@@ -287,7 +293,7 @@ Accept wildcard characters: False
 
 指定随机数的最小值。 输入一个整数和一个双精度浮点数，或一个可以转换为整数或双精度的对象，如数值字符串 ( "100" ) 。 默认值为 0（零）。
 
-**Minimum** 值必须小于（不等于） **Maximum** 值。 如果 **最大** 值或 **最小** 值为浮点数，则 `Get-Random` 返回随机选择的浮点数。
+**Minimum** 值必须小于（不等于）**Maximum** 值。 如果 **最大** 值或 **最小** 值为浮点数，则 `Get-Random` 返回随机选择的浮点数。
 
 ```yaml
 Type: System.Object
@@ -303,9 +309,12 @@ Accept wildcard characters: False
 
 ### -SetSeed
 
-为随机数生成程序指定种子值。 此种子值用于当前命令和当前会话中的所有后续 `Get-Random` 命令，直到再次使用 **SetSeed** 或关闭会话。 不能将种子重置为其默认值。
+为随机数生成程序指定种子值。 当你使用 **SetSeed** 时，该 [cmdlet 将使用 system.exception 方法来](/dotnet/api/system.random) 生成不安全加密的伪随机数。
 
-**SetSeed** 参数不是必需的。 默认情况下， `Get-Random` 使用 [RandomNumberGenerator ( # B1 ](/dotnet/api/system.security.cryptography.randomnumbergenerator) 方法来生成种子值。 因为 **SetSeed** 会导致非随机行为，所以通常仅在尝试重现行为时（例如在调试或分析包含命令的脚本时）使用 `Get-Random` 。
+> [!CAUTION]
+> 设置种子会导致非随机行为。 只应在尝试重现行为时（例如在调试或分析包含命令的脚本时）使用 `Get-Random` 。
+>
+> 此种子值用于当前命令和当前会话中的所有后续 `Get-Random` 命令，直到再次使用 **SetSeed** 或关闭会话。 不能将种子重置为其默认值。
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -337,7 +346,7 @@ Accept wildcard characters: False
 
 ## 注释
 
-`Get-Random` 在会话启动时，根据系统时间时钟设置每个会话的默认种子。
+默认情况下， `Get-Random` 使用 [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) 类生成加密型安全随机性。
 
 `Get-Random` 并不总是返回与输入值相同的数据类型。 下表显示了每个数值输入类型的输出类型。
 
@@ -354,6 +363,10 @@ Accept wildcard characters: False
 |   Double   |   Double    |
 |   Single   |   Double    |
 
-从 Windows PowerShell 3.0 开始， `Get-Random` 支持64位整数。 在 Windows PowerShell 2.0 中，所有值都强制转换为 **system.object** 。
+从 Windows PowerShell 3.0 开始， `Get-Random` 支持64位整数。 在 Windows PowerShell 2.0 中，所有值都强制转换为 **system.object**。
 
 ## 相关链接
+
+[RandomNumberGenerator ( # B1 ](/dotnet/api/system.security.cryptography.randomnumbergenerator)
+
+[系统随机](/dotnet/api/system.random)
