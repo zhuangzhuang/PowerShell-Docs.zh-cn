@@ -6,12 +6,12 @@ ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Data_Sections
-ms.openlocfilehash: d45339bae42b1131e1dfb9618413a34e250a578e
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 5f70f2cdcc96090317a604f82788d1095e0b3c4d
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200322"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879297"
 ---
 # <a name="about-data-sections"></a>关于数据部分
 
@@ -72,7 +72,7 @@ Data 关键字是必需的。 此名称不区分大小写。 允许的内容仅�
 
 的值 `-SupportedCommand` 是一个或多个 cmdlet 或函数名的逗号分隔列表。
 
-例如，以下 data 节包含用户编写的 cmdlet， `Format-XML` 用于设置 XML 文件中的数据的格式：
+例如，以下 data 节包含用户编写的 cmdlet， `Format-Xml` 用于设置 XML 文件中的数据的格式：
 
 ```powershell
 DATA -supportedCommand Format-Xml

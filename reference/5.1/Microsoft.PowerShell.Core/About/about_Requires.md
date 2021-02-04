@@ -1,17 +1,16 @@
 ---
 description: 禁止运行脚本而不使用所需的元素。
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 07/01/2019
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Requires
-ms.openlocfilehash: d499499c58f22bff10d712d33fc3a021e4fa6bbb
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f8ff922fcf8deb710008bbd9bab619f137d6c831
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200075"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490697"
 ---
 # <a name="about-requires"></a>关于要求
 
@@ -25,7 +24,6 @@ ms.locfileid: "93200075"
 ### <a name="syntax"></a>语法
 
 ```
-#Requires -Assembly { <Path to .dll> | <.NET assembly specification> }
 #Requires -Version <N>[.<n>]
 #Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -Modules { <Module-Name> | <Hashtable> }
@@ -45,7 +43,7 @@ ms.locfileid: "93200075"
 > [!WARNING]
 > 尽管 `#Requires` 语句可以出现在脚本中的任何行上，但其在脚本中的位置并不会影响其应用程序的顺序。 在 `#Requires` 执行脚本之前，必须满足语句提供的全局状态。
 
-示例：
+例如：
 
 ```powershell
 Get-Module AzureRM.Netcore | Remove-Module
@@ -54,9 +52,12 @@ Get-Module AzureRM.Netcore | Remove-Module
 
 您可能认为上述代码不应运行，因为所需的模块已在语句之前删除 `#Requires` 。 但是， `#Requires` 必须先满足状态，然后才能执行该脚本。 然后，该脚本的第一行会使所需状态失效。
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 #### <a name="-assembly-assembly-path--net-assembly-specification"></a>-Assembly \<Assembly path> |\<.NET assembly specification>
+
+> [!IMPORTANT]
+> `-Assembly`语法已弃用。 它不提供任何功能。 已在 PowerShell 5.1 中添加语法，但从未实现支持代码。 为了向后兼容，仍接受语法。
 
 指定程序集 DLL 文件或 .NET 程序集名称的路径。 在 PowerShell 5.0 中引入了 **Assembly** 参数。 有关 .NET 程序集的详细信息，请参阅 [程序集名称](/dotnet/standard/assembly/names)。
 

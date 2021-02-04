@@ -7,12 +7,12 @@ ms.date: 09/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: e05c9b5e44d26b1e16c82f734ec60ca4cc73ab4d
-ms.sourcegitcommit: e0f9fe6335be1e0f94bedaa0e8baec2acaeaa076
+ms.openlocfilehash: 1b1824db5c5c20698d551a6277890ce6c82c4e11
+ms.sourcegitcommit: fb9bafd041e3615b9dc9fb77c9245581b705cd02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "93199405"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97725181"
 ---
 # ForEach-Object
 
@@ -48,7 +48,7 @@ ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit
 
 从 Windows PowerShell 3.0 开始，可以使用两种不同的方法来构造 `ForEach-Object` 命令。
 
-- **脚本块** 。 你可以使用某个脚本块来指定操作。 在脚本块中，使用 `$_` 变量来表示当前对象。 脚本块是 **Process** 参数的值。 脚本块可以包含任何 PowerShell 脚本。
+- **脚本块**。 你可以使用某个脚本块来指定操作。 在脚本块中，使用 `$_` 变量来表示当前对象。 脚本块是 **Process** 参数的值。 脚本块可以包含任何 PowerShell 脚本。
 
   例如，以下命令将获取计算机上每个进程的 **ProcessName** 属性值。
 
@@ -59,13 +59,13 @@ ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit
   > [!NOTE]
   > 脚本块在调用方的作用域中运行。 因此，这些块有权访问该范围内的变量，并且可以创建在 cmdlet 完成后在该范围内持久保留的新变量。
 
-- **操作语句** 。 你还可以编写操作语句，它更像自然语言。 你可以使用该操作语句来指定属性值或调用方法。 Windows PowerShell 3.0 中引入了操作语句。
+- **操作语句**。 你还可以编写操作语句，它更像自然语言。 你可以使用该操作语句来指定属性值或调用方法。 Windows PowerShell 3.0 中引入了操作语句。
 
   例如，以下命令还将获取计算机上每个进程的 **ProcessName** 属性值。
 
   `Get-Process | ForEach-Object ProcessName`
 
-- **并行运行的脚本块** 。 从 PowerShell 7.0 开始，第三个参数集可用于并行运行每个脚本块。 **ThrottleLimit** 参数限制一次运行的并行脚本的数量。 与前面一样，使用 `$_` 变量表示脚本块中的当前输入对象。 使用 `$using:` 关键字可将变量引用传递给正在运行的脚本。
+- **并行运行的脚本块**。 从 PowerShell 7.0 开始，第三个参数集可用于并行运行每个脚本块。 **ThrottleLimit** 参数限制一次运行的并行脚本的数量。 与前面一样，使用 `$_` 变量表示脚本块中的当前输入对象。 使用 `$using:` 关键字可将变量引用传递给正在运行的脚本。
 
   在 PowerShell 7 中，为每个循环迭代创建新的运行空间，以确保最大程度的隔离。
   如果要执行的工作比创建新的运行空间少，或者有大量迭代执行重要的工作，则这可能会造成较大的性能和资源的损失。 从 PowerShell 7.1 开始，默认情况下会重复使用运行空间池中的运行空间。 运行空间池大小由 **ThrottleLimit** 参数指定。 默认的运行空间池大小为5。 你仍可以使用 **UseNewRunspace** 开关为每个迭代创建新的运行空间。
@@ -161,7 +161,7 @@ Get-Module -ListAvailable | Foreach Path
 
 第二个命令等效于第一个命令。 它使用 `Foreach` cmdlet 的别名， `ForEach-Object` 并忽略 **成员** 名称参数的名称，此参数是可选的。
 
-此 `ForEach-Object` cmdlet 对于获取属性值非常有用，因为它在不更改类型的情况下获取值， **Format** 而不是更改 `Select-Object` 属性值类型。
+此 `ForEach-Object` cmdlet 对于获取属性值非常有用，因为它在不更改类型的情况下获取值， 而不是更改 `Select-Object` 属性值类型。
 
 ### 示例7：将模块名称拆分为组件名称
 
@@ -206,7 +206,7 @@ process
 
 ### 示例9：使用包含两个以上脚本块的 ForEach-Object
 
-在此示例中，我们传递两个脚本块按位置。 所有脚本块都绑定到 **Process** 参数。 但是，它们被视为已传递到 **Begin** 、 **Process** 和 **End** 参数。
+在此示例中，我们传递两个脚本块按位置。 所有脚本块都绑定到 **Process** 参数。 但是，它们被视为已传递到 **Begin**、 **Process** 和 **End** 参数。
 
 ```powershell
 1..2 | ForEach-Object { 'begin' } { 'process A' }  { 'process B' }  { 'end' }
@@ -337,7 +337,7 @@ $threadSafeDictionary["pwsh"]
      82    82.87     130.85      15.55    2808   2 pwsh
 ```
 
-**ConcurrentDictionary** 对象的单个实例会传递给每个脚本块，以收集对象。 由于 **ConcurrentDictionary** 是线程安全的，因此可以安全地通过每个并行脚本进行修改。 在此处使用非线程安全的对象（如 **system.object** ）将是不安全的。
+**ConcurrentDictionary** 对象的单个实例会传递给每个脚本块，以收集对象。 由于 **ConcurrentDictionary** 是线程安全的，因此可以安全地通过每个并行脚本进行修改。 在此处使用非线程安全的对象（如 **system.object**）将是不安全的。
 
 > [!NOTE]
 > 此示例非常低效地使用了 **并行** 参数。 此脚本只是将输入对象添加到并发字典对象。 这种方法很简单，不值得在单独的线程中调用每个脚本的系统开销。 `ForEach-Object`在没有 **并行** 交换机的情况下正常运行更高效、更快。 此示例仅用于演示如何使用线程安全变量。
@@ -383,7 +383,7 @@ Output: 5
 
 `Output: 3` 永远不会编写，因为该迭代的并行 scriptblock 已终止。
 
-## parameters
+## 参数
 
 ### -ArgumentList
 
@@ -542,14 +542,14 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 5
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -TimeoutSeconds
 
-指定以并行方式处理所有输入所等待的秒数。 在指定的超时时间后，将停止所有正在运行的脚本。 以及要处理的其余输入对象将被忽略。 默认值为 `0` "禁用超时"， `ForEach-Object -Parallel` 可以无限期运行。 <kbd>Ctrl</kbd> + 在命令行中键入 Ctrl<kbd>C</kbd>会停止正在运行的 `ForEach-Object -Parallel` 命令。 此参数不能与 **AsJob** 参数一起使用。
+指定以并行方式处理所有输入所等待的秒数。 在指定的超时时间后，将停止所有正在运行的脚本。 以及要处理的其余输入对象将被忽略。 默认值为 `0` "禁用超时"， `ForEach-Object -Parallel` 可以无限期运行。 <kbd></kbd> + 在命令行中键入 Ctrl<kbd>C</kbd>会停止正在运行的 `ForEach-Object -Parallel` 命令。 此参数不能与 **AsJob** 参数一起使用。
 
 此参数是在 PowerShell 7.0 中引入的。
 
@@ -643,13 +643,13 @@ Accept wildcard characters: False
 
 你可以通过管道将任何对象传递给此 cmdlet。
 
-## Outputs
+## 输出
 
 ### System.Management.Automation.PSObject
 
 此 cmdlet 将返回由输入确定的对象。
 
-## 注释
+## 说明
 
 - 此 `ForEach-Object` cmdlet 的工作方式与 **foreach** 语句非常相似，不同之处在于你不能通过管道将输入传递给 **foreach** 语句。 有关 **Foreach** 语句的详细信息，请参阅 [about_Foreach](./About/about_Foreach.md)。
 

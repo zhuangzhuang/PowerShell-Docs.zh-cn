@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-content?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Content
-ms.openlocfilehash: f8072e9c93d368fd9ebe49459199d21480031275
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 2561d569fa773d279e1e54561d6005e3eef7f7e3
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93197072"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692790"
 ---
 # Set-Content
 
@@ -120,7 +119,7 @@ The word Caution was replaced.
 `Get-Content`Cmdlet 使用 **Path** 参数来指定当前目录中的 **Notice.txt** 文件。 `Get-Content`命令用括号括起来，以便命令在管道下发送前完成。
 
 **Notice.txt** 文件的内容将通过管道向下发送到 `ForEach-Object` cmdlet。
-`ForEach-Object`使用自动变量 `$_` ，并将每次出现 **Warning** 的警告 **Caution** 替换为警告。 对象通过管道向下发送到 `Set-Content` cmdlet。 `Set-Content` 使用 **Path** 参数指定 **Notice.txt** 文件，并将更新的内容写入文件。
+`ForEach-Object`使用自动变量 `$_` ，并将每次出现的警告替换为警告。 对象通过管道向下发送到 `Set-Content` cmdlet。 `Set-Content` 使用 **Path** 参数指定 **Notice.txt** 文件，并将更新的内容写入文件。
 
 最后一个 `Get-Content` cmdlet 在 PowerShell 控制台中显示更新的文件内容。
 
@@ -207,7 +206,7 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-指定为字符串数组，此 cmdlet 在操作中排除的项。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `*.txt`。 允许使用通配符。 仅 **Exclude** 当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Exclude 参数才有效 `C:\Windows` 。
+指定为字符串数组，此 cmdlet 在操作中排除的项。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `*.txt`。 允许使用通配符。 仅当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Exclude 参数才有效 `C:\Windows` 。
 
 ```yaml
 Type: System.String[]
@@ -257,7 +256,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-指定此 cmdlet 将在操作中包含的一个项或多个项（作为一个字符串数组）。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `"*.txt"`。 允许使用通配符。 仅 **Include** 当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Include 参数才有效 `C:\Windows` 。
+指定此 cmdlet 将在操作中包含的一个项或多个项（作为一个字符串数组）。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `"*.txt"`。 允许使用通配符。 仅当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Include 参数才有效 `C:\Windows` 。
 
 ```yaml
 Type: System.String[]
@@ -340,11 +339,14 @@ Accept wildcard characters: True
 
 ### -Stream
 
+> [!NOTE]
+> 此参数仅在 Windows 上可用。
+
 指定内容的备用数据流。 如果该流不存在，则此 cmdlet 将创建它。 不支持通配符。
 
 **Stream** 是 **FileSystem** 提供程序添加到的动态参数 `Set-Content` 。 此参数仅在文件系统驱动器中有效。
 
-可以使用 `Set-Content` cmdlet 更改区域的内容 **。标识符** 备用数据流。 但是，若要取消安全检查（该安全检查可阻止从 Internet 下载的文件），则不建议使用此方法。 如果验证下载的文件是安全的，请使用 `Unblock-File` cmdlet。
+你可以使用 `Set-Content` cmdlet 来创建或更新任何备用数据流的内容，例如 `Zone.Identifier` 。 但是，若要取消安全检查（该安全检查可阻止从 Internet 下载的文件），则不建议使用此方法。 如果验证下载的文件是安全的，请使用 `Unblock-File` cmdlet。
 
 此参数是在 PowerShell 3.0 中引入的。
 
@@ -410,8 +412,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-此 cmdlet 支持通用参数： `-Debug` 、 `-ErrorAction` 、 `-ErrorVariable` 、、、、、、、 `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` 和 `-WarningVariable` 。
-有关详细信息，请参阅 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)。
+此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
 
 ## 输入
 

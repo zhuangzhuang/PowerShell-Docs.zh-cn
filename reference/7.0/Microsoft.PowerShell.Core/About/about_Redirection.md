@@ -1,17 +1,16 @@
 ---
 description: 说明如何将输出从 PowerShell 重定向到文本文件。
-keywords: PowerShell，cmdlet
 Locale: en-US
 ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
-ms.openlocfilehash: b6351486adff565010e6bb07bed07ee5dea316b7
-ms.sourcegitcommit: 16883bb67e34b3915798070f60f974bf85160bd3
+ms.openlocfilehash: bc72f479650d67ed17b5fafef56565ccbebfea13
+ms.sourcegitcommit: b9826dcf402db8a2b6d3eab37edb82c6af113343
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93200546"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040858"
 ---
 # <a name="about-redirection"></a>关于重定向
 
@@ -52,9 +51,9 @@ PowerShell 支持以下输出流的重定向。
 
 ### <a name="powershell-redirection-operators"></a>PowerShell 重定向运算符
 
-PowerShell 重定向运算符如下所示，其中 `n` 表示流号。 **Success** `1` 如果未指定流，则 ( ) 的成功流为默认值。
+PowerShell 重定向运算符如下所示，其中 `n` 表示流号。  `1` 如果未指定流，则 ( ) 的成功流为默认值。
 
-| 运算符 |                         说明                         | 语法 |
+| 操作员 |                         说明                         | 语法 |
 | -------- | ----------------------------------------------------------- | ------ |
 | `>`      | 向文件发送指定的流。                            | `n>`   |
 | `>>`     | 将指定的流 **追加** 到文件中。                      | `n>>`  |
@@ -92,7 +91,7 @@ dir 'C:\', 'fakepath' 2>&1 > .\dir.log
    Write-Warning "hello"
    Write-Error "hello"
    Write-Output "hi"
-} 3>&1 2>&1 > P:\Temp\redirection.log
+} 3>&1 2>&1 > C:\Temp\redirection.log
 ```
 
 - `3>&1` 将 **警告** 流重定向到 **成功** 流。
@@ -184,11 +183,11 @@ Ignore
 Inquire
 ```
 
-## <a name="notes"></a>注释
+## <a name="notes"></a>说明
 
 不会在不发出警告的情况下将数据追加 (`>` 和 `n>`) 覆盖指定文件的当前内容的重定向运算符。
 
-但是，如果该文件是只读文件、隐藏文件或系统文件，则重定向 **会失败** 。 追加重定向运算符 (`>>` 和 `n>>`) 不写入只读文件，但会将内容附加到系统文件或隐藏文件。
+但是，如果该文件是只读文件、隐藏文件或系统文件，则重定向 **会失败**。 追加重定向运算符 (`>>` 和 `n>>`) 不写入只读文件，但会将内容附加到系统文件或隐藏文件。
 
 若要强制将内容重定向到只读、隐藏或系统文件，请使用 `Out-File` cmdlet 及其 `Force` 参数。
 
@@ -196,7 +195,7 @@ Inquire
 
 ### <a name="potential-confusion-with-comparison-operators"></a>比较运算符可能产生混淆
 
-`>`运算符不会与[大于](about_Comparison_Operators.md#-gt)比较运算符混淆， (通常 `>`) 的其他编程语言中表示为。
+`>`运算符不会与[大于](about_Comparison_Operators.md#-gt--ge--lt-and--le)比较运算符混淆， (通常 `>`) 的其他编程语言中表示为。
 
 根据所比较的对象，使用的输出 `>` 可能看起来是正确的 (因为36不大于 42) 。
 
@@ -222,22 +221,21 @@ PS> cat 42
 
 ```powershell
 PS> if (36 < 42) { "true" } else { "false" }
-At line:1 char:8
-+ if (36 < 42) { "true" } else { "false" }
-+        ~
-The '<' operator is reserved for future use.
-+ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-+ FullyQualifiedErrorId : RedirectionNotSupported
+ParserError:
+Line |
+   1 |  if (36 < 42) { "true" } else { "false" }
+     |         ~
+     | The '<' operator is reserved for future use.
 ```
 
-如果数字比较是必需的操作， `-lt` 则 `-gt` 应使用。 请参阅： [ `-gt` 比较运算符](about_Comparison_Operators.md#-gt)
+如果数字比较是必需的操作， `-lt` 则 `-gt` 应使用。 有关详细信息，请参阅 `-gt` [about_Comparison_Operators](about_Comparison_Operators.md#-gt--ge--lt-and--le)中的运算符。
 
 ## <a name="see-also"></a>另请参阅
 
 - [Out-File](xref:Microsoft.PowerShell.Utility.Out-File)
 - [Tee-Object](xref:Microsoft.PowerShell.Utility.Tee-Object)
 - [Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
-- [写入错误](xref:Microsoft.PowerShell.Utility.Write-Error)
+- [Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
 - [Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host)
 - [Write-Information](xref:Microsoft.PowerShell.Utility.Write-Information)
 - [Write-Output](xref:Microsoft.PowerShell.Utility.Write-Output)

@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/19/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
-ms.openlocfilehash: 3ae91d03e6882eeaf6743d11cfeed5d0ed1aae0c
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: ef44fefe68ef9674eb14ce494341bf04f477d55a
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93199347"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693008"
 ---
 # Add-Content
 
@@ -117,7 +116,7 @@ Get-Content -Path .\NewFile.txt
 
 ### 示例6：向只读文件中添加内容
 
-即使 **IsReadOnly** 文件属性设置为 **True** ，此命令也会向该文件添加一个值。
+即使 **IsReadOnly** 文件属性设置为 **True**，此命令也会向该文件添加一个值。
 示例中包含创建只读文件的步骤。
 
 ```powershell
@@ -212,7 +211,7 @@ Encoding 是 FileSystem 提供程序添加到 cmdlet 的动态参数 `Add-Conten
 从 PowerShell 6.2 开始， **Encoding** 参数还允许已注册代码页的数字 id (如 `-Encoding 1251` (如) 所注册代码页的) 或字符串名称 `-Encoding "windows-1251"` 。 有关详细信息，请参阅 .NET 文档中的[编码。](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)
 
 > [!NOTE]
-> 不建议使用 **utf-7** *。 在 PowerShell 7.1 中，如果 `utf7` 为 **编码** 参数指定，则会写入警告。
+> 不建议使用 **utf-7** _ _。 在 PowerShell 7.1 中，如果 `utf7` 为 _ *Encoding** 参数指定，则会写入警告。
 
 ```yaml
 Type: System.Text.Encoding
@@ -229,7 +228,7 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-指定为字符串数组，此 cmdlet 在操作中排除的项。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `*.txt`。 允许使用通配符。 仅 **Exclude** 当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Exclude 参数才有效 `C:\Windows` 。
+指定为字符串数组，此 cmdlet 在操作中排除的项。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `*.txt`。 允许使用通配符。 仅当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Exclude 参数才有效 `C:\Windows` 。
 
 ```yaml
 Type: System.String[]
@@ -262,7 +261,7 @@ Accept wildcard characters: True
 
 ### -Force
 
-覆盖只读属性，从而允许你向只读文件中添加内容。 例如， **Force** 将覆盖只读属性或创建目录来完成文件路径，但它不会尝试更改文件权限。
+覆盖只读属性，从而允许你向只读文件中添加内容。 例如，**Force** 将覆盖只读属性或创建目录来完成文件路径，但它不会尝试更改文件权限。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -278,7 +277,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-指定此 cmdlet 将在操作中包含的一个项或多个项（作为一个字符串数组）。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `"*.txt"`。 允许使用通配符。 仅 **Include** 当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Include 参数才有效 `C:\Windows` 。
+指定此 cmdlet 将在操作中包含的一个项或多个项（作为一个字符串数组）。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `"*.txt"`。 允许使用通配符。 仅当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Include 参数才有效 `C:\Windows` 。
 
 ```yaml
 Type: System.String[]
@@ -366,11 +365,14 @@ Accept wildcard characters: True
 
 ### -Stream
 
+> [!NOTE]
+> 此参数仅在 Windows 上可用。
+
 指定内容的备用数据流。 如果该流不存在，则此 cmdlet 将创建它。 不支持通配符。
 
 **Stream** 是 FileSystem 提供程序添加到的动态参数 `Add-Content` 。 此参数仅在文件系统驱动器中有效。
 
-可以使用 `Add-Content` cmdlet 更改区域的内容 **。标识符** 备用数据流。 但是，若要取消安全检查（该安全检查可阻止从 Internet 下载的文件），则不建议使用此方法。 如果验证下载的文件是安全的，请使用 `Unblock-File` cmdlet。
+可以使用 `Add-Content` cmdlet 更改任何备用数据流的内容，例如 `Zone.Identifier` 。 但是，若要取消安全检查（该安全检查可阻止从 Internet 下载的文件），则不建议使用此方法。 如果验证下载的文件是安全的，请使用 `Unblock-File` cmdlet。
 
 此参数是在 PowerShell 3.0 中引入的。
 
@@ -388,7 +390,7 @@ Accept wildcard characters: False
 
 ### -Value
 
-指定要添加的内容。 键入带引号的字符串，如 **此数据仅供内部使用** ，或指定包含内容的对象，例如生成的 **DateTime** 对象 `Get-Date` 。
+指定要添加的内容。 键入带引号的字符串，如 **此数据仅供内部使用**，或指定包含内容的对象，例如生成的 **DateTime** 对象 `Get-Date` 。
 
 不能通过键入文件路径来指定文件内容，因为路径只是一个字符串。
 您可以使用 `Get-Content` 命令获取内容并将其传递给 **Value** 参数。
@@ -438,6 +440,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
 
 ## 输入
@@ -473,4 +476,3 @@ Accept wildcard characters: False
 [New-Item](New-Item.md)
 
 [Set-Content](Set-Content.md)
-

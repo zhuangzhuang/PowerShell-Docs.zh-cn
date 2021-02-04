@@ -7,12 +7,12 @@ ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ItemProperty
-ms.openlocfilehash: 969cb181758dc1ac40b9d8fca2c22fa97f87c693
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: cbd1229721650823d9780517934c40a2287f4227
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93198044"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692669"
 ---
 # Set-ItemProperty
 
@@ -64,7 +64,7 @@ Set-ItemProperty -LiteralPath <String[]> -InputObject <PSObject> [-PassThru] [-F
 
 ### 示例1：设置文件的属性
 
-此命令将 "final.doc" 文件的 " **IsReadOnly** " 属性的值设置为 "true"。 它使用 **路径** 指定该文件的名称，使用 **name** 指定属性的名称，并使用 **值** pazrameter 来指定新值。
+此命令将 "final.doc" 文件的 " **IsReadOnly** " 属性的值设置为 "true"。 它使用 **路径** 指定文件的名称，使用 **name** 指定属性的名称，并使用 **Value** 参数指定新值。
 
 文件是 **FileInfo** 对象，而 **IsReadOnly** 只是它的一个属性。
 若要查看所有属性，请键入 `Get-Item C:\GroupFiles\final.doc | Get-Member -MemberType Property` 。
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 ### -LiteralPath
 
 指定项属性的路径。
-与 **Path** 参数不同， **LiteralPath** 的值严格按照所键入的形式使用。
+与 **Path** 参数不同，**LiteralPath** 的值严格按照所键入的形式使用。
 不会将任何字符解释为通配符。
 如果路径包括转义符，请将其括在单引号中。
 单引号指示 PowerShell 不要将任何字符解释为转义序列。
@@ -336,14 +336,14 @@ Accept wildcard characters: False
 指定此 cmdlet 添加的属性类型。
 此参数的可接受值为：
 
-- **String** ：指定以 null 结尾的字符串。 等效于 **REG_SZ** 。
-- **ExpandString** ：指定一个以 null 结尾的字符串，该字符串包含对在检索值时扩展的环境变量的未展开引用。 等效于 **REG_EXPAND_SZ** 。
-- **Binary** ：指定任意格式的二进制数据。 等效于 **REG_BINARY** 。
-- **DWord** ：指定32位二进制数。 等效于 **REG_DWORD** 。
-- **多字符串** ：指定以 null 结尾的字符串的数组，该数组以两个 null 字符结尾。
-  等效于 **REG_MULTI_SZ** 。
-- **Qword** ：指定64位二进制数。 等效于 **REG_QWORD** 。
-- **未知** ：指示不受支持的注册表数据类型，如 **REG_RESOURCE_LIST** 。
+- **String**：指定以 null 结尾的字符串。 等效于 **REG_SZ**。
+- **ExpandString**：指定一个以 null 结尾的字符串，该字符串包含对在检索值时扩展的环境变量的未展开引用。 等效于 **REG_EXPAND_SZ**。
+- **Binary**：指定任意格式的二进制数据。 等效于 **REG_BINARY**。
+- **DWord**：指定32位二进制数。 等效于 **REG_DWORD**。
+- **多字符串**：指定以 null 结尾的字符串的数组，该数组以两个 null 字符结尾。
+  等效于 **REG_MULTI_SZ**。
+- **Qword**：指定64位二进制数。 等效于 **REG_QWORD**。
+- **未知**：指示不受支持的注册表数据类型，如 **REG_RESOURCE_LIST**。
 
 ```yaml
 Type: RegistryValueKind

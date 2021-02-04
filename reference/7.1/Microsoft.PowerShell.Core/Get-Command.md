@@ -7,12 +7,12 @@ ms.date: 05/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
-ms.openlocfilehash: 60b6d2e380685650a86f74056a992afb4051ddc1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 5f2752f53fb5f74b6436548c3bd4fa731d2b02d5
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93198862"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879229"
 ---
 # Get-Command
 
@@ -99,13 +99,13 @@ Get-Command Get-AppLockerPolicy
 
 ### 示例6：获取 cmdlet 的语法
 
-**Syntax** 当在 Cert： **ArgumentList** `Get-ChildItem` 驱动器中使用 cmdlet 时，此命令将使用 ArgumentList 和句法参数获取该 cmdlet 的语法。 Cert：驱动器是证书提供程序添加到会话中的 PowerShell 驱动器。
+当在 Cert：  `Get-ChildItem` 驱动器中使用 cmdlet 时，此命令将使用 ArgumentList 和句法参数获取该 cmdlet 的语法。 Cert：驱动器是证书提供程序添加到会话中的 PowerShell 驱动器。
 
 ```powershell
 Get-Command  -Name Get-Childitem -Args Cert: -Syntax
 ```
 
-当你将输出中显示的语法与省略 **Args** ( **ArgumentList** ) 参数时显示的语法进行比较时，你会看到 **证书提供程序** 将动态参数 **CodeSigningCert** 添加到 `Get-ChildItem` cmdlet。
+当你将输出中显示的语法与省略 **Args** (**ArgumentList**) 参数时显示的语法进行比较时，你会看到 **证书提供程序** 将动态参数 **CodeSigningCert** 添加到 `Get-ChildItem` cmdlet。
 
 有关证书提供程序的详细信息，请参阅 [about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md)。
 
@@ -150,14 +150,14 @@ Get-Command -ParameterName *Auth* -ParameterType AuthenticationMechanism
 
 可以使用类似此命令的命令查找允许你指定用于对用户进行身份验证的方法的 cmdlet。
 
-即使采用 **AuthenticationMechanism** 值的参数和采用 **AuthenticationLevel** 参数的参数具有类似名称， **ParameterType** 参数也可区分它们。
+即使采用 **AuthenticationMechanism** 值的参数和采用 **AuthenticationLevel** 参数的参数具有类似名称，**ParameterType** 参数也可区分它们。
 
 ### 示例10：获取别名
 
 此示例演示如何使用 `Get-Command` 带有别名的 cmdlet。
 
 ```powershell
-Get-Command Name dir
+Get-Command -Name dir
 ```
 
 ```Output
@@ -203,7 +203,7 @@ Application     notepad.exe    C:\WINDOWS\system32\notepad.exe
 Application     NOTEPAD.EXE    C:\WINDOWS\NOTEPAD.EXE
 ```
 
-当会话中的多个命令具有相同名称时， **All** 参数非常有用。
+当会话中的多个命令具有相同名称时，**All** 参数非常有用。
 
 从 Windows PowerShell 3.0 开始，默认情况下，当会话中包含具有相同名称的多个命令时， `Get-Command` 仅获取键入命令名称时运行的命令。 对于 **all** 参数， `Get-Command` 获取具有指定名称的所有命令，并按执行优先级顺序返回它们。 若要运行除列表中第一个命令以外的某个命令，请键入该命令的完全限定的路径。
 
@@ -234,7 +234,7 @@ Get-Command -Type Cmdlet | Where-Object OutputType | Format-List -Property Name,
 
 该命令的第一部分将获取所有 cmdlet。 管道运算符 (`|`) 将 cmdlet 发送到 `Where-Object` cmdlet，该 cmdlet 只选择在其中填充 **OutputType** 属性的 cmdlet。 另一个管道运算符将选定的 cmdlet 对象发送到 `Format-List` cmdlet，该 cmdlet 将在列表中显示每个 cmdlet 的名称和输出类型。
 
-仅当 cmdlet 代码为 cmdlet 定义了 **OutputType** 属性时， **CommandInfo** 对象的 **OutputType** 属性的值才为非 null。
+仅当 cmdlet 代码为 cmdlet 定义了 **OutputType** 属性时，**CommandInfo** 对象的 **OutputType** 属性的值才为非 null。
 
 ### 示例15：获取采用特定对象类型作为输入的 cmdlet
 
@@ -300,7 +300,7 @@ Accept wildcard characters: False
 
 ### -ArgumentList
 
-指定参数数组。 此 cmdlet 将获取有关 cmdlet 或函数的信息，与指定参数一起使用时， ( "arguments" ) 。 **ArgumentList** 的别名是 **Args** 。
+指定参数数组。 此 cmdlet 将获取有关 cmdlet 或函数的信息，与指定参数一起使用时， ( "arguments" ) 。 **ArgumentList** 的别名是 **Args**。
 
 若要检测仅当使用某些其他参数时才可用的动态参数，请将 **ArgumentList** 的值设置为触发动态参数的参数。
 
@@ -320,7 +320,7 @@ Accept wildcard characters: False
 
 ### -CommandType
 
-指定此 cmdlet 获取的命令类型。 输入一个或多个命令类型。 使用 **CommandType** 或其别名 **Type** 。 默认情况下，将 `Get-Command` 获取所有 cmdlet、函数和别名。
+指定此 cmdlet 获取的命令类型。 输入一个或多个命令类型。 使用 **CommandType** 或其别名 **Type**。 默认情况下，将 `Get-Command` 获取所有 cmdlet、函数和别名。
 
 此参数的可接受值为：
 

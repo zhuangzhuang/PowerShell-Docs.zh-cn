@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/07/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
-ms.openlocfilehash: ddb3f8d1889887e01db8663e21cdb0323e6d4084
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 9b8d81c84a5dab8fa5f5e216c8c4eb5b5f6022b7
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93196881"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692851"
 ---
 # Remove-Item
 
@@ -69,7 +68,7 @@ Remove-Item * -Include *.doc -Exclude *1*
 Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
 ```
 
-它使用 **Path** 参数指定文件。 它使用 **Force** 参数将其删除。 如果没有 **强制** ，则无法删除 _只读_ 或 _隐藏_ 文件。
+它使用 **Path** 参数指定文件。 它使用 **Force** 参数将其删除。 如果没有 **强制**，则无法删除 _只读_ 或 _隐藏_ 文件。
 
 ### 示例4：以递归方式删除子文件夹中的文件
 
@@ -85,7 +84,7 @@ Get-ChildItem * -Include *.csv -Recurse | Remove-Item
 
 ### 示例5：以递归方式删除子项
 
-此命令删除 "OldApp" 注册表项及其所有子项和值。 它使用 `Remove-Item` 删除密钥。 指定了路径，但省略了可选的参数名称 ( **路径** ) 。
+此命令删除 "OldApp" 注册表项及其所有子项和值。 它使用 `Remove-Item` 删除密钥。 指定了路径，但省略了可选的参数名称 (**路径**) 。
 
 **递归** 参数会以递归方式删除 "OldApp" 项的所有内容。 如果该注册表项包含子项并且省略了 **递归** 参数，系统会提示您确认是否要删除该注册表项的内容。
 
@@ -174,7 +173,7 @@ At line:1 char:1
 
 ```
 
-**Stream** 参数 `Get-Item` 获取该文件的 **区域。标识符** 流 `Copy-Script.ps1` 。 `Remove-Item` 使用 **Stream** 参数删除 **区域的标识符** 流。 最后，该 `Get-Item` cmdlet 会显示 **区域。** 已删除标识符流。
+**Stream** 参数 `Get-Item` 获取文件的 `Zone.Identifier` 流 `Copy-Script.ps1` 。 `Remove-Item` 使用 **stream** 参数删除 `Zone.Identifier` 文件的流。 最后，该 `Get-Item` cmdlet 会显示 `Zone.Identifier` 已删除流。
 
 ## PARAMETERS
 
@@ -198,7 +197,7 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-指定为字符串数组，此 cmdlet 在操作中排除的项。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `*.txt`。 允许使用通配符。 仅 **Exclude** 当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Exclude 参数才有效 `C:\Windows` 。
+指定为字符串数组，此 cmdlet 在操作中排除的项。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `*.txt`。 允许使用通配符。 仅当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Exclude 参数才有效 `C:\Windows` 。
 
 ```yaml
 Type: System.String[]
@@ -214,8 +213,7 @@ Accept wildcard characters: True
 
 ### -Filter
 
-指定用于限定 **路径** 参数的筛选器。 [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)提供程序是唯一一种支持使用筛选器的已安装 PowerShell 提供程序。 可以在 [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md)中找到 **文件系统** 筛选语言的语法。
-筛选器比其他参数更有效，因为提供程序在 cmdlet 获取对象时应用筛选器，而不是在检索对象后再对其进行筛选。
+指定用于限定 **路径** 参数的筛选器。 [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)提供程序是唯一一种支持使用筛选器的已安装 PowerShell 提供程序。 可以在 [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md)中找到 **文件系统** 筛选语言的语法。 筛选器比其他参数更有效，因为提供程序在 cmdlet 获取对象时应用筛选器，而不是在检索对象后再对其进行筛选。
 
 ```yaml
 Type: System.String
@@ -248,7 +246,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-指定此 cmdlet 将在操作中包含的一个项或多个项（作为一个字符串数组）。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `"*.txt"`。 允许使用通配符。 仅 **Include** 当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Include 参数才有效 `C:\Windows` 。
+指定此 cmdlet 将在操作中包含的一个项或多个项（作为一个字符串数组）。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `"*.txt"`。 允许使用通配符。 仅当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Include 参数才有效 `C:\Windows` 。
 
 ```yaml
 Type: System.String[]
@@ -317,10 +315,14 @@ Accept wildcard characters: False
 
 ### -Stream
 
+> [!NOTE]
+> 此参数仅在 Windows 上可用。
+
 **Stream** 参数是 FileSystem 提供程序添加到的动态参数 `Remove-Item` 。
 此参数仅在文件系统驱动器中有效。
 
-您可以使用 `Remove-Item` 删除备用数据流。 但是，若要取消安全检查（该安全检查可阻止从 Internet 下载的文件），则不建议使用此方法。 如果验证下载的文件是安全的，请使用 `Unblock-File` cmdlet。
+您可以使用 `Remove-Item` 删除备用数据流，如 `Zone.Identifier` 。
+但是，若要取消安全检查（该安全检查可阻止从 Internet 下载的文件），则不建议使用此方法。 如果验证下载的文件是安全的，请使用 `Unblock-File` cmdlet。
 
 已在 Windows PowerShell 3.0 中引入了此参数。
 
@@ -338,7 +340,7 @@ Accept wildcard characters: True
 
 ### -Confirm
 
-提示你在运行 cmdlet 之前进行确认。 有关详细信息，请参阅以下文章：
+提示你在运行 cmdlet 之前进行确认。 有关详细信息，请参阅下列文章：
 
 - [about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
 - [about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
@@ -373,7 +375,8 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-此 cmdlet 支持通用参数： `-Debug` 、 `-ErrorAction` 、 `-ErrorVariable` 、、、、、、、 `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` 和 `-WarningVariable` 。 有关详细信息，请参阅 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)。
+此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+
 
 ## 输入
 

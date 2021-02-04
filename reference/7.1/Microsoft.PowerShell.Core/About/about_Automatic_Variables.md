@@ -1,17 +1,16 @@
 ---
 description: 描述存储 PowerShell 的状态信息的变量。 这些变量由 PowerShell 创建和维护。
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 08/14/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 5ce9e61113da2c781f5774866e827663a7c7ced4
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 60ad0e40f7e392bf240ee76a5902123c45a282fd
+ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200470"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577235"
 ---
 # <a name="about-automatic-variables"></a>关于自动变量
 
@@ -33,7 +32,7 @@ ms.locfileid: "93200470"
 
 包含最后一个命令的执行状态。 如果最后一个命令成功，则 **为 True;** 否则为 **False** 。
 
-对于在管道中的多个阶段（例如在和块中）运行的 cmdlet 和高级函数，在 `process` `end` `this.WriteError()` 任何点调用或分别调用或 `$PSCmdlet.WriteError()` 分别将设置 `$?` 为 **False** ，就像 `this.ThrowTerminatingError()` 和 `$PSCmdlet.ThrowTerminatingError()` 。
+对于在管道中的多个阶段（例如在和块中）运行的 cmdlet 和高级函数，在 `process` `end` `this.WriteError()` 任何点调用或分别调用或 `$PSCmdlet.WriteError()` 分别将设置 `$?` 为 **False**，就像 `this.ThrowTerminatingError()` 和 `$PSCmdlet.ThrowTerminatingError()` 。
 
 `Write-Error`Cmdlet 始终在 `$?` 执行后立即设置为 **false** ，但不会 `$?` 对调用它的函数设置为 **false** ：
 
@@ -50,10 +49,10 @@ $? # $true
 
 对于后一种用途， `$PSCmdlet.WriteError()` 应改为使用。
 
-对于 (可执行文件) 的本机命令， `$?` 当为0时，将设置为 **True** `$LASTEXITCODE` ，如果 **False** `$LASTEXITCODE` 为任何其他值，则设置为 False。
+对于 (可执行文件) 的本机命令， `$?` 当为0时，将设置为 **True** `$LASTEXITCODE` ，如果 `$LASTEXITCODE` 为任何其他值，则设置为 False。
 
 > [!NOTE]
-> 在 PowerShell 7 中，在括号内包含语句后 `(...)` ，子表达式语法 `$(...)` 或数组表达式 `@(...)` 始终重置 `$?` 为 **True** ，因此 `(Write-Error)` 显示 `$?` 为 **true** 。
+> 在 PowerShell 7 中，在括号内包含语句后 `(...)` ，子表达式语法 `$(...)` 或数组表达式 `@(...)` 始终重置 `$?` 为 **True**，因此 `(Write-Error)` 显示 `$?` 为 **true**。
 > 此操作在 PowerShell 7 中已更改，因此 `$?` 将始终反映在这些表达式中运行的最后一个命令的实际成功。
 
 ### <a name=""></a>$^
@@ -103,7 +102,7 @@ $? # $true
 
 ### <a name="false"></a>$false
 
-包含 **False** 。 可以在命令和脚本中使用此变量来表示 **False** ，而不是使用字符串 "False"。 如果字符串被转换为非空字符串或非零整数，则可以将该字符串解释为 **True** 。
+包含 **False**。 可以在命令和脚本中使用此变量来表示 **False** ，而不是使用字符串 "False"。 如果字符串被转换为非空字符串或非零整数，则可以将该字符串解释为 **True** 。
 
 ### <a name="foreach"></a>$foreach
 
@@ -137,6 +136,12 @@ $? # $true
 由于 `$input` 是一个枚举器，因此访问它的任何属性都将导致 `$input` 不再可用。 可以 `$input` 在另一个变量中存储以重用 `$input` 属性。
 
 枚举器包含可用于检索循环值和更改当前循环迭代的属性和方法。 有关详细信息，请参阅 [使用枚举](#using-enumerators)器。
+
+`$input` `-Command` `pwsh` 当从命令行调用时，该变量也可用于由的参数指定的命令。 下面的示例从 Windows 命令行界面运行。
+
+```CMD
+echo Hello | pwsh -Command """$input World!"""
+```
 
 ### <a name="iscoreclr"></a>$IsCoreCLR
 
@@ -226,7 +231,7 @@ Hello
 Hello three
 ```
 
-因此，不能使用 `$null` 来表示 **没有参数值** 。 参数值 `$null` 覆盖默认参数值。
+因此，不能使用 `$null` 来表示 **没有参数值**。 参数值 `$null` 覆盖默认参数值。
 
 但是，因为 PowerShell 将 `$null` 变量视为占位符，所以可以在脚本中使用它，如果忽略，这将不起作用 `$null` 。
 
@@ -332,7 +337,7 @@ b     Shell
 
 ### <a name="pshome"></a>$PSHOME
 
-包含适用于 PowerShell 的安装目录的完整路径，通常是 `$env:windir\System32\PowerShell\v1.0` 在 Windows 系统中。 可以在 PowerShell 文件的路径中使用此变量。 例如，下面的命令在概念帮助主题中搜索 word **变量** ：
+包含适用于 PowerShell 的安装目录的完整路径，通常是 `$env:windir\System32\PowerShell\v1.0` 在 Windows 系统中。 可以在 PowerShell 文件的路径中使用此变量。 例如，下面的命令在概念帮助主题中搜索 word **变量**：
 
 ```powershell
 Select-String -Pattern Variable -Path $pshome\*.txt
@@ -353,7 +358,7 @@ Select-String -Pattern Variable -Path $pshome\*.txt
 
 包含有关启动 PSSession 的用户的信息，其中包括源计算机的用户标识和时区。 此变量仅在 Pssession 中可用。
 
-此 `$PSSenderInfo` 变量包含一个用户可配置的属性 **ApplicationArguments** ，默认情况下，该属性仅包含 `$PSVersionTable` 来自原始会话的。 若要将数据添加到 **ApplicationArguments** 属性，请使用 Cmdlet 的 **ApplicationArguments** 参数 `New-PSSessionOption` 。
+此 `$PSSenderInfo` 变量包含一个用户可配置的属性 **ApplicationArguments**，默认情况下，该属性仅包含 `$PSVersionTable` 来自原始会话的。 若要将数据添加到 **ApplicationArguments** 属性，请使用 Cmdlet 的 **ApplicationArguments** 参数 `New-PSSessionOption` 。
 
 ### <a name="psuiculture"></a>$PSUICulture
 
@@ -377,7 +382,7 @@ Select-String -Pattern Variable -Path $pshome\*.txt
 | **OS**                    | 操作系统的说明      |
 |                           | PowerShell 正在上运行。                     |
 | **平台**              | 操作系统正在运行的平台 |
-|                           | 如果 Linux 和 macOS 上的值为 **Unix** 。 |
+|                           | 如果 Linux 和 macOS 上的值为 **Unix**。 |
 |                           | 请参见 `$IsMacOs` 和 `$IsLinux`。                |
 | **PSCompatibleVersions**  | 兼容的 PowerShell 版本    |
 |                           | 与当前版本                      |
@@ -416,7 +421,7 @@ Select-String -Pattern Variable -Path $pshome\*.txt
 
 ### <a name="true"></a>$true
 
-包含 **True** 。 可以在命令和脚本中使用此变量来表示 **True** 。
+包含 **True**。 可以在命令和脚本中使用此变量来表示 **True** 。
 
 ## <a name="using-enumerators"></a>使用枚举器
 
@@ -447,7 +452,7 @@ Select-String -Pattern Variable -Path $pshome\*.txt
 
 ### <a name="reset"></a>重置
 
-[Reset](/dotnet/api/system.collections.ienumerator.reset)方法将枚举器设置为其初始位置，该位置位于集合中第一个元素 **之前** 。
+[Reset](/dotnet/api/system.collections.ienumerator.reset)方法将枚举器设置为其初始位置，该位置位于集合中第一个元素 **之前**。
 
 ### <a name="current"></a>当前
 
@@ -566,7 +571,7 @@ After MoveNext:
 
 通过使用 **当前** 属性，可以多次访问当前管道值，而无需使用 **Reset** 方法。 进程块不会自动调用 **MoveNext** 方法。
 
-除非显式调用 **MoveNext** ，否则不会填充 **当前** 属性。 **当前** 属性可以在进程块内多次访问，而无需清除其值。
+除非显式调用 **MoveNext**，否则不会填充 **当前** 属性。 **当前** 属性可以在进程块内多次访问，而无需清除其值。
 
 ```powershell
 function Current
@@ -681,7 +686,7 @@ Reset Loop: 0
 下面的示例演示了所有枚举器概念。
 
 > [!NOTE]
-> 请注意， **NotEvaluated** 即使在 `break` **MoveNext** 方法后面没有语句，也不会执行 NotEvaluated 事例。
+> 请注意， 即使在 `break` **MoveNext** 方法后面没有语句，也不会执行 NotEvaluated 事例。
 
 ```powershell
 $values = "Start", "MoveNext", "NotEvaluated", "Reset", "End"

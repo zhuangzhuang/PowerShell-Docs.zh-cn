@@ -6,12 +6,12 @@ ms.date: 07/31/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Signing
-ms.openlocfilehash: 6e4c8c3783af1fda68c6a0c067b79e8d22943c1a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 8eada7e85b6f970a5ba4c6e1714ee598cf768706
+ms.sourcegitcommit: 021ea294327dec542ec040619dac0d2171397a90
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200061"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804140"
 ---
 # <a name="about-signing"></a>关于签名
 
@@ -38,7 +38,7 @@ ms.locfileid: "93200061"
 Get-ExecutionPolicy
 ```
 
-若要运行你在本地计算机上编写的未签名脚本和其他用户的签名脚本，请使用 "以管理员身份运行" 选项启动 PowerShell，然后使用以下命令将计算机上的执行策略更改为 **RemoteSigned** ：
+若要运行你在本地计算机上编写的未签名脚本和其他用户的签名脚本，请使用 "以管理员身份运行" 选项启动 PowerShell，然后使用以下命令将计算机上的执行策略更改为 **RemoteSigned**：
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -48,7 +48,7 @@ Set-ExecutionPolicy RemoteSigned
 
 ## <a name="running-unsigned-scripts-using-the-remotesigned-execution-policy"></a>使用 RemoteSigned 执行策略运行未签名的脚本
 
-如果你的 PowerShell 执行策略是 **RemoteSigned** ，则 powershell 将不会运行从 internet 下载的未签名脚本，包括你通过电子邮件和即时消息程序收到的未签名脚本。
+如果你的 PowerShell 执行策略是 **RemoteSigned**，则 powershell 将不会运行从 internet 下载的未签名脚本，包括你通过电子邮件和即时消息程序收到的未签名脚本。
 
 如果尝试运行下载的脚本，则 PowerShell 将显示以下错误消息：
 
@@ -104,7 +104,7 @@ from trusted publishers.
 
 ## <a name="create-a-self-signed-certificate"></a>创建自签名证书
 
-若要在 PKI 模块中创建自签名证书，请使用 `New-SelfSignedCertificate` cmdlet。 此模块是在 PowerShell 3.0 中引入的，并且包含在 Windows 8 和 Windows Server 2012 中。 有关详细信息，请参阅 cmdlet 的帮助主题 `New-SelfSignedCertificate` 。
+若要创建自签名证书，请使用 `New-SelfSignedCertificate` PKI 模块中的 cmdlet。 此模块是在 PowerShell 3.0 中引入的，并且包含在 Windows 8 和 Windows Server 2012 中。 有关详细信息，请参阅 cmdlet 的帮助主题 `New-SelfSignedCertificate` 。
 
 若要在 Windows 的早期版本中创建自签名证书，请使用证书创建工具 `MakeCert.exe` 。 此工具包含在 Microsoft .NET SDK (版本1.1 及更高版本) 和 Microsoft Windows SDK 中。
 

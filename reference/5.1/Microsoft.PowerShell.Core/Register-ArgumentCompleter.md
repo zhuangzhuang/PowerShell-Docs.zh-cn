@@ -7,12 +7,12 @@ ms.date: 5/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ArgumentCompleter
-ms.openlocfilehash: 1cc6f9f62efc92005c02865ac91cad04164f7655
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 963f99f69ff4406f94445841ad020555617dac42
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93197630"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490858"
 ---
 # Register-ArgumentCompleter
 
@@ -61,7 +61,7 @@ Register-ArgumentCompleter -CommandName Set-TimeZone -ParameterName Id -ScriptBl
 
 第一个命令创建一个脚本块，该脚本块采用用户按 <kbd>Tab</kbd>时传入的必需参数。有关详细信息，请参阅 **ScriptBlock** 参数说明。
 
-在脚本块中，使用 cmdlet 检索 **Id** 的可用值 `Get-TimeZone` 。 每个时区的 **Id** 属性将通过管道传递给 `Where-Object` cmdlet。 `Where-Object`Cmdlet 筛选出不以提供的值开头的所有 id `$wordToComplete` ，表示用户在按<kbd>Tab 键</kbd>之前键入的文本。如果值包含空格，则筛选的 id 将通过管道传递给 `For-EachObject` cmdlet，将每个值括在引号中。
+在脚本块中，使用 cmdlet 检索 **Id** 的可用值 `Get-TimeZone` 。 每个时区的 **Id** 属性将通过管道传递给 `Where-Object` cmdlet。 `Where-Object`Cmdlet 筛选出不以提供的值开头的所有 id `$wordToComplete` ，表示用户在按<kbd>Tab 键</kbd>之前键入的文本。如果值包含空格，则筛选的 id 将通过管道传递给 `ForEach-Object` cmdlet，将每个值括在引号中。
 
 第二个命令通过传递 scriptblock、 **ParameterName** **Id** 和 **CommandName** 来注册参数其完成注册 `Set-TimeZone` 。
 
@@ -91,9 +91,9 @@ Register-ArgumentCompleter -CommandName Stop-Service -ParameterName Name -Script
 
 - **completionText** (字符串) -要用作自动完成结果的文本。 这是发送到命令的值。
 - **listItemText** (String) -要在列表中显示的文本，例如当用户按下 <kbd>Ctrl</kbd> + <kbd>空格键</kbd>时。 它仅用于显示，并且在选中时不会传递给命令。
-- **resultType** ( [CompletionResultType](/dotnet/api/system.management.automation.completionresulttype)) -完成结果的类型。
+- **resultType** ([CompletionResultType](/dotnet/api/system.management.automation.completionresulttype)) -完成结果的类型。
 - **tooltip** (字符串) -具有要显示的有关对象的详细信息的工具提示文本。
-  当用户在按下<kbd>Ctrl 键</kbd>的同时选择某一项时，将显示此选项 + <kbd>Space</kbd>。
+  当用户在按下<kbd>Ctrl 键</kbd>的同时选择某一项时，将显示此选项 + <kbd></kbd>。
 
 最后一个命令演示仍可将停止的服务手动传递到 `Stop-Service` cmdlet。 选项卡完成是唯一受影响的方面。
 

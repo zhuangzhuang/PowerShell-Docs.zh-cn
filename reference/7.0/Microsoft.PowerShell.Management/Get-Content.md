@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
-ms.openlocfilehash: 1409522cffc2dde2cc5002049126bcfaa30ce846
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 48f15f9d7018c2e58584bff80f81132fe08fea1e
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93197022"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692730"
 ---
 # Get-Content
 
@@ -49,7 +48,7 @@ Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] -LiteralP
 
 ### 示例 1：获取文本文件的内容
 
-此示例获取当前目录中的文件的内容。 `LineNumbers.txt`文件包含100行，格式 **为第 X 行** ，在几个示例中使用。
+此示例获取当前目录中的文件的内容。 `LineNumbers.txt`文件包含100行，格式 **为第 X 行**，在几个示例中使用。
 
 ```powershell
 1..100 | ForEach-Object { Add-Content -Path .\LineNumbers.txt -Value "This is line $_." }
@@ -180,7 +179,7 @@ Added a stream named NewStream to Stream.txt
 ```
 
 **Stream** 参数是 [FileSystem 提供程序](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring)的动态参数。
-默认情况下 `Get-Content` ，仅从主副本或流检索数据 `$DATA` 。 **流** 可用于存储隐藏数据，如属性、安全设置或其他数据。
+默认情况下 `Get-Content` ，仅检索默认值或流中的数据 `:$DATA` 。 **流** 可用于存储隐藏数据，如属性、安全设置或其他数据。 它们还可以存储在目录中，而无需作为子项。
 
 ### 示例6：获取原始内容
 
@@ -219,7 +218,7 @@ Get-Member -InputObject $bytearray
 ```
 
 ```Output
-TypeName: System.Byte[]
+   TypeName: System.Byte[]
 
 Name           MemberType            Definition
 ----           ----------            ----------
@@ -289,7 +288,7 @@ Accept wildcard characters: False
 
 从文件或其他项的开始处指定行数。 默认值为 -1（所有行）。
 
-您可以使用 **TotalCount** 参数名称或其别名 **First** 或 **Head** 。
+您可以使用 **TotalCount** 参数名称或其别名 **First** 或 **Head**。
 
 ```yaml
 Type: System.Int64
@@ -305,7 +304,7 @@ Accept wildcard characters: False
 
 ### -Tail
 
-从文件或其他项的结尾处指定行数。 您可以使用 **Tail** 参数名或其别名 **Last** 。 此参数是在 PowerShell 3.0 中引入的。
+从文件或其他项的结尾处指定行数。 您可以使用 **Tail** 参数名或其别名 **Last**。 此参数是在 PowerShell 3.0 中引入的。
 
 ```yaml
 Type: System.Int32
@@ -338,7 +337,7 @@ Accept wildcard characters: True
 
 ### -Include
 
-指定此 cmdlet 将在操作中包含的一个项或多个项（作为一个字符串数组）。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `"*.txt"`。 允许使用通配符。 仅 **Include** 当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Include 参数才有效 `C:\Windows` 。
+指定此 cmdlet 将在操作中包含的一个项或多个项（作为一个字符串数组）。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `"*.txt"`。 允许使用通配符。 仅当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Include 参数才有效 `C:\Windows` 。
 
 ```yaml
 Type: System.String[]
@@ -360,7 +359,7 @@ Accept wildcard characters: True
 请输入路径元素或模式，例如 `*.txt`。
 允许使用通配符。
 
-仅 **Exclude** 当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Exclude 参数才有效 `C:\Windows` 。
+仅当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Exclude 参数才有效 `C:\Windows` 。
 
 ```yaml
 Type: System.String[]
@@ -433,7 +432,7 @@ Accept wildcard characters: False
 
 ### -Wait
 
-在输出所有现有行后，使文件保持打开状态。 等待时， `Get-Content` 每秒检查一次文件，并输出新行（如果存在）。 可以按 **CTRL + C** 中断 **等待** 。 如果文件被删除，则等待也会结束，在这种情况下，会报告非终止错误。
+在输出所有现有行后，使文件保持打开状态。 等待时， `Get-Content` 每秒检查一次文件，并输出新行（如果存在）。 可以按 **CTRL + C** 中断 **等待**。 如果文件被删除，则等待也会结束，在这种情况下，会报告非终止错误。
 
 **Wait** 是 FileSystem 提供程序添加到 cmdlet 的动态参数 `Get-Content` 。 此参数仅在文件系统驱动器中有效。 **Wait** 无法与 **Raw** 组合。
 
@@ -504,6 +503,9 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
+
+> [!NOTE]
+> 此参数仅在 Windows 上可用。
 
 从文件中获取指定的备用 NTFS 文件流的内容。 输入流名称。
 不支持通配符。

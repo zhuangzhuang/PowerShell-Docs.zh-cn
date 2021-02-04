@@ -1,16 +1,15 @@
 ---
 description: 说明如何使用 `pwsh` 命令行界面。 显示命令行参数并描述语法。
-keywords: powershell,cmdlet
 ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pwsh
-ms.openlocfilehash: c71848e327822f7cbc659310d3fa47a5a46a37a2
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 6f6e7ea66aa04eaeea2b9da7c07864180210131c
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200161"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692987"
 ---
 # <a name="about-pwsh"></a>关于 pwsh
 
@@ -49,7 +48,7 @@ pwsh[.exe]
 pwsh[.exe] -h | -Help | -? | /?
 ```
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 所有参数都不区分大小写。
 
@@ -73,7 +72,7 @@ pwsh[.exe] -h | -Help | -? | /?
 
 当脚本文件以命令结束时 `exit` ，进程退出代码将设置为与命令一起使用的数值参数 `exit` 。 如果正常终止，则始终会出现退出代码 `0` 。
 
-类似于 `-Command` ，当发生脚本终止错误时，退出代码将设置为 `1` 。 不过，与不同的 `-Command` 是，在通过<kbd>Ctrl</kbd>C 中断执行时， - <kbd>C</kbd>退出代码为 `0` 。
+类似于 `-Command` ，当发生脚本终止错误时，退出代码将设置为 `1` 。 不过，与不同的 `-Command` 是，在通过<kbd>Ctrl</kbd>C 中断执行时， - <kbd></kbd>退出代码为 `0` 。
 
 ### <a name="-command---c"></a>-Command |-c
 
@@ -147,7 +146,7 @@ Enter-PSHostProcess -CustomPipeName mydebugpipe
 
 ### <a name="-encodedcommand---e---ec"></a>-EncodedCommand |-e |-ec
 
-接受命令的 Base64 编码字符串版本。 使用此参数将命令提交到需要复杂的嵌套引号的 PowerShell。 Base64 表示形式必须是 UTF-16 编码的字符串。
+接受命令的 Base64 编码字符串版本。 使用此参数将命令提交到需要复杂的嵌套引号的 PowerShell。 Base64 表示形式必须为 UTF-16LE 编码的字符串。
 
 例如：
 

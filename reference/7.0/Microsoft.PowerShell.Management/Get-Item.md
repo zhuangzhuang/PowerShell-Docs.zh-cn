@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 07f8da5e6101b1d9bb1971b3c77b9747c0080a23
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e848cc8c77e1d0dff6eb1f98d56c8ed37e44a653
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93197050"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692821"
 ---
 # Get-Item
 
@@ -157,6 +157,9 @@ drwxr-xr-x  root  admin   12/20/2019 11:46   192   Users
 
 ### -Stream
 
+> [!NOTE]
+> 此参数仅在 Windows 上可用。
+
 从文件获取指定的备用 NTFS 文件流。 输入流名称。 支持通配符。 若要获取所有流，请使用星号 (`*`) 。 此参数在文件夹上无效。
 
 **Stream** 是 **FileSystem** 提供程序添加到 cmdlet 的动态参数 `Get-Item` 。
@@ -194,7 +197,7 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-指定为字符串数组，此 cmdlet 在操作中排除的项。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `*.txt`。 允许使用通配符。 仅 **Exclude** 当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Exclude 参数才有效 `C:\Windows` 。
+指定为字符串数组，此 cmdlet 在操作中排除的项。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `*.txt`。 允许使用通配符。 仅当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Exclude 参数才有效 `C:\Windows` 。
 
 ```yaml
 Type: System.String[]
@@ -243,7 +246,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-指定此 cmdlet 将在操作中包含的一个项或多个项（作为一个字符串数组）。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `*.txt`。 允许使用通配符。 仅 **Include** 当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Include 参数才有效 `C:\Windows` 。
+指定此 cmdlet 将在操作中包含的一个项或多个项（作为一个字符串数组）。 此参数值使 **Path** 参数有效。 请输入路径元素或模式，例如 `*.txt`。 允许使用通配符。 仅当命令包括项的内容时（例如 `C:\Windows\*` ，其中的通配符指定目录的内容），Include 参数才有效 `C:\Windows` 。
 
 ```yaml
 Type: System.String[]
@@ -315,7 +318,7 @@ Accept wildcard characters: True
 若要以递归方式获取项的内容，请使用 `Get-ChildItem` 。
 
 若要在注册表中导航，请使用此 cmdlet 获取注册表项，并使用 `Get-ItemProperty` 来获取注册表值和数据。 注册表值被视为注册表项的属性。
-  
+
 此 cmdlet 用于处理由任何提供程序公开的数据。 若要列出会话中可用的提供程序，请键入 `Get-PsProvider`。 有关详细信息，请参阅 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)。
 
 ## 相关链接

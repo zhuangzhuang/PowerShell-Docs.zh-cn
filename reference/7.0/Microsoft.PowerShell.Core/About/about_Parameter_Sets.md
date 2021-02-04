@@ -1,13 +1,13 @@
 ---
 description: 描述如何定义和使用高级函数中的参数集。
 title: about_Parameter_Sets
-ms.date: 02/11/2020
-ms.openlocfilehash: e4cfbc13f981bcc93c8a0a3c799851e83df7746c
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.date: 01/05/2021
+ms.openlocfilehash: 8f3a33345a8e2fa19810c8ebd527d9a7dca7dec5
+ms.sourcegitcommit: eb7ad1850550032880f5529b4e4281514cba1673
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200382"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97917813"
 ---
 # <a name="about-parameter-sets"></a>关于参数集
 
@@ -22,7 +22,7 @@ PowerShell 使用参数集使你可以编写一个函数，该函数可对不同
 
 以下要求适用于所有参数集。
 
-- 每个参数集必须至少具有一个唯一参数。 如果可能，请将此参数设置为必需参数。
+- 每个参数集都必须具有唯一的参数组合。 如果可能，必须至少有一个唯一参数是必需参数。
 
 - 包含多个位置参数的参数集必须为每个参数定义唯一的位置。 无两个位置参数可以指定同一位置。
 
@@ -50,7 +50,7 @@ PowerShell 使用参数集使你可以编写一个函数，该函数可对不同
 
 以下示例函数对文本文件中的行、字符和单词进行计数。 使用参数可以指定要返回的值以及要度量的文件。 定义了四个参数集：
 
-- `Path`
+- 路径
 - PathAll
 - LiteralPath
 - LiteralPathAll

@@ -1,34 +1,33 @@
 ---
 description: 描述在 PowerShell 中使用单引号和双引号的规则。
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/05/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Quoting_Rules
-ms.openlocfilehash: 8e30640c74976ac79634f5f7f648aafc16977f31
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 27d5909c1381c0d221690b353a308680643ecad5
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200197"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490748"
 ---
 # <a name="about-quoting-rules"></a>关于报价规则
 
 ## <a name="short-description"></a>简短说明
 描述在 PowerShell 中使用单引号和双引号的规则。
 
-## <a name="long-description"></a>详细说明
+## <a name="long-description"></a>长说明
 
 引号用于指定文本字符串。 可以用单引号将字符串括起来 (`'`) 或双引号 (`"`) 。
 
-引号还用于创建此处字符串。 此处-字符串是用单引号或双引号括起来的字符串，其中的引号按原义解释。 此处的字符串可以跨多个行。 此处字符串中的所有行都被解释为字符串，即使它们没有用引号引起来。
+引号还用于创建 _此处字符串_。 此处-字符串是用单引号或双引号括起来的字符串，其中的引号按原义解释。 此处的字符串可以跨多个行。 此处字符串中的所有行都被解释为字符串，即使它们没有用引号引起来。
 
 在远程计算机的命令中，引号定义在远程计算机上运行的命令的各个部分。 在远程会话中，引号还确定命令中的变量是在本地计算机上还是在远程计算机上首先解释。
 
-### <a name="single-and-double-quoted-strings"></a>单引号和双引号字符串
+## <a name="single-and-double-quoted-strings"></a>单引号和双引号字符串
 
-用双引号将字符串括起来时 (用双引号引起来) ，在将 `$` 字符串传递到命令进行处理之前，将用变量的值替换前面带有美元符号 () 的变量名称。
+用双引号引起来的字符串是一个 _可扩展_ 字符串。 前面带有美元符号 () 的变量名称 `$` 将替换为该变量的值，然后将该字符串传递到命令进行处理。
 
 例如：
 
@@ -55,7 +54,8 @@ The value of 5 is 5.
 The value of 5 is 5.
 ```
 
-如果将字符串括在单引号中 (单引号的字符串) ，则该字符串将与你键入的内容完全相同。 不执行任何替换。 例如：
+用单引号括起来的字符串是 _原义_ 字符串。 当你键入内容时，字符串将传递给命令。 不执行任何替换。
+例如：
 
 ```powershell
 $i = 5
@@ -82,7 +82,7 @@ The value of $(2+3) is 5.
 
 若要防止用双引号替换变量值，请使用反撇号字符 (`` ` ``) # B2 ASCII 96) ，这是 PowerShell 转义符。
 
-在下面的示例中，第一个 $i 变量之前的反撇号字符会阻止 PowerShell 将变量名称替换为其值。
+在下面的示例中，第一个变量之前的反撇号字符 `$i` 会阻止 PowerShell 将变量名称替换为其值。
 例如：
 
 ```powershell
@@ -155,7 +155,7 @@ Use a quotation mark (`") to begin a string.
 
 由于单引号字符串的内容按原义解释，因此，反撇号字符被视为文本字符并显示在输出中。
 
-### <a name="here-strings"></a>此处-字符串
+## <a name="here-strings"></a>此处-字符串
 
 此处的引号规则与字符串略有不同。
 
@@ -277,7 +277,7 @@ xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
 此处-对于向 cmdlet 进行的输入，字符串也是一种方便的格式，这种格式会 `ConvertFrom-StringData` 将字符串转换为哈希表。
 有关详细信息，请参阅 `ConvertFrom-StringData`。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [about_Special_Characters](about_Special_Characters.md)
 

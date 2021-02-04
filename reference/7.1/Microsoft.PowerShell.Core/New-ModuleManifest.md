@@ -7,12 +7,12 @@ ms.date: 11/02/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
-ms.openlocfilehash: 5fbd197f6c22de0ca50b4d2b6b76a914b85f7120
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: 21d9f21414eec761fbab77ffcc35a9f57706263a
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239768"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879263"
 ---
 # New-ModuleManifest
 
@@ -225,7 +225,7 @@ $moduleSettings = @{
 New-ModuleManifest @moduleSettings
 ```
 
-此示例演示如何使用 **ModuleList** 、 **RequiredModules** 和 **NestedModules** 参数的字符串和哈希表格式。 可以将字符串和哈希表组合到同一参数值中。
+此示例演示如何使用 **ModuleList**、 **RequiredModules** 和 **NestedModules** 参数的字符串和哈希表格式。 可以将字符串和哈希表组合到同一参数值中。
 
 ### 示例 4-创建支持可更新帮助的清单
 
@@ -730,7 +730,7 @@ Accept wildcard characters: False
 
 ### -PowerShellHostName
 
-指定模块所需的 PowerShell 主机程序的名称。 输入主机程序的名称，例如 **Windows PowerShell ISE host** or **ConsoleHost** 。 不允许使用通配符。
+指定模块所需的 PowerShell 主机程序的名称。 输入主机程序的名称，例如 **Windows PowerShell ISE host** or **ConsoleHost**。 不允许使用通配符。
 
 若要查找主机程序的名称，请在 "程序" 中键入 `$Host.Name` 。
 
@@ -764,7 +764,7 @@ Accept wildcard characters: False
 
 ### -PowerShellVersion
 
-指定适用于此模块的 PowerShell 的最低版本。 例如，可以输入1.0、2.0 或3.0 作为参数的值。
+指定适用于此模块的 PowerShell 的最低版本。 例如，可以输入1.0、2.0 或3.0 作为参数的值。 它必须采用 X. X 格式。 例如，如果你提交 `5` ，则 PowerShell 将引发错误。
 
 ```yaml
 Type: System.Version
@@ -923,7 +923,7 @@ Accept wildcard characters: False
 若要从 `.psm1` `.dll` 具有清单的模块中的或文件中导出成员，必须在清单中的 **RootModule** 或 **NestedModules** 键的值中指定这些文件的名称。 否则，不会导出它们的成员。
 
 > [!NOTE]
-> 在 PowerShell 2.0 中，此密钥称为 **ModuleToProcess** 。 可以使用 **RootModule** 参数名称或其 **ModuleToProcess** 别名。
+> 在 PowerShell 2.0 中，此密钥称为 **ModuleToProcess**。 可以使用 **RootModule** 参数名称或其 **ModuleToProcess** 别名。
 
 ```yaml
 Type: System.String

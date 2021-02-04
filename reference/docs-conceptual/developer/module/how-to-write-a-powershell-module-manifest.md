@@ -1,14 +1,14 @@
 ---
-ms.date: 10/16/2019
+ms.date: 01/04/2021
 ms.topic: reference
 title: 如何编写 PowerShell 模块清单
 description: 如何编写 PowerShell 模块清单
-ms.openlocfilehash: 42db71968ccac1cc3c1c05c5be2e72327e5e28d9
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 8c644391008cb97c1206f985f0f5eca9d7dfcc9e
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92647704"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879365"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>如何编写 PowerShell 模块清单
 
@@ -54,7 +54,7 @@ ms.locfileid: "92647704"
 
 下表描述了可在模块清单中包含的元素。
 
-|元素|默认|描述|
+|元素|默认|说明|
 |-------------|-------------|-----------------|
 |**RootModule**<br /> 类型：`String`|`<empty string>`|与此清单关联的脚本模块或二进制模块文件。 以前版本的 PowerShell 调用此元素为 **ModuleToProcess**。<br /> 根模块的可能类型可以是空的，这会创建 **清单** 模块、脚本模块的名称 (`.psm1`) ，或者二进制模块 (`.exe` 或) 的名称 `.dll` 。 在此元素中将模块清单的名称 (`.psd1`) 或脚本文件 (`.ps1`) 会导致错误。 <br /> 示例： `RootModule = 'ScriptModule.psm1'`|
 |**ModuleVersion**<br /> 类型：`Version`|`'0.0.1'`|此模块的版本号。 如果未指定值， `New-ModuleManifest`   将使用默认值。 例如，该字符串必须能够转换为类型 `Version` `#.#.#.#.#` 。 `Import-Module` 加载它在与该名称匹配的 **$PSModulePath** 上找到的第一个模块，其中至少有一个 **ModuleVersion** 作为 **MinimumVersion** 参数。 若要导入特定版本，请使用 `Import-Module` cmdlet 的 **RequiredVersion** 参数。<br /> 示例： `ModuleVersion = '1.0'`|
@@ -63,7 +63,7 @@ ms.locfileid: "92647704"
 |**CompanyName**<br /> 类型：`String`|`'Unknown'`|此模块的公司或供应商。 如果未指定值， `New-ModuleManifest` 将使用默认值。<br /> 示例： `CompanyName = 'Fabrikam'`|
 |**版权**<br /> 类型：`String`|`'(c) <Author>. All rights reserved.'`| 此模块的版权声明。 如果未指定值，则 `New-ModuleManifest` 使用当前用户作为的默认值 `<Author>` 。 若要指定作者，请使用 **author** 参数。 <br /> 示例： `Copyright = '2019 AuthorName. All rights reserved.'`|
 |**说明**<br /> 类型：`String`|`<empty string>`|此模块提供的功能的说明。<br /> 示例： `Description = 'This is the module's description.'`|
-|**PowerShellVersion**<br /> 类型：`Version`|`<empty string>`|此模块所需的最小 PowerShell 引擎版本。 有效值为1.0、2.0、3.0、4.0、5.0、5.1、6和7。<br /> 示例： `PowerShellVersion = '5.0'`|
+|**PowerShellVersion**<br /> 类型：`Version`|`<empty string>`|此模块所需的最小 PowerShell 引擎版本。 有效值为1.0、2.0、3.0、4.0、5.0、5.1、6.0、6.1、6.2、7.0 和7.1。<br /> 示例： `PowerShellVersion = '5.0'`|
 |**PowerShellHostName**<br /> 类型：`String`|`<empty string>`|此模块所需的 PowerShell 主机的名称。 此名称由 PowerShell 提供。 若要查找主机程序的名称，请在 "程序" 中键入： `$host.name` 。<br /> 示例： `PowerShellHostName = 'ConsoleHost'`|
 |**PowerShellHostVersion**<br /> 类型：`Version`|`<empty string>`|此模块所需的最小 PowerShell 主机版本。<br /> 示例： `PowerShellHostVersion = '2.0'`|
 |**DotNetFrameworkVersion**<br /> 类型：`Version`|`<empty string>`|此模块所需的 Microsoft .NET Framework 的最低版本。 此先决条件仅适用于 PowerShell 桌面版，如 PowerShell 5.1。<br /> 示例： `DotNetFrameworkVersion = '3.5'`|
@@ -232,7 +232,7 @@ PrivateData = @{
 }
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [about_Comparison_Operators](/powershell/module/microsoft.powershell.core/about/about_comparison_operators)
 
