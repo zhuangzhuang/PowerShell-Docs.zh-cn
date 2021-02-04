@@ -3,106 +3,115 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: 常见参数名称
 description: 常见参数名称
-ms.openlocfilehash: cf39dd3b04660076718336857d79d55c3784ccd1
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 506aab290abdb97a6e26c340ac4bd0051244f54b
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92668212"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860873"
 ---
-# <a name="common-parameter-names"></a><span data-ttu-id="7efc9-103">常见参数名称</span><span class="sxs-lookup"><span data-stu-id="7efc9-103">Common Parameter Names</span></span>
+# <a name="common-parameter-names"></a><span data-ttu-id="0423e-103">常见参数名称</span><span class="sxs-lookup"><span data-stu-id="0423e-103">Common Parameter Names</span></span>
 
-<span data-ttu-id="7efc9-104">本主题中描述的参数称为 *通用参数*。</span><span class="sxs-lookup"><span data-stu-id="7efc9-104">The parameters described in this topic are referred to as *common parameters*.</span></span> <span data-ttu-id="7efc9-105">它们由 Windows PowerShell 运行时添加到 cmdlet 中，不能由 cmdlet 声明。</span><span class="sxs-lookup"><span data-stu-id="7efc9-105">They are added to cmdlets by the Windows PowerShell runtime and cannot be declared by the cmdlet.</span></span>
+<span data-ttu-id="0423e-104">本主题中描述的参数称为 **通用参数**。</span><span class="sxs-lookup"><span data-stu-id="0423e-104">The parameters described in this topic are referred to as **common parameters**.</span></span> <span data-ttu-id="0423e-105">它们由 Windows PowerShell 运行时添加到 cmdlet 中，不能由 cmdlet 声明。</span><span class="sxs-lookup"><span data-stu-id="0423e-105">They are added to cmdlets by the Windows PowerShell runtime and cannot be declared by the cmdlet.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="7efc9-106">还会将这些参数添加到提供程序 cmdlet 以及用特性修饰的函数 `CmdletBinding` 。</span><span class="sxs-lookup"><span data-stu-id="7efc9-106">These parameters are also added to provider cmdlets and to functions that are decorated with the `CmdletBinding` attribute.</span></span>
+> <span data-ttu-id="0423e-106">还会将这些参数添加到提供程序 cmdlet 以及用特性修饰的函数 `CmdletBinding` 。</span><span class="sxs-lookup"><span data-stu-id="0423e-106">These parameters are also added to provider cmdlets and to functions that are decorated with the `CmdletBinding` attribute.</span></span>
 
-## <a name="general-common-parameters"></a><span data-ttu-id="7efc9-107">一般常见参数</span><span class="sxs-lookup"><span data-stu-id="7efc9-107">General Common Parameters</span></span>
+## <a name="general-common-parameters"></a><span data-ttu-id="0423e-107">一般常见参数</span><span class="sxs-lookup"><span data-stu-id="0423e-107">General Common Parameters</span></span>
 
-<span data-ttu-id="7efc9-108">以下参数将添加到所有 cmdlet 中，并可在每次运行 cmdlet 时访问。</span><span class="sxs-lookup"><span data-stu-id="7efc9-108">The following parameters are added to all cmdlets and can be accessed whenever the cmdlet is run.</span></span> <span data-ttu-id="7efc9-109">这些参数是由 [Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters) 类定义的。</span><span class="sxs-lookup"><span data-stu-id="7efc9-109">These parameters are defined by the [System.Management.Automation.Internal.Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters) class.</span></span>
+<span data-ttu-id="0423e-108">以下参数将添加到所有 cmdlet 中，并可在每次运行 cmdlet 时访问。</span><span class="sxs-lookup"><span data-stu-id="0423e-108">The following parameters are added to all cmdlets and can be accessed whenever the cmdlet is run.</span></span>
+<span data-ttu-id="0423e-109">这些参数是由 [Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters) 类定义的。</span><span class="sxs-lookup"><span data-stu-id="0423e-109">These parameters are defined by the [System.Management.Automation.Internal.Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters) class.</span></span>
 
-### <a name="debug-alias-db"></a><span data-ttu-id="7efc9-110">调试 (别名： db) </span><span class="sxs-lookup"><span data-stu-id="7efc9-110">Debug (alias: db)</span></span>
+### <a name="confirm-alias-cf"></a><span data-ttu-id="0423e-110">确认 (别名： cf) </span><span class="sxs-lookup"><span data-stu-id="0423e-110">Confirm (alias: cf)</span></span>
 
-<span data-ttu-id="7efc9-111">数据类型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="7efc9-111">Data type: SwitchParameter</span></span>
+<span data-ttu-id="0423e-111">数据类型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="0423e-111">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="7efc9-112">此参数指定是否可以在命令行中显示的程序员级调试消息。</span><span class="sxs-lookup"><span data-stu-id="7efc9-112">This parameter specifies whether programmer-level debugging messages that can be displayed at the command line.</span></span> <span data-ttu-id="7efc9-113">这些消息用于对 cmdlet 的操作进行故障排除，并由对 [WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) 方法的调用生成。</span><span class="sxs-lookup"><span data-stu-id="7efc9-113">These messages are intended for troubleshooting the operation of the cmdlet, and are generated by calls to the [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method.</span></span> <span data-ttu-id="7efc9-114">调试消息无需本地化。</span><span class="sxs-lookup"><span data-stu-id="7efc9-114">Debug messages do not need to be localized.</span></span>
+<span data-ttu-id="0423e-112">此参数指定该 cmdlet 是否显示提示，询问用户是否确实要继续。</span><span class="sxs-lookup"><span data-stu-id="0423e-112">This parameter specifies whether the cmdlet displays a prompt that asks if the user is sure that they want to continue.</span></span>
 
-### <a name="erroraction-alias-ea"></a><span data-ttu-id="7efc9-115">ErrorAction (别名： ea) </span><span class="sxs-lookup"><span data-stu-id="7efc9-115">ErrorAction (alias: ea)</span></span>
+### <a name="debug-alias-db"></a><span data-ttu-id="0423e-113">调试 (别名： db) </span><span class="sxs-lookup"><span data-stu-id="0423e-113">Debug (alias: db)</span></span>
 
-<span data-ttu-id="7efc9-116">数据类型：枚举</span><span class="sxs-lookup"><span data-stu-id="7efc9-116">Data type: Enumeration</span></span>
+<span data-ttu-id="0423e-114">数据类型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="0423e-114">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="7efc9-117">此参数指定发生错误时应执行的操作。</span><span class="sxs-lookup"><span data-stu-id="7efc9-117">This parameter specifies what action should take place when an error occurs.</span></span> <span data-ttu-id="7efc9-118">此参数的可能值是由 [Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) 枚举定义的。</span><span class="sxs-lookup"><span data-stu-id="7efc9-118">The possible values for this parameter are defined by the [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeration.</span></span>
+<span data-ttu-id="0423e-115">此参数指定是否可以在命令行中显示的程序员级调试消息。</span><span class="sxs-lookup"><span data-stu-id="0423e-115">This parameter specifies whether programmer-level debugging messages that can be displayed at the command line.</span></span> <span data-ttu-id="0423e-116">这些消息用于对 cmdlet 的操作进行故障排除，并由对 [WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) 方法的调用生成。</span><span class="sxs-lookup"><span data-stu-id="0423e-116">These messages are intended for troubleshooting the operation of the cmdlet, and are generated by calls to the [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method.</span></span> <span data-ttu-id="0423e-117">调试消息无需本地化。</span><span class="sxs-lookup"><span data-stu-id="0423e-117">Debug messages do not need to be localized.</span></span>
 
-### <a name="errorvariable-alias-ev"></a><span data-ttu-id="7efc9-119">ErrorVariable (alias： ev) </span><span class="sxs-lookup"><span data-stu-id="7efc9-119">ErrorVariable (alias: ev)</span></span>
+### <a name="erroraction-alias-ea"></a><span data-ttu-id="0423e-118">ErrorAction (别名： ea) </span><span class="sxs-lookup"><span data-stu-id="0423e-118">ErrorAction (alias: ea)</span></span>
 
-<span data-ttu-id="7efc9-120">数据类型：字符串</span><span class="sxs-lookup"><span data-stu-id="7efc9-120">Data type: String</span></span>
+<span data-ttu-id="0423e-119">数据类型：枚举</span><span class="sxs-lookup"><span data-stu-id="0423e-119">Data type: Enumeration</span></span>
 
-<span data-ttu-id="7efc9-121">此参数指定发生错误时要在其中放置对象的变量。</span><span class="sxs-lookup"><span data-stu-id="7efc9-121">This parameter specifies the variable in which to place objects when an error occurs.</span></span> <span data-ttu-id="7efc9-122">若要追加到此变量，请使用 +*varname* ，而不是清除和设置变量。</span><span class="sxs-lookup"><span data-stu-id="7efc9-122">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
+<span data-ttu-id="0423e-120">此参数指定发生错误时应执行的操作。</span><span class="sxs-lookup"><span data-stu-id="0423e-120">This parameter specifies what action should take place when an error occurs.</span></span> <span data-ttu-id="0423e-121">此参数的可能值是由 [Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) 枚举定义的。</span><span class="sxs-lookup"><span data-stu-id="0423e-121">The possible values for this parameter are defined by the [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeration.</span></span>
 
-### <a name="outvariable-alias-ov"></a><span data-ttu-id="7efc9-123">OutVariable (alias： ov-es) </span><span class="sxs-lookup"><span data-stu-id="7efc9-123">OutVariable (alias: ov)</span></span>
+### <a name="errorvariable-alias-ev"></a><span data-ttu-id="0423e-122">ErrorVariable (alias： ev) </span><span class="sxs-lookup"><span data-stu-id="0423e-122">ErrorVariable (alias: ev)</span></span>
 
-<span data-ttu-id="7efc9-124">数据类型：字符串</span><span class="sxs-lookup"><span data-stu-id="7efc9-124">Data type: String</span></span>
+<span data-ttu-id="0423e-123">数据类型：字符串</span><span class="sxs-lookup"><span data-stu-id="0423e-123">Data type: String</span></span>
 
-<span data-ttu-id="7efc9-125">此参数指定在其中放置由 cmdlet 生成的所有输出对象的变量。</span><span class="sxs-lookup"><span data-stu-id="7efc9-125">This parameter specifies the variable in which to place all output objects generated by the cmdlet.</span></span> <span data-ttu-id="7efc9-126">若要追加到此变量，请使用 +*varname* ，而不是清除和设置变量。</span><span class="sxs-lookup"><span data-stu-id="7efc9-126">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
+<span data-ttu-id="0423e-124">此参数指定发生错误时要在其中放置对象的变量。</span><span class="sxs-lookup"><span data-stu-id="0423e-124">This parameter specifies the variable in which to place objects when an error occurs.</span></span> <span data-ttu-id="0423e-125">若要追加到此变量，请使用 +_varname_ ，而不是清除和设置变量。</span><span class="sxs-lookup"><span data-stu-id="0423e-125">To append to this variable, use +_varname_ rather than clearing and setting the variable.</span></span>
 
-### <a name="outbuffer-alias-ob"></a><span data-ttu-id="7efc9-127">OutBuffer (别名： ob) </span><span class="sxs-lookup"><span data-stu-id="7efc9-127">OutBuffer (alias: ob)</span></span>
+### <a name="outbuffer-alias-ob"></a><span data-ttu-id="0423e-126">OutBuffer (别名： ob) </span><span class="sxs-lookup"><span data-stu-id="0423e-126">OutBuffer (alias: ob)</span></span>
 
-<span data-ttu-id="7efc9-128">数据类型： Int32</span><span class="sxs-lookup"><span data-stu-id="7efc9-128">Data type: Int32</span></span>
+<span data-ttu-id="0423e-127">数据类型： Int32</span><span class="sxs-lookup"><span data-stu-id="0423e-127">Data type: Int32</span></span>
 
-<span data-ttu-id="7efc9-129">此参数定义在将任何对象向下传递管道之前要存储在输出缓冲区中的对象数。</span><span class="sxs-lookup"><span data-stu-id="7efc9-129">This parameter defines the number of objects to store in the output buffer before any objects are passed down the pipeline.</span></span> <span data-ttu-id="7efc9-130">默认情况下，对象会立即沿管道向下传递。</span><span class="sxs-lookup"><span data-stu-id="7efc9-130">By default, objects are passed immediately down the pipeline.</span></span>
+<span data-ttu-id="0423e-128">此参数定义在将任何对象向下传递管道之前要存储在输出缓冲区中的对象数。</span><span class="sxs-lookup"><span data-stu-id="0423e-128">This parameter defines the number of objects to store in the output buffer before any objects are passed down the pipeline.</span></span> <span data-ttu-id="0423e-129">默认情况下，对象会立即沿管道向下传递。</span><span class="sxs-lookup"><span data-stu-id="0423e-129">By default, objects are passed immediately down the pipeline.</span></span>
 
-### <a name="verbose-alias-vb"></a><span data-ttu-id="7efc9-131">详细 (别名： vb) </span><span class="sxs-lookup"><span data-stu-id="7efc9-131">Verbose (alias: vb)</span></span>
+### <a name="outvariable-alias-ov"></a><span data-ttu-id="0423e-130">OutVariable (alias： ov-es) </span><span class="sxs-lookup"><span data-stu-id="0423e-130">OutVariable (alias: ov)</span></span>
 
-<span data-ttu-id="7efc9-132">数据类型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="7efc9-132">Data type: SwitchParameter</span></span>
+<span data-ttu-id="0423e-131">数据类型：字符串</span><span class="sxs-lookup"><span data-stu-id="0423e-131">Data type: String</span></span>
 
-<span data-ttu-id="7efc9-133">此参数指定该 cmdlet 是否写入可以在命令行中显示的解释性消息。</span><span class="sxs-lookup"><span data-stu-id="7efc9-133">This parameter specifies whether the cmdlet writes explanatory messages that can be displayed at the command line.</span></span> <span data-ttu-id="7efc9-134">这些消息旨在向用户提供其他帮助，并通过对 [WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) 方法的调用来生成它们。</span><span class="sxs-lookup"><span data-stu-id="7efc9-134">These messages are intended to provide additional help to the user, and are generated by calls to the [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method.</span></span>
+<span data-ttu-id="0423e-132">此参数指定在其中放置由 cmdlet 生成的所有输出对象的变量。</span><span class="sxs-lookup"><span data-stu-id="0423e-132">This parameter specifies the variable in which to place all output objects generated by the cmdlet.</span></span>
+<span data-ttu-id="0423e-133">若要追加到此变量，请使用 +_varname_ ，而不是清除和设置变量。</span><span class="sxs-lookup"><span data-stu-id="0423e-133">To append to this variable, use +_varname_ rather than clearing and setting the variable.</span></span>
 
-### <a name="warningaction-alias-wa"></a><span data-ttu-id="7efc9-135">WarningAction (别名： wa) </span><span class="sxs-lookup"><span data-stu-id="7efc9-135">WarningAction (alias: wa)</span></span>
+### <a name="pipelinevariable-alias-pv"></a><span data-ttu-id="0423e-134">PipelineVariable (alias： pv) </span><span class="sxs-lookup"><span data-stu-id="0423e-134">PipelineVariable (alias: pv)</span></span>
 
-<span data-ttu-id="7efc9-136">数据类型：枚举</span><span class="sxs-lookup"><span data-stu-id="7efc9-136">Data type: Enumeration</span></span>
+<span data-ttu-id="0423e-135">数据类型：字符串</span><span class="sxs-lookup"><span data-stu-id="0423e-135">Data type: String</span></span>
 
-<span data-ttu-id="7efc9-137">此参数指定在 cmdlet 写入警告消息时应执行的操作。</span><span class="sxs-lookup"><span data-stu-id="7efc9-137">This parameter specifies what action should take place when the cmdlet writes a warning message.</span></span> <span data-ttu-id="7efc9-138">此参数的可能值是由 [Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) 枚举定义的。</span><span class="sxs-lookup"><span data-stu-id="7efc9-138">The possible values for this parameter are defined by the [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeration.</span></span>
+<span data-ttu-id="0423e-136">此参数将当前管道元素的值存储为任何命名命令的变量，因为它流经管道。</span><span class="sxs-lookup"><span data-stu-id="0423e-136">This parameter stores the value of the current pipeline element as a variable for any named command as it flows through the pipeline.</span></span>
 
-### <a name="warningvariable-alias-wv"></a><span data-ttu-id="7efc9-139">WarningVariable (alias： wv) </span><span class="sxs-lookup"><span data-stu-id="7efc9-139">WarningVariable (alias: wv)</span></span>
+## <a name="verbose-alias-vb"></a><span data-ttu-id="0423e-137">详细 (别名： vb) </span><span class="sxs-lookup"><span data-stu-id="0423e-137">Verbose (alias: vb)</span></span>
 
-<span data-ttu-id="7efc9-140">数据类型：字符串</span><span class="sxs-lookup"><span data-stu-id="7efc9-140">Data type: String</span></span>
+<span data-ttu-id="0423e-138">数据类型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="0423e-138">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="7efc9-141">此参数指定可在其中保存警告消息的变量。</span><span class="sxs-lookup"><span data-stu-id="7efc9-141">This parameter specifies the variable in which warning messages can be saved.</span></span> <span data-ttu-id="7efc9-142">若要追加到此变量，请使用 +*varname* ，而不是清除和设置变量。</span><span class="sxs-lookup"><span data-stu-id="7efc9-142">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
+<span data-ttu-id="0423e-139">此参数指定该 cmdlet 是否写入可以在命令行中显示的解释性消息。</span><span class="sxs-lookup"><span data-stu-id="0423e-139">This parameter specifies whether the cmdlet writes explanatory messages that can be displayed at the command line.</span></span> <span data-ttu-id="0423e-140">这些消息旨在向用户提供其他帮助，并通过对 [WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) 方法的调用来生成它们。</span><span class="sxs-lookup"><span data-stu-id="0423e-140">These messages are intended to provide additional help to the user, and are generated by calls to the [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method.</span></span>
 
-## <a name="risk-mitigation-parameters"></a><span data-ttu-id="7efc9-143">Risk-Mitigation 参数</span><span class="sxs-lookup"><span data-stu-id="7efc9-143">Risk-Mitigation Parameters</span></span>
+### <a name="warningaction-alias-wa"></a><span data-ttu-id="0423e-141">WarningAction (别名： wa) </span><span class="sxs-lookup"><span data-stu-id="0423e-141">WarningAction (alias: wa)</span></span>
 
-<span data-ttu-id="7efc9-144">将以下参数添加到 cmdlet，这些 cmdlet 在执行操作之前请求确认。</span><span class="sxs-lookup"><span data-stu-id="7efc9-144">The following parameters are added to cmdlets that requests confirmation before they perform their action.</span></span> <span data-ttu-id="7efc9-145">有关确认请求的详细信息，请参阅 [请求确认](./requesting-confirmation-from-cmdlets.md)。</span><span class="sxs-lookup"><span data-stu-id="7efc9-145">For more information about confirmation requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).</span></span> <span data-ttu-id="7efc9-146">这些参数是由 [Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) 类定义的。</span><span class="sxs-lookup"><span data-stu-id="7efc9-146">These parameters are defined by the [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) class.</span></span>
+<span data-ttu-id="0423e-142">数据类型：枚举</span><span class="sxs-lookup"><span data-stu-id="0423e-142">Data type: Enumeration</span></span>
 
-### <a name="confirm-alias-cf"></a><span data-ttu-id="7efc9-147">确认 (别名： cf) </span><span class="sxs-lookup"><span data-stu-id="7efc9-147">Confirm (alias: cf)</span></span>
+<span data-ttu-id="0423e-143">此参数指定在 cmdlet 写入警告消息时应执行的操作。</span><span class="sxs-lookup"><span data-stu-id="0423e-143">This parameter specifies what action should take place when the cmdlet writes a warning message.</span></span> <span data-ttu-id="0423e-144">此参数的可能值是由 [Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) 枚举定义的。</span><span class="sxs-lookup"><span data-stu-id="0423e-144">The possible values for this parameter are defined by the [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeration.</span></span>
 
-<span data-ttu-id="7efc9-148">数据类型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="7efc9-148">Data type: SwitchParameter</span></span>
+### <a name="warningvariable-alias-wv"></a><span data-ttu-id="0423e-145">WarningVariable (alias： wv) </span><span class="sxs-lookup"><span data-stu-id="0423e-145">WarningVariable (alias: wv)</span></span>
 
-<span data-ttu-id="7efc9-149">此参数指定该 cmdlet 是否显示提示，询问用户是否确实要继续。</span><span class="sxs-lookup"><span data-stu-id="7efc9-149">This parameter specifies whether the cmdlet displays a prompt that asks if the user is sure that they want to continue.</span></span>
+<span data-ttu-id="0423e-146">数据类型：字符串</span><span class="sxs-lookup"><span data-stu-id="0423e-146">Data type: String</span></span>
 
-### <a name="whatif-alias-wi"></a><span data-ttu-id="7efc9-150">WhatIf (别名： wi) </span><span class="sxs-lookup"><span data-stu-id="7efc9-150">WhatIf (alias: wi)</span></span>
+<span data-ttu-id="0423e-147">此参数指定可在其中保存警告消息的变量。</span><span class="sxs-lookup"><span data-stu-id="0423e-147">This parameter specifies the variable in which warning messages can be saved.</span></span> <span data-ttu-id="0423e-148">若要追加到此变量，请使用 +_varname_ ，而不是清除和设置变量。</span><span class="sxs-lookup"><span data-stu-id="0423e-148">To append to this variable, use +_varname_ rather than clearing and setting the variable.</span></span>
 
-<span data-ttu-id="7efc9-151">数据类型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="7efc9-151">Data type: SwitchParameter</span></span>
+## <a name="risk-mitigation-parameters"></a><span data-ttu-id="0423e-149">Risk-Mitigation 参数</span><span class="sxs-lookup"><span data-stu-id="0423e-149">Risk-Mitigation Parameters</span></span>
 
-<span data-ttu-id="7efc9-152">此参数指定该 cmdlet 是否写入一条消息，该消息描述运行 cmdlet 的效果，而不实际执行任何操作。</span><span class="sxs-lookup"><span data-stu-id="7efc9-152">This parameter specifies whether the cmdlet writes a message that describes the effects of running the cmdlet without actually performing any action.</span></span>
+<span data-ttu-id="0423e-150">将以下参数添加到 cmdlet，这些 cmdlet 在执行操作之前请求确认。</span><span class="sxs-lookup"><span data-stu-id="0423e-150">The following parameters are added to cmdlets that requests confirmation before they perform their action.</span></span> <span data-ttu-id="0423e-151">有关确认请求的详细信息，请参阅 [请求确认](./requesting-confirmation-from-cmdlets.md)。</span><span class="sxs-lookup"><span data-stu-id="0423e-151">For more information about confirmation requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).</span></span>
+<span data-ttu-id="0423e-152">这些参数是由 [Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) 类定义的。</span><span class="sxs-lookup"><span data-stu-id="0423e-152">These parameters are defined by the [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) class.</span></span>
 
-## <a name="transaction-parameters"></a><span data-ttu-id="7efc9-153">事务参数</span><span class="sxs-lookup"><span data-stu-id="7efc9-153">Transaction Parameters</span></span>
+### <a name="whatif-alias-wi"></a><span data-ttu-id="0423e-153">WhatIf (别名： wi) </span><span class="sxs-lookup"><span data-stu-id="0423e-153">WhatIf (alias: wi)</span></span>
 
-<span data-ttu-id="7efc9-154">将以下参数添加到支持事务的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="7efc9-154">The following parameter is added to cmdlets that support transactions.</span></span> <span data-ttu-id="7efc9-155">这些参数是由 [Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) 类定义的。</span><span class="sxs-lookup"><span data-stu-id="7efc9-155">These parameters are defined by the [System.Management.Automation.Internal.Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) class.</span></span>
+<span data-ttu-id="0423e-154">数据类型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="0423e-154">Data type: SwitchParameter</span></span>
 
-### <a name="usetransaction-alias-usetx"></a><span data-ttu-id="7efc9-156">UseTransaction (alias： usetx) </span><span class="sxs-lookup"><span data-stu-id="7efc9-156">UseTransaction (alias: usetx)</span></span>
+<span data-ttu-id="0423e-155">此参数指定该 cmdlet 是否写入一条消息，该消息描述运行 cmdlet 的效果，而不实际执行任何操作。</span><span class="sxs-lookup"><span data-stu-id="0423e-155">This parameter specifies whether the cmdlet writes a message that describes the effects of running the cmdlet without actually performing any action.</span></span>
 
-<span data-ttu-id="7efc9-157">数据类型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="7efc9-157">Data type: SwitchParameter</span></span>
+## <a name="transaction-parameters"></a><span data-ttu-id="0423e-156">事务参数</span><span class="sxs-lookup"><span data-stu-id="0423e-156">Transaction Parameters</span></span>
 
-<span data-ttu-id="7efc9-158">此参数指定该 cmdlet 是否将使用当前事务来执行其操作。</span><span class="sxs-lookup"><span data-stu-id="7efc9-158">This parameter specifies whether the cmdlet will use the current transaction to perform its action.</span></span>
+<span data-ttu-id="0423e-157">将以下参数添加到支持事务的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="0423e-157">The following parameter is added to cmdlets that support transactions.</span></span> <span data-ttu-id="0423e-158">这些参数是由 [Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) 类定义的。</span><span class="sxs-lookup"><span data-stu-id="0423e-158">These parameters are defined by the [System.Management.Automation.Internal.Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) class.</span></span> <span data-ttu-id="0423e-159">Powershell 3.0 中引入了事务支持，在 PowerShell 6.0 中已停止使用。</span><span class="sxs-lookup"><span data-stu-id="0423e-159">Transaction support was introduced in PowerShell 3.0 and discontinued in PowerShell 6.0.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="7efc9-159">另请参阅</span><span class="sxs-lookup"><span data-stu-id="7efc9-159">See Also</span></span>
+### <a name="usetransaction-alias-usetx"></a><span data-ttu-id="0423e-160">UseTransaction (alias： usetx) </span><span class="sxs-lookup"><span data-stu-id="0423e-160">UseTransaction (alias: usetx)</span></span>
 
-[<span data-ttu-id="7efc9-160">System.web. Commonparameters。</span><span class="sxs-lookup"><span data-stu-id="7efc9-160">System.Management.Automation.Internal.Commonparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.CommonParameters)
+<span data-ttu-id="0423e-161">数据类型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="0423e-161">Data type: SwitchParameter</span></span>
 
-[<span data-ttu-id="7efc9-161">System.web. Shouldprocessparameters。</span><span class="sxs-lookup"><span data-stu-id="7efc9-161">System.Management.Automation.Internal.Shouldprocessparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)
+<span data-ttu-id="0423e-162">此参数指定该 cmdlet 是否将使用当前事务来执行其操作。</span><span class="sxs-lookup"><span data-stu-id="0423e-162">This parameter specifies whether the cmdlet will use the current transaction to perform its action.</span></span>
 
-[<span data-ttu-id="7efc9-162">System.web. Transactionparameters。</span><span class="sxs-lookup"><span data-stu-id="7efc9-162">System.Management.Automation.Internal.Transactionparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)
+## <a name="see-also"></a><span data-ttu-id="0423e-163">另请参阅</span><span class="sxs-lookup"><span data-stu-id="0423e-163">See Also</span></span>
 
-[<span data-ttu-id="7efc9-163">编写 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7efc9-163">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="0423e-164">System.web. Commonparameters。</span><span class="sxs-lookup"><span data-stu-id="0423e-164">System.Management.Automation.Internal.Commonparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.CommonParameters)
 
-[<span data-ttu-id="7efc9-164">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="7efc9-164">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="0423e-165">System.web. Shouldprocessparameters。</span><span class="sxs-lookup"><span data-stu-id="0423e-165">System.Management.Automation.Internal.Shouldprocessparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)
+
+[<span data-ttu-id="0423e-166">System.web. Transactionparameters。</span><span class="sxs-lookup"><span data-stu-id="0423e-166">System.Management.Automation.Internal.Transactionparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)
+
+[<span data-ttu-id="0423e-167">编写 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="0423e-167">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+
+[<span data-ttu-id="0423e-168">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="0423e-168">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
