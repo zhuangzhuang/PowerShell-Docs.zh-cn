@@ -7,12 +7,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: cbf87c2a2d6ab0f08e514ba971a622ea9f1904aa
-ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
+ms.openlocfilehash: bb7f169e0c01c73bb4e834375f341bf795e37ce7
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95514929"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584663"
 ---
 # Get-Date
 
@@ -37,7 +37,7 @@ Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-
  [-UFormat <String>] [<CommonParameters>]
 ```
 
-## 说明
+## DESCRIPTION
 
 该 `Get-Date` cmdlet 将获取表示当前日期或指定日期的 **DateTime** 对象。 `Get-Date` 可以采用多种 .NET 和 UNIX 格式设置日期和时间的格式。 您可以使用 `Get-Date` 生成日期或时间字符串，然后将字符串发送到其他 cmdlet 或程序。
 
@@ -461,7 +461,7 @@ Accept wildcard characters: False
 | `%H` | 24小时制格式的小时                                                  | 17                       |
 | `%h` | 与 "b" 相同                                                             |                          |
 | `%I` | 12小时制格式                                                  | 05                       |
-| `%j` | 一年中的第几天                                                         | 1-366                    |
+| `%j` | 一年中的第几天 (不包括 `0` PowerShell 6 + 中的前导固定)  | 1-366                    |
 | `%k` | 与 "H" 相同                                                             |                          |
 | `%l` | 与 (大写的 "I" 相同)                                               | 05                       |
 | `%M` | 分钟数                                                                 | 35                       |

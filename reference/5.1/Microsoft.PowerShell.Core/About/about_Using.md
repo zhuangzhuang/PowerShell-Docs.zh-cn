@@ -1,16 +1,16 @@
 ---
 description: 允许你指示在会话中使用的命名空间。
 Locale: en-US
-ms.date: 11/18/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
-ms.openlocfilehash: b48cd85e200f44cdf9fdf278de78e07a918386c8
-ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
+ms.openlocfilehash: 2a02ff32b110d369c080dde695a8fc2369b1a5e2
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94891340"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98619884"
 ---
 # <a name="about-using"></a>关于使用
 
@@ -21,7 +21,9 @@ ms.locfileid: "94891340"
 
 `using`语句允许您指定在会话中使用的命名空间。 添加命名空间可简化 .NET 类和成员的使用，并允许你从脚本模块和程序集导入类。
 
-`using`语句必须位于脚本中的任何其他语句之前。
+`using`语句必须位于脚本或模块中的任何其他语句之前。 该语句前面不能有取消注释语句，包括参数。
+
+`using`语句不能包含任何变量。
 
 `using`语句不应与 `using:` 变量的作用域修饰符混淆。 有关详细信息，请参阅 [about_Remote_Variables](about_Remote_Variables.md)。
 
@@ -57,6 +59,12 @@ using module <module-name>
   - `ModuleVersion` -指定模块的最低可接受版本。
   - `RequiredVersion` -指定模块的准确的必需版本。
   - `MaximumVersion` -指定模块可接受的最大版本。
+
+`using module`语句从根模块导入类 (`ModuleToProcess` 脚本模块或二进制模块的) 。 它不会始终导入嵌套模块中定义的类，也不会将类中定义的类中定义的类始终导入到模块中。 要提供给模块外用户的类应在根模块中定义。
+
+在开发脚本模块的过程中，通常会对代码进行更改，并使用 Force 参数加载模块的新版本 `Import-Module` 。  这仅适用于根模块中的函数更改。 `Import-Module` 不会重新加载任何嵌套模块。 此外，无法加载任何更新的类。
+
+若要确保您运行的是最新版本，必须使用 cmdlet 卸载该模块 `Remove-Module` 。 `Remove-Module` 删除根模块、所有嵌套的模块以及模块中定义的任何类。 然后，可以使用和语句重载该模块和类 `Import-Module` `using module` 。
 
 ## <a name="assembly-syntax"></a>程序集语法
 

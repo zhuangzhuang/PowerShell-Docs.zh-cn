@@ -1,14 +1,15 @@
 ---
 ms.date: 07/29/2020
 keywords: powershell,cmdlet
+ms.topic: how-to
 title: 如何使用 PowerShell 文档
 description: 本文介绍如何使用此站点的功能，包括搜索筛选和版本选择。
-ms.openlocfilehash: b7e036fce0abb12f6c1ab4c0092784321a41a916
-ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
+ms.openlocfilehash: 4779e6e4b17c461d71e9d613d1184b9ce2e7ab7b
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94810294"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216076"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>如何使用 PowerShell 文档
 

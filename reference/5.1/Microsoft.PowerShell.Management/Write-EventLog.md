@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/write-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-EventLog
-ms.openlocfilehash: 4044453cb46b407344619f1edd3227213bf67250
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 051f02b00144805569d5130686a51a0f42b64b00
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94388240"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584627"
 ---
 # Write-EventLog
 
@@ -27,11 +27,12 @@ Write-EventLog [-LogName] <String> [-Source] <String> [[-EntryType] <EventLogEnt
 ```
 
 ## DESCRIPTION
+
 `Write-EventLog`Cmdlet 将事件写入事件日志。
 
 若要将事件写入事件日志，则计算机上必须存在该事件日志，并且必须为该事件日志注册来源。
 
- ( **eventlog** Cmdlet 包含 **eventlog** 名词的 cmdlet) 仅适用于经典事件日志。 若要从使用 windows Vista 和更高版本的 windows 操作系统中的 Windows 事件日志技术的日志中获取事件，请使用 `Get-WinEvent` cmdlet。
+ (**eventlog** Cmdlet 包含 **eventlog** 名词的 cmdlet) 仅适用于经典事件日志。 若要从使用 windows Vista 和更高版本的 windows 操作系统中的 Windows 事件日志技术的日志中获取事件，请使用 `Get-WinEvent` cmdlet。
 
 ## 示例
 
@@ -75,7 +76,7 @@ Accept wildcard characters: False
 
 键入远程计算机的 NetBIOS 名称、IP 地址或完全限定的域名。
 
-此参数不依赖于 Windows PowerShell 远程处理。 **ComputerName** `Get-EventLog` 即使你的计算机未配置为运行远程命令，你也可以使用该 cmdlet 的 ComputerName 参数。
+此参数不依赖于 Windows PowerShell 远程处理。  `Get-EventLog` 即使你的计算机未配置为运行远程命令，你也可以使用该 cmdlet 的 ComputerName 参数。
 
 ```yaml
 Type: System.String
@@ -126,7 +127,7 @@ Accept wildcard characters: False
 
 ### -LogName
 
-指定要向其中写入事件的日志的名称。 输入日志名称。 日志名称是 **log** 属性的值，而不是 **LogDisplayName** 。 不允许使用通配符。
+指定要向其中写入事件的日志的名称。 输入日志名称。 日志名称是 **log** 属性的值，而不是 **LogDisplayName**。 不允许使用通配符。
 此参数是必需的。
 
 ```yaml
@@ -196,16 +197,18 @@ Accept wildcard characters: False
 ## 输入
 
 ### 无
+
 不能通过管道将输入传递给此 cmdlet。
 
 ## 输出
 
 ### System.Diagnostics.EventLogEntry
+
 此 cmdlet 将返回表示日志中的事件的对象。
 
 ## 注释
 
-若要使用 `Write-EventLog` ，请使用 "以管理员身份运行" 选项启动 Windows PowerShell。
+对于某些 Windows 事件日志，写入事件需要管理员权限。 你必须使用 "以 **管理员身份运行** " 选项启动 PowerShell。
 
 ## 相关链接
 

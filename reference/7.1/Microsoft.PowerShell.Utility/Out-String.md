@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/29/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
-ms.openlocfilehash: 16dc25e3468eaf3126b3286cfd71bfea9627c015
-ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
+ms.openlocfilehash: 09995397e33bf3fa1facc4137f4517390d69b78e
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "93199462"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620167"
 ---
 # Out-String
 
 ## 摘要
 将输入对象输出为字符串。
 
-## SYNTAX
+## 语法
 
 ### NoNewLineFormatting (默认值) 
 
@@ -33,7 +33,7 @@ Out-String [-Width <Int32>] [-NoNewline] [-InputObject <PSObject>] [<CommonParam
 Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 `Out-String`Cmdlet 将输入对象转换为字符串。 默认情况下， `Out-String` 累积字符串并将它们作为单个字符串返回，但你可以使用 **Stream** 参数定向 `Out-String` 到一次返回一行或创建字符串数组。 此 cmdlet 用于在对象操作不太方便时像在传统 shell 中一样搜索和操作字符串输出。
 
@@ -84,7 +84,7 @@ IsReadOnly                     : False
 
 ### 示例2：使用对象
 
-此示例演示了使用对象和使用字符串之间的差异。 该命令显示一个别名，其中包含文本 **gcm** （的别名） `Get-Command` 。
+此示例演示了使用对象和使用字符串之间的差异。 该命令显示一个别名，其中包含文本 **gcm**（的别名） `Get-Command` 。
 
 ```powershell
 Get-Alias | Out-String -Stream | Select-String -Pattern "gcm"
@@ -97,7 +97,7 @@ Alias           gcm -> Get-Command
 `Get-Alias` 获取每个别名的 **system.management.automation.aliasinfo** 对象，并沿管道向下发送对象。 `Out-String` 使用 **Stream** 参数将每个对象转换为字符串，而不是将所有对象连接到一个字符串。 **系统** 对象将沿管道向下发送，并 `Select-String` 使用 **Pattern** 参数查找文本 **gcm** 的匹配项。
 
 > [!NOTE]
-> 如果省略 **Stream** 参数，则该命令将显示所有别名，因为 `Select-String` 在返回的 **gcm** 单个字符串中查找文本 gcm `Out-String` 。
+> 如果省略 **Stream** 参数，则该命令将显示所有别名，因为 `Select-String` 在返回的单个字符串中查找文本 gcm `Out-String` 。
 
 ### 示例3：使用 Width 参数防止截断。
 
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 
 ### -Stream
 
-指示 cmdlet 为输入对象的每一行发送单独的字符串。 默认情况下，每个对象的字符串都将作为单个字符串进行累积和发送。
+默认情况下，将 `Out-String` 输出单个字符串的格式，如您在控制台中所看到的那样，其中包括任何空白标头或尾随换行符。 **Stream** 参数使 `Out-String` 能够逐个输出每一行。 唯一的例外是多行字符串。 在这种情况下， `Out-String` 仍会将字符串输出为单个多行字符串。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -221,4 +221,3 @@ Accept wildcard characters: False
 [Out-GridView](Out-GridView.md)
 
 [Out-printer](Out-Printer.md)
-

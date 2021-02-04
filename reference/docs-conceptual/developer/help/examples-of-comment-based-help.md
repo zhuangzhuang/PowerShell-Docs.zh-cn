@@ -1,14 +1,14 @@
 ---
-ms.date: 09/12/2016
+ms.date: 01/11/2021
 ms.topic: reference
 title: 基于注释的帮助的示例
 description: 基于注释的帮助的示例
-ms.openlocfilehash: 35fe9103a261483c56af629f620dbd6b3c642e68
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 237e65c59cc3b35f48b6d667c8fb297994b03638
+ms.sourcegitcommit: 4879b9cdfa3f03b04a07b84442dc1ca9ae0f6b46
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92667634"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98105156"
 ---
 # <a name="examples-of-comment-based-help"></a>基于注释的帮助的示例
 
@@ -46,15 +46,15 @@ function Add-Extension
         System.String. Add-Extension returns a string with the extension or file name.
 
         .EXAMPLE
-        C:\PS> extension -name "File"
+        PS> extension -name "File"
         File.txt
 
         .EXAMPLE
-        C:\PS> extension -name "File" -extension "doc"
+        PS> extension -name "File" -extension "doc"
         File.doc
 
         .EXAMPLE
-        C:\PS> extension "File" "doc"
+        PS> extension "File" "doc"
         File.doc
 
         .LINK
@@ -69,7 +69,7 @@ function Add-Extension
 以下输出显示了 `Get-Help` 用于显示函数帮助的命令的结果 `Add-Extension` 。
 
 ```powershell
-C:\PS> get-help add-extension -full
+PS> Get-Help Add-Extension -full
 ```
 
 ```Output
@@ -118,17 +118,17 @@ C:\PS> get-help add-extension -full
 
             -------------------------- EXAMPLE 1 --------------------------
 
-            C:\PS> extension -name "File"
+            PS> extension -name "File"
             File.txt
 
             -------------------------- EXAMPLE 2 --------------------------
 
-            C:\PS> extension -name "File" -extension "doc"
+            PS> extension -name "File" -extension "doc"
             File.doc
 
             -------------------------- EXAMPLE 3 --------------------------
 
-            C:\PS> extension "File" "doc"
+            PS> extension "File" "doc"
             File.doc
 
         RELATED LINKS
@@ -166,13 +166,13 @@ C:\PS> get-help add-extension -full
   None. Update-Month.ps1 does not generate any output.
 
   .EXAMPLE
-  C:\PS> .\Update-Month.ps1
+  PS> .\Update-Month.ps1
 
   .EXAMPLE
-  C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+  PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
 
   .EXAMPLE
-  C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath C:\Reports\2009\January.csv
+  PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath C:\Reports\2009\January.csv
 #>
 
 param ([string]$InputPath, [string]$OutPutPath)
@@ -183,7 +183,7 @@ function Get-Data { }
 以下命令获取脚本帮助。 由于脚本不在 Path 环境变量中列出的目录中，因此 `Get-Help` 获取脚本帮助的命令必须指定脚本路径。
 
 ```powershell
-C:\PS> get-help c:\ps-test\update-month.ps1 -full
+PS> Get-Help c:\ps-test\update-month.ps1 -full
 ```
 
 ```Output
@@ -236,15 +236,15 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
             -------------------------- EXAMPLE 1 --------------------------
 
-            C:\PS> .\Update-Month.ps1
+            PS> .\Update-Month.ps1
 
             -------------------------- EXAMPLE 2 --------------------------
 
-            C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+            PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
 
             -------------------------- EXAMPLE 3 --------------------------
 
-            C:\PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
+            PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
             C:\Reports\2009\January.csv
 
             RELATED LINKS
@@ -327,7 +327,7 @@ function help
 以下命令使用此功能。 当用户键入该 `Get-Help` 函数的命令时 `Help` ，将 `Get-Help` 显示该 cmdlet 的帮助主题 `Get-Help` 。
 
 ```powershell
-C:\PS> get-help help
+PS> get-help help
 ```
 
 ```Output

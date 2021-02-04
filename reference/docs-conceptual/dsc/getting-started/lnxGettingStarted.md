@@ -1,14 +1,14 @@
 ---
-ms.date: 11/20/2020
+ms.date: 01/07/2021
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Linux 的 Desired State Configuration (DSC) 入门
 description: 本主题说明如何开始使用适用于 Linux 的 PowerShell Desired State Configuration (DSC)。
-ms.openlocfilehash: df9cab07284a7d6fa199f5524a8719ea490192d0
-ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
+ms.openlocfilehash: 6f0dea956b16c0828964a10b43abbbc65879ea33
+ms.sourcegitcommit: b9826dcf402db8a2b6d3eab37edb82c6af113343
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95514994"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040916"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>适用于 Linux 的 Desired State Configuration (DSC) 入门
 
@@ -109,15 +109,25 @@ $Node = "ostc-dsc-01"
 $Credential = Get-Credential -UserName "root" -Message "Enter Password:"
 
 #Ignore SSL certificate validation
-#$opt = New-CimSessionOption -UseSsl $true -SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true
+# $opt = New-CimSessionOption -UseSsl -SkipCACheck -SkipCNCheck -SkipRevocationCheck
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl $true
-$Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Authentication basic -SessionOption $opt -OperationTimeoutSec 90
+$opt = New-CimSessionOption -UseSsl
+
+$sessParams = @{
+    Credential = $credential
+    ComputerName = $Node
+    Port = 5986
+    Authentication = 'basic'
+    SessionOption = $opt
+    OperationTimeoutSec = 90
+}
+
+$Sess = New-CimSession @sessParams
 ```
 
 > [!NOTE]
-> 对于“推送”模式，用户凭据必须为 Linux 计算机上的根用户。 适用于 Linux 的 DSC 仅支持 SSL/TLS 连接，使用 `New-CimSession` 时必须将 –UseSSL 参数设置为 $true。 在 `/etc/opt/omi/conf/omiserver.conf` 文件中通过 pemfile 和 keyfile 属性指定（DSC 的）OMI 使用的 SSL 证书。 如果 [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet 运行于的 Windows 计算机不信任此证书，你可以通过以下 CIMSession 选项选择忽略证书验证：`-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
+> 对于“推送”模式，用户凭据必须为 Linux 计算机上的根用户。 适用于 Linux 的 DSC 仅支持 SSL/TLS 连接，使用 `New-CimSession` 时必须将 –UseSSL 参数设置为 $true。 在 `/etc/opt/omi/conf/omiserver.conf` 文件中通过 pemfile 和 keyfile 属性指定（DSC 的）OMI 使用的 SSL 证书。 如果 [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet 运行于的 Windows 计算机不信任此证书，你可以通过以下 CIMSession 选项选择忽略证书验证：`-SkipCACheck -SkipCNCheck -SkipRevocationCheck`
 
 运行以下命令以将 DSC 配置推送到 Linux 节点。
 
@@ -147,7 +157,7 @@ $Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Aut
 
   安装自定义 DSC 资源模块。 需要包含模块共享对象库和架构 MOF 文件的 .zip 文件的路径。
 
- `# sudo ./InstallModule.py /tmp/cnx_Resource.zip`
+  `# sudo ./InstallModule.py /tmp/cnx_Resource.zip`
 
 - RemoveModule.py
 

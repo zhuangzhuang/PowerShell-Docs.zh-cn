@@ -1,17 +1,16 @@
 ---
 description: 描述如何使用类创建自己的自定义类型。
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/16/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
-ms.openlocfilehash: 27950034806caf53b2cdbe50329709a8ab177aee
-ms.sourcegitcommit: 16d62a98449e3ddaf8d7c65bc1848ede1fd8a3e7
+ms.openlocfilehash: 7974ec49ebf27338da461cd57fb43cc0229b7323
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "93199425"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620041"
 ---
 # <a name="about-classes"></a>关于类
 
@@ -316,7 +315,7 @@ Microsoft Surface Pro 4 5072641000
 
 在此示例中，使用属性、默认构造函数和构造函数来定义 **设备** 类以初始化实例。
 
-默认构造函数将该 **品牌** 设置为 **Undefined** ，并将 **模型** 和 **供应商-sku** 保留为 null 值。
+默认构造函数将该 **品牌** 设置为 **Undefined**，并将 **模型** 和 **供应商-sku** 保留为 null 值。
 
 ```powershell
 class Device {
@@ -768,9 +767,19 @@ class MyComparableBar : bar, System.IComparable
 
 `Import-Module``#requires`语句仅导入模块定义的模块函数、别名和变量。 不导入类。 `using module`语句将导入模块中定义的类。 如果该模块未在当前会话中加载，则该 `using` 语句将失败。 有关语句的详细信息 `using` ，请参阅 [about_Using](about_Using.md)。
 
+`using module`语句从根模块导入类 (`ModuleToProcess` 脚本模块或二进制模块的) 。 它不会始终导入嵌套模块中定义的类，也不会将类中定义的类中定义的类始终导入到模块中。 要提供给模块外用户的类应在根模块中定义。
+
+## <a name="loading-newly-changed-code-during-development"></a>在开发过程中加载新更改的代码
+
+在开发脚本模块的过程中，通常会对代码进行更改，并使用 Force 参数加载模块的新版本 `Import-Module` 。  这仅适用于根模块中的函数更改。 `Import-Module` 不会重新加载任何嵌套模块。 此外，无法加载任何更新的类。
+
+若要确保您运行的是最新版本，必须使用 cmdlet 卸载该模块 `Remove-Module` 。 `Remove-Module` 删除根模块、所有嵌套的模块以及模块中定义的任何类。 然后，可以使用和语句重载该模块和类 `Import-Module` `using module` 。
+
+另一种常见的开发做法是将代码分成不同的文件。 如果在一个文件中使用另一个模块中定义的类，则应使用 `using module` 语句来确保函数具有所需的类定义。
+
 ## <a name="the-psreference-type-is-not-supported-with-class-members"></a>类成员不支持 PSReference 类型
 
-对 `[ref]` 类成员使用类型强制转换将失败。 使用参数的 Api `[ref]` 不能与类成员一起使用。 **PSReference** 旨在支持 COM 对象。 COM 对象的情况下，需要通过引用传递中的值。
+对 `[ref]` 类成员使用类型强制转换将失败。 使用参数的 Api `[ref]` 不能与类成员一起使用。 **PSReference** 类旨在支持 COM 对象。 COM 对象的情况下，需要通过引用传递中的值。
 
 有关类型的详细信息 `[ref]` ，请参阅 [PSReference 类](/dotnet/api/system.management.automation.psreference)。
 

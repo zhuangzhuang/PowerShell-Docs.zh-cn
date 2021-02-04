@@ -6,12 +6,12 @@ ms.date: 09/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
-ms.openlocfilehash: c954ee6e783b7926dbcd05a3e08b6b9b5cf9bc25
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 4b5894822f4436f127ed4789fd8008a0e7f2f2df
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93199948"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584648"
 ---
 # <a name="about-environment-variables"></a>关于环境变量
 
@@ -68,7 +68,7 @@ $Env:<variable-name> = "<new-value>"
 $Env:Path += ";c:\temp"
 ```
 
-在 Linux 或 MacOS 上，命令中的冒号 (`:`) 将新路径与列表中其前面的路径分隔开。
+在 Linux 或 macOS 上，命令中的冒号 (`:`) 将新路径与列表中其前面的路径分隔开。
 
 ```powershell
 $Env:PATH += ":/usr/local/temp"
@@ -232,7 +232,7 @@ PS Env:\> Get-ChildItem ComputerName
 
 ### <a name="saving-changes-to-environment-variables"></a>保存对环境变量所做的更改
 
-若要对 Windows 上的环境变量进行持久更改，请使用系统控制面板。 选择 " **高级系统设置** "。 在 " **高级** " 选项卡上，单击 " **环境变量 ...** "。你可以在 **用户** 和 **系统** (计算机) 范围中添加或编辑现有环境变量。 Windows 将这些值写入注册表，以便它们在会话和系统重启之间保持不变。
+若要对 Windows 上的环境变量进行持久更改，请使用系统控制面板。 选择 " **高级系统设置**"。 在 " **高级** " 选项卡上，单击 " **环境变量 ...**"。你可以在 **用户** 和 **系统** (计算机) 范围中添加或编辑现有环境变量。 Windows 将这些值写入注册表，以便它们在会话和系统重启之间保持不变。
 
 或者，可以在 PowerShell 配置文件中添加或更改环境变量。 此方法适用于任何受支持平台上的任何版本的 PowerShell。
 
