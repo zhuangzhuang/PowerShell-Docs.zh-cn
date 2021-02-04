@@ -3,23 +3,30 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: 常见参数名称
 description: 常见参数名称
-ms.openlocfilehash: cf39dd3b04660076718336857d79d55c3784ccd1
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 506aab290abdb97a6e26c340ac4bd0051244f54b
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92668212"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860873"
 ---
 # <a name="common-parameter-names"></a>常见参数名称
 
-本主题中描述的参数称为 *通用参数*。 它们由 Windows PowerShell 运行时添加到 cmdlet 中，不能由 cmdlet 声明。
+本主题中描述的参数称为 **通用参数**。 它们由 Windows PowerShell 运行时添加到 cmdlet 中，不能由 cmdlet 声明。
 
 > [!NOTE]
 > 还会将这些参数添加到提供程序 cmdlet 以及用特性修饰的函数 `CmdletBinding` 。
 
 ## <a name="general-common-parameters"></a>一般常见参数
 
-以下参数将添加到所有 cmdlet 中，并可在每次运行 cmdlet 时访问。 这些参数是由 [Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters) 类定义的。
+以下参数将添加到所有 cmdlet 中，并可在每次运行 cmdlet 时访问。
+这些参数是由 [Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters) 类定义的。
+
+### <a name="confirm-alias-cf"></a>确认 (别名： cf) 
+
+数据类型： SwitchParameter
+
+此参数指定该 cmdlet 是否显示提示，询问用户是否确实要继续。
 
 ### <a name="debug-alias-db"></a>调试 (别名： db) 
 
@@ -37,13 +44,7 @@ ms.locfileid: "92668212"
 
 数据类型：字符串
 
-此参数指定发生错误时要在其中放置对象的变量。 若要追加到此变量，请使用 +*varname* ，而不是清除和设置变量。
-
-### <a name="outvariable-alias-ov"></a>OutVariable (alias： ov-es) 
-
-数据类型：字符串
-
-此参数指定在其中放置由 cmdlet 生成的所有输出对象的变量。 若要追加到此变量，请使用 +*varname* ，而不是清除和设置变量。
+此参数指定发生错误时要在其中放置对象的变量。 若要追加到此变量，请使用 +_varname_ ，而不是清除和设置变量。
 
 ### <a name="outbuffer-alias-ob"></a>OutBuffer (别名： ob) 
 
@@ -51,7 +52,20 @@ ms.locfileid: "92668212"
 
 此参数定义在将任何对象向下传递管道之前要存储在输出缓冲区中的对象数。 默认情况下，对象会立即沿管道向下传递。
 
-### <a name="verbose-alias-vb"></a>详细 (别名： vb) 
+### <a name="outvariable-alias-ov"></a>OutVariable (alias： ov-es) 
+
+数据类型：字符串
+
+此参数指定在其中放置由 cmdlet 生成的所有输出对象的变量。
+若要追加到此变量，请使用 +_varname_ ，而不是清除和设置变量。
+
+### <a name="pipelinevariable-alias-pv"></a>PipelineVariable (alias： pv) 
+
+数据类型：字符串
+
+此参数将当前管道元素的值存储为任何命名命令的变量，因为它流经管道。
+
+## <a name="verbose-alias-vb"></a>详细 (别名： vb) 
 
 数据类型： SwitchParameter
 
@@ -67,17 +81,12 @@ ms.locfileid: "92668212"
 
 数据类型：字符串
 
-此参数指定可在其中保存警告消息的变量。 若要追加到此变量，请使用 +*varname* ，而不是清除和设置变量。
+此参数指定可在其中保存警告消息的变量。 若要追加到此变量，请使用 +_varname_ ，而不是清除和设置变量。
 
 ## <a name="risk-mitigation-parameters"></a>Risk-Mitigation 参数
 
-将以下参数添加到 cmdlet，这些 cmdlet 在执行操作之前请求确认。 有关确认请求的详细信息，请参阅 [请求确认](./requesting-confirmation-from-cmdlets.md)。 这些参数是由 [Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) 类定义的。
-
-### <a name="confirm-alias-cf"></a>确认 (别名： cf) 
-
-数据类型： SwitchParameter
-
-此参数指定该 cmdlet 是否显示提示，询问用户是否确实要继续。
+将以下参数添加到 cmdlet，这些 cmdlet 在执行操作之前请求确认。 有关确认请求的详细信息，请参阅 [请求确认](./requesting-confirmation-from-cmdlets.md)。
+这些参数是由 [Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) 类定义的。
 
 ### <a name="whatif-alias-wi"></a>WhatIf (别名： wi) 
 
@@ -87,7 +96,7 @@ ms.locfileid: "92668212"
 
 ## <a name="transaction-parameters"></a>事务参数
 
-将以下参数添加到支持事务的 cmdlet。 这些参数是由 [Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) 类定义的。
+将以下参数添加到支持事务的 cmdlet。 这些参数是由 [Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) 类定义的。 Powershell 3.0 中引入了事务支持，在 PowerShell 6.0 中已停止使用。
 
 ### <a name="usetransaction-alias-usetx"></a>UseTransaction (alias： usetx) 
 

@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: 添加和调用命令
 description: 添加和调用命令
-ms.openlocfilehash: c30cb15d473c344e40b96938c355d77c059fe2d5
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: f539172eaf119fe5774e158c77a00276c8ba9e0a
+ms.sourcegitcommit: 880b00218708724a76503000c9eca181f4e00891
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "96616023"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99049419"
 ---
 # <a name="adding-and-invoking-commands"></a>添加和调用命令
 
@@ -89,14 +89,14 @@ ps.Invoke();
 
 ```csharp
 PowerShell ps = PowerShell.Create();
-ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
+ps.AddScript(File.ReadAllText(@"D:\PSScripts\MyScript.ps1")).Invoke();
 ```
 
 还有一个版本的 [Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) 方法，它采用名为的布尔参数 `useLocalScope` 。 如果将此参数设置为 `true` ，则脚本将在本地作用域中运行。 以下代码将在本地作用域中运行该脚本。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
-ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
+ps.AddScript(File.ReadAllText(@"D:\PSScripts\MyScript.ps1"), true).Invoke();
 ```
 
 ### <a name="invoking-a-pipeline-synchronously"></a>同步调用管道
@@ -160,11 +160,11 @@ namespace HostPS3
       // Create an IAsyncResult object and call the
       // BeginInvoke method to start running the
       // command pipeline asynchronously.
-      IAsyncResult async = ps.BeginInvoke();
+      IAsyncResult asyncpl = ps.BeginInvoke();
 
       // Using the PowerShell.Invoke method, run the command
       // pipeline using the default runspace.
-      foreach (PSObject result in ps.EndInvoke(async))
+      foreach (PSObject result in ps.EndInvoke(asyncpl))
       {
         Console.WriteLine("{0,-20}{1}",
                 result.Members["ProcessName"].Value,

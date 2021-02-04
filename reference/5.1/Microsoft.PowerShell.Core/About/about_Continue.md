@@ -5,12 +5,12 @@ ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_continue?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Continue
-ms.openlocfilehash: 51dfd85044d240f1d1429580d6eeb98c662d62c4
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: fc0b84829a96fc6ba2cafa0c24a7585cc9944fe8
+ms.sourcegitcommit: 0c31814bed14ff715dc7d4aace07cbdc6df2438e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200325"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614044"
 ---
 # <a name="about-continue"></a>关于继续
 
@@ -62,7 +62,7 @@ for ($i = 0; $i -lt 10; $i++)
 
 标记 `continue` 语句终止迭代的执行，并将控制权移交给目标封闭迭代或 `switch` 语句标签。
 
-在下面的示例中， `for` 当为 True 时，最内层终止， `$condition` 迭代将在处继续执行第二个 **True** `for` 循环 `labelB` 。
+在下面的示例中， `for` 当为 True 时，最内层终止， `$condition` 迭代将在处继续执行第二个 `for` 循环 `labelB` 。
 
 ```powershell
 :labelA for ($i = 1; $i -le 10; $i++) {
@@ -105,9 +105,9 @@ switch (1,2,3) {
 
 如果在 `continue` 直接支持 (循环、) 的构造之外使用，则 `switch` `trap` PowerShell 将查找封闭构造 _的调用堆栈_ 。 如果找不到封闭构造，则当前的运行空间将不知不觉地终止。
 
-这意味着，如果函数和脚本无意中使用了 `continue` 支持它的封闭构造之外的，则可能会无意中终止其 _调用方_ 。
+这意味着，如果函数和脚本无意中使用了 `continue` 支持它的封闭构造之外的，则可能会无意中终止其 _调用方_。
 
-在 `continue` 管道内使用（如 `ForEach-Object` 脚本块），不仅会退出管道，也可能会终止整个运行空间。
+在 `continue` 管道内使用（如 `ForEach-Object` 脚本块），不仅会退出管道，还可能终止整个运行空间。
 
 ## <a name="see-also"></a>另请参阅
 

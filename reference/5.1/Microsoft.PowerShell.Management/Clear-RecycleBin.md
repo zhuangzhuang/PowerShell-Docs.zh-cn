@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 6/24/2019
+ms.date: 01/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-recyclebin?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-RecycleBin
-ms.openlocfilehash: 9314aaf7c444f9a1159b301135d4130737daa439
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: f59cc9ff4e6d1b6579292c84f440bbbdd156b65c
+ms.sourcegitcommit: 81558c2adb9d109946a027e5b96e4d24b3b13747
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93198318"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99098557"
 ---
 # Clear-RecycleBin
 
@@ -29,7 +28,7 @@ Clear-RecycleBin [[-DriveLetter] <String[]>] [-Force] [-WhatIf] [-Confirm] [<Com
 
 ## DESCRIPTION
 
-`Clear-RecycleBin`Cmdlet 删除计算机回收站的内容。 此操作类似于使用 Windows **空回收站** 。
+`Clear-RecycleBin`Cmdlet 删除计算机回收站的内容。 此操作类似于使用 Windows **空回收站**。
 
 ## 示例
 
@@ -92,7 +91,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-指定不提示用户确认是否要清除回收站。
+指定不提示用户确认是否要清除回收站。 **Force** 参数还会替代 **WhatIf** 和 **Confirm** 参数。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
