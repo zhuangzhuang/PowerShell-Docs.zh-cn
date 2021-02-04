@@ -1,13 +1,13 @@
 ---
 title: 在 macOS 上安装 PowerShell
 description: 介绍如何在 macOS 上安装 PowerShell
-ms.date: 11/11/2020
-ms.openlocfilehash: 1ce96e993d8fc87edd93fca840ede250d5632577
-ms.sourcegitcommit: 3ab2951a5460a39ca5fb3d25ffcb1d8868f4e011
+ms.date: 02/02/2021
+ms.openlocfilehash: 8132d88f4104696c5580a44b26247a24643f1b5b
+ms.sourcegitcommit: 40b6d8e9b6d791ac69e2ff85224e900b21552bc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96535094"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99536537"
 ---
 # <a name="installing-powershell-on-macos"></a>在 macOS 上安装 PowerShell
 
@@ -112,12 +112,12 @@ brew upgrade powershell
 
 ## <a name="installation-via-direct-download"></a>通过直接下载安装
 
-请从[版本][]页中将 PKG 包 `powershell-7.1.0-osx-x64.pkg` 下载到 CentOS 计算机。
+请从[版本][]页中将 PKG 包 `powershell-7.1.1-osx-x64.pkg` 下载到 CentOS 计算机。
 
 可以双击文件并按照提示操作，或者从终端安装：
 
 ```sh
-sudo installer -pkg powershell-7.1.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-7.1.1-osx-x64.pkg -target /
 ```
 
 安装 [OpenSSL](#installing-dependencies). PowerShell 远程处理和 CIM 操作均需要 OpenSSL。
@@ -144,19 +144,19 @@ dotnet 工具安装程序将 `~/.dotnet/tools` 添加到 `PATH` 环境变量中�
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.1/powershell-7.1.1-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/7.1.0
+sudo mkdir -p /usr/local/microsoft/powershell/7.1.1
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.1.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.1.1
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/7.1.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/7.1.1/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/7.1.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/7.1.1/pwsh /usr/local/bin/pwsh
 ```
 
 ## <a name="installing-dependencies"></a>安装依赖关系
@@ -204,7 +204,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 ## <a name="paths"></a>路径
 
-- `$PSHOME` 是 `/usr/local/microsoft/powershell/7.1.0/`
+- `$PSHOME` 是 `/usr/local/microsoft/powershell/7.1.1/`
 - 将从 `~/.config/powershell/profile.ps1` 中读取用户配置文件
 - 将从 `$PSHOME/profile.ps1` 中读取默认配置文件
 - 将从 `~/.local/share/powershell/Modules` 中读取用户模块
@@ -216,7 +216,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 PowerShell 采用 macOS 上的 [XDG Base Directory 规范][xdg-bds]。
 
-由于 macOS 派生自 BSD，因此前缀为 `/usr/local`而不是 `/opt`。 因此，`$PSHOME` 是 `/usr/local/microsoft/powershell/7.1.0/`，且符号链接位于 `/usr/local/bin/pwsh` 中。
+由于 macOS 派生自 BSD，因此前缀为 `/usr/local`而不是 `/opt`。 因此，`$PSHOME` 是 `/usr/local/microsoft/powershell/7.1.1/`，且符号链接位于 `/usr/local/bin/pwsh` 中。
 
 ## <a name="installation-support"></a>安装支持
 
@@ -232,5 +232,5 @@ Microsoft 支持本文档中的安装方法。 其他源可能会提供其他安
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[版本]: https://github.com/PowerShell/PowerShell/releases/latest
+[版本]: https://aka.ms/powershell-release?tag=stable
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
