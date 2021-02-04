@@ -1,43 +1,42 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/28/2019
+ms.date: 01/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-recyclebin?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-RecycleBin
-ms.openlocfilehash: 4131232e7afb2e0a213bbe11f5da7ee3a0071a59
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 4fde991ea99b46b96d0058334419ef4782a9adac
+ms.sourcegitcommit: 81558c2adb9d109946a027e5b96e4d24b3b13747
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94344297"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99098639"
 ---
-# <span data-ttu-id="67d57-103">Clear-RecycleBin</span><span class="sxs-lookup"><span data-stu-id="67d57-103">Clear-RecycleBin</span></span>
+# <span data-ttu-id="264e2-102">Clear-RecycleBin</span><span class="sxs-lookup"><span data-stu-id="264e2-102">Clear-RecycleBin</span></span>
 
-## <span data-ttu-id="67d57-104">摘要</span><span class="sxs-lookup"><span data-stu-id="67d57-104">SYNOPSIS</span></span>
-<span data-ttu-id="67d57-105">清除回收站的内容。</span><span class="sxs-lookup"><span data-stu-id="67d57-105">Clears the contents of a recycle bin.</span></span>
+## <span data-ttu-id="264e2-103">摘要</span><span class="sxs-lookup"><span data-stu-id="264e2-103">SYNOPSIS</span></span>
+<span data-ttu-id="264e2-104">清除回收站的内容。</span><span class="sxs-lookup"><span data-stu-id="264e2-104">Clears the contents of a recycle bin.</span></span>
 
-## <span data-ttu-id="67d57-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="67d57-106">SYNTAX</span></span>
+## <span data-ttu-id="264e2-105">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="264e2-105">SYNTAX</span></span>
 
-### <span data-ttu-id="67d57-107">全部</span><span class="sxs-lookup"><span data-stu-id="67d57-107">All</span></span>
+### <span data-ttu-id="264e2-106">全部</span><span class="sxs-lookup"><span data-stu-id="264e2-106">All</span></span>
 
 ```
 Clear-RecycleBin [[-DriveLetter] <String[]>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="67d57-108">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="67d57-108">DESCRIPTION</span></span>
+## <span data-ttu-id="264e2-107">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="264e2-107">DESCRIPTION</span></span>
 
-<span data-ttu-id="67d57-109">`Clear-RecycleBin`Cmdlet 删除计算机回收站的内容。</span><span class="sxs-lookup"><span data-stu-id="67d57-109">The `Clear-RecycleBin` cmdlet deletes the content of a computer's recycle bin.</span></span> <span data-ttu-id="67d57-110">此操作类似于使用 Windows **空回收站** 。</span><span class="sxs-lookup"><span data-stu-id="67d57-110">This action is like using Windows **Empty Recycle Bin**.</span></span>
+<span data-ttu-id="264e2-108">`Clear-RecycleBin`Cmdlet 删除计算机回收站的内容。</span><span class="sxs-lookup"><span data-stu-id="264e2-108">The `Clear-RecycleBin` cmdlet deletes the content of a computer's recycle bin.</span></span> <span data-ttu-id="264e2-109">此操作类似于使用 Windows **空回收站**。</span><span class="sxs-lookup"><span data-stu-id="264e2-109">This action is like using Windows **Empty Recycle Bin**.</span></span>
 
-<span data-ttu-id="67d57-111">此 cmdlet 已在 PowerShell 7 中 readded。</span><span class="sxs-lookup"><span data-stu-id="67d57-111">This cmdlet was readded in PowerShell 7.</span></span>
+<span data-ttu-id="264e2-110">此 cmdlet 已在 PowerShell 7 中 readded。</span><span class="sxs-lookup"><span data-stu-id="264e2-110">This cmdlet was readded in PowerShell 7.</span></span>
 
-## <span data-ttu-id="67d57-112">示例</span><span class="sxs-lookup"><span data-stu-id="67d57-112">EXAMPLES</span></span>
+## <span data-ttu-id="264e2-111">示例</span><span class="sxs-lookup"><span data-stu-id="264e2-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="67d57-113">1：清除所有回收站</span><span class="sxs-lookup"><span data-stu-id="67d57-113">1: Clear all recycle bins</span></span>
+### <span data-ttu-id="264e2-112">1：清除所有回收站</span><span class="sxs-lookup"><span data-stu-id="264e2-112">1: Clear all recycle bins</span></span>
 
-<span data-ttu-id="67d57-114">在此示例中，所有本地计算机的回收站都将被清除。</span><span class="sxs-lookup"><span data-stu-id="67d57-114">In this example, all the local computer's recycle bins are cleared.</span></span>
+<span data-ttu-id="264e2-113">在此示例中，所有本地计算机的回收站都将被清除。</span><span class="sxs-lookup"><span data-stu-id="264e2-113">In this example, all the local computer's recycle bins are cleared.</span></span>
 
 ```powershell
 Clear-RecycleBin
@@ -50,35 +49,35 @@ Performing the operation "Clear-RecycleBin" on target "All of the contents of th
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-<span data-ttu-id="67d57-115">`Clear-RecycleBin` 提示用户确认是否要清除本地计算机上的所有回收站。</span><span class="sxs-lookup"><span data-stu-id="67d57-115">`Clear-RecycleBin` prompts the user for confirmation to clear all recycle bins on the local computer.</span></span>
+<span data-ttu-id="264e2-114">`Clear-RecycleBin` 提示用户确认是否要清除本地计算机上的所有回收站。</span><span class="sxs-lookup"><span data-stu-id="264e2-114">`Clear-RecycleBin` prompts the user for confirmation to clear all recycle bins on the local computer.</span></span>
 
-### <span data-ttu-id="67d57-116">2：清除指定的回收站</span><span class="sxs-lookup"><span data-stu-id="67d57-116">2: Clear a specified recycle bin</span></span>
+### <span data-ttu-id="264e2-115">2：清除指定的回收站</span><span class="sxs-lookup"><span data-stu-id="264e2-115">2: Clear a specified recycle bin</span></span>
 
-<span data-ttu-id="67d57-117">此示例将为指定驱动器号清除回收站。</span><span class="sxs-lookup"><span data-stu-id="67d57-117">This example clears the recycle bin for a specified drive letter.</span></span>
+<span data-ttu-id="264e2-116">此示例将为指定驱动器号清除回收站。</span><span class="sxs-lookup"><span data-stu-id="264e2-116">This example clears the recycle bin for a specified drive letter.</span></span>
 
 ```powershell
 Clear-RecycleBin -DriveLetter C
 ```
 
-<span data-ttu-id="67d57-118">`Clear-RecycleBin` 使用 **驱动器号** 参数在 **C** 卷上指定回收站。</span><span class="sxs-lookup"><span data-stu-id="67d57-118">`Clear-RecycleBin` uses the **DriveLetter** parameter to specify the recycle bin on the **C** volume.</span></span> <span data-ttu-id="67d57-119">系统将提示用户进行确认以运行该命令。</span><span class="sxs-lookup"><span data-stu-id="67d57-119">The user is prompted for confirmation to run the command.</span></span>
+<span data-ttu-id="264e2-117">`Clear-RecycleBin` 使用 **驱动器号** 参数在 **C** 卷上指定回收站。</span><span class="sxs-lookup"><span data-stu-id="264e2-117">`Clear-RecycleBin` uses the **DriveLetter** parameter to specify the recycle bin on the **C** volume.</span></span> <span data-ttu-id="264e2-118">系统将提示用户进行确认以运行该命令。</span><span class="sxs-lookup"><span data-stu-id="264e2-118">The user is prompted for confirmation to run the command.</span></span>
 
-### <span data-ttu-id="67d57-120">3：清除所有回收站而不进行确认</span><span class="sxs-lookup"><span data-stu-id="67d57-120">3: Clear all recycle bins without confirmation</span></span>
+### <span data-ttu-id="264e2-119">3：清除所有回收站而不进行确认</span><span class="sxs-lookup"><span data-stu-id="264e2-119">3: Clear all recycle bins without confirmation</span></span>
 
-<span data-ttu-id="67d57-121">此示例不会提示确认是否要清除本地计算机的回收站。</span><span class="sxs-lookup"><span data-stu-id="67d57-121">This example doesn't prompt for confirmation to clear the local computer's recycle bins.</span></span>
+<span data-ttu-id="264e2-120">此示例不会提示确认是否要清除本地计算机的回收站。</span><span class="sxs-lookup"><span data-stu-id="264e2-120">This example doesn't prompt for confirmation to clear the local computer's recycle bins.</span></span>
 
 ```powershell
 Clear-RecycleBin -Force
 ```
 
-<span data-ttu-id="67d57-122">`Clear-RecycleBin` 使用 **Force** 参数，而不提示用户确认清除本地计算机上的所有回收站。</span><span class="sxs-lookup"><span data-stu-id="67d57-122">`Clear-RecycleBin` uses the **Force** parameter and doesn't prompt the user for confirmation to clear all recycle bins on the local computer.</span></span>
+<span data-ttu-id="264e2-121">`Clear-RecycleBin` 使用 **Force** 参数，而不提示用户确认清除本地计算机上的所有回收站。</span><span class="sxs-lookup"><span data-stu-id="264e2-121">`Clear-RecycleBin` uses the **Force** parameter and doesn't prompt the user for confirmation to clear all recycle bins on the local computer.</span></span>
 
-<span data-ttu-id="67d57-123">替代方法是将替换 `-Force` 为 `-Confirm:$false` 。</span><span class="sxs-lookup"><span data-stu-id="67d57-123">An alternative is to replace `-Force` with `-Confirm:$false`.</span></span>
+<span data-ttu-id="264e2-122">替代方法是将替换 `-Force` 为 `-Confirm:$false` 。</span><span class="sxs-lookup"><span data-stu-id="264e2-122">An alternative is to replace `-Force` with `-Confirm:$false`.</span></span>
 
-## <span data-ttu-id="67d57-124">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="67d57-124">PARAMETERS</span></span>
+## <span data-ttu-id="264e2-123">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="264e2-123">PARAMETERS</span></span>
 
-### <span data-ttu-id="67d57-125">-驱动器号</span><span class="sxs-lookup"><span data-stu-id="67d57-125">-DriveLetter</span></span>
+### <span data-ttu-id="264e2-124">-驱动器号</span><span class="sxs-lookup"><span data-stu-id="264e2-124">-DriveLetter</span></span>
 
-<span data-ttu-id="67d57-126">指定为单个驱动器号或驱动器号数组清除的回收站。</span><span class="sxs-lookup"><span data-stu-id="67d57-126">Specifies the recycle bin to clear for a single drive letter or an array of drive letters.</span></span>
+<span data-ttu-id="264e2-125">指定为单个驱动器号或驱动器号数组清除的回收站。</span><span class="sxs-lookup"><span data-stu-id="264e2-125">Specifies the recycle bin to clear for a single drive letter or an array of drive letters.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -92,9 +91,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="67d57-127">-Force</span><span class="sxs-lookup"><span data-stu-id="67d57-127">-Force</span></span>
+### <span data-ttu-id="264e2-126">-Force</span><span class="sxs-lookup"><span data-stu-id="264e2-126">-Force</span></span>
 
-<span data-ttu-id="67d57-128">指定不提示用户确认是否要清除回收站。</span><span class="sxs-lookup"><span data-stu-id="67d57-128">Specifies that the user isn't prompted for confirmation to clear a recycle bin.</span></span>
+<span data-ttu-id="264e2-127">指定不提示用户确认是否要清除回收站。</span><span class="sxs-lookup"><span data-stu-id="264e2-127">Specifies that the user isn't prompted for confirmation to clear a recycle bin.</span></span> <span data-ttu-id="264e2-128">**Force** 参数还会替代 **WhatIf** 和 **Confirm** 参数。</span><span class="sxs-lookup"><span data-stu-id="264e2-128">The **Force** parameter also overrides the **WhatIf** and **Confirm** parameters.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -108,9 +107,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="67d57-129">-Confirm</span><span class="sxs-lookup"><span data-stu-id="67d57-129">-Confirm</span></span>
+### <span data-ttu-id="264e2-129">-Confirm</span><span class="sxs-lookup"><span data-stu-id="264e2-129">-Confirm</span></span>
 
-<span data-ttu-id="67d57-130">在运行 cmdlet 之前提示用户进行确认。</span><span class="sxs-lookup"><span data-stu-id="67d57-130">Prompts for user confirmation before running the cmdlet.</span></span> <span data-ttu-id="67d57-131">即使未指定 **Confirm** 参数，也会提示用户进行确认。</span><span class="sxs-lookup"><span data-stu-id="67d57-131">The user is prompted for confirmation even if the **Confirm** parameter isn't specified.</span></span>
+<span data-ttu-id="264e2-130">在运行 cmdlet 之前提示用户进行确认。</span><span class="sxs-lookup"><span data-stu-id="264e2-130">Prompts for user confirmation before running the cmdlet.</span></span> <span data-ttu-id="264e2-131">即使未指定 **Confirm** 参数，也会提示用户进行确认。</span><span class="sxs-lookup"><span data-stu-id="264e2-131">The user is prompted for confirmation even if the **Confirm** parameter isn't specified.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -124,9 +123,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="67d57-132">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="67d57-132">-WhatIf</span></span>
+### <span data-ttu-id="264e2-132">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="264e2-132">-WhatIf</span></span>
 
-<span data-ttu-id="67d57-133">显示运行时将发生 `Clear-RecycleBin` 的情况。</span><span class="sxs-lookup"><span data-stu-id="67d57-133">Shows what would happen if `Clear-RecycleBin` runs.</span></span> <span data-ttu-id="67d57-134">cmdlet 未运行。</span><span class="sxs-lookup"><span data-stu-id="67d57-134">The cmdlet isn't run.</span></span>
+<span data-ttu-id="264e2-133">显示运行时将发生 `Clear-RecycleBin` 的情况。</span><span class="sxs-lookup"><span data-stu-id="264e2-133">Shows what would happen if `Clear-RecycleBin` runs.</span></span> <span data-ttu-id="264e2-134">cmdlet 未运行。</span><span class="sxs-lookup"><span data-stu-id="264e2-134">The cmdlet isn't run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -140,18 +139,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="67d57-135">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="67d57-135">CommonParameters</span></span>
+### <span data-ttu-id="264e2-135">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="264e2-135">CommonParameters</span></span>
 
-<span data-ttu-id="67d57-136">此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="67d57-136">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="67d57-137">有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="67d57-137">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="264e2-136">此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="264e2-136">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="264e2-137">有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="264e2-137">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="67d57-138">输入</span><span class="sxs-lookup"><span data-stu-id="67d57-138">INPUTS</span></span>
+## <span data-ttu-id="264e2-138">输入</span><span class="sxs-lookup"><span data-stu-id="264e2-138">INPUTS</span></span>
 
-## <span data-ttu-id="67d57-139">输出</span><span class="sxs-lookup"><span data-stu-id="67d57-139">OUTPUTS</span></span>
+## <span data-ttu-id="264e2-139">输出</span><span class="sxs-lookup"><span data-stu-id="264e2-139">OUTPUTS</span></span>
 
-### <span data-ttu-id="67d57-140">None</span><span class="sxs-lookup"><span data-stu-id="67d57-140">None</span></span>
+### <span data-ttu-id="264e2-140">无</span><span class="sxs-lookup"><span data-stu-id="264e2-140">None</span></span>
 
-## <span data-ttu-id="67d57-141">注释</span><span class="sxs-lookup"><span data-stu-id="67d57-141">NOTES</span></span>
+## <span data-ttu-id="264e2-141">注释</span><span class="sxs-lookup"><span data-stu-id="264e2-141">NOTES</span></span>
 
-<span data-ttu-id="67d57-142">此 cmdlet 仅在 Windows 平台上可用。</span><span class="sxs-lookup"><span data-stu-id="67d57-142">This cmdlet is only available on Windows platforms.</span></span>
+<span data-ttu-id="264e2-142">此 cmdlet 仅在 Windows 平台上可用。</span><span class="sxs-lookup"><span data-stu-id="264e2-142">This cmdlet is only available on Windows platforms.</span></span>
 
-## <span data-ttu-id="67d57-143">相关链接</span><span class="sxs-lookup"><span data-stu-id="67d57-143">RELATED LINKS</span></span>
+## <span data-ttu-id="264e2-143">相关链接</span><span class="sxs-lookup"><span data-stu-id="264e2-143">RELATED LINKS</span></span>

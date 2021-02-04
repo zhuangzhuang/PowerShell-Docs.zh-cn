@@ -3,81 +3,90 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 01/28/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/wait-job?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Job
-ms.openlocfilehash: 560202531a992b9db8ba5d5ebc957f96750f1feb
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 0afa3b0a86b3c2c318b8bbf6c969639825370cd7
+ms.sourcegitcommit: 81558c2adb9d109946a027e5b96e4d24b3b13747
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94389243"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99098656"
 ---
-# <span data-ttu-id="c8202-103">Wait-Job</span><span class="sxs-lookup"><span data-stu-id="c8202-103">Wait-Job</span></span>
+# <span data-ttu-id="f1fd6-103">Wait-Job</span><span class="sxs-lookup"><span data-stu-id="f1fd6-103">Wait-Job</span></span>
 
-## <span data-ttu-id="c8202-104">摘要</span><span class="sxs-lookup"><span data-stu-id="c8202-104">SYNOPSIS</span></span>
-<span data-ttu-id="c8202-105">禁止显示命令提示符，直到在会话中运行的一个或所有 PowerShell 后台作业完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-105">Suppresses the command prompt until one or all of the PowerShell background jobs running in the session are completed.</span></span>
+## <span data-ttu-id="f1fd6-104">摘要</span><span class="sxs-lookup"><span data-stu-id="f1fd6-104">SYNOPSIS</span></span>
+<span data-ttu-id="f1fd6-105">等待在会话中运行的一个或所有 PowerShell 作业处于终止状态。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-105">Waits until one or all of the PowerShell jobs running in the session are in a terminating state.</span></span>
 
-## <span data-ttu-id="c8202-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="c8202-106">SYNTAX</span></span>
+## <span data-ttu-id="f1fd6-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="f1fd6-106">SYNTAX</span></span>
 
-### <span data-ttu-id="c8202-107">SessionIdParameterSet（默认值）</span><span class="sxs-lookup"><span data-stu-id="c8202-107">SessionIdParameterSet (Default)</span></span>
+### <span data-ttu-id="f1fd6-107">SessionIdParameterSet（默认值）</span><span class="sxs-lookup"><span data-stu-id="f1fd6-107">SessionIdParameterSet (Default)</span></span>
 
 ```
 Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Id] <Int32[]> [<CommonParameters>]
 ```
 
-### <span data-ttu-id="c8202-108">JobParameterSet</span><span class="sxs-lookup"><span data-stu-id="c8202-108">JobParameterSet</span></span>
+### <span data-ttu-id="f1fd6-108">JobParameterSet</span><span class="sxs-lookup"><span data-stu-id="f1fd6-108">JobParameterSet</span></span>
 
 ```
 Wait-Job [-Job] <Job[]> [-Any] [-Timeout <Int32>] [-Force] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="c8202-109">NameParameterSet</span><span class="sxs-lookup"><span data-stu-id="c8202-109">NameParameterSet</span></span>
+### <span data-ttu-id="f1fd6-109">NameParameterSet</span><span class="sxs-lookup"><span data-stu-id="f1fd6-109">NameParameterSet</span></span>
 
 ```
 Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Name] <String[]> [<CommonParameters>]
 ```
 
-### <span data-ttu-id="c8202-110">InstanceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="c8202-110">InstanceIdParameterSet</span></span>
+### <span data-ttu-id="f1fd6-110">InstanceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="f1fd6-110">InstanceIdParameterSet</span></span>
 
 ```
 Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-InstanceId] <Guid[]> [<CommonParameters>]
 ```
 
-### <span data-ttu-id="c8202-111">StateParameterSet</span><span class="sxs-lookup"><span data-stu-id="c8202-111">StateParameterSet</span></span>
+### <span data-ttu-id="f1fd6-111">StateParameterSet</span><span class="sxs-lookup"><span data-stu-id="f1fd6-111">StateParameterSet</span></span>
 
 ```
 Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-State] <JobState> [<CommonParameters>]
 ```
 
-### <span data-ttu-id="c8202-112">FilterParameterSet</span><span class="sxs-lookup"><span data-stu-id="c8202-112">FilterParameterSet</span></span>
+### <span data-ttu-id="f1fd6-112">FilterParameterSet</span><span class="sxs-lookup"><span data-stu-id="f1fd6-112">FilterParameterSet</span></span>
 
 ```
 Wait-Job [-Any] [-Timeout <Int32>] [-Force] [-Filter] <Hashtable> [<CommonParameters>]
 ```
 
-## <span data-ttu-id="c8202-113">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="c8202-113">DESCRIPTION</span></span>
+## <span data-ttu-id="f1fd6-113">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="f1fd6-113">DESCRIPTION</span></span>
 
-<span data-ttu-id="c8202-114">`Wait-Job`Cmdlet 会等待 PowerShell 后台作业完成，然后再显示命令提示符。</span><span class="sxs-lookup"><span data-stu-id="c8202-114">The `Wait-Job` cmdlet waits for PowerShell background jobs to finish before it displays the command prompt.</span></span> <span data-ttu-id="c8202-115">可以等待某一个后台作业完成或所有后台作业完成，并可为作业设置最长等待时间。</span><span class="sxs-lookup"><span data-stu-id="c8202-115">You can wait until any background job is complete, or until all background jobs are complete, and you can set a maximum wait time for the job.</span></span>
+<span data-ttu-id="f1fd6-114">`Wait-Job`Cmdlet 会等待作业处于终止状态，然后再继续执行。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-114">The `Wait-Job` cmdlet waits for a job to be in a terminating state before continuing execution.</span></span>
+<span data-ttu-id="f1fd6-115">终止状态为：</span><span class="sxs-lookup"><span data-stu-id="f1fd6-115">The terminating states are:</span></span>
 
-<span data-ttu-id="c8202-116">当作业中的命令完成时， `Wait-Job` 将显示命令提示符并返回作业对象，以便可以将其通过管道传递给另一个命令。</span><span class="sxs-lookup"><span data-stu-id="c8202-116">When the commands in the job are complete, `Wait-Job` displays the command prompt and returns a job object so that you can pipe it to another command.</span></span>
+- <span data-ttu-id="f1fd6-116">已完成</span><span class="sxs-lookup"><span data-stu-id="f1fd6-116">Completed</span></span>
+- <span data-ttu-id="f1fd6-117">已失败</span><span class="sxs-lookup"><span data-stu-id="f1fd6-117">Failed</span></span>
+- <span data-ttu-id="f1fd6-118">已停止</span><span class="sxs-lookup"><span data-stu-id="f1fd6-118">Stopped</span></span>
+- <span data-ttu-id="f1fd6-119">Suspended</span><span class="sxs-lookup"><span data-stu-id="f1fd6-119">Suspended</span></span>
+- <span data-ttu-id="f1fd6-120">已断开连接</span><span class="sxs-lookup"><span data-stu-id="f1fd6-120">Disconnected</span></span>
 
-<span data-ttu-id="c8202-117">可以使用 `Wait-Job` cmdlet 等待后台作业，如使用 `Start-Job` cmdlet 或 Cmdlet 的 **AsJob** 参数启动的作业 `Invoke-Command` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-117">You can use `Wait-Job` cmdlet to wait for background jobs, such as those that were started by using the `Start-Job` cmdlet or the **AsJob** parameter of the `Invoke-Command` cmdlet.</span></span> <span data-ttu-id="c8202-118">有关 Windows PowerShell 后台作业的详细信息，请参阅 [about_Jobs](./about/about_Jobs.md)。</span><span class="sxs-lookup"><span data-stu-id="c8202-118">For more information about Windows PowerShell background jobs, see [about_Jobs](./about/about_Jobs.md).</span></span>
+<span data-ttu-id="f1fd6-121">可以等待指定的作业，或者所有作业都处于终止状态。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-121">You can wait until a specified job, or all jobs are in a terminating state.</span></span> <span data-ttu-id="f1fd6-122">你还可以使用 **Timeout** 参数为作业设置最长等待时间，或使用 **Force** 参数等待或状态下的作业 `Suspended` `Disconnected` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-122">You can also set a maximum wait time for the job using the **Timeout** parameter, or use the **Force** parameter to wait for a job in the `Suspended` or `Disconnected` states.</span></span>
 
-<span data-ttu-id="c8202-119">从 Windows PowerShell 3.0 开始， `Wait-Job` cmdlet 还会等待自定义作业类型，例如工作流作业和计划作业的实例。</span><span class="sxs-lookup"><span data-stu-id="c8202-119">Starting in Windows PowerShell 3.0, the `Wait-Job` cmdlet also waits for custom job types, such as workflow jobs and instances of scheduled jobs.</span></span> <span data-ttu-id="c8202-120">若要使 `Wait-Job` 能够等待特定类型的作业，请在运行 cmdlet 之前将支持自定义作业类型的模块导入到会话中，方法 `Get-Job` 是使用 `Import-Module` cmdlet 或通过使用或在模块中获取 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c8202-120">To enable `Wait-Job` to wait for jobs of a particular type, import the module that supports the custom job type into the session before you run the `Get-Job` cmdlet, either by using the `Import-Module` cmdlet or by using or getting a cmdlet in the module.</span></span> <span data-ttu-id="c8202-121">有关特定的自定义作业类型的信息，请参阅自定义作业类型功能的文档。</span><span class="sxs-lookup"><span data-stu-id="c8202-121">For information about a particular custom job type, see the documentation of the custom job type feature.</span></span>
+<span data-ttu-id="f1fd6-123">当作业中的命令完成时， `Wait-Job` 将返回一个作业对象，并继续执行。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-123">When the commands in the job are complete, `Wait-Job` returns a job object and continues execution.</span></span>
 
-## <span data-ttu-id="c8202-122">示例</span><span class="sxs-lookup"><span data-stu-id="c8202-122">EXAMPLES</span></span>
+<span data-ttu-id="f1fd6-124">可以使用 cmdlet `Wait-Job` 等待使用 cmdlet `Start-Job` 或 Cmdlet 的 **AsJob** 参数启动的作业 `Invoke-Command` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-124">You can use the `Wait-Job` cmdlet to wait for jobs started by using the `Start-Job` cmdlet or the **AsJob** parameter of the `Invoke-Command` cmdlet.</span></span> <span data-ttu-id="f1fd6-125">有关作业的详细信息，请参阅 [about_Jobs](./about/about_Jobs.md)。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-125">For more information about jobs, see [about_Jobs](./about/about_Jobs.md).</span></span>
 
-### <span data-ttu-id="c8202-123">示例1：等待所有作业</span><span class="sxs-lookup"><span data-stu-id="c8202-123">Example 1: Wait for all jobs</span></span>
+<span data-ttu-id="f1fd6-126">从 Windows PowerShell 3.0 开始， `Wait-Job` cmdlet 还会等待自定义作业类型，例如工作流作业和计划作业的实例。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-126">Starting in Windows PowerShell 3.0, the `Wait-Job` cmdlet also waits for custom job types, such as workflow jobs and instances of scheduled jobs.</span></span> <span data-ttu-id="f1fd6-127">若要使 `Wait-Job` 能够等待特定类型的作业，请在运行 cmdlet 之前将支持自定义作业类型的模块导入到会话中，方法 `Get-Job` 是使用 `Import-Module` cmdlet 或通过使用或在模块中获取 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-127">To enable `Wait-Job` to wait for jobs of a particular type, import the module that supports the custom job type into the session before you run the `Get-Job` cmdlet, either by using the `Import-Module` cmdlet or by using or getting a cmdlet in the module.</span></span> <span data-ttu-id="f1fd6-128">有关特定的自定义作业类型的信息，请参阅自定义作业类型功能的文档。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-128">For information about a particular custom job type, see the documentation of the custom job type feature.</span></span>
+
+## <span data-ttu-id="f1fd6-129">示例</span><span class="sxs-lookup"><span data-stu-id="f1fd6-129">EXAMPLES</span></span>
+
+### <span data-ttu-id="f1fd6-130">示例1：等待所有作业</span><span class="sxs-lookup"><span data-stu-id="f1fd6-130">Example 1: Wait for all jobs</span></span>
 
 ```powershell
 Get-Job | Wait-Job
 ```
 
-<span data-ttu-id="c8202-124">此命令等待在会话中运行的所有后台作业完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-124">This command waits for all of the background jobs running in the session to finish.</span></span>
+<span data-ttu-id="f1fd6-131">此命令等待在会话中运行的所有作业完成。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-131">This command waits for all of the jobs running in the session to finish.</span></span>
 
-### <span data-ttu-id="c8202-125">示例2：使用 Start-Job 等待远程计算机上启动的作业</span><span class="sxs-lookup"><span data-stu-id="c8202-125">Example 2: Wait for jobs started on remote computers by using Start-Job</span></span>
+### <span data-ttu-id="f1fd6-132">示例2：使用 Start-Job 等待远程计算机上启动的作业</span><span class="sxs-lookup"><span data-stu-id="f1fd6-132">Example 2: Wait for jobs started on remote computers by using Start-Job</span></span>
 
 ```powershell
 $s = New-PSSession Server01, Server02, Server03
@@ -90,20 +99,20 @@ $done.Count
 3
 ```
 
-<span data-ttu-id="c8202-126">此示例显示了如何 `Wait-Job` 通过 cmdlet 将 cmdlet 用于远程计算机上启动的作业 `Start-Job` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-126">This example shows how to use the `Wait-Job` cmdlet with jobs started on remote computers by using the `Start-Job` cmdlet.</span></span> <span data-ttu-id="c8202-127">`Start-Job` `Wait-Job` 使用 cmdlet 将和命令提交到远程计算机 `Invoke-Command` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-127">Both `Start-Job` and `Wait-Job` commands are submitted to the remote computer by using the `Invoke-Command` cmdlet.</span></span>
+<span data-ttu-id="f1fd6-133">此示例显示了如何 `Wait-Job` 通过 cmdlet 将 cmdlet 用于远程计算机上启动的作业 `Start-Job` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-133">This example shows how to use the `Wait-Job` cmdlet with jobs started on remote computers by using the `Start-Job` cmdlet.</span></span> <span data-ttu-id="f1fd6-134">`Start-Job` `Wait-Job` 使用 cmdlet 将和命令提交到远程计算机 `Invoke-Command` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-134">Both `Start-Job` and `Wait-Job` commands are submitted to the remote computer by using the `Invoke-Command` cmdlet.</span></span>
 
-<span data-ttu-id="c8202-128">此示例使用 `Wait-Job` 来确定 `Get-Date` 在三台不同计算机上作为后台作业运行的命令是否完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-128">This example uses `Wait-Job` to determine whether a `Get-Date` command running as a background job on three different computers is finished.</span></span>
+<span data-ttu-id="f1fd6-135">此示例使用 `Wait-Job` 来确定 `Get-Date` 在三台不同计算机上作为作业运行的命令是否完成。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-135">This example uses `Wait-Job` to determine whether a `Get-Date` command running as a job on three different computers is finished.</span></span>
 
-<span data-ttu-id="c8202-129">第一个命令在三台远程计算机的每台计算机上创建一个 ( **PSSession** ) 的 Windows PowerShell 会话，并将其存储在 `$s` 变量中。</span><span class="sxs-lookup"><span data-stu-id="c8202-129">The first command creates a Windows PowerShell session ( **PSSession** ) on each of the three remote computers and stores them in the `$s` variable.</span></span>
+<span data-ttu-id="f1fd6-136">第一个命令在三台远程计算机的每台计算机上创建一个 (**PSSession**) 的 Windows PowerShell 会话，并将其存储在 `$s` 变量中。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-136">The first command creates a Windows PowerShell session (**PSSession**) on each of the three remote computers and stores them in the `$s` variable.</span></span>
 
-<span data-ttu-id="c8202-130">第二个命令使用在 `Invoke-Command` `Start-Job` 中的三个会话中运行 `$s` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-130">The second command uses `Invoke-Command` to run `Start-Job` in each of the three sessions in `$s`.</span></span>
-<span data-ttu-id="c8202-131">所有作业都命名为 Date1。</span><span class="sxs-lookup"><span data-stu-id="c8202-131">All of the jobs are named Date1.</span></span>
+<span data-ttu-id="f1fd6-137">第二个命令使用在 `Invoke-Command` `Start-Job` 中的三个会话中运行 `$s` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-137">The second command uses `Invoke-Command` to run `Start-Job` in each of the three sessions in `$s`.</span></span>
+<span data-ttu-id="f1fd6-138">所有作业都命名为 Date1。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-138">All of the jobs are named Date1.</span></span>
 
-<span data-ttu-id="c8202-132">第三个命令使用 `Invoke-Command` 来运行 `Wait-Job` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-132">The third command uses `Invoke-Command` to run `Wait-Job`.</span></span> <span data-ttu-id="c8202-133">此命令等待每台计算机上的 Date1 作业完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-133">This command waits for the Date1 jobs on each computer to finish.</span></span> <span data-ttu-id="c8202-134">它将生成的集合存储 (数组中的作业对象) `$done` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-134">It stores the resulting collection (array) of job objects in the `$done` variable.</span></span>
+<span data-ttu-id="f1fd6-139">第三个命令使用 `Invoke-Command` 来运行 `Wait-Job` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-139">The third command uses `Invoke-Command` to run `Wait-Job`.</span></span> <span data-ttu-id="f1fd6-140">此命令等待 `Date1` 每台计算机上的作业完成。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-140">This command waits for the `Date1` jobs on each computer to finish.</span></span> <span data-ttu-id="f1fd6-141">它将生成的集合存储 (**数组** 中的 **作业** 对象) `$done` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-141">It stores the resulting collection (**array**) of **job** objects in the `$done` variable.</span></span>
 
-<span data-ttu-id="c8202-135">第四个命令使用变量中的作业对象数组的 **Count** 属性 `$done` 来确定完成的作业数。</span><span class="sxs-lookup"><span data-stu-id="c8202-135">The fourth command uses the **Count** property of the array of job objects in the `$done` variable to determine how many of the jobs are finished.</span></span>
+<span data-ttu-id="f1fd6-142">第四个命令使用变量中的作业对象数组的 **Count** 属性 `$done` 来确定完成的作业数。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-142">The fourth command uses the **Count** property of the array of job objects in the `$done` variable to determine how many of the jobs are finished.</span></span>
 
-### <span data-ttu-id="c8202-136">示例3：确定第一次后台作业何时完成</span><span class="sxs-lookup"><span data-stu-id="c8202-136">Example 3: Determine when the first background job finishes</span></span>
+### <span data-ttu-id="f1fd6-143">示例3：确定第一个作业完成的时间</span><span class="sxs-lookup"><span data-stu-id="f1fd6-143">Example 3: Determine when the first job finishes</span></span>
 
 ```powershell
 $s = New-PSSession (Get-Content Machines.txt)
@@ -112,80 +121,80 @@ Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {$Using:c}
 Invoke-Command -Session $s -ScriptBlock {Wait-Job -Any}
 ```
 
-<span data-ttu-id="c8202-137">此示例使用的 **Any** 参数 `Wait-Job` 来确定在当前会话中运行的多个后台作业中的第一个作业完成的时间。</span><span class="sxs-lookup"><span data-stu-id="c8202-137">This example uses the **Any** parameter of `Wait-Job` to determine when the first of many background jobs running in the current session are completed.</span></span> <span data-ttu-id="c8202-138">它还演示了如何使用 `Wait-Job` cmdlet 等待远程作业完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-138">It also shows how to use the `Wait-Job` cmdlet to wait for remote jobs to finish.</span></span>
+<span data-ttu-id="f1fd6-144">此示例使用的 **Any** 参数 `Wait-Job` 来确定在当前会话中运行的多个作业的第一个处于终止状态的时间。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-144">This example uses the **Any** parameter of `Wait-Job` to determine when the first of many jobs running in the current session are in a terminating state.</span></span> <span data-ttu-id="f1fd6-145">它还演示了如何使用 `Wait-Job` cmdlet 等待远程作业完成。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-145">It also shows how to use the `Wait-Job` cmdlet to wait for remote jobs to finish.</span></span>
 
-<span data-ttu-id="c8202-139">第一个命令在 Machines.txt 文件中列出的每台计算机上创建 **pssession** ，并将 **pssession** 对象存储在 `$s` 变量中。</span><span class="sxs-lookup"><span data-stu-id="c8202-139">The first command creates a **PSSession** on each of the computers listed in the Machines.txt file and stores the **PSSession** objects in the `$s` variable.</span></span> <span data-ttu-id="c8202-140">该命令使用 `Get-Content` cmdlet 来获取文件的内容。</span><span class="sxs-lookup"><span data-stu-id="c8202-140">The command uses the `Get-Content` cmdlet to get the contents of the file.</span></span> <span data-ttu-id="c8202-141">`Get-Content`命令括在括号中，以确保它在命令之前运行 `New-PSSession` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-141">The `Get-Content` command is enclosed in parentheses to make sure that it runs before the `New-PSSession` command.</span></span>
+<span data-ttu-id="f1fd6-146">第一个命令在 Machines.txt 文件中列出的每台计算机上创建 **pssession** ，并将 **pssession** 对象存储在 `$s` 变量中。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-146">The first command creates a **PSSession** on each of the computers listed in the Machines.txt file and stores the **PSSession** objects in the `$s` variable.</span></span> <span data-ttu-id="f1fd6-147">该命令使用 `Get-Content` cmdlet 来获取文件的内容。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-147">The command uses the `Get-Content` cmdlet to get the contents of the file.</span></span> <span data-ttu-id="f1fd6-148">`Get-Content`命令括在括号中，以确保它在命令之前运行 `New-PSSession` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-148">The `Get-Content` command is enclosed in parentheses to make sure that it runs before the `New-PSSession` command.</span></span>
 
-<span data-ttu-id="c8202-142">第二个命令将 `Get-EventLog` 命令字符串用引号引起来 `$c` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-142">The second command stores a `Get-EventLog` command string, in quotation marks, in the `$c` variable.</span></span>
+<span data-ttu-id="f1fd6-149">第二个命令将 `Get-EventLog` 命令字符串用引号引起来 `$c` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-149">The second command stores a `Get-EventLog` command string, in quotation marks, in the `$c` variable.</span></span>
 
-<span data-ttu-id="c8202-143">第三个命令使用 `Invoke-Command` cmdlet `Start-Job` 在中的每个会话中运行 `$s` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-143">The third command uses `Invoke-Command` cmdlet to run `Start-Job` in each of the sessions in `$s`.</span></span>
-<span data-ttu-id="c8202-144">`Start-Job`命令启动一个后台作业，该作业 `Get-EventLog` 在变量中运行该命令 `$c` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-144">The `Start-Job` command starts a background job that runs the `Get-EventLog` command in the `$c` variable.</span></span>
+<span data-ttu-id="f1fd6-150">第三个命令使用 `Invoke-Command` cmdlet `Start-Job` 在中的每个会话中运行 `$s` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-150">The third command uses `Invoke-Command` cmdlet to run `Start-Job` in each of the sessions in `$s`.</span></span>
+<span data-ttu-id="f1fd6-151">`Start-Job`命令启动一个作业，该作业 `Get-EventLog` 在变量中运行该命令 `$c` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-151">The `Start-Job` command starts a job that runs the `Get-EventLog` command in the `$c` variable.</span></span>
 
-<span data-ttu-id="c8202-145">该命令使用 **Using** 作用域修饰符来指示该 `$c` 变量是在本地计算机上定义的。</span><span class="sxs-lookup"><span data-stu-id="c8202-145">The command uses the **Using** scope modifier to indicate that the `$c` variable was defined on the local computer.</span></span> <span data-ttu-id="c8202-146">在 Windows PowerShell 3.0 中引入了 **Using** 作用域修饰符。</span><span class="sxs-lookup"><span data-stu-id="c8202-146">The **Using** scope modifier is introduced in Windows PowerShell 3.0.</span></span> <span data-ttu-id="c8202-147">有关 **Using** 作用域修饰符的详细信息，请参阅 [about_Remote_Variables](./about/about_Remote_Variables.md)。</span><span class="sxs-lookup"><span data-stu-id="c8202-147">For more information about the **Using** scope modifier, see [about_Remote_Variables](./about/about_Remote_Variables.md).</span></span>
+<span data-ttu-id="f1fd6-152">该命令使用 **Using** 作用域修饰符来指示该 `$c` 变量是在本地计算机上定义的。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-152">The command uses the **Using** scope modifier to indicate that the `$c` variable was defined on the local computer.</span></span> <span data-ttu-id="f1fd6-153">在 Windows PowerShell 3.0 中引入了 **Using** 作用域修饰符。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-153">The **Using** scope modifier is introduced in Windows PowerShell 3.0.</span></span> <span data-ttu-id="f1fd6-154">有关 **Using** 作用域修饰符的详细信息，请参阅 [about_Remote_Variables](./about/about_Remote_Variables.md)。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-154">For more information about the **Using** scope modifier, see [about_Remote_Variables](./about/about_Remote_Variables.md).</span></span>
 
-<span data-ttu-id="c8202-148">第四个命令使用 `Invoke-Command` `Wait-Job` 在会话中运行命令。</span><span class="sxs-lookup"><span data-stu-id="c8202-148">The fourth command uses `Invoke-Command` to run a `Wait-Job` command in the sessions.</span></span> <span data-ttu-id="c8202-149">它使用 **Any** 参数等待，直到远程计算机上的第一个作业完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-149">It uses the **Any** parameter to wait until the first job on the remote computers is completed.</span></span>
+<span data-ttu-id="f1fd6-155">第四个命令使用 `Invoke-Command` `Wait-Job` 在会话中运行命令。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-155">The fourth command uses `Invoke-Command` to run a `Wait-Job` command in the sessions.</span></span> <span data-ttu-id="f1fd6-156">它使用 **Any** 参数等待，直到远程计算机上的第一个作业终止状态。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-156">It uses the **Any** parameter to wait until the first job on the remote computers is terminating state.</span></span>
 
-### <span data-ttu-id="c8202-150">示例4：设置远程计算机上的作业的等待时间</span><span class="sxs-lookup"><span data-stu-id="c8202-150">Example 4: Set a wait time for jobs on remote computers</span></span>
+### <span data-ttu-id="f1fd6-157">示例4：设置远程计算机上的作业的等待时间</span><span class="sxs-lookup"><span data-stu-id="f1fd6-157">Example 4: Set a wait time for jobs on remote computers</span></span>
 
 ```powershell
-$s = New-PSSession Server01, Server02, Server03
-$jobs = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Date}}
-$done = Invoke-Command -Session $s -ScriptBlock {Wait-Job -Timeout 30}
+PS> $s = New-PSSession Server01, Server02, Server03
+PS> $jobs = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Date}}
+PS> $done = Invoke-Command -Session $s -ScriptBlock {Wait-Job -Timeout 30}
+PS>
 ```
 
-<span data-ttu-id="c8202-151">此示例演示如何使用的 **Timeout** 参数设置在 `Wait-Job` 远程计算机上运行的作业的最长等待时间。</span><span class="sxs-lookup"><span data-stu-id="c8202-151">This example shows how to use the **Timeout** parameter of `Wait-Job` to set a maximum wait time for the jobs running on remote computers.</span></span>
+<span data-ttu-id="f1fd6-158">此示例演示如何使用的 **Timeout** 参数设置在 `Wait-Job` 远程计算机上运行的作业的最长等待时间。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-158">This example shows how to use the **Timeout** parameter of `Wait-Job` to set a maximum wait time for the jobs running on remote computers.</span></span>
 
-<span data-ttu-id="c8202-152">第一个命令在 (Server01、Server02 和 Server03) 的三台远程计算机上创建 **pssession** ，然后将 **pssession** 对象存储在 `$s` 变量中。</span><span class="sxs-lookup"><span data-stu-id="c8202-152">The first command creates a **PSSession** on each of three remote computers (Server01, Server02, and Server03), and then stores the **PSSession** objects in the `$s` variable.</span></span>
+<span data-ttu-id="f1fd6-159">第一个命令在 (Server01、Server02 和 Server03) 的三台远程计算机上创建 **pssession** ，然后将 **pssession** 对象存储在 `$s` 变量中。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-159">The first command creates a **PSSession** on each of three remote computers (Server01, Server02, and Server03), and then stores the **PSSession** objects in the `$s` variable.</span></span>
 
-<span data-ttu-id="c8202-153">第二个命令使用在 `Invoke-Command` `Start-Job` 中的每个 **PSSession** 对象中运行 `$s` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-153">The second command uses `Invoke-Command` to run `Start-Job` in each of the **PSSession** objects in `$s`.</span></span> <span data-ttu-id="c8202-154">它将生成的作业对象存储在 `$jobs` 变量中。</span><span class="sxs-lookup"><span data-stu-id="c8202-154">It stores the resulting job objects in the `$jobs` variable.</span></span>
+<span data-ttu-id="f1fd6-160">第二个命令使用在 `Invoke-Command` `Start-Job` 中的每个 **PSSession** 对象中运行 `$s` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-160">The second command uses `Invoke-Command` to run `Start-Job` in each of the **PSSession** objects in `$s`.</span></span> <span data-ttu-id="f1fd6-161">它将生成的作业对象存储在 `$jobs` 变量中。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-161">It stores the resulting job objects in the `$jobs` variable.</span></span>
 
-<span data-ttu-id="c8202-155">第三个命令使用 `Invoke-Command` `Wait-Job` 在中的每个会话中运行 `$s` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-155">The third command uses `Invoke-Command` to run `Wait-Job` in each of the sessions in `$s`.</span></span> <span data-ttu-id="c8202-156">`Wait-Job`命令确定所有命令是否在30秒内完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-156">The `Wait-Job` command determines whether all of the commands have completed within 30 seconds.</span></span> <span data-ttu-id="c8202-157">它使用值为30的 **Timeout** 参数来建立最长等待时间，然后将命令的结果存储在 `$done` 变量中。</span><span class="sxs-lookup"><span data-stu-id="c8202-157">It uses the **Timeout** parameter with a value of 30 to establish the maximum wait time, and then stores the results of the command in the `$done` variable.</span></span>
+<span data-ttu-id="f1fd6-162">第三个命令使用 `Invoke-Command` `Wait-Job` 在中的每个会话中运行 `$s` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-162">The third command uses `Invoke-Command` to run `Wait-Job` in each of the sessions in `$s`.</span></span> <span data-ttu-id="f1fd6-163">`Wait-Job`命令确定所有命令是否在30秒内完成。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-163">The `Wait-Job` command determines whether all of the commands have completed within 30 seconds.</span></span> <span data-ttu-id="f1fd6-164">它使用值为30的 **Timeout** 参数来建立最长等待时间，然后将命令的结果存储在 `$done` 变量中。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-164">It uses the **Timeout** parameter with a value of 30 to establish the maximum wait time, and then stores the results of the command in the `$done` variable.</span></span>
 
-<span data-ttu-id="c8202-158">在此示例中，30 秒后，只有 Server02 计算机上的命令完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-158">In this case, after 30 seconds, only the command on the Server02 computer has completed.</span></span> <span data-ttu-id="c8202-159">`Wait-Job` 结束等待，显示命令提示符，并返回表示已完成作业的对象。</span><span class="sxs-lookup"><span data-stu-id="c8202-159">`Wait-Job` ends the wait, displays the command prompt, and returns the object that represents the job that was completed.</span></span>
+<span data-ttu-id="f1fd6-165">在此示例中，30 秒后，只有 Server02 计算机上的命令完成。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-165">In this case, after 30 seconds, only the command on the Server02 computer has completed.</span></span> <span data-ttu-id="f1fd6-166">`Wait-Job` 结束等待，返回表示已完成作业的对象，然后显示命令提示符。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-166">`Wait-Job` ends the wait, returns the object that represents the job that was completed, and displays the command prompt.</span></span>
 
-<span data-ttu-id="c8202-160">`$done`变量包含一个作业对象，该对象表示在 Server02 上运行的作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-160">The `$done` variable contains a job object that represents the job that ran on Server02.</span></span>
+<span data-ttu-id="f1fd6-167">`$done`变量包含一个作业对象，该对象表示在 Server02 上运行的作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-167">The `$done` variable contains a job object that represents the job that ran on Server02.</span></span>
 
-### <span data-ttu-id="c8202-161">示例5：等待多个作业中的一个完成</span><span class="sxs-lookup"><span data-stu-id="c8202-161">Example 5: Wait until one of several jobs finishes</span></span>
+### <span data-ttu-id="f1fd6-168">示例5：等待多个作业中的一个完成</span><span class="sxs-lookup"><span data-stu-id="f1fd6-168">Example 5: Wait until one of several jobs finishes</span></span>
 
 ```powershell
 Wait-Job -id 1,2,5 -Any
 ```
 
-<span data-ttu-id="c8202-162">此命令通过 Id 标识三个作业，并等待其中任何一个作业完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-162">This command identifies three jobs by their IDs and waits until any one of them are completed.</span></span>
-<span data-ttu-id="c8202-163">当第一个作业完成时，将返回命令提示符。</span><span class="sxs-lookup"><span data-stu-id="c8202-163">The command prompt returns when the first job finishes.</span></span>
+<span data-ttu-id="f1fd6-169">此命令按 Id 标识三个作业，并等待其中任何一个作业处于终止状态。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-169">This command identifies three jobs by their IDs and waits until any one of them are in a terminating state.</span></span> <span data-ttu-id="f1fd6-170">当第一个作业完成时，执行将继续。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-170">Execution continues when the first job finishes.</span></span>
 
-### <span data-ttu-id="c8202-164">示例6：等待一段时间，然后允许作业在后台继续</span><span class="sxs-lookup"><span data-stu-id="c8202-164">Example 6: Wait for a period, then allow job to continue in background</span></span>
+### <span data-ttu-id="f1fd6-171">示例6：等待一段时间，然后允许作业在后台继续</span><span class="sxs-lookup"><span data-stu-id="f1fd6-171">Example 6: Wait for a period, then allow job to continue in background</span></span>
 
 ```powershell
 Wait-Job -Name "DailyLog" -Timeout 120
 ```
 
-<span data-ttu-id="c8202-165">此命令120等待 DailyLog 作业 (两分钟) ，直到完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-165">This command waits 120 seconds (two minutes) for the DailyLog job to finish.</span></span> <span data-ttu-id="c8202-166">如果作业未在接下来的两分钟内完成，则命令提示符仍返回，并且作业继续在后台运行。</span><span class="sxs-lookup"><span data-stu-id="c8202-166">If the job does not finish in the next two minutes, the command prompt returns anyway, and the job continues to run in the background.</span></span>
+<span data-ttu-id="f1fd6-172">此命令120等待 DailyLog 作业 (两分钟) ，直到完成。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-172">This command waits 120 seconds (two minutes) for the DailyLog job to finish.</span></span> <span data-ttu-id="f1fd6-173">如果作业未在接下来的两分钟内完成，则执行将继续，并且作业继续在后台运行。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-173">If the job does not finish in the next two minutes, execution continues, and the job continues to run in the background.</span></span>
 
-### <span data-ttu-id="c8202-167">示例7：按名称等待作业</span><span class="sxs-lookup"><span data-stu-id="c8202-167">Example 7: Wait for a job by name</span></span>
+### <span data-ttu-id="f1fd6-174">示例7：按名称等待作业</span><span class="sxs-lookup"><span data-stu-id="f1fd6-174">Example 7: Wait for a job by name</span></span>
 
 ```powershell
 Wait-Job -Name "Job3"
 ```
 
-<span data-ttu-id="c8202-168">此命令使用作业名称来标识要等待的作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-168">This command uses the job name to identify the job for which to wait.</span></span>
+<span data-ttu-id="f1fd6-175">此命令使用作业名称来标识要等待的作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-175">This command uses the job name to identify the job for which to wait.</span></span>
 
-### <span data-ttu-id="c8202-169">示例8：等待本地计算机上的作业开始 Start-Job</span><span class="sxs-lookup"><span data-stu-id="c8202-169">Example 8: Wait for jobs on local computer started with Start-Job</span></span>
+### <span data-ttu-id="f1fd6-176">示例8：等待本地计算机上的作业开始 Start-Job</span><span class="sxs-lookup"><span data-stu-id="f1fd6-176">Example 8: Wait for jobs on local computer started with Start-Job</span></span>
 
 ```powershell
-$j = Start-Job -ScriptBlock {Get-ChildItem *.ps1| where {$_lastwritetime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
+$j = Start-Job -ScriptBlock {Get-ChildItem *.ps1| where {$_.lastwritetime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
 $j | Wait-Job
 ```
 
-<span data-ttu-id="c8202-170">此示例演示如何 `Wait-Job` 通过使用将 cmdlet 用于本地计算机上启动的作业 `Start-Job` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-170">This example shows how to use the `Wait-Job` cmdlet with jobs started on the local computer by using `Start-Job`.</span></span>
+<span data-ttu-id="f1fd6-177">此示例演示如何 `Wait-Job` 通过使用将 cmdlet 用于本地计算机上启动的作业 `Start-Job` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-177">This example shows how to use the `Wait-Job` cmdlet with jobs started on the local computer by using `Start-Job`.</span></span>
 
-<span data-ttu-id="c8202-171">这些命令启动一个可获取在上一周添加或更新的 Windows PowerShell 脚本文件的作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-171">These commands start a job that gets the Windows PowerShell script files that were added or updated in the last week.</span></span>
+<span data-ttu-id="f1fd6-178">这些命令启动一个可获取在上一周添加或更新的 Windows PowerShell 脚本文件的作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-178">These commands start a job that gets the Windows PowerShell script files that were added or updated in the last week.</span></span>
 
-<span data-ttu-id="c8202-172">第一个命令使用 `Start-Job` 在本地计算机上启动后台作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-172">The first command uses `Start-Job` to start a background job on the local computer.</span></span> <span data-ttu-id="c8202-173">作业运行一个 `Get-ChildItem` 命令，该命令获取在上周添加或更新的文件扩展名为 ps1 的所有文件。</span><span class="sxs-lookup"><span data-stu-id="c8202-173">The job runs a `Get-ChildItem` command that gets all of the files that have a .ps1 file name extension that were added or updated in the last week.</span></span>
+<span data-ttu-id="f1fd6-179">第一个命令使用 `Start-Job` 在本地计算机上启动作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-179">The first command uses `Start-Job` to start a job on the local computer.</span></span> <span data-ttu-id="f1fd6-180">作业运行一个 `Get-ChildItem` 命令，该命令获取在上周添加或更新的文件扩展名为 ps1 的所有文件。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-180">The job runs a `Get-ChildItem` command that gets all of the files that have a .ps1 file name extension that were added or updated in the last week.</span></span>
 
-<span data-ttu-id="c8202-174">第三个命令使用 `Wait-Job` 等待作业完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-174">The third command uses `Wait-Job` to wait until the job is completed.</span></span> <span data-ttu-id="c8202-175">作业完成后，该命令将显示作业对象，该对象包含有关作业的信息。</span><span class="sxs-lookup"><span data-stu-id="c8202-175">When the job finishes, the command displays the job object, which contains information about the job.</span></span>
+<span data-ttu-id="f1fd6-181">第三个命令使用 `Wait-Job` 等待直到作业处于终止状态。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-181">The third command uses `Wait-Job` to wait until the job is in a terminating state.</span></span> <span data-ttu-id="f1fd6-182">作业完成后，该命令将显示作业对象，该对象包含有关作业的信息。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-182">When the job finishes, the command displays the job object, which contains information about the job.</span></span>
 
-### <span data-ttu-id="c8202-176">示例9：使用 Invoke-Command 等待远程计算机上启动的作业</span><span class="sxs-lookup"><span data-stu-id="c8202-176">Example 9: Wait for jobs started on remote computers by using Invoke-Command</span></span>
+### <span data-ttu-id="f1fd6-183">示例9：使用 Invoke-Command 等待远程计算机上启动的作业</span><span class="sxs-lookup"><span data-stu-id="f1fd6-183">Example 9: Wait for jobs started on remote computers by using Invoke-Command</span></span>
 
 ```powershell
 $s = New-PSSession Server01, Server02, Server03
@@ -193,18 +202,18 @@ $j = Invoke-Command -Session $s -ScriptBlock {Get-Process} -AsJob
 $j | Wait-Job
 ```
 
-<span data-ttu-id="c8202-177">此示例演示如何 `Wait-Job` 通过使用的 **AsJob** 参数，将用于远程计算机上启动的作业 `Invoke-Command` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-177">This example shows how to use `Wait-Job` with jobs started on remote computers by using the **AsJob** parameter of `Invoke-Command`.</span></span> <span data-ttu-id="c8202-178">使用 **AsJob** 时，将在本地计算机上创建作业，并自动将结果返回到本地计算机，即使作业运行在远程计算机上也是如此。</span><span class="sxs-lookup"><span data-stu-id="c8202-178">When using **AsJob** , the job is created on the local computer and the results are automatically returned to the local computer, even though the job runs on the remote computers.</span></span>
+<span data-ttu-id="f1fd6-184">此示例演示如何 `Wait-Job` 通过使用的 **AsJob** 参数，将用于远程计算机上启动的作业 `Invoke-Command` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-184">This example shows how to use `Wait-Job` with jobs started on remote computers by using the **AsJob** parameter of `Invoke-Command`.</span></span> <span data-ttu-id="f1fd6-185">使用 **AsJob** 时，将在本地计算机上创建作业，并自动将结果返回到本地计算机，即使作业运行在远程计算机上也是如此。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-185">When using **AsJob**, the job is created on the local computer and the results are automatically returned to the local computer, even though the job runs on the remote computers.</span></span>
 
-<span data-ttu-id="c8202-179">此示例使用 `Wait-Job` 确定在 `Get-Process` 三台远程计算机上的会话中运行的命令是否完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-179">This example uses `Wait-Job` to determine whether a `Get-Process` command running in the sessions on three remote computers is completed.</span></span>
+<span data-ttu-id="f1fd6-186">此示例使用 `Wait-Job` 来确定 `Get-Process` 三台远程计算机上的会话中运行的命令是否处于终止状态。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-186">This example uses `Wait-Job` to determine whether a `Get-Process` command running in the sessions on three remote computers is in a terminating state.</span></span>
 
-<span data-ttu-id="c8202-180">第一个命令在三台计算机上创建 **PSSession** 对象并将其存储在 `$s` 变量中。</span><span class="sxs-lookup"><span data-stu-id="c8202-180">The first command creates **PSSession** objects on three computers and stores them in the `$s` variable.</span></span>
+<span data-ttu-id="f1fd6-187">第一个命令在三台计算机上创建 **PSSession** 对象并将其存储在 `$s` 变量中。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-187">The first command creates **PSSession** objects on three computers and stores them in the `$s` variable.</span></span>
 
-<span data-ttu-id="c8202-181">第二个命令使用在 `Invoke-Command` `Get-Process` 中的三个会话中运行 `$s` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-181">The second command uses `Invoke-Command` to run `Get-Process` in each of the three sessions in `$s`.</span></span>
-<span data-ttu-id="c8202-182">该命令使用 **AsJob** 参数将命令作为后台作业异步运行。</span><span class="sxs-lookup"><span data-stu-id="c8202-182">The command uses the **AsJob** parameter to run the command asynchronously as a background job.</span></span> <span data-ttu-id="c8202-183">命令返回一个作业对象，就像使用启动的作业一样， `Start-Job` 作业对象存储在 `$j` 变量中。</span><span class="sxs-lookup"><span data-stu-id="c8202-183">The command returns a job object, just like the jobs started by using `Start-Job`, and the job object is stored in the `$j` variable.</span></span>
+<span data-ttu-id="f1fd6-188">第二个命令使用在 `Invoke-Command` `Get-Process` 中的三个会话中运行 `$s` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-188">The second command uses `Invoke-Command` to run `Get-Process` in each of the three sessions in `$s`.</span></span>
+<span data-ttu-id="f1fd6-189">该命令使用 **AsJob** 参数以异步方式将命令作为作业运行。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-189">The command uses the **AsJob** parameter to run the command asynchronously as a job.</span></span> <span data-ttu-id="f1fd6-190">命令返回一个作业对象，就像使用启动的作业一样， `Start-Job` 作业对象存储在 `$j` 变量中。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-190">The command returns a job object, just like the jobs started by using `Start-Job`, and the job object is stored in the `$j` variable.</span></span>
 
-<span data-ttu-id="c8202-184">第三个命令使用管道运算符 (`|`) 将作业对象发送 `$j` 到 `Wait-Job` cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c8202-184">The third command uses a pipeline operator (`|`) to send the job object in `$j` to the `Wait-Job` cmdlet.</span></span> <span data-ttu-id="c8202-185">`Invoke-Command`在这种情况下，不需要使用命令，因为作业驻留在本地计算机上。</span><span class="sxs-lookup"><span data-stu-id="c8202-185">An `Invoke-Command` command is not required in this case, because the job resides on the local computer.</span></span>
+<span data-ttu-id="f1fd6-191">第三个命令使用管道运算符 (`|`) 将作业对象发送 `$j` 到 `Wait-Job` cmdlet。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-191">The third command uses a pipeline operator (`|`) to send the job object in `$j` to the `Wait-Job` cmdlet.</span></span> <span data-ttu-id="f1fd6-192">`Invoke-Command`在这种情况下，不需要使用命令，因为作业驻留在本地计算机上。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-192">An `Invoke-Command` command is not required in this case, because the job resides on the local computer.</span></span>
 
-### <span data-ttu-id="c8202-186">示例10：等待 ID 为的作业</span><span class="sxs-lookup"><span data-stu-id="c8202-186">Example 10: Wait for a job that has an ID</span></span>
+### <span data-ttu-id="f1fd6-193">示例10：等待 ID 为的作业</span><span class="sxs-lookup"><span data-stu-id="f1fd6-193">Example 10: Wait for a job that has an ID</span></span>
 
 ```powershell
 Get-Job
@@ -221,13 +230,13 @@ Id   Name     State      HasMoreData     Location             Command
 Wait-Job -Id 1
 ```
 
-<span data-ttu-id="c8202-187">此命令等待 ID 值为 1 的作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-187">This command waits for the job with an ID value of 1.</span></span>
+<span data-ttu-id="f1fd6-194">此命令等待 ID 值为 1 的作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-194">This command waits for the job with an ID value of 1.</span></span>
 
-## <span data-ttu-id="c8202-188">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="c8202-188">PARAMETERS</span></span>
+## <span data-ttu-id="f1fd6-195">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="f1fd6-195">PARAMETERS</span></span>
 
-### <span data-ttu-id="c8202-189">-Any</span><span class="sxs-lookup"><span data-stu-id="c8202-189">-Any</span></span>
+### <span data-ttu-id="f1fd6-196">-Any</span><span class="sxs-lookup"><span data-stu-id="f1fd6-196">-Any</span></span>
 
-<span data-ttu-id="c8202-190">指示此 cmdlet 显示命令提示符，并在任何作业完成时返回作业对象。</span><span class="sxs-lookup"><span data-stu-id="c8202-190">Indicates that this cmdlet displays the command prompt, and returns the job object, when any job finishes.</span></span> <span data-ttu-id="c8202-191">默认情况下，将 `Wait-Job` 一直等待，直到所有指定的作业完成后才显示提示。</span><span class="sxs-lookup"><span data-stu-id="c8202-191">By default, `Wait-Job` waits until all of the specified jobs are complete before it displays the prompt.</span></span>
+<span data-ttu-id="f1fd6-197">指示此 cmdlet 返回作业对象并在任何作业完成时继续执行。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-197">Indicates that this cmdlet returns the job object and continues execution when any job finishes.</span></span> <span data-ttu-id="f1fd6-198">默认情况下，将 `Wait-Job` 一直等待，直到所有指定的作业完成后才显示提示。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-198">By default, `Wait-Job` waits until all of the specified jobs are complete before it displays the prompt.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -241,13 +250,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c8202-192">-Filter</span><span class="sxs-lookup"><span data-stu-id="c8202-192">-Filter</span></span>
+### <span data-ttu-id="f1fd6-199">-Filter</span><span class="sxs-lookup"><span data-stu-id="f1fd6-199">-Filter</span></span>
 
-<span data-ttu-id="c8202-193">指定条件的哈希表。</span><span class="sxs-lookup"><span data-stu-id="c8202-193">Specifies a hash table of conditions.</span></span> <span data-ttu-id="c8202-194">此 cmdlet 将等待满足哈希表中所有条件的作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-194">This cmdlet waits for jobs that satisfy all of the conditions in the hash table.</span></span> <span data-ttu-id="c8202-195">输入一个哈希表，其中的键为作业属性，其中的值为作业属性值。</span><span class="sxs-lookup"><span data-stu-id="c8202-195">Enter a hash table where the keys are job properties and the values are job property values.</span></span>
+<span data-ttu-id="f1fd6-200">指定条件的哈希表。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-200">Specifies a hash table of conditions.</span></span> <span data-ttu-id="f1fd6-201">此 cmdlet 将等待满足哈希表中所有条件的作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-201">This cmdlet waits for jobs that satisfy all of the conditions in the hash table.</span></span> <span data-ttu-id="f1fd6-202">输入一个哈希表，其中的键为作业属性，其中的值为作业属性值。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-202">Enter a hash table where the keys are job properties and the values are job property values.</span></span>
 
-<span data-ttu-id="c8202-196">此参数仅适用于自定义作业类型，例如工作流作业和计划作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-196">This parameter works only on custom job types, such as workflow jobs and scheduled jobs.</span></span> <span data-ttu-id="c8202-197">它不适用于标准后台作业，如使用 cmdlet 创建的作业 `Start-Job` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-197">It does not work on standard background jobs, such as those created by using the `Start-Job` cmdlet.</span></span> <span data-ttu-id="c8202-198">有关支持此参数的信息，请参阅作业类型的帮助主题。</span><span class="sxs-lookup"><span data-stu-id="c8202-198">For information about support for this parameter, see the help topic for the job type.</span></span>
+<span data-ttu-id="f1fd6-203">此参数仅适用于自定义作业类型，例如工作流作业和计划作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-203">This parameter works only on custom job types, such as workflow jobs and scheduled jobs.</span></span> <span data-ttu-id="f1fd6-204">它不适用于标准作业，如使用 cmdlet 创建的作业 `Start-Job` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-204">It does not work on standard jobs, such as those created by using the `Start-Job` cmdlet.</span></span> <span data-ttu-id="f1fd6-205">有关支持此参数的信息，请参阅作业类型的帮助主题。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-205">For information about support for this parameter, see the help topic for the job type.</span></span>
 
-<span data-ttu-id="c8202-199">已在 Windows PowerShell 3.0 中引入了此参数。</span><span class="sxs-lookup"><span data-stu-id="c8202-199">This parameter was introduced in Windows PowerShell 3.0.</span></span>
+<span data-ttu-id="f1fd6-206">已在 Windows PowerShell 3.0 中引入了此参数。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-206">This parameter was introduced in Windows PowerShell 3.0.</span></span>
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -261,17 +270,17 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c8202-200">-Force</span><span class="sxs-lookup"><span data-stu-id="c8202-200">-Force</span></span>
+### <span data-ttu-id="f1fd6-207">-Force</span><span class="sxs-lookup"><span data-stu-id="f1fd6-207">-Force</span></span>
 
-<span data-ttu-id="c8202-201">指示此 cmdlet 继续等待处于 "挂起" 或 "已断开连接" 状态的作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-201">Indicates that this cmdlet continues to wait for jobs in the Suspended or Disconnected state.</span></span> <span data-ttu-id="c8202-202">默认情况下， `Wait-Job` 当作业处于以下状态之一时，将返回或结束等待：</span><span class="sxs-lookup"><span data-stu-id="c8202-202">By default, `Wait-Job` returns, or ends the wait, when jobs are in one of the following states:</span></span>
+<span data-ttu-id="f1fd6-208">指示此 cmdlet 继续等待处于 "挂起" 或 "已断开连接" 状态的作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-208">Indicates that this cmdlet continues to wait for jobs in the Suspended or Disconnected state.</span></span> <span data-ttu-id="f1fd6-209">默认情况下， `Wait-Job` 当作业处于以下状态之一时，将返回或结束等待：</span><span class="sxs-lookup"><span data-stu-id="f1fd6-209">By default, `Wait-Job` returns, or ends the wait, when jobs are in one of the following states:</span></span>
 
-- <span data-ttu-id="c8202-203">已完成</span><span class="sxs-lookup"><span data-stu-id="c8202-203">Completed</span></span>
-- <span data-ttu-id="c8202-204">已失败</span><span class="sxs-lookup"><span data-stu-id="c8202-204">Failed</span></span>
-- <span data-ttu-id="c8202-205">已停止</span><span class="sxs-lookup"><span data-stu-id="c8202-205">Stopped</span></span>
-- <span data-ttu-id="c8202-206">Suspended</span><span class="sxs-lookup"><span data-stu-id="c8202-206">Suspended</span></span>
-- <span data-ttu-id="c8202-207">已断开连接</span><span class="sxs-lookup"><span data-stu-id="c8202-207">Disconnected</span></span>
+- <span data-ttu-id="f1fd6-210">已完成</span><span class="sxs-lookup"><span data-stu-id="f1fd6-210">Completed</span></span>
+- <span data-ttu-id="f1fd6-211">已失败</span><span class="sxs-lookup"><span data-stu-id="f1fd6-211">Failed</span></span>
+- <span data-ttu-id="f1fd6-212">已停止</span><span class="sxs-lookup"><span data-stu-id="f1fd6-212">Stopped</span></span>
+- <span data-ttu-id="f1fd6-213">Suspended</span><span class="sxs-lookup"><span data-stu-id="f1fd6-213">Suspended</span></span>
+- <span data-ttu-id="f1fd6-214">已断开连接</span><span class="sxs-lookup"><span data-stu-id="f1fd6-214">Disconnected</span></span>
 
-<span data-ttu-id="c8202-208">已在 Windows PowerShell 3.0 中引入了此参数。</span><span class="sxs-lookup"><span data-stu-id="c8202-208">This parameter was introduced in Windows PowerShell 3.0.</span></span>
+<span data-ttu-id="f1fd6-215">已在 Windows PowerShell 3.0 中引入了此参数。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-215">This parameter was introduced in Windows PowerShell 3.0.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -285,11 +294,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c8202-209">-Id</span><span class="sxs-lookup"><span data-stu-id="c8202-209">-Id</span></span>
+### <span data-ttu-id="f1fd6-216">-Id</span><span class="sxs-lookup"><span data-stu-id="f1fd6-216">-Id</span></span>
 
-<span data-ttu-id="c8202-210">指定此 cmdlet 等待的作业的 Id 的数组。</span><span class="sxs-lookup"><span data-stu-id="c8202-210">Specifies an array of IDs of jobs for which this cmdlet waits.</span></span>
+<span data-ttu-id="f1fd6-217">指定此 cmdlet 等待的作业的 Id 的数组。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-217">Specifies an array of IDs of jobs for which this cmdlet waits.</span></span>
 
-<span data-ttu-id="c8202-211">ID 是一个整数，用于唯一标识当前会话中的作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-211">The ID is an integer that uniquely identifies the job in the current session.</span></span> <span data-ttu-id="c8202-212">它比实例 ID 更容易记住和键入，但它仅在当前会话中是唯一的。</span><span class="sxs-lookup"><span data-stu-id="c8202-212">It is easier to remember and type than the instance ID, but it is unique only in the current session.</span></span> <span data-ttu-id="c8202-213">你可以键入一个或多个 Id （以逗号分隔）。</span><span class="sxs-lookup"><span data-stu-id="c8202-213">You can type one or more IDs, separated by commas.</span></span> <span data-ttu-id="c8202-214">若要查找作业的 ID，请键入 `Get-Job` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-214">To find the ID of a job, type `Get-Job`.</span></span>
+<span data-ttu-id="f1fd6-218">ID 是一个整数，用于唯一标识当前会话中的作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-218">The ID is an integer that uniquely identifies the job in the current session.</span></span> <span data-ttu-id="f1fd6-219">它比实例 ID 更容易记住和键入，但它仅在当前会话中是唯一的。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-219">It is easier to remember and type than the instance ID, but it is unique only in the current session.</span></span> <span data-ttu-id="f1fd6-220">你可以键入一个或多个 Id （以逗号分隔）。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-220">You can type one or more IDs, separated by commas.</span></span> <span data-ttu-id="f1fd6-221">若要查找作业的 ID，请键入 `Get-Job` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-221">To find the ID of a job, type `Get-Job`.</span></span>
 
 ```yaml
 Type: System.Int32[]
@@ -303,11 +312,11 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c8202-215">-InstanceId</span><span class="sxs-lookup"><span data-stu-id="c8202-215">-InstanceId</span></span>
+### <span data-ttu-id="f1fd6-222">-InstanceId</span><span class="sxs-lookup"><span data-stu-id="f1fd6-222">-InstanceId</span></span>
 
-<span data-ttu-id="c8202-216">指定此 cmdlet 等待的作业的实例 Id 的数组。</span><span class="sxs-lookup"><span data-stu-id="c8202-216">Specifies an array of instance IDs of jobs for which this cmdlet waits.</span></span> <span data-ttu-id="c8202-217">默认值为所有作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-217">The default is all jobs.</span></span>
+<span data-ttu-id="f1fd6-223">指定此 cmdlet 等待的作业的实例 Id 的数组。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-223">Specifies an array of instance IDs of jobs for which this cmdlet waits.</span></span> <span data-ttu-id="f1fd6-224">默认值为所有作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-224">The default is all jobs.</span></span>
 
-<span data-ttu-id="c8202-218">实例 ID 是一个 GUID，用于在计算机上唯一标识作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-218">An instance ID is a GUID that uniquely identifies the job on the computer.</span></span> <span data-ttu-id="c8202-219">若要查找作业的实例 ID，请使用 `Get-Job` 。</span><span class="sxs-lookup"><span data-stu-id="c8202-219">To find the instance ID of a job, use `Get-Job`.</span></span>
+<span data-ttu-id="f1fd6-225">实例 ID 是一个 GUID，用于在计算机上唯一标识作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-225">An instance ID is a GUID that uniquely identifies the job on the computer.</span></span> <span data-ttu-id="f1fd6-226">若要查找作业的实例 ID，请使用 `Get-Job` 。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-226">To find the instance ID of a job, use `Get-Job`.</span></span>
 
 ```yaml
 Type: System.Guid[]
@@ -321,9 +330,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c8202-220">-Job</span><span class="sxs-lookup"><span data-stu-id="c8202-220">-Job</span></span>
+### <span data-ttu-id="f1fd6-227">-Job</span><span class="sxs-lookup"><span data-stu-id="f1fd6-227">-Job</span></span>
 
-<span data-ttu-id="c8202-221">指定此 cmdlet 要等待的作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-221">Specifies the jobs for which this cmdlet waits.</span></span> <span data-ttu-id="c8202-222">输入一个包含作业对象的变量或可获取作业对象的命令。</span><span class="sxs-lookup"><span data-stu-id="c8202-222">Enter a variable that contains the job objects or a command that gets the job objects.</span></span> <span data-ttu-id="c8202-223">你还可以使用管道运算符将作业对象发送到 `Wait-Job` cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c8202-223">You can also use a pipeline operator to send job objects to the `Wait-Job` cmdlet.</span></span> <span data-ttu-id="c8202-224">默认情况下， `Wait-Job` 将等待在当前会话中创建的所有作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-224">By default, `Wait-Job` waits for all jobs created in the current session.</span></span>
+<span data-ttu-id="f1fd6-228">指定此 cmdlet 要等待的作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-228">Specifies the jobs for which this cmdlet waits.</span></span> <span data-ttu-id="f1fd6-229">输入一个包含作业对象的变量或可获取作业对象的命令。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-229">Enter a variable that contains the job objects or a command that gets the job objects.</span></span> <span data-ttu-id="f1fd6-230">你还可以使用管道运算符将作业对象发送到 `Wait-Job` cmdlet。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-230">You can also use a pipeline operator to send job objects to the `Wait-Job` cmdlet.</span></span> <span data-ttu-id="f1fd6-231">默认情况下， `Wait-Job` 将等待在当前会话中创建的所有作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-231">By default, `Wait-Job` waits for all jobs created in the current session.</span></span>
 
 ```yaml
 Type: System.Management.Automation.Job[]
@@ -337,9 +346,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c8202-225">-Name</span><span class="sxs-lookup"><span data-stu-id="c8202-225">-Name</span></span>
+### <span data-ttu-id="f1fd6-232">-Name</span><span class="sxs-lookup"><span data-stu-id="f1fd6-232">-Name</span></span>
 
-<span data-ttu-id="c8202-226">指定此 cmdlet 等待的作业的友好名称。</span><span class="sxs-lookup"><span data-stu-id="c8202-226">Specifies friendly names of jobs for which this cmdlet waits.</span></span>
+<span data-ttu-id="f1fd6-233">指定此 cmdlet 等待的作业的友好名称。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-233">Specifies friendly names of jobs for which this cmdlet waits.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -353,22 +362,22 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c8202-227">-State</span><span class="sxs-lookup"><span data-stu-id="c8202-227">-State</span></span>
+### <span data-ttu-id="f1fd6-234">-State</span><span class="sxs-lookup"><span data-stu-id="f1fd6-234">-State</span></span>
 
-<span data-ttu-id="c8202-228">指定作业状态。</span><span class="sxs-lookup"><span data-stu-id="c8202-228">Specifies a job state.</span></span> <span data-ttu-id="c8202-229">此 cmdlet 仅等待处于指定状态的作业。</span><span class="sxs-lookup"><span data-stu-id="c8202-229">This cmdlet waits only for jobs in the specified state.</span></span> <span data-ttu-id="c8202-230">此参数的可接受值为：</span><span class="sxs-lookup"><span data-stu-id="c8202-230">The acceptable values for this parameter are:</span></span>
+<span data-ttu-id="f1fd6-235">指定作业状态。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-235">Specifies a job state.</span></span> <span data-ttu-id="f1fd6-236">此 cmdlet 仅等待处于指定状态的作业。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-236">This cmdlet waits only for jobs in the specified state.</span></span> <span data-ttu-id="f1fd6-237">此参数的可接受值为：</span><span class="sxs-lookup"><span data-stu-id="f1fd6-237">The acceptable values for this parameter are:</span></span>
 
-- <span data-ttu-id="c8202-231">NotStarted</span><span class="sxs-lookup"><span data-stu-id="c8202-231">NotStarted</span></span>
-- <span data-ttu-id="c8202-232">正在运行</span><span class="sxs-lookup"><span data-stu-id="c8202-232">Running</span></span>
-- <span data-ttu-id="c8202-233">已完成</span><span class="sxs-lookup"><span data-stu-id="c8202-233">Completed</span></span>
-- <span data-ttu-id="c8202-234">已失败</span><span class="sxs-lookup"><span data-stu-id="c8202-234">Failed</span></span>
-- <span data-ttu-id="c8202-235">已停止</span><span class="sxs-lookup"><span data-stu-id="c8202-235">Stopped</span></span>
-- <span data-ttu-id="c8202-236">已阻止</span><span class="sxs-lookup"><span data-stu-id="c8202-236">Blocked</span></span>
-- <span data-ttu-id="c8202-237">Suspended</span><span class="sxs-lookup"><span data-stu-id="c8202-237">Suspended</span></span>
-- <span data-ttu-id="c8202-238">已断开连接</span><span class="sxs-lookup"><span data-stu-id="c8202-238">Disconnected</span></span>
-- <span data-ttu-id="c8202-239">正在暂停</span><span class="sxs-lookup"><span data-stu-id="c8202-239">Suspending</span></span>
-- <span data-ttu-id="c8202-240">正在停止</span><span class="sxs-lookup"><span data-stu-id="c8202-240">Stopping</span></span>
+- <span data-ttu-id="f1fd6-238">NotStarted</span><span class="sxs-lookup"><span data-stu-id="f1fd6-238">NotStarted</span></span>
+- <span data-ttu-id="f1fd6-239">正在运行</span><span class="sxs-lookup"><span data-stu-id="f1fd6-239">Running</span></span>
+- <span data-ttu-id="f1fd6-240">已完成</span><span class="sxs-lookup"><span data-stu-id="f1fd6-240">Completed</span></span>
+- <span data-ttu-id="f1fd6-241">已失败</span><span class="sxs-lookup"><span data-stu-id="f1fd6-241">Failed</span></span>
+- <span data-ttu-id="f1fd6-242">已停止</span><span class="sxs-lookup"><span data-stu-id="f1fd6-242">Stopped</span></span>
+- <span data-ttu-id="f1fd6-243">已阻止</span><span class="sxs-lookup"><span data-stu-id="f1fd6-243">Blocked</span></span>
+- <span data-ttu-id="f1fd6-244">Suspended</span><span class="sxs-lookup"><span data-stu-id="f1fd6-244">Suspended</span></span>
+- <span data-ttu-id="f1fd6-245">已断开连接</span><span class="sxs-lookup"><span data-stu-id="f1fd6-245">Disconnected</span></span>
+- <span data-ttu-id="f1fd6-246">正在暂停</span><span class="sxs-lookup"><span data-stu-id="f1fd6-246">Suspending</span></span>
+- <span data-ttu-id="f1fd6-247">正在停止</span><span class="sxs-lookup"><span data-stu-id="f1fd6-247">Stopping</span></span>
 
-<span data-ttu-id="c8202-241">有关作业状态的详细信息，请参阅 [JobState 枚举](/dotnet/api/system.management.automation.jobstate)。</span><span class="sxs-lookup"><span data-stu-id="c8202-241">For more information about job states, see [JobState Enumeration](/dotnet/api/system.management.automation.jobstate).</span></span>
+<span data-ttu-id="f1fd6-248">有关作业状态的详细信息，请参阅 [JobState 枚举](/dotnet/api/system.management.automation.jobstate)。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-248">For more information about job states, see [JobState Enumeration](/dotnet/api/system.management.automation.jobstate).</span></span>
 
 ```yaml
 Type: System.Management.Automation.JobState
@@ -383,11 +392,12 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c8202-242">-Timeout</span><span class="sxs-lookup"><span data-stu-id="c8202-242">-Timeout</span></span>
+### <span data-ttu-id="f1fd6-249">-Timeout</span><span class="sxs-lookup"><span data-stu-id="f1fd6-249">-Timeout</span></span>
 
-<span data-ttu-id="c8202-243">指定每个后台作业的最长等待时间（以秒为单位）。</span><span class="sxs-lookup"><span data-stu-id="c8202-243">Specifies the maximum wait time for each background job, in seconds.</span></span> <span data-ttu-id="c8202-244">默认值为-1，指示该 cmdlet 将等待直到作业完成。</span><span class="sxs-lookup"><span data-stu-id="c8202-244">The default value, -1, indicates that the cmdlet waits until the job finishes.</span></span> <span data-ttu-id="c8202-245">提交命令时将开始计时 `Wait-Job` ，而不是 `Start-Job` 命令。</span><span class="sxs-lookup"><span data-stu-id="c8202-245">The timing starts when you submit the `Wait-Job` command, not the `Start-Job` command.</span></span>
+<span data-ttu-id="f1fd6-250">指定每个作业的最长等待时间（以秒为单位）。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-250">Specifies the maximum wait time for each job, in seconds.</span></span> <span data-ttu-id="f1fd6-251">默认值为-1，指示该 cmdlet 将等待直到作业完成。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-251">The default value, -1, indicates that the cmdlet waits until the job finishes.</span></span> <span data-ttu-id="f1fd6-252">提交命令时将开始计时 `Wait-Job` ，而不是 `Start-Job` 命令。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-252">The timing starts when you submit the `Wait-Job` command, not the `Start-Job` command.</span></span>
 
-<span data-ttu-id="c8202-246">如果超过此时间，则等待结束，并返回命令提示符，即使作业仍在运行也是如此。</span><span class="sxs-lookup"><span data-stu-id="c8202-246">If this time is exceeded, the wait ends and the command prompt returns, even if the job is still running.</span></span> <span data-ttu-id="c8202-247">此命令不会显示任何错误消息。</span><span class="sxs-lookup"><span data-stu-id="c8202-247">The command does not display any error message.</span></span>
+<span data-ttu-id="f1fd6-253">如果超过此时间，则等待结束，并继续执行，即使作业仍在运行也是如此。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-253">If this time is exceeded, the wait ends and execution continues, even if the job is still running.</span></span>
+<span data-ttu-id="f1fd6-254">此命令不会显示任何错误消息。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-254">The command does not display any error message.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -401,42 +411,42 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c8202-248">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c8202-248">CommonParameters</span></span>
+### <span data-ttu-id="f1fd6-255">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f1fd6-255">CommonParameters</span></span>
 
-<span data-ttu-id="c8202-249">此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="c8202-249">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c8202-250">有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="c8202-250">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="f1fd6-256">此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-256">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f1fd6-257">有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-257">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="c8202-251">输入</span><span class="sxs-lookup"><span data-stu-id="c8202-251">INPUTS</span></span>
+## <span data-ttu-id="f1fd6-258">输入</span><span class="sxs-lookup"><span data-stu-id="f1fd6-258">INPUTS</span></span>
 
-### <span data-ttu-id="c8202-252">System.Management.Automation.RemotingJob</span><span class="sxs-lookup"><span data-stu-id="c8202-252">System.Management.Automation.RemotingJob</span></span>
+### <span data-ttu-id="f1fd6-259">System.Management.Automation.RemotingJob</span><span class="sxs-lookup"><span data-stu-id="f1fd6-259">System.Management.Automation.RemotingJob</span></span>
 
-<span data-ttu-id="c8202-253">可以通过管道将作业对象传递给此 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c8202-253">You can pipe a job object to this cmdlet.</span></span>
+<span data-ttu-id="f1fd6-260">可以通过管道将作业对象传递给此 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-260">You can pipe a job object to this cmdlet.</span></span>
 
-## <span data-ttu-id="c8202-254">输出</span><span class="sxs-lookup"><span data-stu-id="c8202-254">OUTPUTS</span></span>
+## <span data-ttu-id="f1fd6-261">输出</span><span class="sxs-lookup"><span data-stu-id="f1fd6-261">OUTPUTS</span></span>
 
-### <span data-ttu-id="c8202-255">System.Management.Automation.PSRemotingJob</span><span class="sxs-lookup"><span data-stu-id="c8202-255">System.Management.Automation.PSRemotingJob</span></span>
+### <span data-ttu-id="f1fd6-262">System.Management.Automation.PSRemotingJob</span><span class="sxs-lookup"><span data-stu-id="f1fd6-262">System.Management.Automation.PSRemotingJob</span></span>
 
-<span data-ttu-id="c8202-256">此 cmdlet 将返回表示已完成作业的作业对象。</span><span class="sxs-lookup"><span data-stu-id="c8202-256">This cmdlet returns job objects that represent the completed jobs.</span></span> <span data-ttu-id="c8202-257">如果等待由于超过 **Timeout** 参数的值而结束，则 `Wait-Job` 不返回任何对象。</span><span class="sxs-lookup"><span data-stu-id="c8202-257">If the wait ends because the value of the **Timeout** parameter is exceeded, `Wait-Job` does not return any objects.</span></span>
+<span data-ttu-id="f1fd6-263">此 cmdlet 将返回表示处于终止状态的作业的作业对象。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-263">This cmdlet returns job objects that represent the jobs in a terminating state.</span></span> <span data-ttu-id="f1fd6-264">如果等待由于超过 **Timeout** 参数的值而结束，则 `Wait-Job` 不返回任何对象。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-264">If the wait ends because the value of the **Timeout** parameter is exceeded, `Wait-Job` does not return any objects.</span></span>
 
-## <span data-ttu-id="c8202-258">注释</span><span class="sxs-lookup"><span data-stu-id="c8202-258">NOTES</span></span>
+## <span data-ttu-id="f1fd6-265">注释</span><span class="sxs-lookup"><span data-stu-id="f1fd6-265">NOTES</span></span>
 
-<span data-ttu-id="c8202-259">默认情况下， `Wait-Job` 当作业处于以下状态之一时，将返回或结束等待：</span><span class="sxs-lookup"><span data-stu-id="c8202-259">By default, `Wait-Job` returns, or ends the wait, when jobs are in one of the following states:</span></span>
+<span data-ttu-id="f1fd6-266">默认情况下， `Wait-Job` 当作业处于以下状态之一时，将返回或结束等待：</span><span class="sxs-lookup"><span data-stu-id="f1fd6-266">By default, `Wait-Job` returns, or ends the wait, when jobs are in one of the following states:</span></span>
 
-- <span data-ttu-id="c8202-260">已完成</span><span class="sxs-lookup"><span data-stu-id="c8202-260">Completed</span></span>
-- <span data-ttu-id="c8202-261">已失败</span><span class="sxs-lookup"><span data-stu-id="c8202-261">Failed</span></span>
-- <span data-ttu-id="c8202-262">已停止</span><span class="sxs-lookup"><span data-stu-id="c8202-262">Stopped</span></span>
-- <span data-ttu-id="c8202-263">已挂起</span><span class="sxs-lookup"><span data-stu-id="c8202-263">Suspended</span></span>
-- <span data-ttu-id="c8202-264">断开连接以 `Wait-Job` 继续等待挂起和断开连接的作业，请使用 **Force** 参数。</span><span class="sxs-lookup"><span data-stu-id="c8202-264">Disconnected To direct `Wait-Job` to continue to wait for Suspended and Disconnected jobs, use the **Force** parameter.</span></span>
+- <span data-ttu-id="f1fd6-267">已完成</span><span class="sxs-lookup"><span data-stu-id="f1fd6-267">Completed</span></span>
+- <span data-ttu-id="f1fd6-268">已失败</span><span class="sxs-lookup"><span data-stu-id="f1fd6-268">Failed</span></span>
+- <span data-ttu-id="f1fd6-269">已停止</span><span class="sxs-lookup"><span data-stu-id="f1fd6-269">Stopped</span></span>
+- <span data-ttu-id="f1fd6-270">已挂起</span><span class="sxs-lookup"><span data-stu-id="f1fd6-270">Suspended</span></span>
+- <span data-ttu-id="f1fd6-271">断开连接以 `Wait-Job` 继续等待挂起和断开连接的作业，请使用 **Force** 参数。</span><span class="sxs-lookup"><span data-stu-id="f1fd6-271">Disconnected To direct `Wait-Job` to continue to wait for Suspended and Disconnected jobs, use the **Force** parameter.</span></span>
 
-## <span data-ttu-id="c8202-265">相关链接</span><span class="sxs-lookup"><span data-stu-id="c8202-265">RELATED LINKS</span></span>
+## <span data-ttu-id="f1fd6-272">相关链接</span><span class="sxs-lookup"><span data-stu-id="f1fd6-272">RELATED LINKS</span></span>
 
-[<span data-ttu-id="c8202-266">Get-Job</span><span class="sxs-lookup"><span data-stu-id="c8202-266">Get-Job</span></span>](Get-Job.md)
+[<span data-ttu-id="f1fd6-273">Get-Job</span><span class="sxs-lookup"><span data-stu-id="f1fd6-273">Get-Job</span></span>](Get-Job.md)
 
-[<span data-ttu-id="c8202-267">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="c8202-267">Invoke-Command</span></span>](Invoke-Command.md)
+[<span data-ttu-id="f1fd6-274">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="f1fd6-274">Invoke-Command</span></span>](Invoke-Command.md)
 
-[<span data-ttu-id="c8202-268">Receive-Job</span><span class="sxs-lookup"><span data-stu-id="c8202-268">Receive-Job</span></span>](Receive-Job.md)
+[<span data-ttu-id="f1fd6-275">Receive-Job</span><span class="sxs-lookup"><span data-stu-id="f1fd6-275">Receive-Job</span></span>](Receive-Job.md)
 
-[<span data-ttu-id="c8202-269">Remove-Job</span><span class="sxs-lookup"><span data-stu-id="c8202-269">Remove-Job</span></span>](Remove-Job.md)
+[<span data-ttu-id="f1fd6-276">Remove-Job</span><span class="sxs-lookup"><span data-stu-id="f1fd6-276">Remove-Job</span></span>](Remove-Job.md)
 
-[<span data-ttu-id="c8202-270">Start-Job</span><span class="sxs-lookup"><span data-stu-id="c8202-270">Start-Job</span></span>](Start-Job.md)
+[<span data-ttu-id="f1fd6-277">Start-Job</span><span class="sxs-lookup"><span data-stu-id="f1fd6-277">Start-Job</span></span>](Start-Job.md)
 
-[<span data-ttu-id="c8202-271">Stop-Job</span><span class="sxs-lookup"><span data-stu-id="c8202-271">Stop-Job</span></span>](Stop-Job.md)
+[<span data-ttu-id="f1fd6-278">Stop-Job</span><span class="sxs-lookup"><span data-stu-id="f1fd6-278">Stop-Job</span></span>](Stop-Job.md)
