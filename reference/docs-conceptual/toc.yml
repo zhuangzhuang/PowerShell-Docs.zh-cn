@@ -570,14 +570,10 @@
       href: community/hall-of-fame.md
     - name: Docs 中的新增内容
       items:
-        - name: 2020 年第 4 季度
-          href: community/2020-Q4.md
-        - name: 2020-Q3
-          href: community/2020-Q3.md
-        - name: 2020-Q2
-          href: community/2020-Q2.md
-        - name: 2020-Q1
-          href: community/2020-Q1.md
+        - name: 2021 版更新
+          href: community/2021-updates.md
+        - name: 2020 版更新
+          href: community/2020-updates.md
     - name: 参与者指南
       items:
         - name: 概述
@@ -775,7 +771,7 @@
         - name: GDPR 符合性
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: 有关库的常见问题
-      href: gallery/faqs.md
+      href: gallery/faqs.yml
 - name: 脚本和开发
   items:
     - name: Visual Studio Code
