@@ -2,15 +2,14 @@
 title: 附录 A - 帮助语法
 description: 本文介绍如何阅读和理解 Get-Help 提供的 cmdlet 的语法。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: e8e28f66c02370b098f63a0396ef8a724cf3a1bd
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
-ms.translationtype: HT
+ms.openlocfilehash: b8fe218f2a9af1ad1ee6b88740414ecede0194bd
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437978"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99595599"
 ---
 # <a name="appendix-a---help-syntax"></a>附录 A - 帮助语法
 

@@ -2,15 +2,14 @@
 title: 流量控制
 description: PowerShell 提供了一些方法，用于创建循环、制定决策以及以逻辑方式控制脚本中的代码流。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 4f0d7b7f5f3c12bb9475af5aed42b2d32cfbc14d
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
-ms.translationtype: HT
+ms.openlocfilehash: 74595f8c6a5d4a49b05e72dd6bde1441fd2b464e
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437988"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99598043"
 ---
 # <a name="chapter-6---flow-control"></a>第 6 章 - 流控制
 

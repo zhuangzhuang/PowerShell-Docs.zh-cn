@@ -3,10 +3,10 @@ title: 通过 SSH 进行 PowerShell 远程处理
 ms.date: 10/19/2020
 description: 介绍如何为 PowerShell 远程处理设置 SSH 协议。
 ms.openlocfilehash: c3373ac30fd915d42e8c9fb7f1eae348a2aee7f1
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501331"
 ---
 # <a name="powershell-remoting-over-ssh"></a>通过 SSH 进行 PowerShell 远程处理
@@ -161,7 +161,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的�
 
 1. 编辑 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 文件。
 
-   打开文本编辑器，例如 **nano** ：
+   打开文本编辑器，例如 **nano**：
 
    ```bash
    sudo nano /private/etc/ssh/sshd_config

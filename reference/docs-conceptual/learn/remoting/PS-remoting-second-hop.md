@@ -4,20 +4,20 @@ keywords: powershell,cmdlet
 title: 在 PowerShell 远程处理中形成第二个跃点
 description: 本文介绍为 PowerShell 远程处理配置第二跃点身份验证的各种方法，包括安全隐患和建议。
 ms.openlocfilehash: 905b27b4e6c612249c945a741bbe0d2ba9ae28aa
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501365"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 远程处理中形成第二个跃点
 
 “第二个跃点问题”是指如下所示的情况：
 
-1. 已登录到 _ServerA_ 。
-2. 在 _ServerA_ 中，启动远程 PowerShell 会话，以连接到 _ServerB_ 。
+1. 已登录到 _ServerA_。
+2. 在 _ServerA_ 中，启动远程 PowerShell 会话，以连接到 _ServerB_。
 3. 通过 PowerShell 远程处理会话在 _ServerB_ 上运行的命令尝试访问 _ServerC_ 上的资源。
-4. 已拒绝访问 _ServerC_ 上的资源，因为用于创建 PowerShell 远程处理会话的凭据未从 _ServerB_ 传递到 _ServerC_ 。
+4. 已拒绝访问 _ServerC_ 上的资源，因为用于创建 PowerShell 远程处理会话的凭据未从 _ServerB_ 传递到 _ServerC_。
 
 有几种方法可以解决此问题： 下表按优先级列出了方法。
 
@@ -34,7 +34,7 @@ ms.locfileid: "92501365"
 ## <a name="credssp"></a>CredSSP
 
 可以使用[凭据安全支持提供程序(CredSSP)][credssp] 进行身份验证。
-CredSSP 会将凭据缓存在远程服务器 ( _ServerB_ ) 上，因此使用它会给你带来凭据被盗攻击的风险。 如果远程计算机被攻破，攻击者将有权访问用户的凭据。 默认情况下，CredSSP 在客户端和服务器计算机上都处于禁用状态。 应该仅在最受信任的环境中启用 CredSSP。 例如，连接到域控制器的域管理员，因为域控制器是高度可信任的。
+CredSSP 会将凭据缓存在远程服务器 (_ServerB_) 上，因此使用它会给你带来凭据被盗攻击的风险。 如果远程计算机被攻破，攻击者将有权访问用户的凭据。 默认情况下，CredSSP 在客户端和服务器计算机上都处于禁用状态。 应该仅在最受信任的环境中启用 CredSSP。 例如，连接到域控制器的域管理员，因为域控制器是高度可信任的。
 
 若要详细了解在使用 CredSSP 进行 PowerShell 远程处理时需要注意的安全问题，请参阅[非蓄意破坏：当心 CredSSP][beware]。
 
@@ -155,7 +155,7 @@ $x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-Kerberos [密钥分发中心 (KDC)](/windows/win32/secauthn/key-distribution-center) 将拒绝访问尝试（负缓存）缓存保留 15 分钟。 如果 _ServerB_ 先前已尝试访问 _ServerC_ ，则需要通过调用以下命令清除 _ServerB_ 上的缓存：
+Kerberos [密钥分发中心 (KDC)](/windows/win32/secauthn/key-distribution-center) 将拒绝访问尝试（负缓存）缓存保留 15 分钟。 如果 _ServerB_ 先前已尝试访问 _ServerC_，则需要通过调用以下命令清除 _ServerB_ 上的缓存：
 
 ```powershell
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
@@ -241,7 +241,7 @@ JEA 允许限制管理员在 PowerShell 会话期间可以运行的命令。 它
 **缺点**
 
 - 需要 WMF 5.0 或更高版本。
-- 需要在每个中间服务器 ( _ServerB_ ) 上进行配置。
+- 需要在每个中间服务器 (_ServerB_) 上进行配置。
 
 ## <a name="pssessionconfiguration-using-runas"></a>使用 RunAs 的 PSSessionConfiguration
 
@@ -255,7 +255,7 @@ JEA 允许限制管理员在 PowerShell 会话期间可以运行的命令。 它
 
 **缺点**
 
-- 需要在每个中间服务器 ( _ServerB_ ) 上配置 **PSSessionConfiguration** 和 **RunAs** 。
+- 需要在每个中间服务器 (_ServerB_) 上配置 **PSSessionConfiguration** 和 **RunAs**。
 - 使用域 **RunAs** 帐户时要求密码维护
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>在 Invoke-Command 脚本块内传递凭据

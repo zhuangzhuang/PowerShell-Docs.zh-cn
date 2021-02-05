@@ -4,10 +4,10 @@ keywords: jea,powershell,安全性
 title: JEA 角色功能
 description: 角色功能是一个带 .psrc 扩展名的 PowerShell 数据文件，其中列出了向连接用户提供的所有 cmdlet、函数、提供程序和外部程序。
 ms.openlocfilehash: 233d9081f4a8f977f0959addb5573c4566f885d0
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92499988"
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
@@ -21,10 +21,10 @@ ms.locfileid: "92499988"
 你如何执行此过程由你的组织和目标而定。 以下提示可帮助确保你正确选择。
 
 1. **标识** 用户用于完成工作的命令。 这可能需要调查 IT 员工、检查自动化脚本，或者分析 PowerShell 会话脚本和日志。
-2. 将命令行工具改为使用 PowerShell 等效工具（若可能），实现最佳的审核和 JEA 自定义体验  。 不可将外部程序限制为与本机 PowerShell cmdlet 和 JEA 中的函数一样精细。
-3. 将 cmdlet 的范围限制为仅允许特定参数或参数值  。 如果用户只该管理系统的一部分，则这尤其重要。
-4. 创建自定义函数，替换复杂的命令或很难在 JEA 中进行约束的命令  。 封装了复杂命令或应用其他验证逻辑的简单函数可提供额外的掌控力，简化管理员和最终用户的操作。
-5. 通过用户或自动化服务测试允许命令的范围列表，并根据需要进行调整  。
+2. 将命令行工具改为使用 PowerShell 等效工具（若可能），实现最佳的审核和 JEA 自定义体验。 不可将外部程序限制为与本机 PowerShell cmdlet 和 JEA 中的函数一样精细。
+3. 将 cmdlet 的范围限制为仅允许特定参数或参数值。 如果用户只该管理系统的一部分，则这尤其重要。
+4. 创建自定义函数，替换复杂的命令或很难在 JEA 中进行约束的命令。 封装了复杂命令或应用其他验证逻辑的简单函数可提供额外的掌控力，简化管理员和最终用户的操作。
+5. 通过用户或自动化服务测试允许命令的范围列表，并根据需要进行调整。
 
 ### <a name="examples-of-potentially-dangerous-commands"></a>可能存在危险的命令示例
 
@@ -91,9 +91,9 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 > [!WARNING]
 > 最佳的安全做法是，建议在定义可见 cmdlet 或函数时不要使用通配符。 相反，应明确列出每个受信任的命令，确保共享同一命名方案的其他命令均未在无意中获得授权。
 
-无法向同一 cmdlet 或函数同时应用 ValidatePattern 和 ValidateSet  。
+无法向同一 cmdlet 或函数同时应用 ValidatePattern 和 ValidateSet。
 
-若如此操作，ValidatePattern 会覆盖 ValidateSet  。
+若如此操作，ValidatePattern 会覆盖 ValidateSet。
 
 有关 ValidatePattern 的详细信息，请参阅[“你好，脚本专家”博文](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/)和 [PowerShell 正则表达式](/powershell/module/microsoft.powershell.core/about/about_regular_expressions)参考内容。
 
@@ -109,7 +109,7 @@ VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Co
 
 通过很多可执行文件，可读取当前状态，随后再通过提供其他参数来更改它。
 
-例如，考虑使用文件服务器管理员的角色，它可管理系统托管的网络共享。 管理共享的一种方法是使用 `net share`。 但是，允许 net.exe 会带来风险，因为用户可使用该命令获取 `net group Administrators unprivilegedjeauser /add` 的管理员权限  。 更安全的选项是允许使用 [Get-SmbShare](/powershell/module/smbshare/get-smbshare)，该命令可实现相同的结果，但范围更受限制。
+例如，考虑使用文件服务器管理员的角色，它可管理系统托管的网络共享。 管理共享的一种方法是使用 `net share`。 但是，允许 net.exe 会带来风险，因为用户可使用该命令获取 `net group Administrators unprivilegedjeauser /add` 的管理员权限。 更安全的选项是允许使用 [Get-SmbShare](/powershell/module/smbshare/get-smbshare)，该命令可实现相同的结果，但范围更受限制。
 
 使外部命令可供用户在 JEA 会话中使用时，始终指定可执行文件的完整路径。 这可防止执行位于系统上其他位置的同名潜在恶意程序。
 
@@ -154,15 +154,15 @@ FunctionDefinitions = @{
 
 默认情况下，`Select-Object` 是所有 JEA 会话中受约束的 cmdlet，不允许选择对象的任意属性。 若要在函数中使用不受约束的 `Select-Object`，必须使用 FQMN 显式请求完整的实现。 通过函数调用 JEA 会话中任何受约束的 cmdlet 时，它都具有相同的约束。 有关详细信息，请参阅 [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence)。
 
-如果正在编写多个自定义函数，将其放到 PowerShell 脚本模块中可能更方便。 与使用内置模块和第三方模块时一样，可使用 VisibleFunctions 字段使这些函数在 JEA 会话中可见  。
+如果正在编写多个自定义函数，将其放到 PowerShell 脚本模块中可能更方便。 与使用内置模块和第三方模块时一样，可使用 VisibleFunctions 字段使这些函数在 JEA 会话中可见。
 
-为了使 tab 自动补全在 JEA 会话中正常工作，必须在 VisibleFunctions 列表中包含内置函数 `tabexpansion2` 。
+为了使 tab 自动补全在 JEA 会话中正常工作，必须在 VisibleFunctions 列表中包含内置函数 `tabexpansion2`。
 
 ## <a name="make-the-role-capabilities-available-to-a-configuration"></a>让角色功能可用于配置
 
-在 PowerShell 6 之前的版本中，必须将角色功能文件存储在 PowerShell 模块的“RoleCapabilities”  文件夹中，PowerShell 才能找到它。 此模块可存储在 `$env:PSModulePath` 环境变量内附的任何文件夹中，但不得放在 `$env:SystemRoot\System32` 中，也不得放到允许不受信任的用户修改其中文件的文件夹内。
+在 PowerShell 6 之前的版本中，必须将角色功能文件存储在 PowerShell 模块的“RoleCapabilities”文件夹中，PowerShell 才能找到它。 此模块可存储在 `$env:PSModulePath` 环境变量内附的任何文件夹中，但不得放在 `$env:SystemRoot\System32` 中，也不得放到允许不受信任的用户修改其中文件的文件夹内。
 
-下面的示例在 `$env:ProgramFiles` 路径中创建名为“ContosoJEA”  的 PowerShell 脚本模块，用于托管角色功能文件。
+下面的示例在 `$env:ProgramFiles` 路径中创建名为“ContosoJEA”的 PowerShell 脚本模块，用于托管角色功能文件。
 
 ```powershell
 # Create a folder for the module
@@ -182,7 +182,7 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 
 有关 PowerShell 模块的详细信息，请参阅[了解 PowerShell 模块](/powershell/scripting/developer/windows-powershell)。
 
-自 PowerShell 6 起，RoleDefinitions  属性已添加到会话配置文件中。 借助此属性，可以指定角色定义的角色配置文件的位置。 请参阅 [New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile) 中的示例。
+自 PowerShell 6 起，RoleDefinitions 属性已添加到会话配置文件中。 借助此属性，可以指定角色定义的角色配置文件的位置。 请参阅 [New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile) 中的示例。
 
 ## <a name="updating-role-capabilities"></a>更新角色功能
 

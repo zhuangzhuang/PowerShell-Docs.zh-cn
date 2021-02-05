@@ -2,15 +2,14 @@
 title: 函数
 description: 通过 PowerShell 函数，你可以创建可在脚本中重用的工具。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 9554c0b4d3932b7371201f7b08c8b9d26a567f5e
-ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
-ms.translationtype: HT
+ms.openlocfilehash: e4734b556a78f67c54152dad93eada536dd1c928
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94589120"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99596613"
 ---
 # <a name="chapter-9---functions"></a>第 9 章 - 函数
 
@@ -285,6 +284,8 @@ Machine                     0
 ```
 
 我还建议对参数名称使用与默认 cmdlet 相同的大小写。 使用 `ComputerName`，而不是 `computername`。 这会使你的函数看起来像默认 cmdlet。 已经熟悉 PowerShell 的用户会感到得心应手。
+
+`param`语句允许您定义一个或多个参数。 参数定义由逗号分隔 (`,`) 。 有关详细信息，请参阅 [about_Functions_Advanced_Parameters][]。
 
 ## <a name="advanced-functions"></a>高级函数
 

@@ -2,15 +2,14 @@
 title: 帮助系统
 description: 掌握帮助系统是成功使用 PowerShell 的关键。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 98876cf324b367fd5bb3c3462cb90ea6d7c7d5b9
-ms.sourcegitcommit: 0942a6de384f4a1c624e89b1889434a30d22f4d6
-ms.translationtype: HT
+ms.openlocfilehash: cfb12f57b7bb6c514f4e19a93dfe9c77245bd977
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93143307"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99598659"
 ---
 # <a name="chapter-2---the-help-system"></a>第 2 章 - 帮助系统
 
@@ -485,10 +484,8 @@ Update-Help
 
 ```Output
 Update-Help : Failed to update Help for the module(s) 'BitsTransfer' with UI culture(s)
-{en-US} : The value of the HelpInfoUri key in the module manifest must resolve to a
-container or root URL on a website where the help files are stored. The HelpInfoUri
-'https://technet.microsoft.com/en-us/library/dd819413.aspx' does not resolve to a
-container.
+{en-US} : Unable to retrieve the HelpInfo XML file for UI culture en-US. Make sure the HelpInfoUri
+property in the module manifest is valid or check your network connection and then try the command again.
 At line:1 char:1
 + Update-Help
 +

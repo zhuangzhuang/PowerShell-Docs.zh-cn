@@ -4,10 +4,10 @@ keywords: jea,powershell,安全性
 title: JEA 审核和报告
 description: 审核可帮助你评估适当的人员是否有权访问 JEA 终结点，以及向其分配的角色是否仍适用。
 ms.openlocfilehash: 2140d6b756ae38d82e4943c373e8a75beea30e28
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92500005"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>JEA 审核和报告
@@ -32,7 +32,7 @@ Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS 
                 CONTOSO\JEA_DNS_AUDITORS AccessAllowed
 ```
 
-“权限”属性中列出了终结点的有效权限。 这些用户有权连接到 JEA 终结点。 但他们有权访问的角色和命令却是由用于注册终结点的  。 扩展 RoleDefinitions 属性，评估已注册的 JEA 终结点中的角色映射  。
+“权限”属性中列出了终结点的有效权限。 这些用户有权连接到 JEA 终结点。 但他们有权访问的角色和命令却是由用于注册终结点的[会话配置文件](session-configurations.md)中的 RoleDefinitions 属性决定。 扩展 RoleDefinitions 属性，评估已注册的 JEA 终结点中的角色映射。
 
 ```powershell
 # Get the desired session configuration
@@ -47,7 +47,7 @@ $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{
 
 ## <a name="find-available-role-capabilities-on-the-machine"></a>查找计算机上可用的角色功能
 
-JEA 从 PowerShell 模块内“RoleCapabilities”文件夹中存储的 `.psrc` 文件获取角色功能  。 下面的函数会查找计算机上提供的所有角色功能。
+JEA 从 PowerShell 模块内“RoleCapabilities”文件夹中存储的 `.psrc` 文件获取角色功能。 下面的函数会查找计算机上提供的所有角色功能。
 
 ```powershell
 function Find-LocalRoleCapability {
@@ -84,18 +84,18 @@ Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\A
 
 ## <a name="powershell-event-logs"></a>PowerShell 事件日志
 
-如果在系统上启用了模块或脚本块日志记录，则针对用户在 JEA 会话中运行的每条命令，可在 Windows 事件日志中看到相应事件。 要查找这些事件，请打开“Microsoft-Windows-PowerShell/Operational”事件日志，然后查找事件 ID 为 4104 的事件  。
+如果在系统上启用了模块或脚本块日志记录，则针对用户在 JEA 会话中运行的每条命令，可在 Windows 事件日志中看到相应事件。 要查找这些事件，请打开“Microsoft-Windows-PowerShell/Operational”事件日志，然后查找事件 ID 为 4104 的事件。
 
-每个事件日志项目都包括在其中运行命令的会话的相关信息。 对于 JEA 会话，该事件包含 ConnectedUser 和 RunAsUser 的相关信息  。 ConnectedUser 是实际创建 JEA 会话的用户  。 RunAsUser 是 JEA 用于执行该命令的帐户  。
+每个事件日志项目都包括在其中运行命令的会话的相关信息。 对于 JEA 会话，该事件包含 ConnectedUser 和 RunAsUser 的相关信息。 ConnectedUser 是实际创建 JEA 会话的用户。 RunAsUser 是 JEA 用于执行该命令的帐户。
 
-应用程序事件日志显示了 RunAsUser 所做的更改  。 因此需要启用模块和脚本日志记录才能将特定的命令调用回 ConnectedUser  。
+应用程序事件日志显示了 RunAsUser 所做的更改。 因此需要启用模块和脚本日志记录才能将特定的命令调用回 ConnectedUser。
 
 ## <a name="application-event-logs"></a>应用程序事件日志
 
 与外部应用程序或服务交互的 JEA 会话中运行的命令可能会将事件记录到其自己的事件日志中。 与 PowerShell 日志和脚本不同，其他日志记录机制不会捕获 JEA 会话已连接的用户。 相反，这些应用程序只记录虚拟运行身份用户。
 要确定运行该命令的用户，需要参考[会话脚本](#session-transcripts)或相关 PowerShell 事件日志（其中时间和用户显示在应用程序事件日志中）。
 
-WinRM 日志还可帮你将运行身份用户与应用程序事件日志中的连接用户联系起来。 Microsoft-Windows-Windows Remote Management/Operational 日志中 ID 为 193 的事件记录了每个新的 JEA 会话中连接用户和运行身份用户的安全标识符 (SID) 和帐户名称  。
+WinRM 日志还可帮你将运行身份用户与应用程序事件日志中的连接用户联系起来。 Microsoft-Windows-Windows Remote Management/Operational 日志中 ID 为 193 的事件记录了每个新的 JEA 会话中连接用户和运行身份用户的安全标识符 (SID) 和帐户名称。
 
 ## <a name="session-transcripts"></a>会话脚本
 
@@ -132,10 +132,10 @@ PS>CommandInvocation(Get-Service): "Get-Service"
 Running  Dns                DNS Server
 ```
 
-CommandInvocation 行是为用户运行的每个命令编写的  。 ParameterBindings 会记录随附该命令提供的每个参数和值  。 在上一示例中，可看到针对 `Get-Service` cmdlet 向 Name 参数提供了值 Dns  。
+CommandInvocation 行是为用户运行的每个命令编写的。 ParameterBindings 会记录随附该命令提供的每个参数和值。 在上一示例中，可看到针对 `Get-Service` cmdlet 向 Name 参数提供了值 Dns。
 
-每个命令的输出通常还会对 `Out-Default` 触发 CommandInvocation  。 `Out-Default` 的 InputObject 是从命令返回的 PowerShell 对象  。 该对象的详细信息如下面几行所示，严格模拟用户将看到的内容。
+每个命令的输出通常还会对 `Out-Default` 触发 CommandInvocation。 `Out-Default` 的 InputObject 是从命令返回的 PowerShell 对象。 该对象的详细信息如下面几行所示，严格模拟用户将看到的内容。
 
 ## <a name="see-also"></a>另请参阅
 
- 关于安全的博客文章](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
+[PowerShell ♥ the Blue Team 关于安全的博客文章](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)

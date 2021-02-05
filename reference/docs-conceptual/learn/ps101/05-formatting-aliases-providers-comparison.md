@@ -1,16 +1,15 @@
 ---
 title: 格式设置, 别名, 提供程序, 比较
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 description: 本章介绍输出格式设置、命令别名、提供程序和比较操作的概念。
-ms.openlocfilehash: efe70d2d220f8451e781603b6000c3553dda910c
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.openlocfilehash: 5573ca58601af0c6af15736b772a9792d8d77a79
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501603"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99596004"
 ---
 # <a name="chapter-5---formatting-aliases-providers-comparison"></a>第 5 章 - 格式设置、别名、提供程序、比较
 
