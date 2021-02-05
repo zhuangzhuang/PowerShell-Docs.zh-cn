@@ -1,13 +1,13 @@
 ---
-ms.date: 12/01/2020
+ms.date: 01/25/2021
 title: cmdlet 故障排除
 description: 本文提供了有关使用 PowerShell 库排查错误的信息和步骤
-ms.openlocfilehash: 980da8ea7b8a09513f33a9939d512c437b755d8d
-ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
+ms.openlocfilehash: 8139147683b655b5f8532c3068387db6df12a98f
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96913312"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771809"
 ---
 # <a name="troubleshooting-cmdlets"></a>cmdlet 故障排除
 
@@ -30,6 +30,7 @@ Update-Module Azure -Verbose
 - `devopsgallerystorage.blob.core.windows.net` - 存储帐户主机名
 - `*.powershellgallery.com` - 网站
 - `go.microsoft.com` - 重定向服务
+- `onegetcdn.azureedge.net` - 启动 `PowerShellGet/PackageManagement` 中的 NuGet 提供程序
 
 > [!NOTE]
 > 当 PowerShell 库服务发生中断时，与 PowerShell 库进行交互的 cmdlet 可能会失败，并出现意外错误。 若要查看 PowerShell 库的当前状态，请参阅 GitHub 上的 [PowerShell 库状态](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md)页面。

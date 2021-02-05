@@ -3,12 +3,12 @@ ms.date: 07/23/2020
 keywords: dsc,powershell,配置,安装程序
 title: DSC 资源
 description: DSC 资源为 DSC 配置提供构建基块。 资源公开可配置的属性（架构），并包含由 LCM 用于应用配置的 PowerShell 脚本函数。
-ms.openlocfilehash: 1634db84deff8de3b33c941ad738dc21cf3017ac
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 33268c68638bb581e0b2235a53aee9d186dff6be
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92658439"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771793"
 ---
 # <a name="dsc-resources"></a>DSC 资源
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 11/11/2020
+ms.date: 12/14/2020
 title: 使用 PowerShell 中的实验性功能
 description: 列出了目前可用的实验性功能及其用法。
-ms.openlocfilehash: 4df3601cd38120fedecbbad8a3c63a95240c5f15
-ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
+ms.openlocfilehash: be02829c27ff5d8babaf173d2ee7ebbfc7614773
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94625697"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879348"
 ---
 # <a name="using-experimental-features-in-powershell"></a>使用 PowerShell 中的实验性功能
 
@@ -24,20 +24,21 @@ PowerShell 中的实验性功能支持提供了一种机制，可便于实验性
 
 本文介绍了可用的实验性功能及其用法。
 
-|                            名称                            |   6.2   |   7.0   |   7.1   |
-| ---------------------------------------------------------- | :-----: | :-----: | :-----: |
-| PSTempDrive（PS 7.0 及更高版本中的主要支持）                        | &check; |         |         |
-| PSUseAbbreviationExpansion（PS 7.0 及更高版本中的主要支持）         | &check; |         |         |
-| PSNullConditionalOperators（PS 7.1 及更高版本中的主要支持）         |         | &check; |         |
-| PSUnixFileStat（仅限非 Windows - PS 7.1 及更高版本中的主要支持）  |         | &check; |         |
-| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
-| PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
-| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; | &check; |
-| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
-| PSNativePSPathResolution                                   |         |         | &check; |
-| PSCultureInvariantReplaceOperator                          |         |         | &check; |
-| PSNotApplyErrorActionToStderr                              |         |         | &check; |
-| PSSubsystemPluginModel                                     |         |         | &check; |
+|                            名称                            |   6.2   |   7.0   |   7.1   |   7.2   |
+| ---------------------------------------------------------- | :-----: | :-----: | :-----: | :-----: |
+| PSTempDrive（PS 7.0 及更高版本中的主要支持）                        | &check; |         |         |         |
+| PSUseAbbreviationExpansion（PS 7.0 及更高版本中的主要支持）         | &check; |         |         |         |
+| PSNullConditionalOperators（PS 7.1 及更高版本中的主要支持）         |         | &check; |         |         |
+| PSUnixFileStat（仅限非 Windows - PS 7.1 及更高版本中的主要支持）  |         | &check; |         |         |
+| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; | &check; |
+| PSImplicitRemotingBatching                                 | &check; | &check; | &check; | &check; |
+| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; | &check; | &check; |
+| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; | &check; |
+| PSNativePSPathResolution                                   |         |         | &check; | &check; |
+| PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
+| PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
+| PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiRendering                                            |         |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -65,6 +66,56 @@ $breakpoint = Get-PSBreakPoint -Runspace $runspace
 ```
 
 在此示例中，将启动一个作业，并将一个断点设置为当运行 `Set-PSBreakPoint` 时中断。 运行空间存储在变量中，并通过“运行空间”参数传递到 `Get-PSBreakPoint` 命令。 然后，则可以在 `$breakpoint` 变量中查看断点。
+
+## <a name="psansirendering"></a>PSAnsiRendering
+
+该试验是在 PowerShell 7.2 中添加的。 借助此功能，可更改 PowerShell 引擎如何输出文本并添加 `$PSStyle` 自动变量来控制字符串输出的 ANSI 呈现。
+
+```powershell
+PS> $PSStyle
+
+Name            MemberType Definition
+----            ---------- ----------
+Reset           Property   string AttributesOff {get;set;}
+Background      Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;set;}
+Blink           Property   string Blink {get;set;}
+BlinkOff        Property   string BlinkOff {get;set;}
+Bold            Property   string Bold {get;set;}
+BoldOff         Property   string BoldOff {get;set;}
+Foreground      Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;set;}
+Formatting      Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;set;}
+Hidden          Property   string Hidden {get;set;}
+HiddenOff       Property   string HiddenOff {get;set;}
+OutputRendering Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
+Reverse         Property   string Reverse {get;set;}
+ReverseOff      Property   string ReverseOff {get;set;}
+Italic          Property   string Standout {get;set;}
+ItalicOff       Property   string StandoutOff {get;set;}
+Underline       Property   string Underlined {get;set;}
+Underline Off   Property   string UnderlinedOff {get;set;}
+```
+
+基成员会返回映射到其名称的 ANSI 转义序列的字符串。 值可设置为允许自定义。
+
+有关详细信息，请参阅 [about_Automatic_Variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+
+> [!NOTE]
+> C# 开发人员可将 `PSStyle` 作为单一实例访问。 用法如下所示：
+>
+> ```csharp
+> string output = $"{PSStyle.Instance.Foreground.Red}{PSStyle.Instance.Bold}Hello{PSStyle.Instance.Reset}";
+> ```
+>
+> `PSStyle` 存在于 System.Management.Automation 命名空间中。
+
+除了有权访问 `$PSStyle` 外，这还引入了对 PowerShell 引擎的更改。 PowerShell 格式系统已更新，现遵循 `$PSStyle.OutputRendering`。
+
+- 添加了 `StringDecorated` 类型来处理 ANSI 转义字符串。
+- 添加了 `string IsDecorated` 布尔属性，它会根据字符串是包含 ESC 还是 C1 CSI 来返回字符串是否包含 ANSI 转义序列。
+- `Length` 属性仅返回没有 ANSI 转义序列的文本的长度。
+- `StringDecorated Substring(int contentLength)` 方法会返回一个子字符串，该字符串从索引 0 处开始，一直到超出 ANSI 转义序列的内容长度。 如果表格式设置要截断字符串，并保留未占用可打印字符空间的 ANSI 转义序列，则需要使用此方法。
+- `string ToString()` 方法保持不变，并返回字符串的纯文本版本。
+- `Ansi` 参数为 true 时，`string ToString(bool Ansi)` 方法返回原始 ANSI 嵌入字符串。 否则，返回已删除 ANSI 转义序列的纯文本版本。
 
 ## <a name="pscommandnotfoundsuggestion"></a>PSCommandNotFoundSuggestion
 
