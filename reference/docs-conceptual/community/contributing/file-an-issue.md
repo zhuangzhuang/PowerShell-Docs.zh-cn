@@ -1,14 +1,14 @@
 ---
 title: 如何提交 PowerShell-Docs 问题
 description: 本文说明如何提供有关 PowerShell 文档的反馈。
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: fa2c74d55cdcd779646c50d58f7705f7a4c33542
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
-ms.translationtype: HT
+ms.openlocfilehash: a044f77d3529817ec063d4a26fc9d10cdfe873aa
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79060292"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "99598854"
 ---
 # <a name="how-to-file-a-powershell-docs-issue"></a>如何提交 PowerShell-Docs 问题
 
@@ -21,10 +21,11 @@ ms.locfileid: "79060292"
 
 若要查看反馈控件的完整说明，请参阅发布此[功能][feedback]的 Docs 团队博客。
 
-在大多数 `docs.microsoft.com` 页面的底部，你都会看到两个反馈按钮。 一个是用于产品反馈的链接，另一个是用于文档反馈。 文档反馈需要一个 GitHub 帐户。 单击此按钮时，将在 GitHub 中对你的身份进行验证，然后提供一个简单的表单，供你输入反馈。 提交此表单后，此反馈控件会生成新的 GitHub 问题，并将它链接到当前的文章。
+在大多数 `docs.microsoft.com` 页面的底部，你都会看到两个反馈按钮。 一个是用于产品反馈的链接，另一个是用于文档反馈。 文档反馈需要一个 GitHub 帐户。 单击该按钮将使你进入 GitHub 并显示预填充的问题模板。
+输入反馈并提交表单。
 
 > [!NOTE]
-> 这不是一个支持渠道。 这是要求澄清文档或报告错误和遗漏的一种途径。 如需技术支持，请参阅[社区资源](../community-support.md)。
+> 这不是一个支持渠道。 这是一种询问有关文档的问题或报告错误和遗漏的方法。 如需技术支持，请参阅[社区资源](../community-support.md)。
 
 ## <a name="filing-issues-on-github"></a>在 GitHub 上提交问题
 
