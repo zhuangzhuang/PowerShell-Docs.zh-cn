@@ -2,15 +2,14 @@
 title: 发现对象、属性和方法
 description: 无需成为开发人员也能理解和使用对象、属性和方法。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 5ab972755afeba0d94bf6c2debaf84ec84cd9244
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
-ms.translationtype: HT
+ms.openlocfilehash: f226221da7dd3b663f54cf23439dd7f945ed3a2a
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438068"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99603572"
 ---
 # <a name="chapter-3---discovering-objects-properties-and-methods"></a>第 3 章 - 发现对象、属性和方法
 
@@ -698,7 +697,7 @@ UserPrincipalName      : miker@mikefrobbins.com
 - [about_Objects][]
 - [about_Properties][]
 - [about_Methods][]
-- [没有可用于启动或停止某内容的 PowerShell Cmdlet 吗？别忘了还可以查看和使用 Get Cmdlet 上的方法][use-methods]
+- [没有 PowerShell Cmdlet 可用于启动或停止某些内容？不要忘记在 Get Cmdlet 上检查方法][use-methods]
 
 <!-- link references -->
 [适用于 Windows 的 RSAT]: https://support.microsoft.com/help/2693643

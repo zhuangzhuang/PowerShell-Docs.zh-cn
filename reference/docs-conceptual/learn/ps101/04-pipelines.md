@@ -2,15 +2,14 @@
 title: 准确描述和管道
 description: PowerShell 单行命令是一个用于完成单个任务的连续管道，其中包含多个命令。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: b8fd45e5e5dc408754ebac015757ef4241428978
-ms.sourcegitcommit: 109f132360e8adbbdaf5dbc42a270be73d9dfa9b
-ms.translationtype: HT
+ms.openlocfilehash: 1483ec6b76d17c3dd081356ecff85a929fc43e2c
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633339"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99603573"
 ---
 # <a name="chapter-4---one-liners-and-the-pipeline"></a>第 4 章 - 单行命令和管道
 
@@ -23,7 +22,7 @@ ms.locfileid: "84633339"
 
 ## <a name="one-liners"></a>单行命令
 
-PowerShell 单行命令是一个连续管道，而不一定是一个物理行上的命令。 并非一个物理行上的所有命令都是单行命令。
+PowerShell one 命令是一种连续管道，不一定是一条物理线路上的命令。 并非一个物理行上的所有命令都是单行命令。
 
 即使以下命令位于多个物理行上，它也是 PowerShell 单行命令，因为它是一个连续管道。 它可以写在一个物理行上，但我已选择在管道符号处换行。 管道符号是 PowerShell 中允许自然换行处的某个字符。
 
