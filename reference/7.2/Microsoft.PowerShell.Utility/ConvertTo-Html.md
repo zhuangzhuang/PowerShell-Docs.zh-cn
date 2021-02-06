@@ -1,0 +1,470 @@
+---
+external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
+Module Name: Microsoft.PowerShell.Utility
+ms.date: 08/10/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-7.2&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: ConvertTo-Html
+ms.openlocfilehash: ffe7fe7c44258435c7ec9ddd2bab9ebeb9f6c465
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "99597253"
+---
+# ConvertTo-Html
+
+## 摘要
+将.NET 对象转换为可以在 Web 浏览器中显示的 HTML。
+
+## SYNTAX
+
+### Page（默认值）
+
+```
+ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [[-Body] <String[]>]
+ [[-Head] <String[]>] [[-Title] <String>] [-As <String>] [-CssUri <Uri>] [-PostContent <String[]>]
+ [-PreContent <String[]>] [-Meta <Hashtable>] [-Charset <String>] [-Transitional]
+ [<CommonParameters>]
+```
+
+### Fragment
+
+```
+ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [-As <String>] [-Fragment]
+ [-PostContent <String[]>] [-PreContent <String[]>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+
+`ConvertTo-Html`Cmdlet 可将 .net 对象转换为可在 Web 浏览器中显示的 HTML。 可使用此 cmdlet 在网页上显示命令的输出内容。
+
+您可以使用的参数来 `ConvertTo-Html` 选择对象属性、指定表格或列表格式、指定 HTML 页面标题、在对象前后添加文本，以及仅返回表格或列表片段，而不是严格的 DTD 页面。
+
+当你将多个对象提交到时 `ConvertTo-Html` ，PowerShell 会根据你提交的第一个对象的属性， (或列出) 。 如果剩余的对象不具有所指定的属性之一，则该对象的属性值为空单元。 如果剩余的对象有其他属性，这些属性值将不包括在文件中。
+
+## 示例
+
+### 示例1：创建显示日期的网页
+
+```powershell
+ConvertTo-Html -InputObject (Get-Date)
+```
+
+此命令创建用来显示当前日期的属性的 HTML 页。 它使用 **InputObject** 参数将命令的结果提交 `Get-Date` 给 `ConvertTo-Html` cmdlet。
+
+### 示例2：创建显示 PowerShell 别名的网页
+
+```powershell
+Get-Alias | ConvertTo-Html | Out-File aliases.htm
+Invoke-Item aliases.htm
+```
+
+此命令创建一个 HTML 页面，其中列出了当前控制台中的 PowerShell 别名。
+
+该命令使用 `Get-Alias` cmdlet 来获取别名。 它使用管道运算符 (`|`) 将别名发送到 `ConvertTo-Html` cmdlet，该 cmdlet 将创建 HTML 页。 该命令还使用 `Out-File` cmdlet 将 HTML 代码发送到该 `aliases.htm` 文件。
+
+### 示例3：创建网页以显示 PowerShell 事件
+
+```powershell
+`Get-EventLog` -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
+```
+
+此命令会创建一个名为 `pslog.htm` 的 HTML 页面，用于显示本地计算机上 Windows PowerShell 事件日志中的事件。
+
+它使用 `Get-EventLog` cmdlet 获取 Windows PowerShell 日志中的事件，然后使用管道运算符 (`|`) 将事件发送到 `ConvertTo-Html` cmdlet。 该命令还使用 `Out-File` cmdlet 将 HTML 代码发送到该 `pslog.htm` 文件。
+
+该命令还使用 `Out-File` cmdlet 将 HTML 代码发送到该 `pslog.htm` 文件。
+
+### 示例4：创建显示进程的网页
+
+```powershell
+Get-Process |
+  ConvertTo-Html -Property Name, Path, Company -Title "Process Information" |
+    Out-File proc.htm
+Invoke-Item proc.htm
+```
+
+这些命令创建并打开一个 HTML 页，该页列出了本地计算机上进程的名称、路径和所属公司。
+
+第一个命令使用 `Get-Process` cmdlet 来获取表示在计算机上运行的进程的对象。 该命令使用管道运算符 (`|`) 将进程对象发送到 `ConvertTo-Html` cmdlet。
+
+该命令使用 **Property** 参数来选择要包括在表中的进程对象的三个属性。 该命令使用 **title** 参数来指定 HTML 页的标题。 该命令还使用 `Out-File` cmdlet 将生成的 HTML 发送到名为 Proc.htm 的文件。
+
+第二个命令使用 `Invoke-Item` cmdlet `Proc.htm` 在默认浏览器中打开。
+
+### 示例5：创建网页以显示服务对象
+
+```powershell
+Get-Service | ConvertTo-Html -CssUri "test.css"
+```
+
+```Output
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>HTML TABLE</title>
+<link rel="stylesheet" type="text/css" href="test.css" />
+...
+```
+
+此命令创建 cmdlet 返回的服务对象的 HTML 页 `Get-Service` 。 该命令使用 **CssUri** 参数来指定 HTML 页的级联样式表。
+
+**CssUri** 参数向 `<link rel="stylesheet" type="text/css" href="test.css">` 生成的 HTML 添加其他标记。 标记中的 HREF 属性包含该样式表的名称。
+
+### 示例6：创建网页以显示服务对象
+
+```powershell
+Get-Service | ConvertTo-Html -As LIST | Out-File services.htm
+```
+
+此命令创建 cmdlet 返回的服务对象的 HTML 页 `Get-Service` 。 该命令使用 **As** 参数来指定列表格式。 Cmdlet `Out-File` 将生成的 HTML 发送到该 `Services.htm` 文件。
+
+### 示例7：为当前日期创建 web 表
+
+```powershell
+Get-Date | ConvertTo-Html -Fragment
+```
+
+```Output
+<table>
+<colgroup>...</colgroup>
+<tr><th>DisplayHint</th><th>DateTime</th><th>Date</th><th>Day</th><th>DayOfWeek</th><th>DayOfYear</th><th>Hour</th>
+<th>Kind</th><th>Millisecond</th><th>Minute</th><th>Month</th><th>Second</th><th>Ticks</th><th>TimeOfDay</th><th>Year</th></tr>
+<tr><td>DateTime</td><td>Monday, May 05, 2008 10:40:04 AM</td><td>5/5/2008 12:00:00 AM</td><td>5</td><td>Monday</td>
+<td>126</td><td>10</td><td>Local</td><td>123</td><td>40</td><td>5</td><td>4</td><td>633455808041237213</td><td>10:40:04.12
+37213</td><td>2008</td></tr>
+</table>
+```
+
+此命令使用 `ConvertTo-Html` 生成当前日期的 HTML 表。 该命令使用 `Get-Date` cmdlet 来获取当前日期。 它使用管道运算符 (|) 将结果发送到 `ConvertTo-Html` cmdlet。
+
+此 `ConvertTo-Html` 命令包含 **片段** 参数，该参数将输出限制为 HTML 表。 因此，将忽略 HTML 页的其他元素，如 `<HEAD>` 和 `<BODY>` 标记。
+
+### 示例8：创建网页以显示 PowerShell 事件
+
+```powershell
+Get-EventLog -Log "Windows PowerShell" | ConvertTo-Html -Property id, level, task
+```
+
+此命令使用 `Get-EventLog` cmdlet 从 Windows PowerShell 事件日志中获取事件。
+
+它使用管道运算符 (`|`) 将事件发送到 `ConvertTo-Html` cmdlet，后者将事件转换为 HTML 格式。
+
+该 `ConvertTo-Html` 命令使用 **Property** 参数来仅选择事件的 **ID**、 **Level** 和 **Task** 属性。
+
+### 示例9：创建显示指定服务的网页
+
+```powershell
+$htmlParams = @{
+  Title = "Windows Services: Server01"
+  Body = Get-Date
+  PreContent = "<P>Generated by Corporate IT</P>"
+  PostContent = "For details, contact Corporate IT."
+}
+Get-Service A* |
+  ConvertTo-Html @htmlParams |
+    Out-File Services.htm
+Invoke-Item Services.htm
+```
+
+此命令创建并打开一个网页，其中显示了计算机上以开头的服务。它使用的 **Title**、 **Body**、 **PreContent** 和 **PostContent** 参数 `ConvertTo-Html` 来自定义输出。
+
+该命令的第一部分使用 `Get-Service` cmdlet 来获取计算机上以开头的服务。该命令使用管道运算符 (`|`) 将结果发送到 `ConvertTo-Html` cmdlet。 该命令还使用 `Out-File` cmdlet 将输出发送到 Services.htm 文件中。
+
+分号 (`;`) 结束第一个命令并启动第二个命令，该命令使用 `Invoke-Item` cmdlet `Services.htm` 在默认浏览器中打开文件。
+
+### 示例10：设置 HTML 的元属性和字符集
+
+```powershell
+Get-Service | ConvertTo-HTML -Meta @{
+  refresh=10
+  author="Author's Name"
+  keywords="PowerShell, HTML, ConvertTo-HTML"
+} -Charset "UTF-8"
+```
+
+此命令为网页创建 HTML，其中包含用于刷新、创作和关键字的元标记。
+该页的字符集设置为 UTF-8
+
+### 示例11：将 HTML 设置为 XHTML 过渡 DTD
+
+```powershell
+Get-Service | ConvertTo-HTML -Transitional
+```
+
+此命令将返回的 HTML 的 DOCTYPE 设置为 XHTML 过渡 DTD
+
+## PARAMETERS
+
+### -As
+
+确定将对象设置为表格格式还是列表格式。 有效值为 **Table** 和 **List**。 默认值为 **Table**。
+
+**Table** 值会生成一个类似于 PowerShell 表格格式的 HTML 表。 标题行显示属性名称。 表格的每一行表示一个对象，并显示该对象的每个属性值。
+
+**列表** 值为每个对象生成一个两列的 HTML 表，其中每个对象都类似于 PowerShell 列表格式。 第一列显示属性名称。 第二列显示属性值。
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Table, List
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Body
+
+指定要在左 `<BODY>` 标记之后添加的文本。 默认情况下，该位置没有文本。
+
+```yaml
+Type: System.String[]
+Parameter Sets: Page
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -字符集
+
+指定要添加到开始标记的文本 `<charset>` 。 默认情况下，该位置没有文本。
+
+此参数是在 PowerShell 6.0 中引入的。
+
+```yaml
+Type: System.String
+Parameter Sets: Page
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CssUri
+
+指定级联样式表 (CSS) 的统一资源标识符 (URI)，该 URI 适用于 HTML 文件。 输出中的样式表链接中包含该 URI。
+
+```yaml
+Type: System.Uri
+Parameter Sets: Page
+Aliases: cu, uri
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Fragment
+
+仅生成一个 HTML 表。 省略了 HTML、HEAD、TITLE 和 BODY 标记。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Fragment
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Head
+
+指定 `<HEAD>` 标记的内容。 默认值为 `<title\>HTML TABLE</title>`。 如果使用 **Head** 参数，则将忽略 **Title** 参数。
+
+```yaml
+Type: System.String[]
+Parameter Sets: Page
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+
+指定要用 HTML 表示的对象。 输入一个包含对象的变量，或键入可获取对象的命令或表达式。
+
+如果使用此参数提交多个对象（如计算机上的所有服务），则将 `ConvertTo-Html` 创建一个表，该表显示集合的属性或对象的数组。 若要创建单个对象的表，请使用管道运算符通过管道将对象传递给 `ConvertTo-Html` 。
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -元
+
+指定要添加到开始标记的文本 `<meta>` 。 默认情况下，该位置没有文本。
+
+此参数是在 PowerShell 6.0 中引入的。
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: Page
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PostContent
+
+指定要在右 `</TABLE>` 标记之后添加的文本。 默认情况下，该位置没有文本。
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PreContent
+
+指定要在左 `<TABLE>` 标记之前添加的文本。 默认情况下，该位置没有文本。
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Property
+
+在 HTML 中包括所指定的对象属性。 **Property** 参数的值可以是新的计算属性。 计算属性可以是脚本块，也可以是哈希表。 有效的键-值对为：
+
+- 在 PowerShell 3.x 中添加的名称 (或标签) `<string>` () 
+- Expression `<string>` 或 `<script block>`
+- 说明符 `<string>`
+- Width- `<int32>` -必须大于 `0`
+- 对齐值可以是 `Left` 、 `Center` 或 `Right`
+
+有关详细信息，请参阅 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)。
+
+```yaml
+Type: System.Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Title
+
+指定 HTML 文件的标题，即在 `<TITLE>` 标记之间显示的文本。
+
+```yaml
+Type: System.String
+Parameter Sets: Page
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -过渡
+
+将 **doctype** 更改为 **xhtml 过渡 Dtd**，默认 **doctype** 为 **xhtml 严格 DTD**。
+
+此参数是在 PowerShell 6.0 中引入的。
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Page
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+
+此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
+
+## 输入
+
+### System.Management.Automation.PSObject
+
+可以通过管道将任何 .NET 对象传递给 `ConvertTo-Html` 。
+
+## 输出
+
+### System.object 或 System.Xml.Xml文档
+
+`ConvertTo-Html` 返回包含有效 HTML 的字符串序列。
+
+## 注释
+
+若要使用此 cmdlet，请通过管道将一个或多个对象传递给 cmdlet，或使用 **InputObject** 参数来指定对象。 当输入由多个对象组成时，这两种方法的输出将完全不同。
+
+- 通过管道将多个对象传递给 cmdlet 时，PowerShell 会一次将对象发送到 cmdlet。 因此， `ConvertTo-Html` 将创建一个显示单个对象的表。 例如，如果通过管道将计算机上的进程传递给 `ConvertTo-Html` ，则生成的表将显示所有进程。
+
+- 当使用 **InputObject** 参数提交多个对象时，将 `ConvertTo-Html` 以集合或数组的形式接收这些对象。 因此，它会创建一个表格，该表格将显示数组及其属性，而非数组中的项。 例如，如果使用 **InputObject** 将计算机上的进程提交到 `ConvertTo-Html` ，则生成的表将显示对象数组及其属性。
+
+  为了符合 XHTML 严格 DTD 的要求，会相应地修改 DOCTYPE 标记：
+
+   `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"\>`
+
+## 相关链接
+
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
+
+[ConvertTo-Csv](ConvertTo-Csv.md)
+
+[ConvertTo-Json](ConvertTo-Json.md)
+
+[ConvertTo-Xml](ConvertTo-Xml.md)
+
+[Export-Clixml](Export-Clixml.md)
+
+[Import-Clixml](Import-Clixml.md)

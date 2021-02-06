@@ -1,20 +1,20 @@
 ---
 title: 参与 PowerShell 文档撰写
 description: 本文概述了参与 PowerShell 文档撰写所需的步骤。
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 255b74a75b8412ed509f6da930eb722d54233711
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
-ms.translationtype: HT
+ms.openlocfilehash: 9fbdafa023eac80340437f30d2d6925a1a4ed3cb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93354396"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "99596610"
 ---
 # <a name="contributing-to-powershell-documentation"></a>参与 PowerShell 文档撰写
 
 感谢你对 PowerShell 的支持！
 
-《参与者指南》包含一系列文章，介绍在参与 Microsoft 文档创建时会用到的工具和过程。 其中一些指南涵盖了发布到 [docs.microsoft.com][docs] 的任何文档集共有的信息。 一些指南专门介绍如何编写 PowerShell 文档。
+参与者指南是一系列文章，介绍了在 Microsoft 创建文档时使用的工具和过程。 其中一些指南涵盖了发布到 [docs.microsoft.com][docs] 的任何文档集共有的信息。 一些指南专门介绍如何编写 PowerShell 文档。
 
 在汇总的[参与者指南][contribute]中提供了一些常见文章。 本文介绍特定于 PowerShell 的指南。
 
@@ -24,11 +24,12 @@ ms.locfileid: "93354396"
 
 - [提出问题][file-an-issue]有助于我们发现文档中的问题和缺陷。 有时，这些问题比较棘手，需要进一步调查研究。 在解决问题的过程中，我们能够针对问题展开讨论，并制定满意的解决方法。
 
-- 提交新内容或对现有文章进行更改的过程可能会花费很多时间。 以下信息概述了将内容提交到文档会用到的工具、流程和标准。
+- 将[拉取请求提交](pull-requests.md)到添加或更改内容是一个更复杂的过程。
+  以下信息概述了将内容提交到文档会用到的工具、流程和标准。
 
 ## <a name="prepare-to-make-a-contribution"></a>准备参与撰写文档
 
-参与撰写文档需要一个 GitHub 帐户。 使用以下清单获取工具，并了解参与撰写文档的过程。
+参与撰写文档需要一个 GitHub 帐户。 使用下列清单来安装和配置发布所需的工具。
 
 1. [注册 GitHub](/contribute/get-started-setup-github)
 1. [安装 Git 和 Markdown 工具](/contribute/get-started-setup-tools)
@@ -66,7 +67,6 @@ docs.microsoft.com [使用条款][terms-of-use]涵盖了公共存储库中对文
 - [开始编写文档](get-started-writing.md)
 - [提交拉取请求](pull-requests.md)
 - [PowerShell-Docs 风格指南](powershell-style-guide.md)
-- [编辑 cmdlet 引用](editing-cmdlet-ref.md)
 
 其他资源
 

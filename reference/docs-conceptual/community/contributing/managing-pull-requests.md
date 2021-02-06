@@ -1,22 +1,22 @@
 ---
 title: 如何管理拉取请求
 description: 本文介绍 PowerShell-Docs 团队如何管理拉取请求。
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: af5280e91aa3744b6172dc3555df6989cb0ce1a2
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
-ms.translationtype: HT
+ms.openlocfilehash: 7050db6ad30963d0a75b2a083daace494d703027
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158167"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "99595800"
 ---
 # <a name="managing-pull-requests"></a>管理拉取请求
 
-本文说明了如何管理 PowerShell-Docs 存储库中的拉取请求。 本文旨在为 PowerShell-Docs 团队成员提供帮助。 在此处发布本文，以便为公共参与者提供流程透明性。
+本文说明了如何管理 PowerShell-Docs 存储库中的拉取请求。 本文旨在为 PowerShell-Docs 团队成员提供帮助。 它在此处发布，为公共参与者提供流程透明性。
 
 ## <a name="best-practices"></a>最佳做法
 
-- 提交 PR 的人员不应在不进行同级评审的情况下合并 PR。
+- 提交 PR 的人员不应在不进行同行评审的情况下合并 PR。
 - 提交 PR 后分配同级审阅者。 早期分配可让审阅者使用编辑备注更快地做出响应。
 - 使用注释来描述更改的性质或所请求的评审的类型。 请确保 @mention 审阅者。 例如，如果更改很小，并且不需要完整的技术评审，请在注释中对此进行说明。
 
@@ -43,7 +43,7 @@ ms.locfileid: "86158167"
 - 检查预览渲染
 - 检查元数据 - ms.date，删除 ms.assetid，确保必填字段
 - 验证 markdown 正确性
-  - 请参阅风格指南以设置特定内容的格式
+  - 请参阅样式指南了解内容特定的格式设置规则
 - 按如下所示重新组织示例：
   - 介绍语句
   - 代码和输出
@@ -60,7 +60,7 @@ ms.locfileid: "86158167"
 
 ## <a name="branch-merge-process"></a>分支合并进程
 
-Staging 分支是应合并到 live 分支中的唯一分支。 应压缩来自短期（工作）分支的合并。
+`staging`分支是合并到中的唯一分支 `live` 。 应压缩来自短期（工作）分支的合并。
 
 | *合并自/到*  | *发布分支* | *staging*        | *live*      |
 | ---------------- |:----------------:|:----------------:|:-----------:|
@@ -97,9 +97,9 @@ Docs platform, so the values set in these 3 places will be ignored. Please remov
 
 ## <a name="publishing-to-live"></a>发布到 Live
 
-需要定期将 `staging` 分支中累积的更改发布到实时网站。 这需要将 `staging` 分支合并到 `live` 分支中。
+需要定期将 `staging` 分支中累积的更改发布到实时网站。
 
-- `staging` 分支应合并到 `live` 中，至少每周一次。
+- 该 `staging` 分支会合并到 `live` 3pm PST 上的每个工作日。
 - 做出任何重大更改后，应将 `staging` 分支合并到 `live` 中。
   - 50 个或更多文件的更改
   - 合并发布分支后

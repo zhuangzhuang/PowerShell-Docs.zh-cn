@@ -1,33 +1,33 @@
 ---
 title: PowerShell-Docs 风格指南
 description: 本文介绍用于撰写 PowerShell 文档的风格规则。
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 32df641f7cafa2a5bfcf1bcbf94be594aa77c7d0
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
-ms.translationtype: HT
+ms.openlocfilehash: 6f23f63cffc9fed9cbbcf84539875bfaf4247732
+ms.sourcegitcommit: 61765d08321623743dc5db5367160f6982fe7857
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837437"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "99596816"
 ---
 # <a name="powershell-docs-style-guide"></a>PowerShell-Docs 风格指南
 
-本文介绍特定于 PowerShell-Docs 内容的风格指南。 本文是根据[概述](overview.md#get-started-writing-docs)中所述的信息撰写的。
+本文介绍特定于 PowerShell-Docs 内容的风格指南。 它以 [概述](overview.md#get-started-writing-docs)中概述的信息为基础。
 
 ## <a name="product-terminology"></a>产品术语
 
 PowerShell 有多个变体。
 
-- **PowerShell** - 这是默认名称。 我们认为 PowerShell 7 及其以后的版本将是真正的 PowerShell。
-- **PowerShell Core** - 基于 .NET Core 生成的 PowerShell。 只有在有必要与 Windows PowerShell 进行区分的情况下，才会使用术语“Core”  。
+- **PowerShell** - 这是默认名称。 我们将 PowerShell 7 和更高版本视为真实的 PowerShell。
+- **PowerShell Core** - 基于 .NET Core 生成的 PowerShell。 术语 " **核心** " 的使用应限制为需要在 Windows PowerShell 中区分它的情况。
 - **Windows PowerShell** - 基于 .NET Framework 生成的 PowerShell。 Windows PowerShell 仅对 Windows 提供，并且需要完整的 Framework。
 
-  通常，可以将文档中对“Windows PowerShell”的引用更改为“PowerShell”。
-  在介绍“Windows PowerShell”特定的活动时，应使用“Windows PowerShell”。
+  通常，可以将文档中的 "Windows PowerShell" 的引用更改为 _PowerShell_。
+  讨论特定于 _Windows powershell_ 的行为时应使用 "windows powershell"。
 
 相关产品
 
-- Visual Studio Code (VS Code)  - 这是 Microsoft 的免费开源编辑器。 首次提及时，应使用完整名称。 之后，可以使用 VS Code  。 不要使用“VSCode”。
+- **) Visual Studio Code (VS Code** -这是 Microsoft 的免费开源编辑器。 首次提及时，应使用完整名称。 之后，可以使用 VS Code  。 不要使用 "VSCode"。
 - 适用于 Visual Studio Code 的 PowerShell 扩展  - 此扩展会将 VS Code 转换为适用于 PowerShell 的首选 IDE。 首次提及时，应使用完整名称。 之后，可以使用 PowerShell 扩展  。
 - Azure PowerShell  - 这是用于管理 Azure 服务的 PowerShell 模块的集合。
 - Azure Stack PowerShell  - 这是用于管理 Microsoft 混合云解决方案的 PowerShell 模块的集合。
@@ -42,7 +42,8 @@ PowerShell 有多个变体。
 
 在 Markdown 中，空白行还表示块的末尾。 在不同类型的 Markdown 块之间（例如，在段落和列表或标题之间）应该有一个空白行。
 
-删除重复的空白行。 多个空白行在 HTML 中呈现为单个空白行，因此多个空白行不起作用。 如果代码块中有多个空行，则会中断代码块。
+在 HTML 中，多个连续的空行呈现为一个空白行。 它们不起作用。
+在代码块中，连续的空行中断代码块。
 
 删除行尾的多余空格。
 
@@ -57,8 +58,8 @@ PowerShell 有多个变体。
 - `#` 与标题的首个字母之间必须有一个空格
 - 标题前后应该都留有一个空白行
 - 每个文档只有 1 个 H1
-- 标题级别应按 1 递增。 不要跨级
-- 不要在标题中使用粗体或其他标记
+- 标题级别应按 1 递增。 不跳过级别
+- 请勿在标头中使用粗体或其他标记
 
 ### <a name="limit-line-length-to-100-characters"></a>将行长度限制为 100 个字符
 
@@ -66,30 +67,30 @@ PowerShell 有多个变体。
 
 在 Visual Studio Code 中使用 [Reflow Markdown][reflow] 扩展可以轻松地重排段落以适应指定的行长度。
 
-About_topics 限制为 80 个字符。 有关更具体的信息，请参阅[编辑参考文章](./editing-cmdlet-ref.md#formatting-about_-files)。
+About_topics 限制为 80 个字符。 有关更具体的信息，请参阅 [格式 About_ 文件](#formatting-about_-files)。
 
 ### <a name="lists"></a>列表
 
-如果列表包含多个句子或段落，请考虑使用子级标题代替列表。
+如果列表包含多个句子或段落，请考虑使用子层标题而不是列表。
 
 列表前后应该都留有一个空白行。
 
 #### <a name="unordered-lists"></a>未排序列表
 
-除非列表项包含多个句子，否则不要以句点结尾。 对于列表项项目符号，使用连字符 (`-`)。 这样可以避免与使用星号 [`*`] 的粗体或斜体标记混淆。 若要在项目符号项下添加段落或其他元素，请插入一个换行符，并使缩进与项目符号后的第一个字符对齐。
+不要以句点结尾列出项，除非它们包含多个句子。 对于列表项项目符号，使用连字符 (`-`)。 这样可以避免与使用星号 [`*`] 的粗体或斜体标记混淆。 若要在项目符号项下添加段落或其他元素，请插入一个换行符，并使缩进与项目符号后的第一个字符对齐。
 
 例如：
 
 ```markdown
-This is a list that contain sub-elements under a bullet item.
+This is a list that contain child elements under a bullet item.
 
 - First bullet item
 
   Sentence explaining the first bullet.
 
-  - Sub-bullet item
+  - Child bullet item
 
-    Sentence explaining the sub-bullet.
+    Sentence explaining the child bullet.
 
 - Second bullet item
 - Third bullet item
@@ -103,7 +104,7 @@ This is a list that contain sub-elements under a bullet item.
 
   - 子项目符号项
 
-    说明子项目符号的句子。
+    解释子项目符号的句子。
 
 - 第二个项目符号项
 - 第三个项目符号项
@@ -147,16 +148,16 @@ Example:
 ![Introduction](./media/overview/Introduction.png)
 ```
 
-其中 `alt text` 是图像的简要说明，`<folder path>` 是图像的相对路径。 必须为视觉障碍人士的屏幕阅读器使用替代文本。 如果存在无法呈现图像的站点 bug，则此方法也非常有用。
+其中 `alt text` 是图像的简要说明，`<folder path>` 是图像的相对路径。 必须为视觉障碍人士的屏幕阅读器使用替代文本。
 
-图像应存储在包含文章的文件夹内的 `media/<article-name>` 文件夹中。
-不应在文章之间共享图像。 在 `media` 文件夹下创建一个与你的文章的文件名匹配的文件夹。 将该文章的图像复制到新文件夹。 如果有多篇文章使用了同一个图像，则每个图像文件夹都必须包含该图像文件的副本。 这种做法可以防止一篇文章中的图像更改影响另一篇文章。
+图像应存储在 `media/<article-name>` 包含项目的文件夹中的文件夹内。
+不要在项目之间共享图像。 在 `media` 文件夹下创建与文章的文件名相匹配的文件夹。 将该文章的图像复制到该新文件夹。 如果多个文章使用一个图像，则每个图像文件夹都必须具有该图像文件的副本。 这种做法可防止更改一篇文章的图像影响到另一篇文章。
 
-支持以下图像文件类型：`*.png`、`*.gif`、`*.jpeg`、`*.jpg`、`*.svg`
+支持下列图像文件类型： `*.png` 、 `*.gif` 、 `*.jpeg` 、 `*.jpg` 、 `*.svg`
 
-### <a name="markdown-extensions-supported-by-open-publishing"></a>开放发布系统支持的 Markdown 扩展
+### <a name="markdown-extensions-supported-by-open-publishing"></a>公开发布支持 Markdown 扩展
 
-[Microsoft Docs 创作包](/contribute/how-to-write-docs-auth-pack)中包含支持发布系统独有功能的工具。 “通知”是一种 Markdown 扩展，用于创建在 docs.microsoft.com 上呈现的块引用，这些内容带有可突出显示内容重要性的颜色和图标。 支持以下通知类型：
+[Microsoft Docs 创作包](/contribute/how-to-write-docs-auth-pack)包含的工具支持发布系统独有的功能。 警报是一种 Markdown 扩展，用于创建在 docs.microsoft.com 上呈现的 blockquotes，颜色和图标突出显示内容的重要性。 支持以下警报类型：
 
 ```markdown
 > [!NOTE]
@@ -175,82 +176,91 @@ Example:
 > Dangerous certain consequences of an action.
 ```
 
-这些通知在 docs.microsoft.com 上看起来如下所示：
+这些警报在 docs.microsoft.com 上如下所示：
 
-“注意”块
+备注块
 
 > [!NOTE]
-> 即使略读，用户也应注意的信息。
+> Information the user should notice even if skimming.
 
-“提示”块
+Tip 块
 
 > [!TIP]
-> 为用户带来更大成就感的可选信息。
+> Optional information to help a user be more successful.
 
-“重要说明”块
+重要块
 
 > [!IMPORTANT]
-> 用户成功所需的基本信息。
+> Essential information required for user success.
 
-“小心”块
+警告块
 
 > [!CAUTION]
-> 操作的潜在不良后果。
+> Negative potential consequences of an action.
 
-“警告”块
+警告块
 
 > [!WARNING]
-> 操作的某些危险后果。
+> 操作必然造成的危险后果。
 
 ### <a name="hyperlinks"></a>超链接
 
-- 超链接必须使用 Markdown 语法 `[friendlyname](url-or-path)`
-- 链接应尽可能使用 HTTPS。
-- 链接必须具有友好名称，通常是链接主题的标题
-- 底部“相关链接”部分中的所有项都应具有超链接
-- 不要在超链接的括号内使用反引号、粗体或其他标记。
-- 涉及特定 URI 时，可以使用裸 URL。 必须用反引号引住此 URI。 例如：
+- 超链接必须使用 Markdown 语法 `[friendlyname](url-or-path)` 。 支持[链接引用][linkref]。
+- 发布系统支持三种类型的链接：
+  - URL 链接
+  - 文件链接
+  - 交叉引用链接
+- 指向 docs.microsoft.com 上的其他文章的链接必须是站点相对路径
+- 除非对于目标站点无效，否则外部网站的所有 Url 都应使用 HTTPS。
+- 链接必须具有友好名称，通常为链接项目的标题
+- 底部的 " _相关链接_ " 部分中的所有项都应为超链接
+- 请勿在超链接的方括号内使用反撇号、粗体或其他标记。
+- 当你记录特定的 URI 时，可以使用 Bare Url。 此 URI 必须包含在反撇号中。 例如：
 
   ```markdown
-  By default, if you do not specify this parameter, the DMTF standard resource URI
+  By default, if you don't specify this parameter, the DMTF standard resource URI
   `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
   ```
 
-#### <a name="linking-to-other-content"></a>链接到其他内容
+#### <a name="linking-to-other-content-on-docsmicrosoftcom"></a>链接到 docs.microsoft.com 上的其他内容
 
-发布系统支持两种类型的超链接：
+- 指向 docs.microsoft.com 上的其他文章的 **URL 链接** 必须是站点相对路径。 创建相对链接的最简单方法是从浏览器复制 URL，然后 `https://docs.microsoft.com/en-us` 从粘贴到 markdown 中的值中删除。 请勿在 Microsoft 属性的 Url 中包含区域设置 (`/en-us` 从 URL) 中删除。 从 URL 中删除任何不必要的查询参数。 应删除的示例：
 
-URL 链接可以是相对于 docs.microsoft.com 根的 URL 路径  。 也可以是包含完整 URL 语法的绝对 URL。 例如： `https:/github.com/MicrosoftDocs/PowerShell-Docs`
+  - `?view=powershell-5.1` -用于链接到特定版本的 PowerShell
+  - `?redirectedfrom=MSDN` -从旧文章重定向到新位置时添加到 URL
 
-- 链接到 PowerShell-Docs 之外的内容时，或在 PowerShell-docs 内的 cmdlet 参考与概念性文章之间链接时，请使用 URL 链接。创建相对链接的最简单方法是从浏览器复制 URL，然后从粘贴到 Markdown 的值中删除 `https://docs.microsoft.com/en-us`。
-- 不要在 Microsoft 属性的 URL 中包含区域设置（例如， 从 URL 中删除 `/en-us`）。
-- 除非需要链接到这样的特定版本，否则请从 URL 中删除任何不必要的查询参数。 示例：
-  - `?view=powershell-5.1` - 用于链接到特定版本的 PowerShell
-  - `?redirectedfrom=MSDN` - 当你从旧文章重定向到新位置时，会将它添加到 URL 中
-- 指向外部网站的所有 URL 都应使用 HTTPS（除非对目标站点无效）。
+  如果需要链接到文档的特定版本，则需要将 `&preserve_view=true` 参数添加到查询字符串。 例如： `?view=powershell-5.1&preserve_view=true`
 
-从一个参考文章链接到另一个参考文章，或从一个概念性文章链接到另一个概念性文章时，使用文件链接  。 如果需要链接到特定版本的 PowerShell 的参考文章，必须使用 URL 链接。
+- **文件链接** 用于从一个引用文章链接到另一个引用文章，或从一个概念文章链接到另一个。 如果需要链接到特定版本的 PowerShell 的参考文章，则必须使用 URL 链接。
 
-- 文件链接包含相对文件路径（例如：`../folder/file.md`）
-- 所有文件路径都使用正斜杠 (`/`) 字符
+  - 文件链接包含相对文件路径 (例如： `../folder/file.md`) 
+  - 所有文件路径使用正斜杠 (`/`) 字符
 
-URL 和文件链接都允许深层链接。 将定位点添加到目标路径的末尾。
+- **交叉引用链接** 是发布系统支持的一项特殊功能。 您可以使用概念文章中的交叉引用链接链接到 .NET API 或 cmdlet 引用。
+
+  有关 .NET API 参考的链接，请参阅中心参与者指南中的 [使用文档](/contribute/how-to-write-links#xref-cross-reference-links) 中的链接。
+
+  指向 cmdlet 引用的链接具有以下格式： `xref:<module-name>.<cmdlet-name>` 。 例如，若要链接到位于 `Get-Content` **Microsoft 的 PowerShell** 模块中的 cmdlet。
+
+  `[Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)`
+
+URL 和文件链接上都允许深层链接。 将定位点添加到目标路径的末尾。
 例如：
 
 - `[about_Splatting](about_Splatting.md#splatting-with-arrays)`
 - `[custom key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)`
 
-有关详细信息，请参阅[在文档中使用链接](/contribute/how-to-write-links)。
+有关详细信息，请参阅 [使用文档中的链接](/contribute/how-to-write-links)。
 
-## <a name="formatting-command-syntax-elements"></a>设置命令语法元素格式
+## <a name="formatting-command-syntax-elements"></a>设置命令语法元素的格式
 
-- 始终对 cmdlet 和参数使用全名。 避免使用别名，除非专门演示别名。
+- 始终将全名用于 cmdlet 和参数。 除非您专门演示别名，否则请避免使用别名。
 
-- 属性、参数、对象、类型名称、类名、类方法应为粗体形式  。
-  - 应使用反引号 (`` ` ``) 将属性和参数值引起来。
-  - 使用方括号样式指代类型时，请使用反引号。 例如： `[System.Io.FileInfo]`
+- 属性、参数、对象、类型名称、类名称和类方法应为 **粗体**。
+  - 应将属性和参数值包装在反撇号 (`` ` ``) 中。
+  - 使用括号式样式引用类型时，请使用反撇号。 例如： `[System.Io.FileInfo]`
 
-- 应使用反引号 (`` ` ``) 字符将语言关键字、cmdlet 名称、函数、变量、本机 EXE、文件路径和内联语法示例引起来。
+- 语言关键字、cmdlet 名称、函数、变量、本机 Exe、文件路径和内联语法示例应包装在反撇号中 (`` ` ``) 字符。
 
   例如：
 
@@ -263,14 +273,14 @@ URL 和文件链接都允许深层链接。 将定位点添加到目标路径的
   ```
   ~~~
 
-  - 通过名称引用参数时，名称应为粗体  。 在说明如何使用带有连字符前缀的参数时，应使用反引号将参数引起来。 例如：
+  - 按名称引用参数时，该名称应采用粗体。 演示使用带有连字符前缀的参数时，应使用反引号将参数引起来。 例如：
 
     ```markdown
-    The parameter's name is **Name**, but it is typed as `-Name` when used on the command
+    The parameter's name is **Name**, but it's typed as `-Name` when used on the command
     line as a parameter.
     ```
 
-  - 显示外部命令的示例用法时，应使用反引号将示例引起来。
+  - 演示外部命令的示例用法时，示例应由反引号引起来。
     始终在本机命令中包含文件扩展名。 例如：
 
     ```markdown
@@ -279,7 +289,7 @@ URL 和文件链接都允许深层链接。 将定位点添加到目标路径的
 
     包括文件扩展名可确保根据 PowerShell 的命令优先级执行正确的命令。
 
-- 在撰写概念性文章（而不是参考内容）时，应将 cmdlet 名称的第一个实例超链接到 cmdlet 文档。 不要在超链接的括号内使用反引号、粗体或其他标记。
+- 编写概念性文章（而非引用内容）时，cmdlet 名称的第一个实例应超链接到 cmdlet 文档中。 请勿在超链接的方括号内使用反撇号、粗体或其他标记。
 
   例如：
 
@@ -288,23 +298,23 @@ URL 和文件链接都允许深层链接。 将定位点添加到目标路径的
   uses the **Object** parameter to ...
   ```
 
-  有关详细信息，请参阅本文中的[超链接](#hyperlinks)一节。
+  有关详细信息，请参阅本文中的 [超链接](#hyperlinks) 部分。
 
 ## <a name="markdown-for-code-samples"></a>Markdown 代码示例
 
 Markdown 支持两种不同的代码样式：
 
-- 代码范围（内联）- 用单个反引号 (`` ` ``) 字符标记  。 在段落中使用，而不是作为独立的块使用。
-- 代码块 - 使用三个反引号 (`` ``` ``) 字符串引起来的多行代码块  。 代码块的反引号后面还可能跟有一个语言标签。 语言标签使代码块内容的语法突出显示。
+- **代码跨越 (内联)** 由单个反撇号 (`` ` ``) 字符标记。 在段落内而不是作为独立的块中使用。
+- **代码块** -由三反撇号 () 字符串括起来的多行块 `` ``` `` 。 代码块还可能在反撇号后面有一个语言标签。 语言标签对代码块的内容启用语法突出显示。
 
-所有代码块都应包含在代码隔离区中。 不要对代码块使用缩进。 Markdown 允许使用此模式，但这样可能会出现问题，应避免使用。
+所有代码块都应包含在代码隔离区中。 不要对代码块使用缩进。 Markdown 允许此模式，但它可能会出现问题，应避免此模式。
 
-代码块是由三个反引号 (`` ``` ``) 代码隔离区包围的一个或多个代码行。
+代码块是一个或多个代码行，反撇号 (`` ``` ``) 代码隔离区。
 代码隔离区标记必须位于代码示例前后其自己的行上。 代码块开头的标记可能具有可选的语言标签。 Microsoft 的开放发布系统 (OPS) 使用语言标签来支持语法突出显示功能。
 
-有关支持的语言标记的完整列表，请参阅集中式参与者指南中的[隔离代码块](/contribute/code-in-docs#fenced-code-blocks)。
+有关支持的语言标记的完整列表，请参阅集中参与者指南中的 [隔离代码块](/contribute/code-in-docs#fenced-code-blocks) 。
 
-OPS 还添加了可将代码块的内容复制到剪贴板的“复制”按钮  。 这样，你就可以将代码快速粘贴到脚本中，以测试代码示例。 但是，并非文档中的所有示例都计划照原样运行。 一些代码块是 PowerShell 概念的简单说明。
+OPS 还添加了可将代码块的内容复制到剪贴板的“复制”按钮。 这使你可以快速将代码粘贴到脚本中，以测试代码示例。 但是，并非我们文档中的所有示例都应按原样运行。 一些代码块是 PowerShell 概念的简单阐释。
 
 文档中使用三种类型的代码块：
 
@@ -314,7 +324,7 @@ OPS 还添加了可将代码块的内容复制到剪贴板的“复制”按钮 
 
 ### <a name="syntax-code-blocks"></a>语法代码块
 
-语法代码块用于说明命令的语法结构。 不要对代码隔离区使用语言标记。 此示例演示 `Get-Command` cmdlet 所有可能的参数。
+语法代码块用于描述命令的语法结构。 不要在代码隔离上使用语言标记。 此示例演示 `Get-Command` cmdlet 所有可能的参数。
 
 ~~~markdown
 ```
@@ -334,11 +344,11 @@ for (<init>; <condition>; <repeat>)
 ```
 ~~~
 
-### <a name="illustrative-examples"></a>说明性示例
+### <a name="illustrative-examples"></a>演示示例
 
-说明性示例用于解释 PowerShell 概念。 不应将它们复制到剪贴板来执行。 这些示例最常用于易于键入且易于理解的简单示例。 代码块可以包括 PowerShell 提示符和示例输出。
+演示示例用于解释 PowerShell 概念。 它们不会被复制到剪贴板上以执行。 它们最常用于易于键入并易于理解的简单示例。 代码块可以包括 PowerShell 提示符和示例输出。
 
-以下简单示例展示了 PowerShell 比较运算符。 在这种情况下，我们不希望读者复制并运行此示例。
+以下简单示例演示了 PowerShell 比较运算符。 在这种情况下，我们不希望读者复制并运行此示例。
 
 ~~~markdown
 ```powershell
@@ -348,7 +358,7 @@ True
 PS> 2 -eq 3
 False
 
-PS>  1,2,3 -eq 2
+PS> 1,2,3 -eq 2
 2
 
 PS> "abc" -eq "abc"
@@ -364,7 +374,7 @@ abc
 
 ### <a name="executable-examples"></a>可执行示例
 
-复杂的示例或计划用于复制和执行的示例应使用以下块样式标记：
+要复制和执行的复杂示例或示例应使用以下块样式标记：
 
 ~~~markdown
 ```powershell
@@ -372,7 +382,7 @@ abc
 ```
 ~~~
 
-PowerShell 命令显示的输出应包含在 Output 代码块中，以防止语法突出显示  。 例如：
+PowerShell 命令显示的输出应包含在 Output 代码块中，以防止语法突出显示。 例如：
 
 ~~~markdown
 ```powershell
@@ -400,23 +410,23 @@ Cmdlet       Unprotect-CmsMessage        3.0.0.0    Microsoft.PowerShell.Securit
 ```
 ~~~
 
-Output 代码标签不是语法突出显示系统支持的一种正式“语言”  。
-但是，此标签非常有用，因为 OPS 会将“Output”标签添加到网页上的代码框框架中。 “Output”代码框不会突出显示语法。
+" **输出** 代码" 标签不是语法突出显示系统支持的官方 "语言"。
+但是，此标签非常有用，因为 OPS 会将 "输出" 标签添加到网页上的代码框框架中。 "输出" 代码框没有突出显示的语法。
 
 ## <a name="coding-style-rules"></a>编码样式规则
 
-### <a name="avoid-line-continuation-in-code-samples"></a>避免在代码示例中出现续行符
+### <a name="avoid-line-continuation-in-code-samples"></a>避免在代码示例中出现行继续符
 
-避免在 PowerShell 代码示例中使用续行符 (`` ` ``)。 如果行尾出现多余的空格，会很难看到续行符，并且可能会引发问题。
+避免在 PowerShell 代码示例中使用行继续符 (`` ` ``)。 如果行尾出现多余的空格，则很难看到行继续符，并且可能会引发问题。
 
-- 使用 PowerShell 展开来缩短包含大量参数的 cmdlet 的行长度。
-- 利用 PowerShell 的自然换行机会，如竖线 (`|`) 字符、左大括号、圆括号和方括号之后。
+- 使用 PowerShell 展开缩短具有多个参数的 cmdlet 的行长度。
+- 利用 PowerShell 的自然换行机会，如管道 (`|`) 字符、左大括号 (`{`) 、括号 (`(`) 和方括号 (`[`) 。
 
 ### <a name="avoid-using-powershell-prompts-in-examples"></a>避免在示例中使用 PowerShell 提示
 
-不建议使用提示字符串，应该将其限制在旨在说明命令行用法的方案。 对于其中大多数示例，提示字符串应为 `PS>`。 此提示与特定于 OS 的指示器无关。
+不建议使用提示字符串，因此应将其限制为旨在说明命令行用法的方案。 对于其中的大多数示例，提示字符串应为 `PS>` 。 此提示与特定于 OS 的指示器无关。
 
-如果示例演示改变提示的命令，或显示的路径对所演示的方案非常重要时，则需要提示。 下面的示例演示使用注册表提供程序时提示的变化。
+在示例中需要提示，以说明更改提示的命令或显示的路径对于方案非常重要。 下面的示例演示使用注册表提供程序时提示的变化。
 
 ```powershell
 PS C:\> cd HKCU:\System\
@@ -435,22 +445,111 @@ GameConfigStore        GameDVR_Enabled                       : 1
                        GameDVR_DXGIHonorFSEWindowsCompatible : 0
 ```
 
-### <a name="do-not-use-aliases-in-examples"></a>请勿在示例中使用别名
+### <a name="dont-use-aliases-in-examples"></a>不要在示例中使用别名
 
-应始终使用所有 cmdlet 和参数的全名，除非专门讨论别名。 Cmdlet 和参数名称必须采用正确的 Pascal 大小写格式。
+使用所有 cmdlet 和参数的完整名称，除非专门记录别名。
+Cmdlet 和参数名称必须使用正确的 [Pascal 大小写][] 名称。
 
 ### <a name="using-parameters-in-examples"></a>在示例中使用参数
 
-避免使用位置参数。 通常，即使是位置参数，也应始终在示例中包含参数名称。 这样可以减少在示例中产生混淆的可能性。
+避免使用位置参数。 通常，应始终在示例中包含参数名称，即使参数是位置。 这样可减少在示例中产生混淆的可能性。
+
+## <a name="formatting-cmdlet-reference-articles"></a>格式化 cmdlet 参考文章
+
+Cmdlet 引用文章具有特定的结构。 此结构由 PlatyPS 定义[][]。
+Platypus 为 Markdown 中的 PowerShell 模块生成 cmdlet 帮助。 编辑 Markdown 文件后，使用 PlatyPS 创建 `Get-Help` cmdlet 使用的 MAML 帮助文件。
+
+PlatyPS 具有用于 cmdlet 引用的硬编码架构，并且已写入代码中。 [platyPS.schema.md][] 文档尝试描述此结构。 架构冲突会导致生成错误，必须先修复这些错误然后才能接受你撰写的内容。
+
+- 请勿删除任何 ATX 标头结构。 PlatyPS 需要一组特定的标头。
+- 输入类型和输出类型标头必须具有类型。 如果该 cmdlet 不接受输入或返回值，则使用值 `None` 。
+- 任何段落都可使用内联代码范围。
+- 仅在 " **示例** " 部分中允许隔离代码块。
+
+在 Platypus 架构中， **示例** 是 H2 标头。 每个示例都是一个 H3 标头。 在示例中，该架构不允许按段落分隔代码块。 架构允许以下结构：
+
+```
+### Example X - Title sentence
+
+0 or more paragraphs
+1 or more code blocks
+0 or more paragraphs.
+```
+
+为每个示例编号并添加简短标题。
+
+例如：
+
+~~~markdown
+### Example 1: Get cmdlets, functions, and aliases
+
+This command gets the PowerShell cmdlets, functions, and aliases that are installed on the
+computer.
+
+```powershell
+Get-Command
+```
+
+### Example 2: Get commands in the current session
+
+```powershell
+Get-Command -ListImported
+```
+~~~
+
+## <a name="formatting-about_-files"></a>设置 About_ 文件的格式
+
+`About_*` 文件是以 Markdown 编写的，但以纯文本文件的形式提供。 我们使用 [Pandoc][] 将 Markdown 转换为纯文本。 `About_*` 在所有版本的 PowerShell 和发布工具中，文件的格式都是最兼容的。
+
+基本格式设置指南：
+
+- 将普通行限制为80个字符
+- 代码块限制为76个字符
+- Blockquotes (和警报) 的范围限制为78个字符
+- 使用这些特殊的元字符时 `\` ， `$` 和 `<` ：
+  - 在标头中，这些字符必须使用前导字符进行转义， `\` 或使用反撇号 (包含在代码中 `` ` ``) 
+  - 在段落中，应将这些字符放入代码跨越。 例如：
+
+    ~~~markdown
+    ### The purpose of the \$foo variable
+
+    The `$foo` variable is used to store ...
+    ~~~
+
+- 表格需要超过76个字符
+  - 手动将单元格内容换到多行
+  - 在每一行上使用开始和结束 `|` 字符
+  - 下面的示例说明了如何正确构造一个表，该表包含在单元内的多个行上进行换行的信息。
+
+    ~~~markdown
+    ```
+    |Operator|Description                |Example                          |
+    |--------|---------------------------|---------------------------------|
+    |`-is`   |Returns TRUE when the input|`(get-date) -is [DateTime]`      |
+    |        |is an instance of the      |`True`                           |
+    |        |specified .NET type.       |                                 |
+    |`-isNot`|Returns TRUE when the input|`(get-date) -isNot [DateTime]`   |
+    |        |not an instance of the     |`False`                          |
+    |        |specified.NET type.        |                                 |
+    |`-as`   |Converts the input to the  |`"5/7/07" -as [DateTime]`        |
+    |        |specified .NET type.       |`Monday, May 7, 2007 12:00:00 AM`|
+    ```
+    ~~~
+
+    > [!NOTE]
+    > 76列限制仅适用于 `About_*` 主题。 你可以使用概念或 cmdlet 参考文章中的宽列。
 
 ## <a name="next-steps"></a>后续步骤
 
-[编辑 cmdlet 参考](editing-cmdlet-ref.md)
+[编辑清单](editorial-checklist.md)
 
-<!-- External URLs -->
-[platyPS]: https://github.com/PowerShell/platyPS
-[markdig]: https://github.com/lunet-io/markdig
-[CommonMark]: https://spec.commonmark.org/
+<!-- link references -->
 [atx]: https://github.github.com/gfm/#atx-headings
-[pascal-case]: https://en.wikipedia.org/wiki/PascalCase
+[CommonMark]: https://spec.commonmark.org/
+[markdig]: https://github.com/lunet-io/markdig
+[Pandoc]: https://pandoc.org
+[Pascal 大小写]: https://en.wikipedia.org/wiki/PascalCase
+[platyPS.schema.md]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md
+[PlatyPS]: https://github.com/powershell/platyps
 [reflow]: https://marketplace.visualstudio.com/items?itemName=marvhen.reflow-markdown
+[linkref]: https://spec.commonmark.org/0.29/#link-reference-definitions
