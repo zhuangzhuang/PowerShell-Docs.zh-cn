@@ -1,18 +1,18 @@
 ---
 title: 如何管理问题
 description: 本文介绍 PowerShell-Docs 团队如何管理问题。
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 56f0ea5b4c5c700db8fdd0b16e3ce1c4040a43dc
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
-ms.translationtype: HT
+ms.openlocfilehash: 72267137a2657f51e5f616113adf92d80647acad
+ms.sourcegitcommit: 61765d08321623743dc5db5367160f6982fe7857
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93354586"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "99597429"
 ---
 # <a name="how-we-manage-issues"></a>如何管理问题
 
-本文记录了如何管理 PowerShell-Docs 存储库中的问题。 本文旨在为 PowerShell-Docs 团队成员提供帮助。 在此处发布本文，以便为公共参与者提供流程透明性。
+本文记录了如何管理 PowerShell-Docs 存储库中的问题。 本文旨在为 PowerShell-Docs 团队成员提供帮助。 它在此处发布，为公共参与者提供流程透明性。
 
 ## <a name="sources-of-issues"></a>问题源
 
@@ -23,51 +23,54 @@ ms.locfileid: "93354586"
 
 ## <a name="response-time-targets"></a>响应时间目标
 
-- 已会审 - 5 个工作日
-- 修复或更改 - 无具体目标 - 仅尽最大努力
+80% 的新问题将在3个工作日内结束。
+
+- 已会审-1 个工作日内
+- 修复或更改-10 个工作日内
 
 ### <a name="labeling--milestones"></a>标记和里程碑
 
 #### <a name="label-types"></a>标签类型
 
-|前缀  | 说明                                                         |
-|------- | --------------------------------------------------------------------|
-|区域    | 用于指示问题正在讨论哪个部分的 PowerShell 或文档。<br>有助于功能所有者查找其功能的问题。|
-|Pri     | 用于指示问题的优先级。 值范围是 0-4。        |
-|问题   | 用于对问题的反馈类型进行分类                     |
-|审阅  | 用于需要团队进一步评审的问题              |
-|状态  | 用于指示工作项的状态                        |
-|等待 | 用于指示我们正在等待                   |
+|   类型   | 说明                                                         |
+| -------- | ------------------------------------------------------------------- |
+| 区域     | 用于指示问题正在讨论哪个部分的 PowerShell 或文档。<br>有助于功能所有者查找其功能的问题。 |
+| 问题    | 指示问题的类型                                         |
+| 优先级 | 指示问题的优先级。 值范围 0 (高) -4 (低)   |
+| 状态   | 指示工作项的状态或它的关闭原因          |
+| 标记      | 用于附加分类的标签                        |
+| 等待  | 指示我们正在等待某人或某个其他事件         |
 
 #### <a name="milestones"></a>里程碑
 
-应使用相应的里程碑标记的问题和 PR。 如果问题并未针对特定版本，则不使用里程碑。 应将尚未合并到 PowerShell 代码库中的更改的 Docs PR 的问题分配给“未来”里程碑。 合并代码更改后，将里程碑更改为相应的版本。
+应使用相应的里程碑标记的问题和 PR。 如果此问题不适用于特定版本，则不会使用里程碑。 应将尚未合并到 PowerShell 代码库中的更改的 Pr 和相关问题分配给 **未来** 里程碑。 合并代码更改后，将里程碑更改为相应的版本。
 
 |    里程碑     |                    说明                     |
 | ---------------- | -------------------------------------------------- |
-| 6.x              | 与 PowerShell 6.0 到 6.2.x 相关的工作项 |
 | 7.0.0            | 与 PowerShell 7.0 相关的工作项               |
 | 7.1.0            | 与 PowerShell 7.1 相关的工作项               |
+| 7.2.0            | 与 PowerShell 7.2 相关的工作项               |
 | 未来           | 工作项 PowerShell 的未来版本          |
-| PSReadline-vNext | 工作项 PSReadline 的未来版本          |
 
 ## <a name="triage-process"></a>会审过程
 
-PowerShell Docs 团队每周都要开会讨论自上次会议以来新增的任何问题。 如果分配了标签或分配了所有者，则会将问题视为已会审。 建议 PowerShell Docs 团队成员每天审查问题，并在遇到新问题时进行会审。 然后，可以根据需要开展每周会审会议来更详细地讨论新问题。
+PowerShell 文档团队成员每天查看问题，并在遇到新问题时对其进行会审。 团队每周都要讨论需要会审或保持未解决的问题。
 
 ### <a name="misplaced-product-feedback"></a>错放的产品反馈
 
-- 输入客户注释，指明它是产品反馈，并提供指向相应反馈渠道的链接。
+- 输入将客户重定向到正确反馈通道的注释。
 - 可选：将问题复制到相应的产品反馈位置，将链接添加到复制的项，并关闭问题。 请勿将问题复制到 UserVoice。
 
-  | DocSet    | 产品反馈 URL                                           |
-  | --------- | -------------------------------------------------------------- |
-  | 开发人员 | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
-  | dsc       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
-  | 库   | `https://github.com/powershell/powershellgallery/issues/new`   |
-  | jea       | `https://github.com/powershell/jea/issues/new`                 |
-  | reference | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
-  | wmf       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
+  PowerShell 问题的默认位置是 [https://github.com/PowerShell/PowerShell/issues/new/choose](https://github.com/PowerShell/PowerShell/issues/new/choose) 。
+
+  以下主题区域对于问题有不同的位置：
+
+  | 主题 |                                                     产品反馈 URL                                                     |
+  | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+  | dsc      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
+  | 库  | [https://github.com/powershell/powershellgallery/issues/new](https://github.com/powershell/powershellgallery/issues/new)     |
+  | jea      | [https://github.com/powershell/jea/issues/new](https://github.com/powershell/jea/issues/new)                                 |
+  | wmf      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
 
 ### <a name="support-requests"></a>支持请求
 
@@ -84,4 +87,4 @@ PowerShell Docs 团队每周都要开会讨论自上次会议以来新增的任�
 
 - 编辑问题以删除任何冒犯性内容（如有必要）。
 - 输入一条注释，指示此问题是垃圾邮件，关闭问题，然后将其锁定以防止进一步注释。
-- 每次出现该问题时应在每周会审中进行讨论，以确定是否需要执行进一步操作（向 GitHub 或 Microsoft 法律报告）。
+- 每周的会审中都应该讨论每个冲突，以确定需要进一步操作 (向 GitHub 或 Microsoft 合法) 报告。
