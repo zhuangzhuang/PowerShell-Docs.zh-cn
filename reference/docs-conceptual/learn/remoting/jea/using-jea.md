@@ -4,10 +4,10 @@ keywords: jea,powershell,安全性
 title: 使用 JEA
 description: 本文介绍连接和使用 JEA 终结点的各种方式。
 ms.openlocfilehash: b3d81cc0aa76549c81136e5a1a5af28df9c6fa7a
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501535"
 ---
 # <a name="using-jea"></a>使用 JEA
@@ -31,7 +31,7 @@ $nonAdminCred = Get-Credential
 Enter-PSSession -ComputerName localhost -ConfigurationName JEAMaintenance -Credential $nonAdminCred
 ```
 
-如果当前用户帐户有权访问 JEA 终结点，则可省略 Credential 参数  。
+如果当前用户帐户有权访问 JEA 终结点，则可省略 Credential 参数。
 
 PowerShell 提示更改为 `[localhost]: PS>` 时，即表示你正在与远程 JEA 会话交互。 可以运行 `Get-Command` 检查哪些命令可用。 咨询管理员，了解可用参数或允许的参数值是否存在任何限制。
 
@@ -56,7 +56,7 @@ Start-VM -VMName 'SQL01'
 
 ## <a name="using-jea-with-implicit-remoting"></a>将 JEA 与隐式远程处理配合使用
 
-PowerShell 具有隐式远程处理模型，让你能够从远程计算机导入代理 cmdlet，并如同本地命令一样与之交互。 有关隐式远程处理的解释，请参阅“你好，脚本专家！”  [博客文章](https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/)。
+PowerShell 具有隐式远程处理模型，让你能够从远程计算机导入代理 cmdlet，并如同本地命令一样与之交互。 有关隐式远程处理的解释，请参阅“你好，脚本专家！” [博客文章](https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/)。
 当隐式远程处理配合 JEA 使用时非常有用，因为它允许在完整语言模式下使用 JEA cmdlet。 你可使用 Tab 自动补全、变量、操作对象，甚至使用本地脚本对 JEA 终结点自动执行任务。 每次调用代理命令时，数据都会发送到远程计算机上的 JEA 终结点并在此执行。
 
 隐式远程处理工作时，从现有 PowerShell 会话中导入 cmdlet。 可以有选择性地选择使用所选字符串作为每个代理 cmdlet 的名词前缀。 通过前缀，可区分哪些命令适用于远程系统。 系统会创建包含所有代理命令的临时脚本模块，该模块可在本地 PowerShell 会话期间导入。

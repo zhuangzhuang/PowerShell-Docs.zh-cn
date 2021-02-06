@@ -4,10 +4,10 @@ keywords: jea,powershell,安全性
 title: JEA 先决条件
 description: 本文介绍使用 JEA 前必须满足的先决条件。
 ms.openlocfilehash: 5cc70a06887a2d0a840cc83117f865d3148056e1
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501722"
 ---
 # <a name="prerequisites"></a>先决条件

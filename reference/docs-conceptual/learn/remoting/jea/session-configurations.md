@@ -4,10 +4,10 @@ keywords: jea,powershell,安全性
 title: JEA 会话配置
 description: 会话配置定义了可使用 JEA 终结点的人员及其有权访问的角色。
 ms.openlocfilehash: b616d5bf260bbdfe89b6422fd4a8b4866f7fdc67
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501552"
 ---
 # <a name="jea-session-configurations"></a>JEA 会话配置
@@ -34,7 +34,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 > [!TIP]
 > 默认情况下，模板文件仅包含最常用的配置选项。 使用 `-Full` 切换，在生成的 PSSC 中包含所有适用设置。
 
-`-SessionType RestrictedRemoteServer` 字段指示 JEA 使用该会话配置进行安全管理。 此类型的会话在 NoLanguage 模式下运行，且只有权访问以下默认命令（和别名）  ：
+`-SessionType RestrictedRemoteServer` 字段指示 JEA 使用该会话配置进行安全管理。 此类型的会话在 NoLanguage 模式下运行，且只有权访问以下默认命令（和别名）：
 
 - Clear-Host (cls, clear)
 - Exit-PSSession (exsn, exit)
@@ -57,7 +57,7 @@ JEA 在后台运行已连接用户的命令时需要使用标识（即帐户）�
 #### <a name="local-virtual-account"></a>本地虚拟帐户
 
 如果为 JEA 终结点定义的所有角色均用于管理本地计算机，并且本地管理员帐户足以成功运行命令，则本地虚拟帐户非常有用。
-虚拟帐户是特定用户所独有的临时帐户，仅在 PowerShell 会话的持续时间内有效。 在成员服务器或工作站上，虚拟帐户属于本地计算机的管理员组  。 在 Active Directory 域控制器上，虚拟帐户属于域的 **域管理员** 组。
+虚拟帐户是特定用户所独有的临时帐户，仅在 PowerShell 会话的持续时间内有效。 在成员服务器或工作站上，虚拟帐户属于本地计算机的管理员组。 在 Active Directory 域控制器上，虚拟帐户属于域的 **域管理员** 组。
 
 ```powershell
 # Setting the session to use a virtual account
@@ -112,13 +112,13 @@ TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 
 ### <a name="user-drive"></a>用户驱动器
 
-如果连接用户需要将文件复制到 JEA 终结点或从中复制文件，可在会话配置文件中启用用户驱动器。 用户驱动器是映射到各连接用户的唯一文件夹的 **PSDrive** 。 此文件夹允许用户将文件复制到系统或从中复制文件，但不提供访问完整文件系统的权限，也不公开 FileSystem 提供程序。 用户驱动器内容在会话之间持续存在，以便应对网络连接可能中断的情况。
+如果连接用户需要将文件复制到 JEA 终结点或从中复制文件，可在会话配置文件中启用用户驱动器。 用户驱动器是映射到各连接用户的唯一文件夹的 **PSDrive**。 此文件夹允许用户将文件复制到系统或从中复制文件，但不提供访问完整文件系统的权限，也不公开 FileSystem 提供程序。 用户驱动器内容在会话之间持续存在，以便应对网络连接可能中断的情况。
 
 ```powershell
 MountUserDrive = $true
 ```
 
-默认情况下，用户驱动器允许每个用户存储最多 50 MB 的数据。 可使用“UserDriveMaximumSize”  字段限制用户能使用的数据量。
+默认情况下，用户驱动器允许每个用户存储最多 50 MB 的数据。 可使用“UserDriveMaximumSize”字段限制用户能使用的数据量。
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -148,7 +148,7 @@ RoleDefinitions = @{
 
 如果某用户属于角色定义中的多个组，则有权访问每个组的角色。 两个角色向同一个 cmdlet 授予访问权限时，向用户授予最宽松的参数集。
 
-在角色定义字段中指定本地用户或组时，请务必使用计算机名称，而不是 localhost 或通配符  。 可通过检查 `$env:COMPUTERNAME` 变量来查看计算机名称。
+在角色定义字段中指定本地用户或组时，请务必使用计算机名称，而不是 localhost 或通配符。 可通过检查 `$env:COMPUTERNAME` 变量来查看计算机名称。
 
 ```powershell
 RoleDefinitions = @{
@@ -158,11 +158,11 @@ RoleDefinitions = @{
 
 ### <a name="role-capability-search-order"></a>角色功能搜索顺序
 
-如上例所示，角色功能由角色功能文件的基名称进行引用。 文件的基名称是不带扩展名的文件名。 如果多个角色功能适用于具有相同名称的系统，则 PowerShell 使用其隐式搜索顺序选择有效的角色功能文件。 JEA 不提供对名称相同的所有角色功能文件的访问权限  。
+如上例所示，角色功能由角色功能文件的基名称进行引用。 文件的基名称是不带扩展名的文件名。 如果多个角色功能适用于具有相同名称的系统，则 PowerShell 使用其隐式搜索顺序选择有效的角色功能文件。 JEA 不提供对名称相同的所有角色功能文件的访问权限。
 
 JEA 使用 `$env:PSModulePath` 环境变量来确定扫描角色功能文件的路径。 在每个路径中，JEA 查找包含“RoleCapabilities”子文件夹的有效 PowerShell 模块。 与导入模块一样，与具有相同名称的自定义角色功能相比，JEA 更倾向于 Windows 随附的角色功能。
 
-对于所有其他命名冲突，优先级由 Windows 枚举目录中文件的顺序决定。 不保证按字母顺序排序。 找到的匹配所指定名称的第一个角色功能文件用于连接用户。 由于角色功能搜索顺序具有不确定性，由此强烈建议让角色功能具有唯一的文件名  。
+对于所有其他命名冲突，优先级由 Windows 枚举目录中文件的顺序决定。 不保证按字母顺序排序。 找到的匹配所指定名称的第一个角色功能文件用于连接用户。 由于角色功能搜索顺序具有不确定性，由此强烈建议让角色功能具有唯一的文件名。
 
 ### <a name="conditional-access-rules"></a>条件访问规则
 
