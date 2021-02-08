@@ -3,12 +3,12 @@ title: 关于哈希表的各项须知内容
 description: 哈希表在 PowerShell 中非常重要，因此最好对它们进行全面深入的了解。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
-ms.sourcegitcommit: 0c31814bed14ff715dc7d4aace07cbdc6df2438e
+ms.openlocfilehash: e386e2aa2f7b85bee4bf622fd9251ef7642cf16a
+ms.sourcegitcommit: 57e577097085dc621bd797ef4a7e2854ea7d4e29
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "93354416"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "97980495"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>关于哈希表的各项须知内容
 
@@ -925,8 +925,7 @@ Orig: [copy]
 
 ### <a name="deep-copies"></a>深层副本
 
-撰写本文时，我还不知道有什么快捷方法可以仅创建哈希表的深层副本（并将其保存为哈希表）。 这只是需要有人去写的内容之一。
-下面是进行深层复制的一个快速方法。
+可以通过几种方式来生成哈希表的深层副本（并将其保存为哈希表）。 下面是使用 PowerShell 以递归方式创建深层副本的函数：
 
 ```powershell
 function Get-DeepClone
@@ -952,6 +951,21 @@ function Get-DeepClone
 ```
 
 它不会处理任何其他引用类型或数组，但它是一个很好的起点。
+
+另一种方法是使用 .Net 对其进行反序列化，方法是使用 CliXml，如此函数中所示：
+
+```powershell
+function Get-DeepClone
+{
+    param(
+        $InputObject
+    )
+    $TempCliXmlString = [System.Management.Automation.PSSerializer]::Serialize($obj, [int32]::MaxValue)
+    return [System.Management.Automation.PSSerializer]::Deserialize($TempCliXmlString)
+}
+```
+
+对于非常大的哈希表，反序列化函数的速度更快，因为它横向扩展。然而，使用此方法时需要考虑一些事项。 由于它使用 CliXml，因此会占用大量内存，如果克隆大型哈希表，这可能是一个问题。 CliXml 的另一个限制是深度限制为 48。 也就是说，如果你有一个包含 48 层嵌套哈希表的哈希表，则克隆将失败，并且根本不会输出任何哈希表。
 
 ## <a name="anything-else"></a>任何其他内容？
 

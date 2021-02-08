@@ -2,12 +2,12 @@
 title: PowerShell Core 支持生命周期
 description: 详细介绍管理 PowerShell 支持的策略
 ms.date: 11/11/2020
-ms.openlocfilehash: f2a1df0fabdfb624db666d240172930dc60f1bfe
-ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
+ms.openlocfilehash: 0803dda070c66b4c1d803171ecdb7029a096517b
+ms.sourcegitcommit: 4879b9cdfa3f03b04a07b84442dc1ca9ae0f6b46
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94810379"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98105173"
 ---
 # <a name="powershell-support-lifecycle"></a>PowerShell 支持生命周期
 
@@ -143,11 +143,13 @@ PowerShell 遵守 [Microsoft 的 Windows 安全服务标准][]。
 
 |         版本          | 发布日期 |                                                                     注意                                                                      |
 | ------------------------ | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| PowerShell 7.1（当前版本） |   2020 年 11 月   | 基于 .NET Core 5.0（当前版本）                                                                                                              |
-| PowerShell 7.0 (LTS)     |   2020 年 3 月   | 基于 .NET Core 3.1 (LTS) 生成                                                                                                                  |
-| PowerShell 6.0           |   2018 年 1 月   | 第一版，基于 .NET Core 2.1 生成。 可在 Windows、Linux 和 macOS 上安装。                                                              |
-| PowerShell 5.1           |   2016 年 8 月   | 在 Windows 10 周年更新和 Windows Server 2016 中发布                                                                             |
-| PowerShell 5.0           |   2016 年 2 月   | 在 Windows Management Framework (WMF) 5.0 中发布                                                                                            |
+| PowerShell 7.1（当前版本） |   2020 年 11 月   | 基于 .NET Core 5.0（当前版本）生成。                                                                                                             |
+| PowerShell 7.0 (LTS)     |   2020 年 3 月   | 基于 .NET Core 3.1 (LTS) 生成。                                                                                                                 |
+| PowerShell 6.2           |   2019 年 3 月   |                                                                                                                                               |
+| PowerShell 6.1           |   2018 年 9 月   | 基于 .NET Core 2.1 生成。                                                                                                                       |
+| PowerShell 6.0           |   2018 年 1 月   | 第一版，基于 .NET Core 2.0 生成。 可在 Windows、Linux 和 macOS 上安装。                                                              |
+| PowerShell 5.1           |   2016 年 8 月   | 在 Windows 10 周年更新和 Windows Server 2016 中发布。                                                                            |
+| PowerShell 5.0           |   2016 年 2 月   | 在 Windows Management Framework (WMF) 5.0 中发布。                                                                                           |
 | PowerShell 4.0           |   2013 年 10 月   | 在 Windows 8.1 中与 Windows Server 2012 R2 集成。 可在 Windows 7 SP1、Windows Server 2008 R2 SP1 和 Windows Server 2012 上安装。 |
 | PowerShell 3.0           |   2012 年 10 月   | 在 Windows 8 中与 Windows Server 2012 集成。 可在 Windows 7 SP1、Windows Server 2008 SP1 和 Windows Server 2008 R2 SP1 上安装。  |
 | PowerShell 2.0           |   2009 年 7 月   | 在 Windows 7 中与 Windows Server 2008 R2 集成。 可在 Windows XP SP3、Windows Server 2003 SP2 和 Windows Vista SP1 上安装。            |

@@ -1,13 +1,13 @@
 ---
 title: 在 Windows 上安装 PowerShell
 description: 介绍如何在 Windows 上安装 PowerShell
-ms.date: 11/11/2020
-ms.openlocfilehash: 039db904a315bd3ad3f4e1358d414c98c3a84be5
-ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
+ms.date: 02/02/2021
+ms.openlocfilehash: befc5ff156cb7c3843d89e394e903778682ba28e
+ms.sourcegitcommit: 40b6d8e9b6d791ac69e2ff85224e900b21552bc1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661420"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99536486"
 ---
 # <a name="installing-powershell-on-windows"></a>在 Windows 上安装 PowerShell
 
@@ -24,14 +24,14 @@ Windows 7 SP1、Server 2008 R2 及更高版本支持最新版 PowerShell。
 
 ## <a name="download-the-installer-package"></a>下载安装程序包
 
-若要在 Windows 上安装 PowerShell，请从 GitHub 下载[最新][]安装包。 你也可以在[版本][]页上找到最新的预览版。 向下滚动到“版本”页的“资产”  部分。 由于“资产”  部分可能处于折叠状态，因此可能需要单击展开它。
+若要在 Windows 上安装 PowerShell，请从 GitHub 下载[最新][]安装包。 你也可以找到最新的[预览版][]版本。 向下滚动到“版本”页的“资产”  部分。 由于“资产”  部分可能处于折叠状态，因此可能需要单击展开它。
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />安装 MSI 包
 
 MSI 文件如下所示：`PowerShell-<version>-win-<os-arch>.msi`。 例如：
 
-- `PowerShell-7.1.0-win-x64.msi`
-- `PowerShell-7.1.0-win-x86.msi`
+- `PowerShell-7.1.1-win-x64.msi`
+- `PowerShell-7.1.1-win-x86.msi`
 
 下载后，双击安装程序并按照提示进行操作。
 
@@ -55,13 +55,14 @@ MSI 文件如下所示：`PowerShell-<version>-win-<os-arch>.msi`。 例如：
 可以通过命令行安装 MSI 包，这样管理员能够在没有用户交互的情况下部署包。 MSI 包中有下列控制安装选项的属性：
 
 - **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - 此属性控制向 Windows 资源管理器中的上下文菜单添加“打开 PowerShell”  项的选项。
+- **ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL** - 此属性控制向 Windows 资源管理器中的上下文菜单添加“使用 PowerShell 运行”项的选项。
 - **ENABLE_PSREMOTING** - 此属性控制用于在安装过程中启用 PowerShell 远程处理的选项。
 - **REGISTER_MANIFEST** - 此属性控制用于注册 Windows 事件日志记录清单的选项。
 
 下面的示例展示了如何在启用所有安装选项的情况下无提示安装 PowerShell。
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.1-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 有关 `Msiexec.exe` 命令行选项的完整列表，请参阅[命令行选项](/windows/desktop/Msi/command-line-options)。
@@ -81,12 +82,12 @@ msiexec.exe /package PowerShell-7.1.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_ME
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />安装 ZIP 包
 
-提供有 PowerShell 二进制 ZIP 存档，从而支持高级部署方案。 从[版本][版本]页下载以下 ZIP 存档之一。
+提供有 PowerShell 二进制 ZIP 存档，从而支持高级部署方案。 从 [版本][releases] 页下载以下某个 ZIP 存档。
 
-- PowerShell-7.1.0-win-x64.zip
-- PowerShell-7.1.0-win-x86.zip
-- PowerShell-7.1.0-win-arm64.zip
-- PowerShell-7.1.0-win-arm32.zip
+- PowerShell-7.1.1-win-x64.zip
+- PowerShell-7.1.1-win-x86.zip
+- PowerShell-7.1.1-win-arm64.zip
+- PowerShell-7.1.1-win-arm32.zip
 
 根据该文件的下载方式，你可能需要使用 `Unblock-File` cmdlet 解锁。 将内容解压到你选择的位置，然后从该位置运行 `pwsh.exe`。 与安装 MSI 包不一样，安装 ZIP 存档不会检查先决条件。 为了让使用 WSMan 的远程处理能够正常运行，请确保已满足[先决条件](#prerequisites)。
 
@@ -225,8 +226,8 @@ dotnet 工具安装程序将 `$env:USERPROFILE\dotnet\tools` 添加到 `$env:PAT
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.1.0
-   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
+   PowerShell         Microsoft.PowerShell         7.1.1
+   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.1-preview.5
    ```
 
 1. 使用 `--exact` 参数安装 PowerShell 版本
@@ -259,7 +260,7 @@ MSIX 包在应用程序沙盒中运行，后者用于虚拟化对某些文件系
 > [!NOTE]
 > PowerShell 的预览版本包含一个 MSIX 包。 MSIX 包尚未获得正式支持。 生成此包的目的是为了在预览期间进行测试。
 
-要在 Windows 10 客户端上手动安装 MSIX 包，请从 GitHub [版本][版本]页下载 MSIX 包。 向下滚动到要安装的版本的“资产”部分。  “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
+要在 Windows 10 客户端上手动安装 MSIX 包，请从 GitHub [版本][releases] 页下载 MSIX 包。 向下滚动到要安装的版本的“资产”部分。  “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
 
 MSIX 文件类似于 - `PowerShell-<version>-win-<os-arch>.msix`
 
@@ -286,8 +287,8 @@ Microsoft 支持本文档中的安装方法。 其他源可能会提供其他安
 
 <!-- link references -->
 
-[版本]: https://github.com/PowerShell/PowerShell/releases
-[latest]: https://github.com/PowerShell/PowerShell/releases/latest
+[预览版]: https://aka.ms/powershell-release?tag=preview
+[latest]: https://aka.ms/powershell-release?tag=stable
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
