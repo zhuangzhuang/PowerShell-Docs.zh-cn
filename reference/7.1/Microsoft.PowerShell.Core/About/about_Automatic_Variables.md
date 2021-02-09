@@ -5,12 +5,12 @@ ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 60ad0e40f7e392bf240ee76a5902123c45a282fd
-ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
+ms.openlocfilehash: 8a2410dd2adcc1679ab203293b4c4e712b960278
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577235"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975135"
 ---
 # <a name="about-automatic-variables"></a>关于自动变量
 
@@ -67,7 +67,7 @@ $? # $true
 
 包含传递给函数、脚本或脚本块的未声明参数的值数组。 创建函数时，可以使用 `param` 关键字或在函数名称后的括号中添加以逗号分隔的参数列表，来声明参数。
 
-在事件操作中， `$Args` 变量包含表示正在处理的事件的事件参数的对象。 仅在 `Action` 事件注册命令块内填充此变量。
+在事件操作中， `$args` 变量包含表示正在处理的事件的事件参数的对象。 仅在 `Action` 事件注册命令块内填充此变量。
 此变量的值还可在返回的 **PSEventArgs** 对象的 **SourceArgs** 属性中找到 `Get-Event` 。
 
 ### <a name="consolefilename"></a>$ConsoleFileName

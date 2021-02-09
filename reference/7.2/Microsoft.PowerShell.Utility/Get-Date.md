@@ -6,12 +6,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: 8c0a1b7a14f5dfa071a85808f5d7dfba4d06048e
-ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
+ms.openlocfilehash: 6f5c76faafa2c68a6d9dfc604238c514489aa717
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "99603594"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975050"
 ---
 # Get-Date
 
@@ -215,7 +215,7 @@ d-----         6/27/2019    07:59                2019-06-27T07.59.24.4603750-07.
 
 ### 示例9：转换 Unix 时间戳
 
-此示例将 (从 1970-01-01 0:00:00) 到 DateTime 的秒数表示的 Unix 时间转换为。
+此示例将 Unix 时间（由 1970-01-01 0:00:00 以来的秒数表示）转换为 DateTime。
 
 ```powershell
 Get-Date -UnixTimeSeconds 1577836800
@@ -513,7 +513,7 @@ Accept wildcard characters: False
 
 ### 管道输入
 
-`Get-Date` 接受管道输入。 例如，`Get-ChildItem | Get-Date`。
+`Get-Date` 接受管道输入。 例如，`Get-ChildItem | Get-Date` 。
 
 ## 输出
 
@@ -526,7 +526,7 @@ Accept wildcard characters: False
 方法 `(Get-Date).ToString()` 将 **DateTime** 对象转换为 **String** 对象。
 
 若要显示对象的属性和方法，请将对象向下发送到 `Get-Member` 。
-例如，`Get-Date | Get-Member`。
+例如，`Get-Date | Get-Member` 。
 
 ## 注释
 
@@ -565,9 +565,9 @@ Accept wildcard characters: False
 | `%t` | 水平制表符                                                |                          |
 | `%T` | 24 小时格式的时间                                                  | 17:45:52                 |
 | `%U` | 与 "W" 相同                                                             |                          |
-| `%u` | 周日期-数字                                                | 星期日 = 0               |
+| `%u` |  (1-7) 的一周中的某一天                                           | 星期一 = 1，星期日 = 7   |
 | `%V` | 一年中的某一周                                                        | 01-53                    |
-| `%w` | 与 "u" 相同                                                             |                          |
+| `%w` |  (0-6) 的一周中的某一天                                           | 星期日 = 0，星期六 = 6 |
 | `%W` | 一年中的某一周                                                        | 00-52                    |
 | `%X` | 与 "t" 相同                                                             |                          |
 | `%x` | 区域设置的标准格式日期                                      | 美国英语06/27/19  |
