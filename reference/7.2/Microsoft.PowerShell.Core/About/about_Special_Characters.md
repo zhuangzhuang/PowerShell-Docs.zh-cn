@@ -1,16 +1,16 @@
 ---
 description: 介绍用于控制 PowerShell 如何解释序列中的下一个字符的特殊字符序列。
 Locale: en-US
-ms.date: 04/04/2020
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Special_Characters
-ms.openlocfilehash: c642bc69d9e67bd945e5687d7f7c35e039062194
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: b21ec1eb5ed0da52cf5eff01eaf3c220d117cf55
+ms.sourcegitcommit: 364c3fe46b2069b810107d840be59fe519ea7b4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99597258"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100100710"
 ---
 # <a name="about-special-characters"></a>关于特殊字符
 
@@ -157,13 +157,28 @@ Unicode 转义序列 (`` `u{x} ``) 使你可以通过其码位的十六进制表
 
 ## <a name="vertical-tab-v"></a>垂直选项卡 ("v) 
 
-"水平" 选项卡 (`` `v ``) 字符前进到下一个垂直制表位，并在该点写入剩余的输出。 这在默认的 Windows 控制台中不起作用。
+"垂直" 选项卡 (`` `v ``) 字符前进到下一个垂直制表位，并在该点写入剩余的输出。 垂直选项卡的呈现是设备和终端相关的。
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
 ```
 
-下面的示例显示了你将在打印机或其他控制台主机上获得的输出。
+下面的示例演示了某些常见环境中的垂直选项卡的呈现输出。
+
+Windows 控制台主机应用程序将 (`` `v ``) 解释为特殊字符，无需添加额外的间距。
+
+```Output
+There is a vertical tab♂between the words.
+```
+
+[Windows 终端](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)将垂直制表符呈现为回车符和换行。 输出的其余部分将打印在下一行的开头。
+
+```Output
+There is a vertical tab
+between the words.
+```
+
+在打印机上或基于 unix 的控制台中，垂直制表符前进到下一行，并在该点写入剩余的输出。
 
 ```Output
 There is a vertical tab
@@ -206,7 +221,7 @@ $args = C:\Users\username|--%|$HOME
 
 有关停止分析令牌的详细信息，请参阅 [about_Parsing](about_Parsing.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [about_Quoting_Rules](about_Quoting_Rules.md)
 

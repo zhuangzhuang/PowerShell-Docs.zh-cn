@@ -2,16 +2,16 @@
 description: 介绍用于控制 PowerShell 如何解释序列中的下一个字符的特殊字符序列。
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/04/2020
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Special_Characters
-ms.openlocfilehash: 6856d903276f5cbe4db222ac4c5d64ce6939413e
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 1d20dc6c1ac06b5686d78cd46d30c8e9f879af00
+ms.sourcegitcommit: 364c3fe46b2069b810107d840be59fe519ea7b4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200190"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100100744"
 ---
 # <a name="about-special-characters"></a>关于特殊字符
 
@@ -21,9 +21,9 @@ ms.locfileid: "93200190"
 
 ## <a name="long-description"></a>长说明
 
-PowerShell 支持使用一组特殊字符序列来表示不属于标准字符集的字符。 序列通常称为 " _转义序列_ "。
+PowerShell 支持使用一组特殊字符序列来表示不属于标准字符集的字符。 序列通常称为 " _转义序列_"。
 
-转义序列以反撇号字符开头，称为抑音符 (ASCII 96) ，区分大小写。 反撇号字符也可以称为 _转义字符_ 。
+转义序列以反撇号字符开头，称为抑音符 (ASCII 96) ，区分大小写。 反撇号字符也可以称为 _转义字符_。
 
 仅当转义序列包含在带双引号的 () 字符串中时，才会进行解释 `"` 。
 
@@ -69,7 +69,7 @@ for ($i = 0; $i -le 1; $i++){"`a"}
 Backspace (`` `b ``) 字符将光标向后移动一个字符，但不会删除任何字符。
 
 该示例将写入单词 **backup** ，然后将光标向后移动两次。
-然后，在新位置写入一个空格，后跟单词 **out** 。
+然后，在新位置写入一个空格，后跟单词 **out**。
 
 ```powershell
 "backup`b`b out"
@@ -158,13 +158,28 @@ Unicode 转义序列 (`` `u{x} ``) 使你可以通过其码位的十六进制表
 
 ## <a name="vertical-tab-v"></a>垂直选项卡 ("v) 
 
-"水平" 选项卡 (`` `v ``) 字符前进到下一个垂直制表位，并在该点写入剩余的输出。 这在默认的 Windows 控制台中不起作用。
+"垂直" 选项卡 (`` `v ``) 字符前进到下一个垂直制表位，并在该点写入剩余的输出。 垂直选项卡的呈现是设备和终端相关的。
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
 ```
 
-下面的示例显示了你将在打印机或其他控制台主机上获得的输出。
+下面的示例演示了某些常见环境中的垂直选项卡的呈现输出。
+
+Windows 控制台主机应用程序将 (`` `v ``) 解释为特殊字符，无需添加额外的间距。
+
+```Output
+There is a vertical tab♂between the words.
+```
+
+[Windows 终端](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)将垂直制表符呈现为回车符和换行。 输出的其余部分将打印在下一行的开头。
+
+```Output
+There is a vertical tab
+between the words.
+```
+
+在打印机上或基于 unix 的控制台中，垂直制表符前进到下一行，并在该点写入剩余的输出。
 
 ```Output
 There is a vertical tab
