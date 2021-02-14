@@ -5,12 +5,12 @@ ms.date: 11/23/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: 关于 PSReadLine
-ms.openlocfilehash: 4836abfec465ba7cdfb6800c1e60104fba19ce08
-ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
+ms.openlocfilehash: b0c5950b2af6a866d0ffcfdd6ce7ad92a1763778
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "99595607"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500206"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -918,19 +918,39 @@ Yank 从上一历史记录行) 命令后 (第一个参数。
 
 - Vi 插入模式： `<Shift+Tab>`
 
-## <a name="miscellaneous-functions"></a>杂项函数
+## <a name="prediction-functions"></a>预测函数
 
 ### <a name="acceptnextsuggestionword"></a>AcceptNextSuggestionWord
 
-接受内嵌或所选建议的下一个单词。
+使用 `InlineView` 作为预测的视图样式时，请接受 "内联建议" 的下一个单词。
 
 - 函数未绑定。
 
 ### <a name="acceptsuggestion"></a>AcceptSuggestion
 
-接受当前内联或所选的建议。
+使用 `InlineView` 作为预测的视图样式时，请接受当前内联建议。
 
 - 函数未绑定。
+
+### <a name="nextsuggestion"></a>NextSuggestion
+
+使用 `ListView` 作为预测的视图样式时，导航到列表中的下一个建议。
+
+- 函数未绑定。
+
+### <a name="previoussuggestion"></a>PreviousSuggestion
+
+使用 `ListView` 作为预测的视图样式时，导航到列表中的上一个建议。
+
+- 函数未绑定。
+
+### <a name="switchpredictionview"></a>SwitchPredictionView
+
+切换与之间的预测的视图 `InlineView` 样式 `ListView` 。
+
+- Cmd：`<F2>`
+
+## <a name="miscellaneous-functions"></a>杂项函数
 
 ### <a name="capturescreen"></a>CaptureScreen
 
@@ -1007,6 +1027,15 @@ Yank 从上一历史记录行) 命令后 (第一个参数。
 
 - 函数未绑定。
 
+### <a name="showcommandhelp"></a>ShowCommandHelp
+
+提供有关使用来自 **Microsoft PowerShell** 的页导航的替代屏幕缓冲区的完整 cmdlet 帮助视图。
+
+- Cmd：`<F1>`
+- Emacs `<F1>`
+- Vi 插入模式： `<F1>`
+- Vi 命令模式： `<F1>`
+
 ### <a name="showkeybindings"></a>ShowKeyBindings
 
 显示所有绑定键。
@@ -1014,6 +1043,15 @@ Yank 从上一历史记录行) 命令后 (第一个参数。
 - Cmd：`<Ctrl+Alt+?>`
 - Emacs `<Ctrl+Alt+?>`
 - Vi 插入模式： `<Ctrl+Alt+?>`
+
+### <a name="showparameterhelp"></a>ShowParameterHelp
+
+提供参数的动态帮助，方法是将其显示在当前命令行（如）下面 `MenuComplete` 。
+
+- Cmd：`<Alt+h>`
+- Emacs `<Alt+h>`
+- Vi 插入模式： `<Alt+h>`
+- Vi 命令模式： `<Alt+h>`
 
 ### <a name="vicommandmode"></a>ViCommandMode
 

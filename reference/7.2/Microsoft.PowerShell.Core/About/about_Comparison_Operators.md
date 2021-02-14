@@ -5,12 +5,12 @@ ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: 2bd2aa825d09078f37dba1f99fa64584dacd324d
-ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
+ms.openlocfilehash: 2ccd631083ddc06d25f2c3b4733223cca2e89d44
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "99597261"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500240"
 ---
 # <a name="about-comparison-operators"></a>关于比较运算符
 
@@ -24,7 +24,7 @@ PowerShell 中的比较运算符可以将集合的两个值或筛选元素与输
 
 |    类型     |   运算符   |              比较测试              |
 | ----------- | ------------ | ----------------------------------------- |
-| 相等    | -eq          | equals                                    |
+| 等式    | -eq          | equals                                    |
 |             | -ne          | 不等于                                |
 |             | -gt          | 大于                              |
 |             | -ge          | 大于或等于                     |
@@ -34,7 +34,7 @@ PowerShell 中的比较运算符可以将集合的两个值或筛选元素与输
 |             | -notlike     | 字符串不匹配通配符模式    |
 |             | -match       | 字符串匹配正则表达式模式              |
 |             | -notmatch    | 字符串不匹配 regex 模式       |
-| Replacement | -replace     | 替换匹配正则表达式模式的字符串 |
+| 替代功能 | -replace     | 替换匹配正则表达式模式的字符串 |
 | Containment | -contains    | 集合包含值               |
 |             | -notcontains | 集合不包含值       |
 |             | -in          | 值在集合中                  |
@@ -72,7 +72,7 @@ Object[]
 
 左侧为标量时， `-eq` 如果右侧是完全匹配，则返回 **True** ，否则返回 `-eq` **False**。 `-ne` 相反;当双方均匹配时，它将返回 **False** ;否则， `-ne` 返回 True。
 
-例如：
+示例：
 
 ```powershell
 2 -eq 2                 # Output: True
@@ -86,7 +86,7 @@ Object[]
 
 如果左侧是集合，则 `-eq` 返回与右侧匹配的成员，同时对 `-ne` 其进行筛选。
 
-例如：
+示例：
 
 ```powershell
 1,2,3 -eq 2             # Output: 2
@@ -94,7 +94,7 @@ Object[]
 "abc", "def" -ne "abc"  # Output: def
 ```
 
-这些运算符处理集合的所有元素。 例如：
+这些运算符处理集合的所有元素。 示例：
 
 ```powershell
 "zzz", "def", "zzz" -eq "zzz"
@@ -178,7 +178,7 @@ $a -ne $null # Output: 1, 2, 4, 6
 
 `-gt`、 `-ge` 、 `-lt` 和的 `-le` 行为与此类似。 当双方都为标量时，它们会返回 **True** 或 **False** ，具体取决于两个边的比较方式：
 
-| 操作员 | 当 .。。                   |
+| 运算符 | 当 .。。                   |
 | -------- | -------------------------------------- |
 | -gt      | 左侧更大          |
 | -ge      | 左侧大于或等于 |
@@ -199,7 +199,7 @@ $a -ne $null # Output: 1, 2, 4, 6
 
 如果左侧是集合，则这些运算符会将集合的每个成员与右侧进行比较。 根据其逻辑，它们可以保留或丢弃成员。
 
-例如：
+示例：
 
 ```powershell
 $a=5, 6, 7, 8, 9
@@ -292,7 +292,7 @@ $a -gt 'a'
 
 `-like` 和 `-notlike` 的行为与 `-eq` 和类似 `-ne` ，但右侧可以是包含 [通配符](about_Wildcards.md)的字符串。
 
-例如：
+示例：
 
 ```powershell
 "PowerShell" -like    "*shell"           # Output: True
@@ -342,7 +342,7 @@ $a -gt 'a'
 
 `-match` 和 `-notmatch` 支持 regex 捕获组。 每次运行时，它们将覆盖 `$Matches` 自动变量。 当 `<input>` 是集合时， `$Matches` 变量是 `$null` 。 `$Matches` 是始终具有名为 "0" 的键的 **哈希表** ，它存储整个匹配项。 如果正则表达式包含捕获组，则 `$Matches` 包含每个组的其他键。
 
-例如：
+示例：
 
 ```powershell
 $string = 'The last logged on user was CONTOSO\jsmith'
@@ -414,7 +414,7 @@ book
 在下面的示例中， `-replace` 运算符接受格式为的用户名， `DomainName\Username` 并将转换为以下 `Username@DomainName` 格式：
 
 ```powershell
-$SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
+$SearchExp = '^(?<DomainName>[\w-.]+)\\(?<Username>[\w-.]+)$'
 $ReplaceExp = '${Username}@${DomainName}'
 
 'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
@@ -429,7 +429,7 @@ John.Doe@Contoso.local
 >
 > - 在 PowerShell 中，在双引号之间，它指定变量并充当子表达式运算符。
 > - 在正则表达式搜索字符串中，它表示行的结尾
-> - 在 Regex 替换字符串中，它表示捕获的组，因此，请务必将正则表达式放在单引号之间，或者在它们之前插入反撇号 (`` ` ``) 字符。
+> - 在 Regex 替换字符串中，它表示捕获的组。请确保将正则表达式放在单引号之间，或 `` ` `` 在它们之前插入反撇号 () 字符。
 
 例如：
 
@@ -443,7 +443,7 @@ $1 = 'Goodbye'
 # Output: Hello Universe
 ```
 
-`$$` 在正则表达式中表示文字 `$` 。 此 `$$` 在替换字符串中，用于在生成的 `$` 替换中包含一个文本。 例如：
+`$$` 在正则表达式中表示文字 `$` 。 此 `$$` 在替换字符串中，以 `$` 在生成的替换中包含文本。 例如：
 
 ```powershell
 '5.72' -replace '(.+)', '$ $1' # Output: $ 5.72

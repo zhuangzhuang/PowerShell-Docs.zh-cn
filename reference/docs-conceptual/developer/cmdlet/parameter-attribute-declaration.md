@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: 参数属性声明
 description: 参数属性声明
-ms.openlocfilehash: bab48a94cb4b1e8501fb79c2f3ef71393fa2ee68
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 24a49406b1493a7f8c23bca798ddb3e73a901111
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92650352"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500223"
 ---
 # <a name="parameter-attribute-declaration"></a>参数属性声明
 
@@ -37,7 +37,7 @@ ms.locfileid: "92650352"
 
 `HelpMessage` 可选的命名参数。 指定参数的简短说明。 运行 cmdlet 时，Windows PowerShell 会显示此消息，未指定必需的参数。
 
-`HelpMessageBaseName` 可选的命名参数。指定资源标识符驻留的位置。 例如，此参数可以指定包含要本地化的帮助消息的资源程序集。
+`HelpMessageBaseName` 可选的命名参数。 指定资源标识符驻留的位置。 例如，此参数可以指定包含要本地化的帮助消息的资源程序集。
 
 `HelpMessageResourceId` 可选的命名参数。指定帮助消息的资源标识符。
 
@@ -59,7 +59,7 @@ ms.locfileid: "92650352"
 
   - 参数集应包含多个具有相同位置的位置参数。
 
-  - 参数集中只应声明一个参数 `ValueFromPipeline = true` 。 可以定义多个参数 `ValueFromPipelineByPropertyName = true` 。
+  - 参数集中只应声明一个参数 `ValueFromPipeline = true` 。
 
   - 可以定义多个参数 `ValueFromPipelineByPropertyName = true` 。
 
