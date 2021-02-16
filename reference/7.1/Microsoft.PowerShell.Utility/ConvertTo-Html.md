@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Html
-ms.openlocfilehash: 27a1d2994dee46b9e5bfd54132ff4a665330c2b4
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: 1eade078765f93713da1f665e3ad6f062a1826d9
+ms.sourcegitcommit: 9777152e026c47ba8d319593051416054cb62246
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93199284"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100529934"
 ---
 # ConvertTo-Html
 
@@ -69,7 +69,7 @@ Invoke-Item aliases.htm
 ### 示例3：创建网页以显示 PowerShell 事件
 
 ```powershell
-`Get-EventLog` -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
+Get-EventLog -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
 ```
 
 此命令会创建一个名为 `pslog.htm` 的 HTML 页面，用于显示本地计算机上 Windows PowerShell 事件日志中的事件。
@@ -153,7 +153,7 @@ Get-EventLog -Log "Windows PowerShell" | ConvertTo-Html -Property id, level, tas
 
 它使用管道运算符 (`|`) 将事件发送到 `ConvertTo-Html` cmdlet，后者将事件转换为 HTML 格式。
 
-该 `ConvertTo-Html` 命令使用 **Property** 参数来仅选择事件的 **ID** 、 **Level** 和 **Task** 属性。
+该 `ConvertTo-Html` 命令使用 **Property** 参数来仅选择事件的 **ID**、 **Level** 和 **Task** 属性。
 
 ### 示例9：创建显示指定服务的网页
 
@@ -170,7 +170,7 @@ Get-Service A* |
 Invoke-Item Services.htm
 ```
 
-此命令创建并打开一个网页，其中显示了计算机上以开头的服务。它使用的 **Title** 、 **Body** 、 **PreContent** 和 **PostContent** 参数 `ConvertTo-Html` 来自定义输出。
+此命令创建并打开一个网页，其中显示了计算机上以开头的服务。它使用的 **Title**、 **Body**、 **PreContent** 和 **PostContent** 参数 `ConvertTo-Html` 来自定义输出。
 
 该命令的第一部分使用 `Get-Service` cmdlet 来获取计算机上以开头的服务。该命令使用管道运算符 (`|`) 将结果发送到 `ConvertTo-Html` cmdlet。 该命令还使用 `Out-File` cmdlet 将输出发送到 Services.htm 文件中。
 
@@ -201,7 +201,7 @@ Get-Service | ConvertTo-HTML -Transitional
 
 ### -As
 
-确定将对象设置为表格格式还是列表格式。 有效值为 **Table** 和 **List** 。 默认值为 **Table** 。
+确定将对象设置为表格格式还是列表格式。 有效值为 **Table** 和 **List**。 默认值为 **Table**。
 
 **Table** 值会生成一个类似于 PowerShell 表格格式的 HTML 表。 标题行显示属性名称。 表格的每一行表示一个对象，并显示该对象的每个属性值。
 
@@ -412,7 +412,7 @@ Accept wildcard characters: False
 
 ### -过渡
 
-将 **doctype** 更改为 **xhtml 过渡 Dtd** ，默认 **doctype** 为 **xhtml 严格 DTD** 。
+将 **doctype** 更改为 **xhtml 过渡 Dtd**，默认 **doctype** 为 **xhtml 严格 DTD**。
 
 此参数是在 PowerShell 6.0 中引入的。
 

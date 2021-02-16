@@ -1,17 +1,16 @@
 ---
 description: 介绍如何在 PowerShell 中使用通配符。
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 3/28/2019
+ms.date: 02/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Wildcards
-ms.openlocfilehash: 4656266107a29e4f57c5e273788d382a477a2428
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 189bff70783b9277f242e8c4ca1c227ae68bae62
+ms.sourcegitcommit: 9777152e026c47ba8d319593051416054cb62246
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200224"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100529951"
 ---
 # <a name="about-wildcards"></a>关于通配符
 
@@ -21,7 +20,9 @@ ms.locfileid: "93200224"
 
 ## <a name="long-description"></a>详细说明
 
-通配符表示一个或多个字符。 您可以使用它们在命令中创建 word 模式。 例如，若要获取文件扩展名为的目录中的所有文件 `C:\Techdocs` `.ppt` ，请键入：
+通配符表示一个或多个字符。 您可以使用它们在命令中创建 word 模式。 通配符表达式与 `-like` 运算符或任何接受通配符的参数一起使用。
+
+例如，若要匹配 `C:\Techdocs` 目录中具有文件扩展名的所有文件 `.ppt` ，请键入：
 
 ```powershell
 Get-ChildItem C:\Techdocs\*.ppt
@@ -29,9 +30,11 @@ Get-ChildItem C:\Techdocs\*.ppt
 
 在这种情况下，星号 (`*`) 通配符表示在文件扩展名之前出现的任何字符 `.ppt` 。
 
+通配符表达式比正则表达式简单。 有关详细信息，请参阅 [about_Regular_Expressions](./about_Regular_Expressions.md)。
+
 PowerShell 支持以下通配符：
 
-|通配符|说明               |示例 |匹配        |无匹配项|
+|通配符|描述               |示例 |匹配        |无匹配项|
 |--------|--------------------------|--------|-------------|--------|
 |\*      |匹配零个或多个字符 | 的\*  | aA、ag、Apple | 香蕉 |
 |?       |匹配该位置中的一个字符 | ？ n | ，在中，在 | 为名 |
@@ -52,7 +55,7 @@ Get-ChildItem C:\Techdocs\[a-l]*.txt
 Get-Service | Where-Object {$_.ServiceType -Like "*Interactive*"}
 ```
 
-在下面的示例中， `If` 语句包含使用通配符查找属性值的条件。 如果还原点的 **描述** 包含 **PowerShell** ，则该命令会将还原点的 **CreationTime** 属性的值添加到日志文件。
+在下面的示例中， `If` 语句包含使用通配符查找属性值的条件。 如果还原点的 **描述** 包含 **PowerShell**，则该命令会将还原点的 **CreationTime** 属性的值添加到日志文件。
 
 ```powershell
 $p = Get-ComputerRestorePoint
