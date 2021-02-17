@@ -3,12 +3,12 @@ ms.date: 01/04/2021
 ms.topic: reference
 title: 如何编写 PowerShell 模块清单
 description: 如何编写 PowerShell 模块清单
-ms.openlocfilehash: 8c644391008cb97c1206f985f0f5eca9d7dfcc9e
-ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
+ms.openlocfilehash: 0270b9b3745b7ffd187f2089414ea7759515d96b
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879365"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563309"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>如何编写 PowerShell 模块清单
 
@@ -57,7 +57,7 @@ ms.locfileid: "97879365"
 |元素|默认|说明|
 |-------------|-------------|-----------------|
 |**RootModule**<br /> 类型：`String`|`<empty string>`|与此清单关联的脚本模块或二进制模块文件。 以前版本的 PowerShell 调用此元素为 **ModuleToProcess**。<br /> 根模块的可能类型可以是空的，这会创建 **清单** 模块、脚本模块的名称 (`.psm1`) ，或者二进制模块 (`.exe` 或) 的名称 `.dll` 。 在此元素中将模块清单的名称 (`.psd1`) 或脚本文件 (`.ps1`) 会导致错误。 <br /> 示例： `RootModule = 'ScriptModule.psm1'`|
-|**ModuleVersion**<br /> 类型：`Version`|`'0.0.1'`|此模块的版本号。 如果未指定值， `New-ModuleManifest`   将使用默认值。 例如，该字符串必须能够转换为类型 `Version` `#.#.#.#.#` 。 `Import-Module` 加载它在与该名称匹配的 **$PSModulePath** 上找到的第一个模块，其中至少有一个 **ModuleVersion** 作为 **MinimumVersion** 参数。 若要导入特定版本，请使用 `Import-Module` cmdlet 的 **RequiredVersion** 参数。<br /> 示例： `ModuleVersion = '1.0'`|
+|**ModuleVersion**<br /> 类型：`Version`|`'0.0.1'`|此模块的版本号。 如果未指定值， `New-ModuleManifest`   将使用默认值。 例如，该字符串必须能够转换为类型 `Version` `#.#.#.#` 。 `Import-Module` 加载它在与该名称匹配的 **$PSModulePath** 上找到的第一个模块，其中至少有一个 **ModuleVersion** 作为 **MinimumVersion** 参数。 若要导入特定版本，请使用 `Import-Module` cmdlet 的 **RequiredVersion** 参数。<br /> 示例： `ModuleVersion = '1.0'`|
 |**GUID**<br /> 类型：`GUID`|`'<GUID>'`|用于唯一标识此模块的 ID。 如果未指定值， `New-ModuleManifest` 则将值自动生成。 当前无法按 **GUID** 导入模块。 <br /> 示例： `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
 |**作者**<br /> 类型：`String`|`'<Current user>'`|此模块的作者。 如果未指定值，则 `New-ModuleManifest` 将使用当前用户。 <br /> 示例： `Author = 'AuthorNameHere'`|
 |**CompanyName**<br /> 类型：`String`|`'Unknown'`|此模块的公司或供应商。 如果未指定值， `New-ModuleManifest` 将使用默认值。<br /> 示例： `CompanyName = 'Fabrikam'`|

@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 12/07/2018
+ms.date: 02/16/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
-ms.openlocfilehash: b12b95cc46f6966c63fd8fd60c42d5417c4c7868
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 22ad8a33f80ad5f4d75fe23c0c8f6c845a40d748
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93200693"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563240"
 ---
 # Set-PSReadLineKeyHandler
 
@@ -28,7 +28,7 @@ Set-PSReadLineKeyHandler [-ScriptBlock] <ScriptBlock> [-BriefDescription <String
  [-Description <String>] [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
 ```
 
-### 函数
+### 功能
 
 ```
 Set-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [-Function] <String>
@@ -84,6 +84,9 @@ Accept wildcard characters: False
 要绑定到函数或脚本块的键或键序列。 使用单个字符串指定单个绑定。 如果绑定是键序列，请用逗号分隔键，如以下示例中所示：
 
 `Ctrl+X,Ctrl+L`
+
+> [!NOTE]
+> 在 PSReadLine 2.0.0 的情况下， **弦** 参数 **区分大小写**。 意思是， `Ctrl+X` 和 `Ctrl+x` 将创建不同的绑定。
 
 此参数接受字符串数组。 每个字符串都是一个单独的绑定，而不是单个绑定的键序列。
 
@@ -153,8 +156,8 @@ Accept wildcard characters: False
 
 有效值是：
 
-- 插入
-- 命令
+- Insert
+- Command
 
 ```yaml
 Type: Microsoft.PowerShell.ViMode
