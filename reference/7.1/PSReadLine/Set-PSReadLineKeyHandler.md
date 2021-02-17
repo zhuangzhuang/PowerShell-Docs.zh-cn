@@ -3,55 +3,55 @@ external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 12/07/2018
+ms.date: 02/16/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
-ms.openlocfilehash: 97d342d9f5d7227fb831794055c2cfa75b8cf765
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: a6b3d437917e26909f5dd116f3d0afa944f4138d
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93200681"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563334"
 ---
-# <span data-ttu-id="3a4a4-103">Set-PSReadLineKeyHandler</span><span class="sxs-lookup"><span data-stu-id="3a4a4-103">Set-PSReadLineKeyHandler</span></span>
+# <span data-ttu-id="037d6-103">Set-PSReadLineKeyHandler</span><span class="sxs-lookup"><span data-stu-id="037d6-103">Set-PSReadLineKeyHandler</span></span>
 
-## <span data-ttu-id="3a4a4-104">摘要</span><span class="sxs-lookup"><span data-stu-id="3a4a4-104">SYNOPSIS</span></span>
-<span data-ttu-id="3a4a4-105">将键绑定到用户定义的或 PSReadLine 的密钥处理程序函数。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-105">Binds keys to user-defined or PSReadLine key handler functions.</span></span>
+## <span data-ttu-id="037d6-104">摘要</span><span class="sxs-lookup"><span data-stu-id="037d6-104">SYNOPSIS</span></span>
+<span data-ttu-id="037d6-105">将键绑定到用户定义的或 PSReadLine 的密钥处理程序函数。</span><span class="sxs-lookup"><span data-stu-id="037d6-105">Binds keys to user-defined or PSReadLine key handler functions.</span></span>
 
-## <span data-ttu-id="3a4a4-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="3a4a4-106">SYNTAX</span></span>
+## <span data-ttu-id="037d6-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="037d6-106">SYNTAX</span></span>
 
-### <span data-ttu-id="3a4a4-107">脚本块</span><span class="sxs-lookup"><span data-stu-id="3a4a4-107">ScriptBlock</span></span>
+### <span data-ttu-id="037d6-107">脚本块</span><span class="sxs-lookup"><span data-stu-id="037d6-107">ScriptBlock</span></span>
 
 ```
 Set-PSReadLineKeyHandler [-ScriptBlock] <ScriptBlock> [-BriefDescription <String>]
  [-Description <String>] [-Chord] <String[]> [-ViMode <ViMode>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="3a4a4-108">函数</span><span class="sxs-lookup"><span data-stu-id="3a4a4-108">Function</span></span>
+### <span data-ttu-id="037d6-108">功能</span><span class="sxs-lookup"><span data-stu-id="037d6-108">Function</span></span>
 
 ```
 Set-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [-Function] <String>
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="3a4a4-109">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="3a4a4-109">DESCRIPTION</span></span>
+## <span data-ttu-id="037d6-109">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="037d6-109">DESCRIPTION</span></span>
 
-<span data-ttu-id="3a4a4-110">`Set-PSReadLineKeyHandler`当按下键或键序列时，该 cmdlet 将自定义结果。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-110">The `Set-PSReadLineKeyHandler` cmdlet customizes the result when a key or sequence of keys is pressed.</span></span> <span data-ttu-id="3a4a4-111">使用用户定义的键绑定，可以在 PowerShell 脚本中执行几乎所有的操作。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-111">With user-defined key bindings, you can do almost anything that is possible from within a PowerShell script.</span></span>
+<span data-ttu-id="037d6-110">`Set-PSReadLineKeyHandler`当按下键或键序列时，该 cmdlet 将自定义结果。</span><span class="sxs-lookup"><span data-stu-id="037d6-110">The `Set-PSReadLineKeyHandler` cmdlet customizes the result when a key or sequence of keys is pressed.</span></span> <span data-ttu-id="037d6-111">使用用户定义的键绑定，可以在 PowerShell 脚本中执行几乎所有的操作。</span><span class="sxs-lookup"><span data-stu-id="037d6-111">With user-defined key bindings, you can do almost anything that is possible from within a PowerShell script.</span></span>
 
-## <span data-ttu-id="3a4a4-112">示例</span><span class="sxs-lookup"><span data-stu-id="3a4a4-112">EXAMPLES</span></span>
+## <span data-ttu-id="037d6-112">示例</span><span class="sxs-lookup"><span data-stu-id="037d6-112">EXAMPLES</span></span>
 
-### <span data-ttu-id="3a4a4-113">示例1：将箭头键绑定到函数</span><span class="sxs-lookup"><span data-stu-id="3a4a4-113">Example 1: Bind the arrow key to a function</span></span>
+### <span data-ttu-id="037d6-113">示例1：将箭头键绑定到函数</span><span class="sxs-lookup"><span data-stu-id="037d6-113">Example 1: Bind the arrow key to a function</span></span>
 
-<span data-ttu-id="3a4a4-114">此命令将向上箭头键绑定到 **HistorySearchBackward** 函数。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-114">This command binds the up arrow key to the **HistorySearchBackward** function.</span></span> <span data-ttu-id="3a4a4-115">此函数搜索命令行中以命令行的当前内容开头的命令行的命令历史记录。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-115">This function searches command history for command lines that start with the current contents of the command line.</span></span>
+<span data-ttu-id="037d6-114">此命令将向上箭头键绑定到 **HistorySearchBackward** 函数。</span><span class="sxs-lookup"><span data-stu-id="037d6-114">This command binds the up arrow key to the **HistorySearchBackward** function.</span></span> <span data-ttu-id="037d6-115">此函数搜索命令行中以命令行的当前内容开头的命令行的命令历史记录。</span><span class="sxs-lookup"><span data-stu-id="037d6-115">This function searches command history for command lines that start with the current contents of the command line.</span></span>
 
 ```powershell
 Set-PSReadLineKeyHandler -Chord UpArrow -Function HistorySearchBackward
 ```
 
-### <span data-ttu-id="3a4a4-116">示例2：将密钥绑定到脚本块</span><span class="sxs-lookup"><span data-stu-id="3a4a4-116">Example 2: Bind a key to a script block</span></span>
+### <span data-ttu-id="037d6-116">示例2：将密钥绑定到脚本块</span><span class="sxs-lookup"><span data-stu-id="037d6-116">Example 2: Bind a key to a script block</span></span>
 
-<span data-ttu-id="3a4a4-117">此示例演示如何使用单个键来运行命令。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-117">This example shows how a single key can be used to run a command.</span></span> <span data-ttu-id="3a4a4-118">命令将键绑定 `Ctrl+B` 到一个清除行的脚本块，插入 "build" 一词，然后接受该行。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-118">The command binds the key `Ctrl+B` to a script block that clears the line, inserts the word "build", and then accepts the line.</span></span>
+<span data-ttu-id="037d6-117">此示例演示如何使用单个键来运行命令。</span><span class="sxs-lookup"><span data-stu-id="037d6-117">This example shows how a single key can be used to run a command.</span></span> <span data-ttu-id="037d6-118">命令将键绑定 `Ctrl+B` 到一个清除行的脚本块，插入 "build" 一词，然后接受该行。</span><span class="sxs-lookup"><span data-stu-id="037d6-118">The command binds the key `Ctrl+B` to a script block that clears the line, inserts the word "build", and then accepts the line.</span></span>
 
 ```powershell
 Set-PSReadLineKeyHandler -Chord Ctrl+B -ScriptBlock {
@@ -61,11 +61,11 @@ Set-PSReadLineKeyHandler -Chord Ctrl+B -ScriptBlock {
 }
 ```
 
-## <span data-ttu-id="3a4a4-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="3a4a4-119">PARAMETERS</span></span>
+## <span data-ttu-id="037d6-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="037d6-119">PARAMETERS</span></span>
 
-### <span data-ttu-id="3a4a4-120">-BriefDescription</span><span class="sxs-lookup"><span data-stu-id="3a4a4-120">-BriefDescription</span></span>
+### <span data-ttu-id="037d6-120">-BriefDescription</span><span class="sxs-lookup"><span data-stu-id="037d6-120">-BriefDescription</span></span>
 
-<span data-ttu-id="3a4a4-121">键绑定的简短说明。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-121">A brief description of the key binding.</span></span> <span data-ttu-id="3a4a4-122">此说明由 `Get-PSReadLineKeyHandler` cmdlet 显示。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-122">This description is displayed by the `Get-PSReadLineKeyHandler` cmdlet.</span></span>
+<span data-ttu-id="037d6-121">键绑定的简短说明。</span><span class="sxs-lookup"><span data-stu-id="037d6-121">A brief description of the key binding.</span></span> <span data-ttu-id="037d6-122">此说明由 `Get-PSReadLineKeyHandler` cmdlet 显示。</span><span class="sxs-lookup"><span data-stu-id="037d6-122">This description is displayed by the `Get-PSReadLineKeyHandler` cmdlet.</span></span>
 
 ```yaml
 Type: System.String
@@ -79,13 +79,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3a4a4-123">-弦</span><span class="sxs-lookup"><span data-stu-id="3a4a4-123">-Chord</span></span>
+### <span data-ttu-id="037d6-123">-弦</span><span class="sxs-lookup"><span data-stu-id="037d6-123">-Chord</span></span>
 
-<span data-ttu-id="3a4a4-124">要绑定到函数或脚本块的键或键序列。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-124">The key or sequence of keys to be bound to a function or script block.</span></span> <span data-ttu-id="3a4a4-125">使用单个字符串指定单个绑定。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-125">Use a single string to specify a single binding.</span></span> <span data-ttu-id="3a4a4-126">如果绑定是键序列，请用逗号分隔键，如以下示例中所示：</span><span class="sxs-lookup"><span data-stu-id="3a4a4-126">If the binding is a sequence of keys, separate the keys by a comma, as in the following example:</span></span>
+<span data-ttu-id="037d6-124">要绑定到函数或脚本块的键或键序列。</span><span class="sxs-lookup"><span data-stu-id="037d6-124">The key or sequence of keys to be bound to a function or script block.</span></span> <span data-ttu-id="037d6-125">使用单个字符串指定单个绑定。</span><span class="sxs-lookup"><span data-stu-id="037d6-125">Use a single string to specify a single binding.</span></span> <span data-ttu-id="037d6-126">如果绑定是键序列，请用逗号分隔键，如以下示例中所示：</span><span class="sxs-lookup"><span data-stu-id="037d6-126">If the binding is a sequence of keys, separate the keys by a comma, as in the following example:</span></span>
 
 `Ctrl+X,Ctrl+L`
 
-<span data-ttu-id="3a4a4-127">此参数接受字符串数组。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-127">This parameter accepts an array of strings.</span></span> <span data-ttu-id="3a4a4-128">每个字符串都是一个单独的绑定，而不是单个绑定的键序列。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-128">Each string is a separate binding, not a sequence of keys for a single binding.</span></span>
+> [!NOTE]
+> <span data-ttu-id="037d6-127">在 PSReadLine 2.0.0 的情况下， **弦** 参数 **区分大小写**。</span><span class="sxs-lookup"><span data-stu-id="037d6-127">As of PSReadLine 2.0.0, the **Chord** parameter is **case-sensitive**.</span></span> <span data-ttu-id="037d6-128">意思是， `Ctrl+X` 和 `Ctrl+x` 将创建不同的绑定。</span><span class="sxs-lookup"><span data-stu-id="037d6-128">Meaning, `Ctrl+X` and `Ctrl+x` will create different bindings.</span></span>
+
+<span data-ttu-id="037d6-129">此参数接受字符串数组。</span><span class="sxs-lookup"><span data-stu-id="037d6-129">This parameter accepts an array of strings.</span></span> <span data-ttu-id="037d6-130">每个字符串都是一个单独的绑定，而不是单个绑定的键序列。</span><span class="sxs-lookup"><span data-stu-id="037d6-130">Each string is a separate binding, not a sequence of keys for a single binding.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -99,9 +102,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3a4a4-129">-Description</span><span class="sxs-lookup"><span data-stu-id="3a4a4-129">-Description</span></span>
+### <span data-ttu-id="037d6-131">-Description</span><span class="sxs-lookup"><span data-stu-id="037d6-131">-Description</span></span>
 
-<span data-ttu-id="3a4a4-130">指定在 cmdlet 的输出中可见的键绑定的更详细说明 `Get-PSReadLineKeyHandler` 。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-130">Specifies a more detailed description of the key binding that is visible in the output of the `Get-PSReadLineKeyHandler` cmdlet.</span></span>
+<span data-ttu-id="037d6-132">指定在 cmdlet 的输出中可见的键绑定的更详细说明 `Get-PSReadLineKeyHandler` 。</span><span class="sxs-lookup"><span data-stu-id="037d6-132">Specifies a more detailed description of the key binding that is visible in the output of the `Get-PSReadLineKeyHandler` cmdlet.</span></span>
 
 ```yaml
 Type: System.String
@@ -115,9 +118,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3a4a4-131">-Function</span><span class="sxs-lookup"><span data-stu-id="3a4a4-131">-Function</span></span>
+### <span data-ttu-id="037d6-133">-Function</span><span class="sxs-lookup"><span data-stu-id="037d6-133">-Function</span></span>
 
-<span data-ttu-id="3a4a4-132">指定 PSReadLine 提供的现有密钥处理程序的名称。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-132">Specifies the name of an existing key handler provided by PSReadLine.</span></span> <span data-ttu-id="3a4a4-133">此参数使你可以重新绑定现有的键绑定，或绑定当前未绑定的处理程序。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-133">This parameter lets you rebind existing key bindings, or bind a handler that is currently unbound.</span></span>
+<span data-ttu-id="037d6-134">指定 PSReadLine 提供的现有密钥处理程序的名称。</span><span class="sxs-lookup"><span data-stu-id="037d6-134">Specifies the name of an existing key handler provided by PSReadLine.</span></span> <span data-ttu-id="037d6-135">此参数使你可以重新绑定现有的键绑定，或绑定当前未绑定的处理程序。</span><span class="sxs-lookup"><span data-stu-id="037d6-135">This parameter lets you rebind existing key bindings, or bind a handler that is currently unbound.</span></span>
 
 ```yaml
 Type: System.String
@@ -131,9 +134,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3a4a4-134">-ScriptBlock</span><span class="sxs-lookup"><span data-stu-id="3a4a4-134">-ScriptBlock</span></span>
+### <span data-ttu-id="037d6-136">-ScriptBlock</span><span class="sxs-lookup"><span data-stu-id="037d6-136">-ScriptBlock</span></span>
 
-<span data-ttu-id="3a4a4-135">指定输入弦时要运行的脚本块值。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-135">Specifies a script block value to run when the chord is entered.</span></span> <span data-ttu-id="3a4a4-136">PSReadLine 将一个或两个参数传递给此脚本块。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-136">PSReadLine passes one or two parameters to this script block.</span></span> <span data-ttu-id="3a4a4-137">第一个参数是 **ConsoleKeyInfo** 对象，表示按下的键。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-137">The first parameter is a **ConsoleKeyInfo** object representing the key pressed.</span></span> <span data-ttu-id="3a4a4-138">第二个参数可以是任意对象，具体取决于上下文。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-138">The second argument can be any object depending on the context.</span></span>
+<span data-ttu-id="037d6-137">指定输入弦时要运行的脚本块值。</span><span class="sxs-lookup"><span data-stu-id="037d6-137">Specifies a script block value to run when the chord is entered.</span></span> <span data-ttu-id="037d6-138">PSReadLine 将一个或两个参数传递给此脚本块。</span><span class="sxs-lookup"><span data-stu-id="037d6-138">PSReadLine passes one or two parameters to this script block.</span></span> <span data-ttu-id="037d6-139">第一个参数是 **ConsoleKeyInfo** 对象，表示按下的键。</span><span class="sxs-lookup"><span data-stu-id="037d6-139">The first parameter is a **ConsoleKeyInfo** object representing the key pressed.</span></span> <span data-ttu-id="037d6-140">第二个参数可以是任意对象，具体取决于上下文。</span><span class="sxs-lookup"><span data-stu-id="037d6-140">The second argument can be any object depending on the context.</span></span>
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -147,14 +150,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3a4a4-139">-ViMode</span><span class="sxs-lookup"><span data-stu-id="3a4a4-139">-ViMode</span></span>
+### <span data-ttu-id="037d6-141">-ViMode</span><span class="sxs-lookup"><span data-stu-id="037d6-141">-ViMode</span></span>
 
-<span data-ttu-id="3a4a4-140">指定绑定应用于哪种 vi 模式。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-140">Specify which vi mode the binding applies to.</span></span>
+<span data-ttu-id="037d6-142">指定绑定应用于哪种 vi 模式。</span><span class="sxs-lookup"><span data-stu-id="037d6-142">Specify which vi mode the binding applies to.</span></span>
 
-<span data-ttu-id="3a4a4-141">有效值是：</span><span class="sxs-lookup"><span data-stu-id="3a4a4-141">Valid values are:</span></span>
+<span data-ttu-id="037d6-143">有效值是：</span><span class="sxs-lookup"><span data-stu-id="037d6-143">Valid values are:</span></span>
 
-- <span data-ttu-id="3a4a4-142">插入</span><span class="sxs-lookup"><span data-stu-id="3a4a4-142">Insert</span></span>
-- <span data-ttu-id="3a4a4-143">命令</span><span class="sxs-lookup"><span data-stu-id="3a4a4-143">Command</span></span>
+- <span data-ttu-id="037d6-144">Insert</span><span class="sxs-lookup"><span data-stu-id="037d6-144">Insert</span></span>
+- <span data-ttu-id="037d6-145">Command</span><span class="sxs-lookup"><span data-stu-id="037d6-145">Command</span></span>
 
 ```yaml
 Type: Microsoft.PowerShell.ViMode
@@ -168,31 +171,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3a4a4-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3a4a4-144">CommonParameters</span></span>
+### <span data-ttu-id="037d6-146">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="037d6-146">CommonParameters</span></span>
 
-<span data-ttu-id="3a4a4-145">此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3a4a4-146">有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-146">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="037d6-147">此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="037d6-147">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="037d6-148">有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="037d6-148">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="3a4a4-147">输入</span><span class="sxs-lookup"><span data-stu-id="3a4a4-147">INPUTS</span></span>
+## <span data-ttu-id="037d6-149">输入</span><span class="sxs-lookup"><span data-stu-id="037d6-149">INPUTS</span></span>
 
-### <span data-ttu-id="3a4a4-148">无</span><span class="sxs-lookup"><span data-stu-id="3a4a4-148">None</span></span>
+### <span data-ttu-id="037d6-150">无</span><span class="sxs-lookup"><span data-stu-id="037d6-150">None</span></span>
 
-<span data-ttu-id="3a4a4-149">不能通过管道将对象传递给此 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-149">You cannot pipe objects to this cmdlet.</span></span>
+<span data-ttu-id="037d6-151">不能通过管道将对象传递给此 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="037d6-151">You cannot pipe objects to this cmdlet.</span></span>
 
-## <span data-ttu-id="3a4a4-150">输出</span><span class="sxs-lookup"><span data-stu-id="3a4a4-150">OUTPUTS</span></span>
+## <span data-ttu-id="037d6-152">输出</span><span class="sxs-lookup"><span data-stu-id="037d6-152">OUTPUTS</span></span>
 
-### <span data-ttu-id="3a4a4-151">无</span><span class="sxs-lookup"><span data-stu-id="3a4a4-151">None</span></span>
+### <span data-ttu-id="037d6-153">无</span><span class="sxs-lookup"><span data-stu-id="037d6-153">None</span></span>
 
-<span data-ttu-id="3a4a4-152">此 cmdlet 将不生成任何输出。</span><span class="sxs-lookup"><span data-stu-id="3a4a4-152">This cmdlet does not generate any output.</span></span>
+<span data-ttu-id="037d6-154">此 cmdlet 将不生成任何输出。</span><span class="sxs-lookup"><span data-stu-id="037d6-154">This cmdlet does not generate any output.</span></span>
 
-## <span data-ttu-id="3a4a4-153">注释</span><span class="sxs-lookup"><span data-stu-id="3a4a4-153">NOTES</span></span>
+## <span data-ttu-id="037d6-155">注释</span><span class="sxs-lookup"><span data-stu-id="037d6-155">NOTES</span></span>
 
-## <span data-ttu-id="3a4a4-154">相关链接</span><span class="sxs-lookup"><span data-stu-id="3a4a4-154">RELATED LINKS</span></span>
+## <span data-ttu-id="037d6-156">相关链接</span><span class="sxs-lookup"><span data-stu-id="037d6-156">RELATED LINKS</span></span>
 
-[<span data-ttu-id="3a4a4-155">PSReadLineKeyHandler</span><span class="sxs-lookup"><span data-stu-id="3a4a4-155">Get-PSReadLineKeyHandler</span></span>](Get-PSReadLineKeyHandler.md)
+[<span data-ttu-id="037d6-157">PSReadLineKeyHandler</span><span class="sxs-lookup"><span data-stu-id="037d6-157">Get-PSReadLineKeyHandler</span></span>](Get-PSReadLineKeyHandler.md)
 
-[<span data-ttu-id="3a4a4-156">PSReadLineKeyHandler</span><span class="sxs-lookup"><span data-stu-id="3a4a4-156">Remove-PSReadLineKeyHandler</span></span>](Remove-PSReadLineKeyHandler.md)
+[<span data-ttu-id="037d6-158">PSReadLineKeyHandler</span><span class="sxs-lookup"><span data-stu-id="037d6-158">Remove-PSReadLineKeyHandler</span></span>](Remove-PSReadLineKeyHandler.md)
 
-[<span data-ttu-id="3a4a4-157">PSReadLineOption</span><span class="sxs-lookup"><span data-stu-id="3a4a4-157">Get-PSReadLineOption</span></span>](Get-PSReadLineOption.md)
+[<span data-ttu-id="037d6-159">PSReadLineOption</span><span class="sxs-lookup"><span data-stu-id="037d6-159">Get-PSReadLineOption</span></span>](Get-PSReadLineOption.md)
 
-[<span data-ttu-id="3a4a4-158">PSReadLineOption</span><span class="sxs-lookup"><span data-stu-id="3a4a4-158">Set-PSReadLineOption</span></span>](Set-PSReadLineOption.md)
+[<span data-ttu-id="037d6-160">PSReadLineOption</span><span class="sxs-lookup"><span data-stu-id="037d6-160">Set-PSReadLineOption</span></span>](Set-PSReadLineOption.md)
 
