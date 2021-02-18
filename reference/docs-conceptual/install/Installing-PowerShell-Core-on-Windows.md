@@ -2,12 +2,12 @@
 title: 在 Windows 上安装 PowerShell
 description: 介绍如何在 Windows 上安装 PowerShell
 ms.date: 02/02/2021
-ms.openlocfilehash: befc5ff156cb7c3843d89e394e903778682ba28e
-ms.sourcegitcommit: 40b6d8e9b6d791ac69e2ff85224e900b21552bc1
+ms.openlocfilehash: 12dedfed8349d243d3f2988fd7cb69c4cfc276bb
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99536486"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563268"
 ---
 # <a name="installing-powershell-on-windows"></a>在 Windows 上安装 PowerShell
 
@@ -30,8 +30,8 @@ Windows 7 SP1、Server 2008 R2 及更高版本支持最新版 PowerShell。
 
 MSI 文件如下所示：`PowerShell-<version>-win-<os-arch>.msi`。 例如：
 
-- `PowerShell-7.1.1-win-x64.msi`
-- `PowerShell-7.1.1-win-x86.msi`
+- `PowerShell-7.1.2-win-x64.msi`
+- `PowerShell-7.1.2-win-x86.msi`
 
 下载后，双击安装程序并按照提示进行操作。
 
@@ -62,7 +62,7 @@ MSI 文件如下所示：`PowerShell-<version>-win-<os-arch>.msi`。 例如：
 下面的示例展示了如何在启用所有安装选项的情况下无提示安装 PowerShell。
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.1-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 有关 `Msiexec.exe` 命令行选项的完整列表，请参阅[命令行选项](/windows/desktop/Msi/command-line-options)。
@@ -84,10 +84,10 @@ msiexec.exe /package PowerShell-7.1.1-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_ME
 
 提供有 PowerShell 二进制 ZIP 存档，从而支持高级部署方案。 从 [版本][releases] 页下载以下某个 ZIP 存档。
 
-- PowerShell-7.1.1-win-x64.zip
-- PowerShell-7.1.1-win-x86.zip
-- PowerShell-7.1.1-win-arm64.zip
-- PowerShell-7.1.1-win-arm32.zip
+- PowerShell-7.1.2-win-x64.zip
+- PowerShell-7.1.2-win-x86.zip
+- PowerShell-7.1.2-win-arm64.zip
+- PowerShell-7.1.2-win-arm32.zip
 
 根据该文件的下载方式，你可能需要使用 `Unblock-File` cmdlet 解锁。 将内容解压到你选择的位置，然后从该位置运行 `pwsh.exe`。 与安装 MSI 包不一样，安装 ZIP 存档不会检查先决条件。 为了让使用 WSMan 的远程处理能够正常运行，请确保已满足[先决条件](#prerequisites)。
 
@@ -226,8 +226,8 @@ dotnet 工具安装程序将 `$env:USERPROFILE\dotnet\tools` 添加到 `$env:PAT
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.1.1
-   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.1-preview.5
+   PowerShell         Microsoft.PowerShell         7.1.2
+   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.2-preview.5
    ```
 
 1. 使用 `--exact` 参数安装 PowerShell 版本
