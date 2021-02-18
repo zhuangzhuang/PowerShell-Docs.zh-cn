@@ -2,12 +2,12 @@
 ms.date: 12/14/2020
 title: 使用 PowerShell 中的实验性功能
 description: 列出了目前可用的实验性功能及其用法。
-ms.openlocfilehash: be02829c27ff5d8babaf173d2ee7ebbfc7614773
-ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
+ms.openlocfilehash: 556ae8d877b670b119b7b5b958a52488aad16241
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879348"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500117"
 ---
 # <a name="using-experimental-features-in-powershell"></a>使用 PowerShell 中的实验性功能
 
@@ -38,6 +38,7 @@ PowerShell 中的实验性功能支持提供了一种机制，可便于实验性
 | PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
 | PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiProgress                                             |         |         |         | &check; |
 | PSAnsiRendering                                            |         |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
@@ -116,6 +117,24 @@ Underline Off   Property   string UnderlinedOff {get;set;}
 - `StringDecorated Substring(int contentLength)` 方法会返回一个子字符串，该字符串从索引 0 处开始，一直到超出 ANSI 转义序列的内容长度。 如果表格式设置要截断字符串，并保留未占用可打印字符空间的 ANSI 转义序列，则需要使用此方法。
 - `string ToString()` 方法保持不变，并返回字符串的纯文本版本。
 - `Ansi` 参数为 true 时，`string ToString(bool Ansi)` 方法返回原始 ANSI 嵌入字符串。 否则，返回已删除 ANSI 转义序列的纯文本版本。
+
+## <a name="psansiprogress"></a>PSAnsiProgress
+
+该试验是在 PowerShell 7.2 中添加的。 此功能添加了 `$PSStyle.Progress` 成员并允许你控制进度视图栏呈现。
+
+- `$PSStyle.Progress.Style` - 设置呈现样式的 ANSI 字符串。
+- `$PSStyle.Progress.MaxWidth` - 设置视图的最大宽度。 控制台宽度设置为 `0`。
+  默认为 `120`
+- `$PSStyle.Progress.View` - 具有 `Minimal` 和 `Classic` 值的枚举。 `Classic` 为现有呈现，无更改。 `Minimal` 为单行最小呈现。 `Minimal` 为默认值。
+
+下面的示例将呈现样式更新为最小进度栏。
+
+```powershell
+$PSStyle.Progress.View.Minimal
+```
+
+> [!NOTE]
+> 必须启用 PSAnsiRendering 试验性功能才能使用此功能。
 
 ## <a name="pscommandnotfoundsuggestion"></a>PSCommandNotFoundSuggestion
 
