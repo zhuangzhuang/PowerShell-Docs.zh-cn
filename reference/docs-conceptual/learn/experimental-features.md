@@ -2,12 +2,12 @@
 ms.date: 12/14/2020
 title: 使用 PowerShell 中的实验性功能
 description: 列出了目前可用的实验性功能及其用法。
-ms.openlocfilehash: 556ae8d877b670b119b7b5b958a52488aad16241
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: f97cea1dff4030da22be1efbe3cd5cbb7a9f3527
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500117"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685274"
 ---
 # <a name="using-experimental-features-in-powershell"></a>使用 PowerShell 中的实验性功能
 
@@ -73,27 +73,37 @@ $breakpoint = Get-PSBreakPoint -Runspace $runspace
 该试验是在 PowerShell 7.2 中添加的。 借助此功能，可更改 PowerShell 引擎如何输出文本并添加 `$PSStyle` 自动变量来控制字符串输出的 ANSI 呈现。
 
 ```powershell
-PS> $PSStyle
+PS> $PSStyle | Get-Member
 
-Name            MemberType Definition
-----            ---------- ----------
-Reset           Property   string AttributesOff {get;set;}
-Background      Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;set;}
-Blink           Property   string Blink {get;set;}
-BlinkOff        Property   string BlinkOff {get;set;}
-Bold            Property   string Bold {get;set;}
-BoldOff         Property   string BoldOff {get;set;}
-Foreground      Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;set;}
-Formatting      Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;set;}
-Hidden          Property   string Hidden {get;set;}
-HiddenOff       Property   string HiddenOff {get;set;}
-OutputRendering Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
-Reverse         Property   string Reverse {get;set;}
-ReverseOff      Property   string ReverseOff {get;set;}
-Italic          Property   string Standout {get;set;}
-ItalicOff       Property   string StandoutOff {get;set;}
-Underline       Property   string Underlined {get;set;}
-Underline Off   Property   string UnderlinedOff {get;set;}
+   TypeName: System.Management.Automation.PSStyle
+
+Name             MemberType Definition
+----             ---------- ----------
+Equals           Method     bool Equals(System.Object obj)
+FormatHyperlink  Method     string FormatHyperlink(string text, uri link)
+GetHashCode      Method     int GetHashCode()
+GetType          Method     type GetType()
+ToString         Method     string ToString()
+Background       Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;}
+Blink            Property   string Blink {get;}
+BlinkOff         Property   string BlinkOff {get;}
+Bold             Property   string Bold {get;}
+BoldOff          Property   string BoldOff {get;}
+Foreground       Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;}
+Formatting       Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;}
+Hidden           Property   string Hidden {get;}
+HiddenOff        Property   string HiddenOff {get;}
+Italic           Property   string Italic {get;}
+ItalicOff        Property   string ItalicOff {get;}
+OutputRendering  Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
+Progress         Property   System.Management.Automation.PSStyle+ProgressConfiguration Progress {get;}
+Reset            Property   string Reset {get;}
+Reverse          Property   string Reverse {get;}
+ReverseOff       Property   string ReverseOff {get;}
+Strikethrough    Property   string Strikethrough {get;}
+StrikethroughOff Property   string StrikethroughOff {get;}
+Underline        Property   string Underline {get;}
+UnderlineOff     Property   string UnderlineOff {get;}
 ```
 
 基成员会返回映射到其名称的 ANSI 转义序列的字符串。 值可设置为允许自定义。
@@ -117,6 +127,8 @@ Underline Off   Property   string UnderlinedOff {get;set;}
 - `StringDecorated Substring(int contentLength)` 方法会返回一个子字符串，该字符串从索引 0 处开始，一直到超出 ANSI 转义序列的内容长度。 如果表格式设置要截断字符串，并保留未占用可打印字符空间的 ANSI 转义序列，则需要使用此方法。
 - `string ToString()` 方法保持不变，并返回字符串的纯文本版本。
 - `Ansi` 参数为 true 时，`string ToString(bool Ansi)` 方法返回原始 ANSI 嵌入字符串。 否则，返回已删除 ANSI 转义序列的纯文本版本。
+
+`FormatHyperlink(string text, uri link)` 返回一个字符串，其中包含用于修饰超链接的 ANSI 转义序列。 某些终端主机（如 [Windows 终端](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)）支持此标记，这使得呈现的文本在终端中可单击。
 
 ## <a name="psansiprogress"></a>PSAnsiProgress
 

@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 title: Windows PowerShell ISE 的键盘快捷方式
 description: 本文列出了在 PowerShell ISE 中使用的键盘快捷方式。
-ms.openlocfilehash: 690997524ab90d7581bb03c802f189d1a4b79d3f
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: 6a55bb2e6046fbda1c8b7b83345138f294009ac8
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500187"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685951"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的键盘快捷方式
 
@@ -20,6 +20,7 @@ ms.locfileid: "100500187"
 |              操作              |              键盘快捷方式               |                                                                                                                                           用于                                                                                                                                           |
 | -------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **帮助**                         | <kbd>F1</kbd>                                 | 脚本窗格“**重要提示**”：你可以指定 <kbd>F1</kbd> 帮助来自 docs.microsoft.com 还是下载的帮助（请参阅“`Update-Help`”）。 若要选择，请单击“工具”、“选项”，然后在“常规设置”选项卡上，设置或清除“使用本地帮助内容，而不是联机内容”。     |
+| **全选**                   | <kbd>CTRL</kbd>+<kbd>A</kbd>                  | 脚本窗格                                                                                                                                                                                                                                                                                |
 | **Copy**                         | <kbd>CTRL</kbd>+<kbd>C</kbd>                  | 脚本窗格、命令窗格、输出窗格                                                                                                                                                                                                                                                     |
 | **剪切**                          | <kbd>CTRL</kbd>+<kbd>X</kbd>                  | 脚本窗格、命令窗格                                                                                                                                                                                                                                                                  |
 | **展开或折叠大纲** | <kbd>CTRL</kbd>+<kbd>M</kbd>                  | 脚本窗格                                                                                                                                                                                                                                                                                |
@@ -36,6 +37,9 @@ ms.locfileid: "100500187"
 | **全选**                   | <kbd>CTRL</kbd>+<kbd>A</kbd>                  | 脚本窗格、命令窗格、输出窗格                                                                                                                                                                                                                                                     |
 | **显示代码段**                | <kbd>CTRL</kbd>+<kbd>J</kbd>                  | 脚本窗格、命令窗格                                                                                                                                                                                                                                                                  |
 | **撤消**                         | <kbd>CTRL</kbd>+<kbd>Z</kbd>                  | 脚本窗格、命令窗格                                                                                                                                                                                                                                                                  |
+| 显示 Intellisense 帮助       | <kbd>CTRL</kbd>+<kbd>空格键</kbd>              | 脚本窗格                                                                                                                                                                                                                                                                                |
+| 删除左侧字词          | <kbd>CTRL</kbd>+<kbd>Backspace</kbd>          | 脚本窗格                                                                                                                                                                                                                                                                                |
+| 删除右侧字词         | <kbd>CTRL</kbd>+<kbd>Delete</kbd>             | 脚本窗格                                                                                                                                                                                                                                                                                |
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>运行脚本的键盘快捷方式
 

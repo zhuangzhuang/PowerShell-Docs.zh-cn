@@ -3,12 +3,12 @@ title: 关于异常的各项须知内容
 description: 错误处理只是编写代码时的一部分工作。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: cd17ae6b5ded052c93923b648155a4dda8956b34
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 589e5d1decff7aa49ce36e10908e4464a768758d
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "90012555"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685510"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>关于异常的各项须知内容
 
@@ -76,7 +76,7 @@ At line:1 char:1
 
 #### <a name="write-error--erroraction-stop"></a>Write-Error -ErrorAction Stop
 
-我提到过，默认情况下 `Write-Error` 不会引发终止错误。 如果指定 `-ErrorAction Stop`，`Write-Error` 会生成一个可以使用 `catch` 处理的终止错误。
+我提到过，默认情况下 `Write-Error` 不会引发终止错误。 如果指定 `-ErrorAction Stop`，`Write-Error` 会生成一个可使用 `catch` 处理的终止错误。
 
 ```powershell
 Write-Error -Message "Houston, we have a problem." -ErrorAction Stop
