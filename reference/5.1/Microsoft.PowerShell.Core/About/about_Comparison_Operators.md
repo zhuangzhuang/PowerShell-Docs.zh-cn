@@ -1,53 +1,53 @@
 ---
 description: 描述在 PowerShell 中比较值的运算符。
 Locale: en-US
-ms.date: 01/20/2021
+ms.date: 02/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: 38067baa2490caa32160212c6c553ec5c2d597bd
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: 97875bb9c194cfef3d823b681973bd556d4195d3
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500136"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685927"
 ---
-# <a name="about-comparison-operators"></a><span data-ttu-id="a4bde-103">关于比较运算符</span><span class="sxs-lookup"><span data-stu-id="a4bde-103">About Comparison Operators</span></span>
+# <a name="about-comparison-operators"></a><span data-ttu-id="68663-103">关于比较运算符</span><span class="sxs-lookup"><span data-stu-id="68663-103">About Comparison Operators</span></span>
 
-## <a name="short-description"></a><span data-ttu-id="a4bde-104">简短说明</span><span class="sxs-lookup"><span data-stu-id="a4bde-104">Short description</span></span>
+## <a name="short-description"></a><span data-ttu-id="68663-104">简短说明</span><span class="sxs-lookup"><span data-stu-id="68663-104">Short description</span></span>
 
-<span data-ttu-id="a4bde-105">PowerShell 中的比较运算符可以将集合的两个值或筛选元素与输入值进行比较。</span><span class="sxs-lookup"><span data-stu-id="a4bde-105">The comparison operators in PowerShell can either compare two values or filter elements of a collection against an input value.</span></span>
+<span data-ttu-id="68663-105">PowerShell 中的比较运算符可以将集合的两个值或筛选元素与输入值进行比较。</span><span class="sxs-lookup"><span data-stu-id="68663-105">The comparison operators in PowerShell can either compare two values or filter elements of a collection against an input value.</span></span>
 
-## <a name="long-description"></a><span data-ttu-id="a4bde-106">长说明</span><span class="sxs-lookup"><span data-stu-id="a4bde-106">Long description</span></span>
+## <a name="long-description"></a><span data-ttu-id="68663-106">长说明</span><span class="sxs-lookup"><span data-stu-id="68663-106">Long description</span></span>
 
-<span data-ttu-id="a4bde-107">比较运算符使您可以比较值或查找与指定模式匹配的值。</span><span class="sxs-lookup"><span data-stu-id="a4bde-107">Comparison operators let you compare values or finding values that match specified patterns.</span></span> <span data-ttu-id="a4bde-108">PowerShell 包含以下比较运算符：</span><span class="sxs-lookup"><span data-stu-id="a4bde-108">PowerShell includes the following comparison operators:</span></span>
+<span data-ttu-id="68663-107">比较运算符使您可以比较值或查找与指定模式匹配的值。</span><span class="sxs-lookup"><span data-stu-id="68663-107">Comparison operators let you compare values or finding values that match specified patterns.</span></span> <span data-ttu-id="68663-108">PowerShell 包含以下比较运算符：</span><span class="sxs-lookup"><span data-stu-id="68663-108">PowerShell includes the following comparison operators:</span></span>
 
-|    <span data-ttu-id="a4bde-109">类型</span><span class="sxs-lookup"><span data-stu-id="a4bde-109">Type</span></span>     |   <span data-ttu-id="a4bde-110">运算符</span><span class="sxs-lookup"><span data-stu-id="a4bde-110">Operator</span></span>   |              <span data-ttu-id="a4bde-111">比较测试</span><span class="sxs-lookup"><span data-stu-id="a4bde-111">Comparison test</span></span>              |
+|    <span data-ttu-id="68663-109">类型</span><span class="sxs-lookup"><span data-stu-id="68663-109">Type</span></span>     |   <span data-ttu-id="68663-110">运算符</span><span class="sxs-lookup"><span data-stu-id="68663-110">Operator</span></span>   |              <span data-ttu-id="68663-111">比较测试</span><span class="sxs-lookup"><span data-stu-id="68663-111">Comparison test</span></span>              |
 | ----------- | ------------ | ----------------------------------------- |
-| <span data-ttu-id="a4bde-112">等式</span><span class="sxs-lookup"><span data-stu-id="a4bde-112">Equality</span></span>    | <span data-ttu-id="a4bde-113">-eq</span><span class="sxs-lookup"><span data-stu-id="a4bde-113">-eq</span></span>          | <span data-ttu-id="a4bde-114">equals</span><span class="sxs-lookup"><span data-stu-id="a4bde-114">equals</span></span>                                    |
-|             | <span data-ttu-id="a4bde-115">-ne</span><span class="sxs-lookup"><span data-stu-id="a4bde-115">-ne</span></span>          | <span data-ttu-id="a4bde-116">不等于</span><span class="sxs-lookup"><span data-stu-id="a4bde-116">not equals</span></span>                                |
-|             | <span data-ttu-id="a4bde-117">-gt</span><span class="sxs-lookup"><span data-stu-id="a4bde-117">-gt</span></span>          | <span data-ttu-id="a4bde-118">大于</span><span class="sxs-lookup"><span data-stu-id="a4bde-118">greater than</span></span>                              |
-|             | <span data-ttu-id="a4bde-119">-ge</span><span class="sxs-lookup"><span data-stu-id="a4bde-119">-ge</span></span>          | <span data-ttu-id="a4bde-120">大于或等于</span><span class="sxs-lookup"><span data-stu-id="a4bde-120">greater than or equal</span></span>                     |
-|             | <span data-ttu-id="a4bde-121">-lt</span><span class="sxs-lookup"><span data-stu-id="a4bde-121">-lt</span></span>          | <span data-ttu-id="a4bde-122">小于</span><span class="sxs-lookup"><span data-stu-id="a4bde-122">less than</span></span>                                 |
-|             | <span data-ttu-id="a4bde-123">-le</span><span class="sxs-lookup"><span data-stu-id="a4bde-123">-le</span></span>          | <span data-ttu-id="a4bde-124">小于或等于</span><span class="sxs-lookup"><span data-stu-id="a4bde-124">less than or equal</span></span>                        |
-| <span data-ttu-id="a4bde-125">Matching</span><span class="sxs-lookup"><span data-stu-id="a4bde-125">Matching</span></span>    | <span data-ttu-id="a4bde-126">-like</span><span class="sxs-lookup"><span data-stu-id="a4bde-126">-like</span></span>        | <span data-ttu-id="a4bde-127">字符串与通配符模式匹配</span><span class="sxs-lookup"><span data-stu-id="a4bde-127">string matches wildcard pattern</span></span>           |
-|             | <span data-ttu-id="a4bde-128">-notlike</span><span class="sxs-lookup"><span data-stu-id="a4bde-128">-notlike</span></span>     | <span data-ttu-id="a4bde-129">字符串不匹配通配符模式</span><span class="sxs-lookup"><span data-stu-id="a4bde-129">string does not match wildcard pattern</span></span>    |
-|             | <span data-ttu-id="a4bde-130">-match</span><span class="sxs-lookup"><span data-stu-id="a4bde-130">-match</span></span>       | <span data-ttu-id="a4bde-131">字符串匹配正则表达式模式</span><span class="sxs-lookup"><span data-stu-id="a4bde-131">string matches regex pattern</span></span>              |
-|             | <span data-ttu-id="a4bde-132">-notmatch</span><span class="sxs-lookup"><span data-stu-id="a4bde-132">-notmatch</span></span>    | <span data-ttu-id="a4bde-133">字符串不匹配 regex 模式</span><span class="sxs-lookup"><span data-stu-id="a4bde-133">string does not match regex pattern</span></span>       |
-| <span data-ttu-id="a4bde-134">替代功能</span><span class="sxs-lookup"><span data-stu-id="a4bde-134">Replacement</span></span> | <span data-ttu-id="a4bde-135">-replace</span><span class="sxs-lookup"><span data-stu-id="a4bde-135">-replace</span></span>     | <span data-ttu-id="a4bde-136">替换匹配正则表达式模式的字符串</span><span class="sxs-lookup"><span data-stu-id="a4bde-136">replaces strings matching a regex pattern</span></span> |
-| <span data-ttu-id="a4bde-137">Containment</span><span class="sxs-lookup"><span data-stu-id="a4bde-137">Containment</span></span> | <span data-ttu-id="a4bde-138">-contains</span><span class="sxs-lookup"><span data-stu-id="a4bde-138">-contains</span></span>    | <span data-ttu-id="a4bde-139">集合包含值</span><span class="sxs-lookup"><span data-stu-id="a4bde-139">collection contains a value</span></span>               |
-|             | <span data-ttu-id="a4bde-140">-notcontains</span><span class="sxs-lookup"><span data-stu-id="a4bde-140">-notcontains</span></span> | <span data-ttu-id="a4bde-141">集合不包含值</span><span class="sxs-lookup"><span data-stu-id="a4bde-141">collection does not contain a value</span></span>       |
-|             | <span data-ttu-id="a4bde-142">-in</span><span class="sxs-lookup"><span data-stu-id="a4bde-142">-in</span></span>          | <span data-ttu-id="a4bde-143">值在集合中</span><span class="sxs-lookup"><span data-stu-id="a4bde-143">value is in a collection</span></span>                  |
-|             | <span data-ttu-id="a4bde-144">-notin</span><span class="sxs-lookup"><span data-stu-id="a4bde-144">-notin</span></span>       | <span data-ttu-id="a4bde-145">值不在集合中</span><span class="sxs-lookup"><span data-stu-id="a4bde-145">value is not in a collection</span></span>              |
-| <span data-ttu-id="a4bde-146">类型</span><span class="sxs-lookup"><span data-stu-id="a4bde-146">Type</span></span>        | <span data-ttu-id="a4bde-147">-为</span><span class="sxs-lookup"><span data-stu-id="a4bde-147">-is</span></span>          | <span data-ttu-id="a4bde-148">这两个对象属于同一类型</span><span class="sxs-lookup"><span data-stu-id="a4bde-148">both objects are the same type</span></span>            |
-|             | <span data-ttu-id="a4bde-149">-isnot</span><span class="sxs-lookup"><span data-stu-id="a4bde-149">-isnot</span></span>       | <span data-ttu-id="a4bde-150">对象的类型不同</span><span class="sxs-lookup"><span data-stu-id="a4bde-150">the objects are not the same type</span></span>         |
+| <span data-ttu-id="68663-112">等式</span><span class="sxs-lookup"><span data-stu-id="68663-112">Equality</span></span>    | <span data-ttu-id="68663-113">-eq</span><span class="sxs-lookup"><span data-stu-id="68663-113">-eq</span></span>          | <span data-ttu-id="68663-114">equals</span><span class="sxs-lookup"><span data-stu-id="68663-114">equals</span></span>                                    |
+|             | <span data-ttu-id="68663-115">-ne</span><span class="sxs-lookup"><span data-stu-id="68663-115">-ne</span></span>          | <span data-ttu-id="68663-116">不等于</span><span class="sxs-lookup"><span data-stu-id="68663-116">not equals</span></span>                                |
+|             | <span data-ttu-id="68663-117">-gt</span><span class="sxs-lookup"><span data-stu-id="68663-117">-gt</span></span>          | <span data-ttu-id="68663-118">大于</span><span class="sxs-lookup"><span data-stu-id="68663-118">greater than</span></span>                              |
+|             | <span data-ttu-id="68663-119">-ge</span><span class="sxs-lookup"><span data-stu-id="68663-119">-ge</span></span>          | <span data-ttu-id="68663-120">大于或等于</span><span class="sxs-lookup"><span data-stu-id="68663-120">greater than or equal</span></span>                     |
+|             | <span data-ttu-id="68663-121">-lt</span><span class="sxs-lookup"><span data-stu-id="68663-121">-lt</span></span>          | <span data-ttu-id="68663-122">小于</span><span class="sxs-lookup"><span data-stu-id="68663-122">less than</span></span>                                 |
+|             | <span data-ttu-id="68663-123">-le</span><span class="sxs-lookup"><span data-stu-id="68663-123">-le</span></span>          | <span data-ttu-id="68663-124">小于或等于</span><span class="sxs-lookup"><span data-stu-id="68663-124">less than or equal</span></span>                        |
+| <span data-ttu-id="68663-125">Matching</span><span class="sxs-lookup"><span data-stu-id="68663-125">Matching</span></span>    | <span data-ttu-id="68663-126">-like</span><span class="sxs-lookup"><span data-stu-id="68663-126">-like</span></span>        | <span data-ttu-id="68663-127">字符串与通配符模式匹配</span><span class="sxs-lookup"><span data-stu-id="68663-127">string matches wildcard pattern</span></span>           |
+|             | <span data-ttu-id="68663-128">-notlike</span><span class="sxs-lookup"><span data-stu-id="68663-128">-notlike</span></span>     | <span data-ttu-id="68663-129">字符串不匹配通配符模式</span><span class="sxs-lookup"><span data-stu-id="68663-129">string does not match wildcard pattern</span></span>    |
+|             | <span data-ttu-id="68663-130">-match</span><span class="sxs-lookup"><span data-stu-id="68663-130">-match</span></span>       | <span data-ttu-id="68663-131">字符串匹配正则表达式模式</span><span class="sxs-lookup"><span data-stu-id="68663-131">string matches regex pattern</span></span>              |
+|             | <span data-ttu-id="68663-132">-notmatch</span><span class="sxs-lookup"><span data-stu-id="68663-132">-notmatch</span></span>    | <span data-ttu-id="68663-133">字符串不匹配 regex 模式</span><span class="sxs-lookup"><span data-stu-id="68663-133">string does not match regex pattern</span></span>       |
+| <span data-ttu-id="68663-134">替代功能</span><span class="sxs-lookup"><span data-stu-id="68663-134">Replacement</span></span> | <span data-ttu-id="68663-135">-replace</span><span class="sxs-lookup"><span data-stu-id="68663-135">-replace</span></span>     | <span data-ttu-id="68663-136">替换匹配正则表达式模式的字符串</span><span class="sxs-lookup"><span data-stu-id="68663-136">replaces strings matching a regex pattern</span></span> |
+| <span data-ttu-id="68663-137">Containment</span><span class="sxs-lookup"><span data-stu-id="68663-137">Containment</span></span> | <span data-ttu-id="68663-138">-contains</span><span class="sxs-lookup"><span data-stu-id="68663-138">-contains</span></span>    | <span data-ttu-id="68663-139">集合包含值</span><span class="sxs-lookup"><span data-stu-id="68663-139">collection contains a value</span></span>               |
+|             | <span data-ttu-id="68663-140">-notcontains</span><span class="sxs-lookup"><span data-stu-id="68663-140">-notcontains</span></span> | <span data-ttu-id="68663-141">集合不包含值</span><span class="sxs-lookup"><span data-stu-id="68663-141">collection does not contain a value</span></span>       |
+|             | <span data-ttu-id="68663-142">-in</span><span class="sxs-lookup"><span data-stu-id="68663-142">-in</span></span>          | <span data-ttu-id="68663-143">值在集合中</span><span class="sxs-lookup"><span data-stu-id="68663-143">value is in a collection</span></span>                  |
+|             | <span data-ttu-id="68663-144">-notin</span><span class="sxs-lookup"><span data-stu-id="68663-144">-notin</span></span>       | <span data-ttu-id="68663-145">值不在集合中</span><span class="sxs-lookup"><span data-stu-id="68663-145">value is not in a collection</span></span>              |
+| <span data-ttu-id="68663-146">类型</span><span class="sxs-lookup"><span data-stu-id="68663-146">Type</span></span>        | <span data-ttu-id="68663-147">-为</span><span class="sxs-lookup"><span data-stu-id="68663-147">-is</span></span>          | <span data-ttu-id="68663-148">这两个对象属于同一类型</span><span class="sxs-lookup"><span data-stu-id="68663-148">both objects are the same type</span></span>            |
+|             | <span data-ttu-id="68663-149">-isnot</span><span class="sxs-lookup"><span data-stu-id="68663-149">-isnot</span></span>       | <span data-ttu-id="68663-150">对象的类型不同</span><span class="sxs-lookup"><span data-stu-id="68663-150">the objects are not the same type</span></span>         |
 
-## <a name="common-features"></a><span data-ttu-id="a4bde-151">常用功能</span><span class="sxs-lookup"><span data-stu-id="a4bde-151">Common features</span></span>
+## <a name="common-features"></a><span data-ttu-id="68663-151">常用功能</span><span class="sxs-lookup"><span data-stu-id="68663-151">Common features</span></span>
 
-<span data-ttu-id="a4bde-152">默认情况下，所有比较运算符都不区分大小写。</span><span class="sxs-lookup"><span data-stu-id="a4bde-152">By default, all comparison operators are case-insensitive.</span></span> <span data-ttu-id="a4bde-153">若要使比较运算符区分大小写，请在 `c` 后面添加一个 `-` 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-153">To make a comparison operator case-sensitive, add a `c` after the `-`.</span></span> <span data-ttu-id="a4bde-154">例如， `-ceq` 是的区分大小写的版本 `-eq` 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-154">For example, `-ceq` is the case-sensitive version of `-eq`.</span></span> <span data-ttu-id="a4bde-155">若要进行不区分大小写的显式，请 `i` 在前面添加 `-` 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-155">To make the case-insensitivity explicit, add an `i` before `-`.</span></span> <span data-ttu-id="a4bde-156">例如， `-ieq` 是的显式不区分大小写的版本 `-eq` 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-156">For example, `-ieq` is the explicitly case-insensitive version of `-eq`.</span></span>
+<span data-ttu-id="68663-152">默认情况下，所有比较运算符都不区分大小写。</span><span class="sxs-lookup"><span data-stu-id="68663-152">By default, all comparison operators are case-insensitive.</span></span> <span data-ttu-id="68663-153">若要使比较运算符区分大小写，请在 `c` 后面添加一个 `-` 。</span><span class="sxs-lookup"><span data-stu-id="68663-153">To make a comparison operator case-sensitive, add a `c` after the `-`.</span></span> <span data-ttu-id="68663-154">例如， `-ceq` 是的区分大小写的版本 `-eq` 。</span><span class="sxs-lookup"><span data-stu-id="68663-154">For example, `-ceq` is the case-sensitive version of `-eq`.</span></span> <span data-ttu-id="68663-155">若要进行不区分大小写的显式，请 `i` 在前面添加 `-` 。</span><span class="sxs-lookup"><span data-stu-id="68663-155">To make the case-insensitivity explicit, add an `i` before `-`.</span></span> <span data-ttu-id="68663-156">例如， `-ieq` 是的显式不区分大小写的版本 `-eq` 。</span><span class="sxs-lookup"><span data-stu-id="68663-156">For example, `-ieq` is the explicitly case-insensitive version of `-eq`.</span></span>
 
-<span data-ttu-id="a4bde-157">当运算符的输入是标量值时，运算符将返回一个 **布尔** 值。</span><span class="sxs-lookup"><span data-stu-id="a4bde-157">When the input of an operator is a scalar value, the operator returns a **Boolean** value.</span></span> <span data-ttu-id="a4bde-158">当输入为集合时，运算符将返回与表达式的右侧值匹配的集合的元素。</span><span class="sxs-lookup"><span data-stu-id="a4bde-158">When the input is a collection, the operator returns the elements of the collection that match the right-hand value of the expression.</span></span>
-<span data-ttu-id="a4bde-159">如果集合中没有匹配项，则比较运算符返回空数组。</span><span class="sxs-lookup"><span data-stu-id="a4bde-159">If there are no matches in the collection, comparison operators return an empty array.</span></span> <span data-ttu-id="a4bde-160">例如：</span><span class="sxs-lookup"><span data-stu-id="a4bde-160">For example:</span></span>
+<span data-ttu-id="68663-157">当运算符的输入是标量值时，运算符将返回一个 **布尔** 值。</span><span class="sxs-lookup"><span data-stu-id="68663-157">When the input of an operator is a scalar value, the operator returns a **Boolean** value.</span></span> <span data-ttu-id="68663-158">当输入为集合时，运算符将返回与表达式的右侧值匹配的集合的元素。</span><span class="sxs-lookup"><span data-stu-id="68663-158">When the input is a collection, the operator returns the elements of the collection that match the right-hand value of the expression.</span></span>
+<span data-ttu-id="68663-159">如果集合中没有匹配项，则比较运算符返回空数组。</span><span class="sxs-lookup"><span data-stu-id="68663-159">If there are no matches in the collection, comparison operators return an empty array.</span></span> <span data-ttu-id="68663-160">例如：</span><span class="sxs-lookup"><span data-stu-id="68663-160">For example:</span></span>
 
 ```powershell
 $a = (1, 2 -eq 3)
@@ -60,19 +60,19 @@ Object[]
 0
 ```
 
-<span data-ttu-id="a4bde-161">有几个例外情况：</span><span class="sxs-lookup"><span data-stu-id="a4bde-161">There are a few exceptions:</span></span>
+<span data-ttu-id="68663-161">有几个例外情况：</span><span class="sxs-lookup"><span data-stu-id="68663-161">There are a few exceptions:</span></span>
 
-- <span data-ttu-id="a4bde-162">包含和类型运算符始终返回 **布尔** 值</span><span class="sxs-lookup"><span data-stu-id="a4bde-162">The containment and type operators always return a **Boolean** value</span></span>
-- <span data-ttu-id="a4bde-163">`-replace`运算符返回替换结果</span><span class="sxs-lookup"><span data-stu-id="a4bde-163">The `-replace` operator returns the replacement result</span></span>
-- <span data-ttu-id="a4bde-164">`-match`和 `-notmatch` 运算符还填充 `$Matches` 自动变量</span><span class="sxs-lookup"><span data-stu-id="a4bde-164">The `-match` and `-notmatch` operators also populate the `$Matches` automatic variable</span></span>
+- <span data-ttu-id="68663-162">包含和类型运算符始终返回 **布尔** 值</span><span class="sxs-lookup"><span data-stu-id="68663-162">The containment and type operators always return a **Boolean** value</span></span>
+- <span data-ttu-id="68663-163">`-replace`运算符返回替换结果</span><span class="sxs-lookup"><span data-stu-id="68663-163">The `-replace` operator returns the replacement result</span></span>
+- <span data-ttu-id="68663-164">`-match`和 `-notmatch` 运算符还填充 `$Matches` 自动变量</span><span class="sxs-lookup"><span data-stu-id="68663-164">The `-match` and `-notmatch` operators also populate the `$Matches` automatic variable</span></span>
 
-## <a name="equality-operators"></a><span data-ttu-id="a4bde-165">相等运算符</span><span class="sxs-lookup"><span data-stu-id="a4bde-165">Equality operators</span></span>
+## <a name="equality-operators"></a><span data-ttu-id="68663-165">相等运算符</span><span class="sxs-lookup"><span data-stu-id="68663-165">Equality operators</span></span>
 
-### <a name="-eq-and--ne"></a><span data-ttu-id="a4bde-166">-eq 和 -ne</span><span class="sxs-lookup"><span data-stu-id="a4bde-166">-eq and -ne</span></span>
+### <a name="-eq-and--ne"></a><span data-ttu-id="68663-166">-eq 和 -ne</span><span class="sxs-lookup"><span data-stu-id="68663-166">-eq and -ne</span></span>
 
-<span data-ttu-id="a4bde-167">左侧为标量时， `-eq` 如果右侧是完全匹配，则返回 **True** ，否则返回 `-eq` **False**。</span><span class="sxs-lookup"><span data-stu-id="a4bde-167">When the left-hand side is scalar, `-eq` returns **True** if the right-hand side is an exact match, otherwise, `-eq` returns **False**.</span></span> <span data-ttu-id="a4bde-168">`-ne` 相反;当双方均匹配时，它将返回 **False** ;否则， `-ne` 返回 True。</span><span class="sxs-lookup"><span data-stu-id="a4bde-168">`-ne` does the opposite; it returns **False** when both sides match; otherwise, `-ne` returns True.</span></span>
+<span data-ttu-id="68663-167">左侧为标量时， `-eq` 如果右侧是完全匹配，则返回 **True** ，否则返回 `-eq` **False**。</span><span class="sxs-lookup"><span data-stu-id="68663-167">When the left-hand side is scalar, `-eq` returns **True** if the right-hand side is an exact match, otherwise, `-eq` returns **False**.</span></span> <span data-ttu-id="68663-168">`-ne` 相反;当双方均匹配时，它将返回 **False** ;否则， `-ne` 返回 True。</span><span class="sxs-lookup"><span data-stu-id="68663-168">`-ne` does the opposite; it returns **False** when both sides match; otherwise, `-ne` returns True.</span></span>
 
-<span data-ttu-id="a4bde-169">示例：</span><span class="sxs-lookup"><span data-stu-id="a4bde-169">Example:</span></span>
+<span data-ttu-id="68663-169">示例：</span><span class="sxs-lookup"><span data-stu-id="68663-169">Example:</span></span>
 
 ```powershell
 2 -eq 2                 # Output: True
@@ -84,9 +84,9 @@ Object[]
 "abc" -ne "abc", "def"  # Output: True
 ```
 
-<span data-ttu-id="a4bde-170">如果左侧是集合，则 `-eq` 返回与右侧匹配的成员，同时对 `-ne` 其进行筛选。</span><span class="sxs-lookup"><span data-stu-id="a4bde-170">When the left-hand side is a collection, `-eq` returns those members that match the right-hand side, while `-ne` filters them out.</span></span>
+<span data-ttu-id="68663-170">如果左侧是集合，则 `-eq` 返回与右侧匹配的成员，同时对 `-ne` 其进行筛选。</span><span class="sxs-lookup"><span data-stu-id="68663-170">When the left-hand side is a collection, `-eq` returns those members that match the right-hand side, while `-ne` filters them out.</span></span>
 
-<span data-ttu-id="a4bde-171">示例：</span><span class="sxs-lookup"><span data-stu-id="a4bde-171">Example:</span></span>
+<span data-ttu-id="68663-171">示例：</span><span class="sxs-lookup"><span data-stu-id="68663-171">Example:</span></span>
 
 ```powershell
 1,2,3 -eq 2             # Output: 2
@@ -94,7 +94,7 @@ Object[]
 "abc", "def" -ne "abc"  # Output: def
 ```
 
-<span data-ttu-id="a4bde-172">这些运算符处理集合的所有元素。</span><span class="sxs-lookup"><span data-stu-id="a4bde-172">These operators process all elements of the collection.</span></span> <span data-ttu-id="a4bde-173">示例：</span><span class="sxs-lookup"><span data-stu-id="a4bde-173">Example:</span></span>
+<span data-ttu-id="68663-172">这些运算符处理集合的所有元素。</span><span class="sxs-lookup"><span data-stu-id="68663-172">These operators process all elements of the collection.</span></span> <span data-ttu-id="68663-173">示例：</span><span class="sxs-lookup"><span data-stu-id="68663-173">Example:</span></span>
 
 ```powershell
 "zzz", "def", "zzz" -eq "zzz"
@@ -105,9 +105,9 @@ zzz
 zzz
 ```
 
-<span data-ttu-id="a4bde-174">相等运算符接受任意两个对象，而不只是标量或集合。</span><span class="sxs-lookup"><span data-stu-id="a4bde-174">The equality operators accept any two objects, not just a scalar or collection.</span></span>
-<span data-ttu-id="a4bde-175">但不保证比较结果对于最终用户有意义。</span><span class="sxs-lookup"><span data-stu-id="a4bde-175">But the comparison result is not guaranteed to be meaningful for the end-user.</span></span>
-<span data-ttu-id="a4bde-176">下面的示例演示了该问题。</span><span class="sxs-lookup"><span data-stu-id="a4bde-176">The following example demonstrates the issue.</span></span>
+<span data-ttu-id="68663-174">相等运算符接受任意两个对象，而不只是标量或集合。</span><span class="sxs-lookup"><span data-stu-id="68663-174">The equality operators accept any two objects, not just a scalar or collection.</span></span>
+<span data-ttu-id="68663-175">但不保证比较结果对于最终用户有意义。</span><span class="sxs-lookup"><span data-stu-id="68663-175">But the comparison result is not guaranteed to be meaningful for the end-user.</span></span>
+<span data-ttu-id="68663-176">下面的示例演示了该问题。</span><span class="sxs-lookup"><span data-stu-id="68663-176">The following example demonstrates the issue.</span></span>
 
 ```powershell
 class MyFileInfoSet {
@@ -123,7 +123,7 @@ $a -eq $b
 False
 ```
 
-<span data-ttu-id="a4bde-177">在此示例中，我们创建了两个具有相同属性的对象。</span><span class="sxs-lookup"><span data-stu-id="a4bde-177">In this example, we created two objects with identical properties.</span></span> <span data-ttu-id="a4bde-178">然而，相等性测试结果为 **False** ，因为它们是不同的对象。</span><span class="sxs-lookup"><span data-stu-id="a4bde-178">Yet, the equality test result is **False** because they are different objects.</span></span> <span data-ttu-id="a4bde-179">若要创建可比较类，需要在类中实现[IEquatable \<T> ][2] 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-179">To create comparable classes, you need to implement [System.IEquatable\<T>][2] in your class.</span></span> <span data-ttu-id="a4bde-180">下面的示例演示了实现 [IEquatable \<T>][2]的 **MyFileInfoSet** 类的分部实现，它具有两个属性：**文件** 和 **大小**。</span><span class="sxs-lookup"><span data-stu-id="a4bde-180">The following example demonstrates the partial implementation of a **MyFileInfoSet** class that implements [System.IEquatable\<T>][2] and has two properties, **File** and **Size**.</span></span> <span data-ttu-id="a4bde-181">`Equals()`如果两个 **MyFileInfoSet** 对象的文件和大小属性相同，则该方法返回 True。</span><span class="sxs-lookup"><span data-stu-id="a4bde-181">The `Equals()` method returns True if the File and Size properties of two **MyFileInfoSet** objects are the same.</span></span>
+<span data-ttu-id="68663-177">在此示例中，我们创建了两个具有相同属性的对象。</span><span class="sxs-lookup"><span data-stu-id="68663-177">In this example, we created two objects with identical properties.</span></span> <span data-ttu-id="68663-178">然而，相等性测试结果为 **False** ，因为它们是不同的对象。</span><span class="sxs-lookup"><span data-stu-id="68663-178">Yet, the equality test result is **False** because they are different objects.</span></span> <span data-ttu-id="68663-179">若要创建可比较类，需要在类中实现[IEquatable \<T> ][2] 。</span><span class="sxs-lookup"><span data-stu-id="68663-179">To create comparable classes, you need to implement [System.IEquatable\<T>][2] in your class.</span></span> <span data-ttu-id="68663-180">下面的示例演示了实现 [IEquatable \<T>][2]的 **MyFileInfoSet** 类的分部实现，它具有两个属性：**文件** 和 **大小**。</span><span class="sxs-lookup"><span data-stu-id="68663-180">The following example demonstrates the partial implementation of a **MyFileInfoSet** class that implements [System.IEquatable\<T>][2] and has two properties, **File** and **Size**.</span></span> <span data-ttu-id="68663-181">`Equals()`如果两个 **MyFileInfoSet** 对象的文件和大小属性相同，则该方法返回 True。</span><span class="sxs-lookup"><span data-stu-id="68663-181">The `Equals()` method returns True if the File and Size properties of two **MyFileInfoSet** objects are the same.</span></span>
 
 ```powershell
 class MyFileInfoSet : System.IEquatable[Object] {
@@ -143,25 +143,25 @@ $a -eq $b
 True
 ```
 
-<span data-ttu-id="a4bde-182">比较任意对象的一个明显示例就是找出这些对象是否为 null。</span><span class="sxs-lookup"><span data-stu-id="a4bde-182">A prominent example of comparing arbitrary objects is to find out if they are null.</span></span> <span data-ttu-id="a4bde-183">但如果需要确定变量是否为 `$null` ，则必须将置于 `$null` 相等运算符的左侧。</span><span class="sxs-lookup"><span data-stu-id="a4bde-183">But if you need to determine whether a variable is `$null`, you must put `$null` on the left-hand side of the equality operator.</span></span> <span data-ttu-id="a4bde-184">将其放在右侧不会执行所需的操作。</span><span class="sxs-lookup"><span data-stu-id="a4bde-184">Putting it on the right-hand side does not do what you expect.</span></span>
+<span data-ttu-id="68663-182">比较任意对象的一个明显示例就是找出这些对象是否为 null。</span><span class="sxs-lookup"><span data-stu-id="68663-182">A prominent example of comparing arbitrary objects is to find out if they are null.</span></span> <span data-ttu-id="68663-183">但如果需要确定变量是否为 `$null` ，则必须将置于 `$null` 相等运算符的左侧。</span><span class="sxs-lookup"><span data-stu-id="68663-183">But if you need to determine whether a variable is `$null`, you must put `$null` on the left-hand side of the equality operator.</span></span> <span data-ttu-id="68663-184">将其放在右侧不会执行所需的操作。</span><span class="sxs-lookup"><span data-stu-id="68663-184">Putting it on the right-hand side does not do what you expect.</span></span>
 
-<span data-ttu-id="a4bde-185">例如，假设 `$a` 数组包含 null 元素：</span><span class="sxs-lookup"><span data-stu-id="a4bde-185">For example, let `$a` be an array containing null elements:</span></span>
+<span data-ttu-id="68663-185">例如，假设 `$a` 数组包含 null 元素：</span><span class="sxs-lookup"><span data-stu-id="68663-185">For example, let `$a` be an array containing null elements:</span></span>
 
 ```powershell
 $a = 1, 2, $null, 4, $null, 6
 ```
 
-<span data-ttu-id="a4bde-186">以下 `$a` 不为空的测试。</span><span class="sxs-lookup"><span data-stu-id="a4bde-186">The following tests that `$a` is not null.</span></span>
+<span data-ttu-id="68663-186">以下 `$a` 不为空的测试。</span><span class="sxs-lookup"><span data-stu-id="68663-186">The following tests that `$a` is not null.</span></span>
 
 ```powershell
 $null -ne $a
 ```
 
 ```output
-False
+True
 ```
 
-<span data-ttu-id="a4bde-187">不过，以下是从以下文件中注销所有 null 元素 `$a` ：</span><span class="sxs-lookup"><span data-stu-id="a4bde-187">The following, however, filers out all null elements from `$a`:</span></span>
+<span data-ttu-id="68663-187">不过，以下是从以下文件中注销所有 null 元素 `$a` ：</span><span class="sxs-lookup"><span data-stu-id="68663-187">The following, however, filers out all null elements from `$a`:</span></span>
 
 ```powershell
 $a -ne $null # Output: 1, 2, 4, 6
@@ -174,18 +174,18 @@ $a -ne $null # Output: 1, 2, 4, 6
 6
 ```
 
-### <a name="-gt--ge--lt-and--le"></a><span data-ttu-id="a4bde-188">-gt、-ge、-lt 和-le</span><span class="sxs-lookup"><span data-stu-id="a4bde-188">-gt, -ge, -lt, and -le</span></span>
+### <a name="-gt--ge--lt-and--le"></a><span data-ttu-id="68663-188">-gt、-ge、-lt 和-le</span><span class="sxs-lookup"><span data-stu-id="68663-188">-gt, -ge, -lt, and -le</span></span>
 
-<span data-ttu-id="a4bde-189">`-gt`、 `-ge` 、 `-lt` 和的 `-le` 行为与此类似。</span><span class="sxs-lookup"><span data-stu-id="a4bde-189">`-gt`, `-ge`, `-lt`, and `-le` behave very similarly.</span></span> <span data-ttu-id="a4bde-190">当双方都为标量时，它们会返回 **True** 或 **False** ，具体取决于两个边的比较方式：</span><span class="sxs-lookup"><span data-stu-id="a4bde-190">When both sides are scalar they return **True** or **False** depending on how the two sides compare:</span></span>
+<span data-ttu-id="68663-189">`-gt`、 `-ge` 、 `-lt` 和的 `-le` 行为与此类似。</span><span class="sxs-lookup"><span data-stu-id="68663-189">`-gt`, `-ge`, `-lt`, and `-le` behave very similarly.</span></span> <span data-ttu-id="68663-190">当双方都为标量时，它们会返回 **True** 或 **False** ，具体取决于两个边的比较方式：</span><span class="sxs-lookup"><span data-stu-id="68663-190">When both sides are scalar they return **True** or **False** depending on how the two sides compare:</span></span>
 
-| <span data-ttu-id="a4bde-191">运算符</span><span class="sxs-lookup"><span data-stu-id="a4bde-191">Operator</span></span> | <span data-ttu-id="a4bde-192">当 .。。</span><span class="sxs-lookup"><span data-stu-id="a4bde-192">Returns True when...</span></span>                   |
+| <span data-ttu-id="68663-191">运算符</span><span class="sxs-lookup"><span data-stu-id="68663-191">Operator</span></span> | <span data-ttu-id="68663-192">当 .。。</span><span class="sxs-lookup"><span data-stu-id="68663-192">Returns True when...</span></span>                   |
 | -------- | -------------------------------------- |
-| <span data-ttu-id="a4bde-193">-gt</span><span class="sxs-lookup"><span data-stu-id="a4bde-193">-gt</span></span>      | <span data-ttu-id="a4bde-194">左侧更大</span><span class="sxs-lookup"><span data-stu-id="a4bde-194">The left-hand side is greater</span></span>          |
-| <span data-ttu-id="a4bde-195">-ge</span><span class="sxs-lookup"><span data-stu-id="a4bde-195">-ge</span></span>      | <span data-ttu-id="a4bde-196">左侧大于或等于</span><span class="sxs-lookup"><span data-stu-id="a4bde-196">The left-hand side is greater or equal</span></span> |
-| <span data-ttu-id="a4bde-197">-lt</span><span class="sxs-lookup"><span data-stu-id="a4bde-197">-lt</span></span>      | <span data-ttu-id="a4bde-198">左侧更小</span><span class="sxs-lookup"><span data-stu-id="a4bde-198">The left-hand side is smaller</span></span>          |
-| <span data-ttu-id="a4bde-199">-le</span><span class="sxs-lookup"><span data-stu-id="a4bde-199">-le</span></span>      | <span data-ttu-id="a4bde-200">左侧小于或等于</span><span class="sxs-lookup"><span data-stu-id="a4bde-200">The left-hand side is smaller or equal</span></span> |
+| <span data-ttu-id="68663-193">-gt</span><span class="sxs-lookup"><span data-stu-id="68663-193">-gt</span></span>      | <span data-ttu-id="68663-194">左侧更大</span><span class="sxs-lookup"><span data-stu-id="68663-194">The left-hand side is greater</span></span>          |
+| <span data-ttu-id="68663-195">-ge</span><span class="sxs-lookup"><span data-stu-id="68663-195">-ge</span></span>      | <span data-ttu-id="68663-196">左侧大于或等于</span><span class="sxs-lookup"><span data-stu-id="68663-196">The left-hand side is greater or equal</span></span> |
+| <span data-ttu-id="68663-197">-lt</span><span class="sxs-lookup"><span data-stu-id="68663-197">-lt</span></span>      | <span data-ttu-id="68663-198">左侧更小</span><span class="sxs-lookup"><span data-stu-id="68663-198">The left-hand side is smaller</span></span>          |
+| <span data-ttu-id="68663-199">-le</span><span class="sxs-lookup"><span data-stu-id="68663-199">-le</span></span>      | <span data-ttu-id="68663-200">左侧小于或等于</span><span class="sxs-lookup"><span data-stu-id="68663-200">The left-hand side is smaller or equal</span></span> |
 
-<span data-ttu-id="a4bde-201">在下面的示例中，所有语句都返回 True。</span><span class="sxs-lookup"><span data-stu-id="a4bde-201">In the following examples, all statements return True.</span></span>
+<span data-ttu-id="68663-201">在下面的示例中，所有语句都返回 True。</span><span class="sxs-lookup"><span data-stu-id="68663-201">In the following examples, all statements return True.</span></span>
 
 ```powershell
 8 -gt 6  # Output: True
@@ -195,11 +195,11 @@ $a -ne $null # Output: 1, 2, 4, 6
 ```
 
 > [!NOTE]
-> <span data-ttu-id="a4bde-202">在大多数编程语言中，大于运算符为 `>` 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-202">In most programming languages the greater-than operator is `>`.</span></span> <span data-ttu-id="a4bde-203">在 PowerShell 中，此字符用于重定向。</span><span class="sxs-lookup"><span data-stu-id="a4bde-203">In PowerShell, this character is used for redirection.</span></span> <span data-ttu-id="a4bde-204">有关详细信息，请参阅 [about_Redirection][3]。</span><span class="sxs-lookup"><span data-stu-id="a4bde-204">For details, see [about_Redirection][3].</span></span>
+> <span data-ttu-id="68663-202">在大多数编程语言中，大于运算符为 `>` 。</span><span class="sxs-lookup"><span data-stu-id="68663-202">In most programming languages the greater-than operator is `>`.</span></span> <span data-ttu-id="68663-203">在 PowerShell 中，此字符用于重定向。</span><span class="sxs-lookup"><span data-stu-id="68663-203">In PowerShell, this character is used for redirection.</span></span> <span data-ttu-id="68663-204">有关详细信息，请参阅 [about_Redirection][3]。</span><span class="sxs-lookup"><span data-stu-id="68663-204">For details, see [about_Redirection][3].</span></span>
 
-<span data-ttu-id="a4bde-205">如果左侧是集合，则这些运算符会将集合的每个成员与右侧进行比较。</span><span class="sxs-lookup"><span data-stu-id="a4bde-205">When the left-hand side is a collection, these operators compare each member of the collection with the right-hand side.</span></span> <span data-ttu-id="a4bde-206">根据其逻辑，它们可以保留或丢弃成员。</span><span class="sxs-lookup"><span data-stu-id="a4bde-206">Depending on their logic, they either keep or discard the member.</span></span>
+<span data-ttu-id="68663-205">如果左侧是集合，则这些运算符会将集合的每个成员与右侧进行比较。</span><span class="sxs-lookup"><span data-stu-id="68663-205">When the left-hand side is a collection, these operators compare each member of the collection with the right-hand side.</span></span> <span data-ttu-id="68663-206">根据其逻辑，它们可以保留或丢弃成员。</span><span class="sxs-lookup"><span data-stu-id="68663-206">Depending on their logic, they either keep or discard the member.</span></span>
 
-<span data-ttu-id="a4bde-207">示例：</span><span class="sxs-lookup"><span data-stu-id="a4bde-207">Example:</span></span>
+<span data-ttu-id="68663-207">示例：</span><span class="sxs-lookup"><span data-stu-id="68663-207">Example:</span></span>
 
 ```powershell
 $a=5, 6, 7, 8, 9
@@ -247,9 +247,9 @@ Members smaller than or equal to 7
 7
 ```
 
-<span data-ttu-id="a4bde-208">这些运算符可用于实现 [system.icomparable][1]的任何类。</span><span class="sxs-lookup"><span data-stu-id="a4bde-208">These operators work with any class that implements [System.IComparable][1].</span></span>
+<span data-ttu-id="68663-208">这些运算符可用于实现 [system.icomparable][1]的任何类。</span><span class="sxs-lookup"><span data-stu-id="68663-208">These operators work with any class that implements [System.IComparable][1].</span></span>
 
-<span data-ttu-id="a4bde-209">示例:</span><span class="sxs-lookup"><span data-stu-id="a4bde-209">Examples:</span></span>
+<span data-ttu-id="68663-209">示例：</span><span class="sxs-lookup"><span data-stu-id="68663-209">Examples:</span></span>
 
 ```powershell
 # Date comparison
@@ -262,7 +262,7 @@ Members smaller than or equal to 7
 'macOS' -clt 'MacOS'  # True; 'm' comes before 'M'
 ```
 
-<span data-ttu-id="a4bde-210">下面的示例演示在美国标准键盘上没有符号，该键盘在 "a" 后进行排序。</span><span class="sxs-lookup"><span data-stu-id="a4bde-210">The following example demonstrates that there is no symbol on an American QWERTY keyboard that gets sorted after 'a'.</span></span> <span data-ttu-id="a4bde-211">它将包含所有此类符号的集馈送到 `-gt` 运算符，以将它们与 "a" 进行比较。</span><span class="sxs-lookup"><span data-stu-id="a4bde-211">It feeds a set containing all such symbols to the `-gt` operator to compare them against 'a'.</span></span> <span data-ttu-id="a4bde-212">输出为空数组。</span><span class="sxs-lookup"><span data-stu-id="a4bde-212">The output is an empty array.</span></span>
+<span data-ttu-id="68663-210">下面的示例演示在美国标准键盘上没有符号，该键盘在 "a" 后进行排序。</span><span class="sxs-lookup"><span data-stu-id="68663-210">The following example demonstrates that there is no symbol on an American QWERTY keyboard that gets sorted after 'a'.</span></span> <span data-ttu-id="68663-211">它将包含所有此类符号的集馈送到 `-gt` 运算符，以将它们与 "a" 进行比较。</span><span class="sxs-lookup"><span data-stu-id="68663-211">It feeds a set containing all such symbols to the `-gt` operator to compare them against 'a'.</span></span> <span data-ttu-id="68663-212">输出为空数组。</span><span class="sxs-lookup"><span data-stu-id="68663-212">The output is an empty array.</span></span>
 
 ```powershell
 $a=' ','`','~','!','@','#','$','%','^','&','*','(',')','_','+','-','=',
@@ -271,13 +271,13 @@ $a -gt 'a'
 # Output: Nothing
 ```
 
-<span data-ttu-id="a4bde-213">如果两个运算符的两边不合理，则这些运算符将引发非终止错误。</span><span class="sxs-lookup"><span data-stu-id="a4bde-213">If the two sides of the operators are not reasonably comparable, these operators raise a non-terminating error.</span></span>
+<span data-ttu-id="68663-213">如果两个运算符的两边不合理，则这些运算符将引发非终止错误。</span><span class="sxs-lookup"><span data-stu-id="68663-213">If the two sides of the operators are not reasonably comparable, these operators raise a non-terminating error.</span></span>
 
-## <a name="matching-operators"></a><span data-ttu-id="a4bde-214">匹配运算符</span><span class="sxs-lookup"><span data-stu-id="a4bde-214">Matching operators</span></span>
+## <a name="matching-operators"></a><span data-ttu-id="68663-214">匹配运算符</span><span class="sxs-lookup"><span data-stu-id="68663-214">Matching operators</span></span>
 
-<span data-ttu-id="a4bde-215">匹配运算符 (`-like` 、 `-notlike` 、 `-match` 和 `-notmatch`) 查找匹配或与指定模式不匹配的元素。</span><span class="sxs-lookup"><span data-stu-id="a4bde-215">The matching operators (`-like`, `-notlike`, `-match`, and `-notmatch`) find elements that match or do not match a specified pattern.</span></span> <span data-ttu-id="a4bde-216">和的模式 `-like` `-notlike` 是包含 `*` 、和)  (通配符表达式 `?` `[ ]` ， `-match` 并 `-notmatch` 接受正则表达式 (正则表达式) 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-216">The pattern for `-like` and `-notlike` is a wildcard expression (containing `*`, `?`, and `[ ]`), while `-match` and `-notmatch` accept a regular expression (Regex).</span></span>
+<span data-ttu-id="68663-215">匹配运算符 (`-like` 、 `-notlike` 、 `-match` 和 `-notmatch`) 查找匹配或与指定模式不匹配的元素。</span><span class="sxs-lookup"><span data-stu-id="68663-215">The matching operators (`-like`, `-notlike`, `-match`, and `-notmatch`) find elements that match or do not match a specified pattern.</span></span> <span data-ttu-id="68663-216">和的模式 `-like` `-notlike` 是包含 `*` 、和)  (通配符表达式 `?` `[ ]` ， `-match` 并 `-notmatch` 接受正则表达式 (正则表达式) 。</span><span class="sxs-lookup"><span data-stu-id="68663-216">The pattern for `-like` and `-notlike` is a wildcard expression (containing `*`, `?`, and `[ ]`), while `-match` and `-notmatch` accept a regular expression (Regex).</span></span>
 
-<span data-ttu-id="a4bde-217">语法为：</span><span class="sxs-lookup"><span data-stu-id="a4bde-217">The syntax is:</span></span>
+<span data-ttu-id="68663-217">语法为：</span><span class="sxs-lookup"><span data-stu-id="68663-217">The syntax is:</span></span>
 
 ```
 <string[]> -like    <wildcard-expression>
@@ -286,13 +286,13 @@ $a -gt 'a'
 <string[]> -notmatch <regular-expression>
 ```
 
-<span data-ttu-id="a4bde-218">当这些运算符的输入是标量值时，它们将返回一个 **布尔** 值。</span><span class="sxs-lookup"><span data-stu-id="a4bde-218">When the input of these operators is a scalar value, they return a **Boolean** value.</span></span> <span data-ttu-id="a4bde-219">当输入是值的集合时，运算符返回任何匹配的成员。</span><span class="sxs-lookup"><span data-stu-id="a4bde-219">When the input is a collection of values, the operators return any matching members.</span></span> <span data-ttu-id="a4bde-220">如果集合中没有匹配项，则运算符将返回空数组。</span><span class="sxs-lookup"><span data-stu-id="a4bde-220">If there are no matches in a collection, the operators return an empty array.</span></span>
+<span data-ttu-id="68663-218">当这些运算符的输入是标量值时，它们将返回一个 **布尔** 值。</span><span class="sxs-lookup"><span data-stu-id="68663-218">When the input of these operators is a scalar value, they return a **Boolean** value.</span></span> <span data-ttu-id="68663-219">当输入是值的集合时，运算符返回任何匹配的成员。</span><span class="sxs-lookup"><span data-stu-id="68663-219">When the input is a collection of values, the operators return any matching members.</span></span> <span data-ttu-id="68663-220">如果集合中没有匹配项，则运算符将返回空数组。</span><span class="sxs-lookup"><span data-stu-id="68663-220">If there are no matches in a collection, the operators return an empty array.</span></span>
 
-### <a name="-like-and--notlike"></a><span data-ttu-id="a4bde-221">-like 和-notlike</span><span class="sxs-lookup"><span data-stu-id="a4bde-221">-like and -notlike</span></span>
+### <a name="-like-and--notlike"></a><span data-ttu-id="68663-221">-like 和-notlike</span><span class="sxs-lookup"><span data-stu-id="68663-221">-like and -notlike</span></span>
 
-<span data-ttu-id="a4bde-222">`-like` 和 `-notlike` 的行为与 `-eq` 和类似 `-ne` ，但右侧可以是包含 [通配符](about_Wildcards.md)的字符串。</span><span class="sxs-lookup"><span data-stu-id="a4bde-222">`-like` and `-notlike` behave similarly to `-eq` and `-ne`, but the right-hand side could be a string containing [wildcards](about_Wildcards.md).</span></span>
+<span data-ttu-id="68663-222">`-like` 和 `-notlike` 的行为与 `-eq` 和类似 `-ne` ，但右侧可以是包含 [通配符](about_Wildcards.md)的字符串。</span><span class="sxs-lookup"><span data-stu-id="68663-222">`-like` and `-notlike` behave similarly to `-eq` and `-ne`, but the right-hand side could be a string containing [wildcards](about_Wildcards.md).</span></span>
 
-<span data-ttu-id="a4bde-223">示例：</span><span class="sxs-lookup"><span data-stu-id="a4bde-223">Example:</span></span>
+<span data-ttu-id="68663-223">示例：</span><span class="sxs-lookup"><span data-stu-id="68663-223">Example:</span></span>
 
 ```powershell
 "PowerShell" -like    "*shell"           # Output: True
@@ -306,11 +306,11 @@ $a -gt 'a'
 "PowerShell", "Server" -notlike "*shell" # Output: Server
 ```
 
-### <a name="-match-and--notmatch"></a><span data-ttu-id="a4bde-224">-match 和-notmatch</span><span class="sxs-lookup"><span data-stu-id="a4bde-224">-match and -notmatch</span></span>
+### <a name="-match-and--notmatch"></a><span data-ttu-id="68663-224">-match 和-notmatch</span><span class="sxs-lookup"><span data-stu-id="68663-224">-match and -notmatch</span></span>
 
-<span data-ttu-id="a4bde-225">`-match` 和 `-notmatch` 使用正则表达式搜索左侧值中的模式。</span><span class="sxs-lookup"><span data-stu-id="a4bde-225">`-match` and `-notmatch` use regular expressions to search for pattern in the left-hand side values.</span></span> <span data-ttu-id="a4bde-226">正则表达式可以匹配复杂模式，如电子邮件地址、UNC 路径或格式化电话号码。</span><span class="sxs-lookup"><span data-stu-id="a4bde-226">Regular expressions can match complex patterns like email addresses, UNC paths, or formatted phone numbers.</span></span> <span data-ttu-id="a4bde-227">右侧字符串必须符合 [正则表达式](about_Regular_Expressions.md) 规则。</span><span class="sxs-lookup"><span data-stu-id="a4bde-227">The right-hand side string must adhere to the [regular expressions](about_Regular_Expressions.md) rules.</span></span>
+<span data-ttu-id="68663-225">`-match` 和 `-notmatch` 使用正则表达式搜索左侧值中的模式。</span><span class="sxs-lookup"><span data-stu-id="68663-225">`-match` and `-notmatch` use regular expressions to search for pattern in the left-hand side values.</span></span> <span data-ttu-id="68663-226">正则表达式可以匹配复杂模式，如电子邮件地址、UNC 路径或格式化电话号码。</span><span class="sxs-lookup"><span data-stu-id="68663-226">Regular expressions can match complex patterns like email addresses, UNC paths, or formatted phone numbers.</span></span> <span data-ttu-id="68663-227">右侧字符串必须符合 [正则表达式](about_Regular_Expressions.md) 规则。</span><span class="sxs-lookup"><span data-stu-id="68663-227">The right-hand side string must adhere to the [regular expressions](about_Regular_Expressions.md) rules.</span></span>
 
-<span data-ttu-id="a4bde-228">标量示例：</span><span class="sxs-lookup"><span data-stu-id="a4bde-228">Scalar examples:</span></span>
+<span data-ttu-id="68663-228">标量示例：</span><span class="sxs-lookup"><span data-stu-id="68663-228">Scalar examples:</span></span>
 
 ```powershell
 # Partial match test, showing how differently -match and -like behave
@@ -322,9 +322,9 @@ $a -gt 'a'
 'bag'        -notmatch 'b[iou]g'   # Output: True
 ```
 
-<span data-ttu-id="a4bde-229">如果输入是集合，则运算符将返回该集合的匹配成员。</span><span class="sxs-lookup"><span data-stu-id="a4bde-229">If the input is a collection, the operators return the matching members of that collection.</span></span>
+<span data-ttu-id="68663-229">如果输入是集合，则运算符将返回该集合的匹配成员。</span><span class="sxs-lookup"><span data-stu-id="68663-229">If the input is a collection, the operators return the matching members of that collection.</span></span>
 
-<span data-ttu-id="a4bde-230">集合示例：</span><span class="sxs-lookup"><span data-stu-id="a4bde-230">Collection examples:</span></span>
+<span data-ttu-id="68663-230">集合示例：</span><span class="sxs-lookup"><span data-stu-id="68663-230">Collection examples:</span></span>
 
 ```powershell
 "PowerShell", "Super PowerShell", "Power's hell" -match '^Power\w+'
@@ -340,9 +340,9 @@ $a -gt 'a'
 #Output: Bag, Beg
 ```
 
-<span data-ttu-id="a4bde-231">`-match` 和 `-notmatch` 支持 regex 捕获组。</span><span class="sxs-lookup"><span data-stu-id="a4bde-231">`-match` and `-notmatch` support regex capture groups.</span></span> <span data-ttu-id="a4bde-232">每次运行时，它们将覆盖 `$Matches` 自动变量。</span><span class="sxs-lookup"><span data-stu-id="a4bde-232">Each time they run, they overwrite the `$Matches` automatic variable.</span></span> <span data-ttu-id="a4bde-233">当 `<input>` 是集合时， `$Matches` 变量是 `$null` 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-233">When `<input>` is a collection the `$Matches` variable is `$null`.</span></span> <span data-ttu-id="a4bde-234">`$Matches` 是始终具有名为 "0" 的键的 **哈希表** ，它存储整个匹配项。</span><span class="sxs-lookup"><span data-stu-id="a4bde-234">`$Matches` is a **Hashtable** that always has a key named '0', which stores the entire match.</span></span> <span data-ttu-id="a4bde-235">如果正则表达式包含捕获组，则 `$Matches` 包含每个组的其他键。</span><span class="sxs-lookup"><span data-stu-id="a4bde-235">If the regular expression contains capture groups, the `$Matches` contains additional keys for each group.</span></span>
+<span data-ttu-id="68663-231">`-match` 和 `-notmatch` 支持 regex 捕获组。</span><span class="sxs-lookup"><span data-stu-id="68663-231">`-match` and `-notmatch` support regex capture groups.</span></span> <span data-ttu-id="68663-232">每次运行时，它们将覆盖 `$Matches` 自动变量。</span><span class="sxs-lookup"><span data-stu-id="68663-232">Each time they run, they overwrite the `$Matches` automatic variable.</span></span> <span data-ttu-id="68663-233">当 `<input>` 是集合时， `$Matches` 变量是 `$null` 。</span><span class="sxs-lookup"><span data-stu-id="68663-233">When `<input>` is a collection the `$Matches` variable is `$null`.</span></span> <span data-ttu-id="68663-234">`$Matches` 是始终具有名为 "0" 的键的 **哈希表** ，它存储整个匹配项。</span><span class="sxs-lookup"><span data-stu-id="68663-234">`$Matches` is a **Hashtable** that always has a key named '0', which stores the entire match.</span></span> <span data-ttu-id="68663-235">如果正则表达式包含捕获组，则 `$Matches` 包含每个组的其他键。</span><span class="sxs-lookup"><span data-stu-id="68663-235">If the regular expression contains capture groups, the `$Matches` contains additional keys for each group.</span></span>
 
-<span data-ttu-id="a4bde-236">示例：</span><span class="sxs-lookup"><span data-stu-id="a4bde-236">Example:</span></span>
+<span data-ttu-id="68663-236">示例：</span><span class="sxs-lookup"><span data-stu-id="68663-236">Example:</span></span>
 
 ```powershell
 $string = 'The last logged on user was CONTOSO\jsmith'
@@ -373,29 +373,29 @@ User name:
 jsmith
 ```
 
-<span data-ttu-id="a4bde-237">有关详细信息，请参阅 [about_Regular_Expressions](about_Regular_Expressions.md)。</span><span class="sxs-lookup"><span data-stu-id="a4bde-237">For details, see [about_Regular_Expressions](about_Regular_Expressions.md).</span></span>
+<span data-ttu-id="68663-237">有关详细信息，请参阅 [about_Regular_Expressions](about_Regular_Expressions.md)。</span><span class="sxs-lookup"><span data-stu-id="68663-237">For details, see [about_Regular_Expressions](about_Regular_Expressions.md).</span></span>
 
-## <a name="replacement-operator"></a><span data-ttu-id="a4bde-238">替换运算符</span><span class="sxs-lookup"><span data-stu-id="a4bde-238">Replacement operator</span></span>
+## <a name="replacement-operator"></a><span data-ttu-id="68663-238">替换运算符</span><span class="sxs-lookup"><span data-stu-id="68663-238">Replacement operator</span></span>
 
-### <a name="replacement-with-regular-expressions"></a><span data-ttu-id="a4bde-239">用正则表达式替换</span><span class="sxs-lookup"><span data-stu-id="a4bde-239">Replacement with regular expressions</span></span>
+### <a name="replacement-with-regular-expressions"></a><span data-ttu-id="68663-239">用正则表达式替换</span><span class="sxs-lookup"><span data-stu-id="68663-239">Replacement with regular expressions</span></span>
 
-<span data-ttu-id="a4bde-240">与类似 `-match` ， `-replace` 运算符使用正则表达式查找指定的模式。</span><span class="sxs-lookup"><span data-stu-id="a4bde-240">Like `-match`, the `-replace` operator uses regular expressions to find the specified pattern.</span></span> <span data-ttu-id="a4bde-241">但与不同的 `-match` 是，它将匹配项替换为另一个指定的值。</span><span class="sxs-lookup"><span data-stu-id="a4bde-241">But unlike `-match`, it replaces the matches with another specified value.</span></span>
+<span data-ttu-id="68663-240">与类似 `-match` ， `-replace` 运算符使用正则表达式查找指定的模式。</span><span class="sxs-lookup"><span data-stu-id="68663-240">Like `-match`, the `-replace` operator uses regular expressions to find the specified pattern.</span></span> <span data-ttu-id="68663-241">但与不同的 `-match` 是，它将匹配项替换为另一个指定的值。</span><span class="sxs-lookup"><span data-stu-id="68663-241">But unlike `-match`, it replaces the matches with another specified value.</span></span>
 
-<span data-ttu-id="a4bde-242">语法：</span><span class="sxs-lookup"><span data-stu-id="a4bde-242">Syntax:</span></span>
+<span data-ttu-id="68663-242">语法：</span><span class="sxs-lookup"><span data-stu-id="68663-242">Syntax:</span></span>
 
 ```
 <input> -replace <regular-expression>, <substitute>
 ```
 
-<span data-ttu-id="a4bde-243">使用正则表达式将运算符替换为指定值的全部或部分值。</span><span class="sxs-lookup"><span data-stu-id="a4bde-243">The operator replaces all or part of a value with the specified value using regular expressions.</span></span> <span data-ttu-id="a4bde-244">对于许多管理任务（如重命名文件），都可以使用运算符。</span><span class="sxs-lookup"><span data-stu-id="a4bde-244">You can use the operator for many administrative tasks, such as renaming files.</span></span> <span data-ttu-id="a4bde-245">例如，以下命令将所有文件的文件扩展名更改 `.txt` 为 `.log` ：</span><span class="sxs-lookup"><span data-stu-id="a4bde-245">For example, the following command changes the file name extensions of all `.txt` files to `.log`:</span></span>
+<span data-ttu-id="68663-243">使用正则表达式将运算符替换为指定值的全部或部分值。</span><span class="sxs-lookup"><span data-stu-id="68663-243">The operator replaces all or part of a value with the specified value using regular expressions.</span></span> <span data-ttu-id="68663-244">对于许多管理任务（如重命名文件），都可以使用运算符。</span><span class="sxs-lookup"><span data-stu-id="68663-244">You can use the operator for many administrative tasks, such as renaming files.</span></span> <span data-ttu-id="68663-245">例如，以下命令将所有文件的文件扩展名更改 `.txt` 为 `.log` ：</span><span class="sxs-lookup"><span data-stu-id="68663-245">For example, the following command changes the file name extensions of all `.txt` files to `.log`:</span></span>
 
 ```powershell
 Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 ```
 
-<span data-ttu-id="a4bde-246">默认情况下， `-replace` 运算符不区分大小写。</span><span class="sxs-lookup"><span data-stu-id="a4bde-246">By default, the `-replace` operator is case-insensitive.</span></span> <span data-ttu-id="a4bde-247">若要区分大小写，请使用 `-creplace` 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-247">To make it case sensitive, use `-creplace`.</span></span> <span data-ttu-id="a4bde-248">若要使它显式不区分大小写，请使用 `-ireplace` 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-248">To make it explicitly case-insensitive, use `-ireplace`.</span></span>
+<span data-ttu-id="68663-246">默认情况下， `-replace` 运算符不区分大小写。</span><span class="sxs-lookup"><span data-stu-id="68663-246">By default, the `-replace` operator is case-insensitive.</span></span> <span data-ttu-id="68663-247">若要区分大小写，请使用 `-creplace` 。</span><span class="sxs-lookup"><span data-stu-id="68663-247">To make it case sensitive, use `-creplace`.</span></span> <span data-ttu-id="68663-248">若要使它显式不区分大小写，请使用 `-ireplace` 。</span><span class="sxs-lookup"><span data-stu-id="68663-248">To make it explicitly case-insensitive, use `-ireplace`.</span></span>
 
-<span data-ttu-id="a4bde-249">示例:</span><span class="sxs-lookup"><span data-stu-id="a4bde-249">Examples:</span></span>
+<span data-ttu-id="68663-249">示例：</span><span class="sxs-lookup"><span data-stu-id="68663-249">Examples:</span></span>
 
 ```powershell
 "book" -ireplace "B", "C" # Case insensitive
@@ -407,11 +407,11 @@ Cook
 book
 ```
 
-### <a name="regular-expressions-substitutions"></a><span data-ttu-id="a4bde-250">正则表达式替换</span><span class="sxs-lookup"><span data-stu-id="a4bde-250">Regular expressions substitutions</span></span>
+### <a name="regular-expressions-substitutions"></a><span data-ttu-id="68663-250">正则表达式替换</span><span class="sxs-lookup"><span data-stu-id="68663-250">Regular expressions substitutions</span></span>
 
-<span data-ttu-id="a4bde-251">还可以使用正则表达式，使用捕获组和替换动态替换文本。</span><span class="sxs-lookup"><span data-stu-id="a4bde-251">It is also possible to use regular expressions to dynamically replace text using capturing groups, and substitutions.</span></span> <span data-ttu-id="a4bde-252">可以 `<substitute>` 使用分组标识符之前的美元符号 () 字符，在字符串中引用捕获组 `$` 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-252">Capture groups can be referenced in the `<substitute>` string using the dollar sign (`$`) character before the group identifier.</span></span>
+<span data-ttu-id="68663-251">还可以使用正则表达式，使用捕获组和替换动态替换文本。</span><span class="sxs-lookup"><span data-stu-id="68663-251">It is also possible to use regular expressions to dynamically replace text using capturing groups, and substitutions.</span></span> <span data-ttu-id="68663-252">可以 `<substitute>` 使用分组标识符之前的美元符号 () 字符，在字符串中引用捕获组 `$` 。</span><span class="sxs-lookup"><span data-stu-id="68663-252">Capture groups can be referenced in the `<substitute>` string using the dollar sign (`$`) character before the group identifier.</span></span>
 
-<span data-ttu-id="a4bde-253">在下面的示例中， `-replace` 运算符接受格式为的用户名， `DomainName\Username` 并将转换为以下 `Username@DomainName` 格式：</span><span class="sxs-lookup"><span data-stu-id="a4bde-253">In the following example, the `-replace` operator accepts a username in the form of `DomainName\Username` and converts to the `Username@DomainName` format:</span></span>
+<span data-ttu-id="68663-253">在下面的示例中， `-replace` 运算符接受格式为的用户名， `DomainName\Username` 并将转换为以下 `Username@DomainName` 格式：</span><span class="sxs-lookup"><span data-stu-id="68663-253">In the following example, the `-replace` operator accepts a username in the form of `DomainName\Username` and converts to the `Username@DomainName` format:</span></span>
 
 ```powershell
 $SearchExp = '^(?<DomainName>[\w-.]+)\\(?<Username>[\w-.]+)$'
@@ -425,13 +425,13 @@ John.Doe@Contoso.local
 ```
 
 > [!WARNING]
-> <span data-ttu-id="a4bde-254">该 `$` 字符具有 PowerShell 和正则表达式中的 syntatic 角色：</span><span class="sxs-lookup"><span data-stu-id="a4bde-254">The `$` character has syntatic roles in both PowerShell and regular expressions:</span></span>
+> <span data-ttu-id="68663-254">该 `$` 字符具有 PowerShell 和正则表达式中的 syntatic 角色：</span><span class="sxs-lookup"><span data-stu-id="68663-254">The `$` character has syntatic roles in both PowerShell and regular expressions:</span></span>
 >
-> - <span data-ttu-id="a4bde-255">在 PowerShell 中，在双引号之间，它指定变量并充当子表达式运算符。</span><span class="sxs-lookup"><span data-stu-id="a4bde-255">In PowerShell, between double quotation marks, it designates variables and acts as a subexpression operator.</span></span>
-> - <span data-ttu-id="a4bde-256">在正则表达式搜索字符串中，它表示行的结尾</span><span class="sxs-lookup"><span data-stu-id="a4bde-256">In Regex search strings, it denotes end of the line</span></span>
-> - <span data-ttu-id="a4bde-257">在 Regex 替换字符串中，它表示捕获的组。请确保将正则表达式放在单引号之间，或 `` ` `` 在它们之前插入反撇号 () 字符。</span><span class="sxs-lookup"><span data-stu-id="a4bde-257">In Regex substitution strings, it denotes captured groups.Be sure to either put your regular expressions between single quotation marks or insert a backtick (`` ` ``) character before them.</span></span>
+> - <span data-ttu-id="68663-255">在 PowerShell 中，在双引号之间，它指定变量并充当子表达式运算符。</span><span class="sxs-lookup"><span data-stu-id="68663-255">In PowerShell, between double quotation marks, it designates variables and acts as a subexpression operator.</span></span>
+> - <span data-ttu-id="68663-256">在正则表达式搜索字符串中，它表示行的结尾</span><span class="sxs-lookup"><span data-stu-id="68663-256">In Regex search strings, it denotes end of the line</span></span>
+> - <span data-ttu-id="68663-257">在 Regex 替换字符串中，它表示捕获的组。请确保将正则表达式放在单引号之间，或 `` ` `` 在它们之前插入反撇号 () 字符。</span><span class="sxs-lookup"><span data-stu-id="68663-257">In Regex substitution strings, it denotes captured groups.Be sure to either put your regular expressions between single quotation marks or insert a backtick (`` ` ``) character before them.</span></span>
 
-<span data-ttu-id="a4bde-258">例如：</span><span class="sxs-lookup"><span data-stu-id="a4bde-258">For example:</span></span>
+<span data-ttu-id="68663-258">例如：</span><span class="sxs-lookup"><span data-stu-id="68663-258">For example:</span></span>
 
 ```powershell
 $1 = 'Goodbye'
@@ -443,7 +443,7 @@ $1 = 'Goodbye'
 # Output: Hello Universe
 ```
 
-<span data-ttu-id="a4bde-259">`$$` 在正则表达式中表示文字 `$` 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-259">`$$` in Regex denotes a literal `$`.</span></span> <span data-ttu-id="a4bde-260">此 `$$` 在替换字符串中，以 `$` 在生成的替换中包含文本。</span><span class="sxs-lookup"><span data-stu-id="a4bde-260">This `$$` in the substitution string to include a literal `$` in the resulting replacement.</span></span> <span data-ttu-id="a4bde-261">例如：</span><span class="sxs-lookup"><span data-stu-id="a4bde-261">For example:</span></span>
+<span data-ttu-id="68663-259">`$$` 在正则表达式中表示文字 `$` 。</span><span class="sxs-lookup"><span data-stu-id="68663-259">`$$` in Regex denotes a literal `$`.</span></span> <span data-ttu-id="68663-260">此 `$$` 在替换字符串中，以 `$` 在生成的替换中包含文本。</span><span class="sxs-lookup"><span data-stu-id="68663-260">This `$$` in the substitution string to include a literal `$` in the resulting replacement.</span></span> <span data-ttu-id="68663-261">例如：</span><span class="sxs-lookup"><span data-stu-id="68663-261">For example:</span></span>
 
 ```powershell
 '5.72' -replace '(.+)', '$ $1' # Output: $ 5.72
@@ -451,11 +451,11 @@ $1 = 'Goodbye'
 '5.72' -replace '(.+)', '$$1'  # Output: $1
 ```
 
-<span data-ttu-id="a4bde-262">若要了解详细信息，请参阅[正则表达式中的][4] [about_Regular_Expressions](about_Regular_Expressions.md)和替换。</span><span class="sxs-lookup"><span data-stu-id="a4bde-262">To learn more, see [about_Regular_Expressions](about_Regular_Expressions.md) and [Substitutions in Regular Expressions][4].</span></span>
+<span data-ttu-id="68663-262">若要了解详细信息，请参阅[正则表达式中的][4] [about_Regular_Expressions](about_Regular_Expressions.md)和替换。</span><span class="sxs-lookup"><span data-stu-id="68663-262">To learn more, see [about_Regular_Expressions](about_Regular_Expressions.md) and [Substitutions in Regular Expressions][4].</span></span>
 
-### <a name="substituting-in-a-collection"></a><span data-ttu-id="a4bde-263">在集合中替换</span><span class="sxs-lookup"><span data-stu-id="a4bde-263">Substituting in a collection</span></span>
+### <a name="substituting-in-a-collection"></a><span data-ttu-id="68663-263">在集合中替换</span><span class="sxs-lookup"><span data-stu-id="68663-263">Substituting in a collection</span></span>
 
-<span data-ttu-id="a4bde-264">如果 `<input>` 到运算符为 `-replace` 集合，则 PowerShell 会将替换应用于集合中的每个值。</span><span class="sxs-lookup"><span data-stu-id="a4bde-264">When the `<input>` to the `-replace` operator is a collection, PowerShell applies the replacement to every value in the collection.</span></span> <span data-ttu-id="a4bde-265">例如：</span><span class="sxs-lookup"><span data-stu-id="a4bde-265">For example:</span></span>
+<span data-ttu-id="68663-264">如果 `<input>` 到运算符为 `-replace` 集合，则 PowerShell 会将替换应用于集合中的每个值。</span><span class="sxs-lookup"><span data-stu-id="68663-264">When the `<input>` to the `-replace` operator is a collection, PowerShell applies the replacement to every value in the collection.</span></span> <span data-ttu-id="68663-265">例如：</span><span class="sxs-lookup"><span data-stu-id="68663-265">For example:</span></span>
 
 ```powershell
 "B1","B2","B3","B4","B5" -replace "B", 'a'
@@ -466,11 +466,11 @@ a4
 a5
 ```
 
-## <a name="containment-operators"></a><span data-ttu-id="a4bde-266">包含运算符</span><span class="sxs-lookup"><span data-stu-id="a4bde-266">Containment operators</span></span>
+## <a name="containment-operators"></a><span data-ttu-id="68663-266">包含运算符</span><span class="sxs-lookup"><span data-stu-id="68663-266">Containment operators</span></span>
 
-<span data-ttu-id="a4bde-267">包含运算符 (`-contains` 、 `-notcontains` 、 `-in` 和 `-notin`) 与相等运算符类似，不同之处在于它们始终返回一个 **布尔** 值，即使输入是集合也是如此。</span><span class="sxs-lookup"><span data-stu-id="a4bde-267">The containment operators (`-contains`, `-notcontains`, `-in`, and `-notin`) are similar to the equality operators, except that they always return a **Boolean** value, even when the input is a collection.</span></span> <span data-ttu-id="a4bde-268">这些运算符在检测到第一个匹配项后会立即停止比较，而相等运算符则计算所有输入成员。</span><span class="sxs-lookup"><span data-stu-id="a4bde-268">These operators stop comparing as soon as they detect the first match, whereas the equality operators evaluate all input members.</span></span> <span data-ttu-id="a4bde-269">在非常大的集合中，这些运算符返回的速度比相等运算符更快。</span><span class="sxs-lookup"><span data-stu-id="a4bde-269">In a very large collection, these operators return quicker than the equality operators.</span></span>
+<span data-ttu-id="68663-267">包含运算符 (`-contains` 、 `-notcontains` 、 `-in` 和 `-notin`) 与相等运算符类似，不同之处在于它们始终返回一个 **布尔** 值，即使输入是集合也是如此。</span><span class="sxs-lookup"><span data-stu-id="68663-267">The containment operators (`-contains`, `-notcontains`, `-in`, and `-notin`) are similar to the equality operators, except that they always return a **Boolean** value, even when the input is a collection.</span></span> <span data-ttu-id="68663-268">这些运算符在检测到第一个匹配项后会立即停止比较，而相等运算符则计算所有输入成员。</span><span class="sxs-lookup"><span data-stu-id="68663-268">These operators stop comparing as soon as they detect the first match, whereas the equality operators evaluate all input members.</span></span> <span data-ttu-id="68663-269">在非常大的集合中，这些运算符返回的速度比相等运算符更快。</span><span class="sxs-lookup"><span data-stu-id="68663-269">In a very large collection, these operators return quicker than the equality operators.</span></span>
 
-<span data-ttu-id="a4bde-270">语法：</span><span class="sxs-lookup"><span data-stu-id="a4bde-270">Syntax:</span></span>
+<span data-ttu-id="68663-270">语法：</span><span class="sxs-lookup"><span data-stu-id="68663-270">Syntax:</span></span>
 
 ```
 <Collection> -contains <Test-object>
@@ -479,11 +479,11 @@ a5
 <Test-object> -notin <Collection>
 ```
 
-### <a name="-contains-and--notcontains"></a><span data-ttu-id="a4bde-271">-contains 和-notcontains</span><span class="sxs-lookup"><span data-stu-id="a4bde-271">-contains and -notcontains</span></span>
+### <a name="-contains-and--notcontains"></a><span data-ttu-id="68663-271">-contains 和-notcontains</span><span class="sxs-lookup"><span data-stu-id="68663-271">-contains and -notcontains</span></span>
 
-<span data-ttu-id="a4bde-272">这些运算符用于判断集是否包含特定元素。</span><span class="sxs-lookup"><span data-stu-id="a4bde-272">These operators tell whether a set includes a certain element.</span></span> <span data-ttu-id="a4bde-273">`-contains` 当右侧 (测试对象) 与集中的元素之一匹配时，返回 True。</span><span class="sxs-lookup"><span data-stu-id="a4bde-273">`-contains` returns True when the right-hand side (test object) matches one of the elements in the set.</span></span> <span data-ttu-id="a4bde-274">`-notcontains` 改为返回 False。</span><span class="sxs-lookup"><span data-stu-id="a4bde-274">`-notcontains` returns False instead.</span></span> <span data-ttu-id="a4bde-275">如果测试对象是集合，则这些运算符使用引用相等性，即，它们检查其中一个集合的元素是否为测试对象的相同实例。</span><span class="sxs-lookup"><span data-stu-id="a4bde-275">When the test object is a collection, these operators use reference equality, i.e. they check whether one of the set's elements is the same instance of the test object.</span></span>
+<span data-ttu-id="68663-272">这些运算符用于判断集是否包含特定元素。</span><span class="sxs-lookup"><span data-stu-id="68663-272">These operators tell whether a set includes a certain element.</span></span> <span data-ttu-id="68663-273">`-contains` 当右侧 (测试对象) 与集中的元素之一匹配时，返回 True。</span><span class="sxs-lookup"><span data-stu-id="68663-273">`-contains` returns True when the right-hand side (test object) matches one of the elements in the set.</span></span> <span data-ttu-id="68663-274">`-notcontains` 改为返回 False。</span><span class="sxs-lookup"><span data-stu-id="68663-274">`-notcontains` returns False instead.</span></span> <span data-ttu-id="68663-275">如果测试对象是集合，则这些运算符使用引用相等性，即，它们检查其中一个集合的元素是否为测试对象的相同实例。</span><span class="sxs-lookup"><span data-stu-id="68663-275">When the test object is a collection, these operators use reference equality, i.e. they check whether one of the set's elements is the same instance of the test object.</span></span>
 
-<span data-ttu-id="a4bde-276">示例:</span><span class="sxs-lookup"><span data-stu-id="a4bde-276">Examples:</span></span>
+<span data-ttu-id="68663-276">示例：</span><span class="sxs-lookup"><span data-stu-id="68663-276">Examples:</span></span>
 
 ```powershell
 "abc", "def" -contains "def"                  # Output: True
@@ -494,7 +494,7 @@ a5
 "abc", "def", "ghi" -notcontains "abc", "def" # Output: True
 ```
 
-<span data-ttu-id="a4bde-277">更复杂的示例：</span><span class="sxs-lookup"><span data-stu-id="a4bde-277">More complex examples:</span></span>
+<span data-ttu-id="68663-277">更复杂的示例：</span><span class="sxs-lookup"><span data-stu-id="68663-277">More complex examples:</span></span>
 
 ```powershell
 $DomainServers = "ContosoDC1","ContosoDC2","ContosoFileServer","ContosoDNS",
@@ -509,11 +509,11 @@ $a = "abc", "def"
 $a, "ghi" -contains $a           # Output: True
 ```
 
-### <a name="-in-and--notin"></a><span data-ttu-id="a4bde-278">-in 和-notin</span><span class="sxs-lookup"><span data-stu-id="a4bde-278">-in and -notin</span></span>
+### <a name="-in-and--notin"></a><span data-ttu-id="68663-278">-in 和-notin</span><span class="sxs-lookup"><span data-stu-id="68663-278">-in and -notin</span></span>
 
-<span data-ttu-id="a4bde-279">`-in`和- `notin` 运算符在 PowerShell 3 中引入，作为和运算符的语法反转 `contains` `-notcontain` 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-279">The `-in` and -`notin` operators were introduced in PowerShell 3 as the syntactic reverse of the of `contains` and `-notcontain` operators.</span></span> <span data-ttu-id="a4bde-280">`-in`当左侧 `<test-object>` 与集中的元素之一匹配时，返回 True。</span><span class="sxs-lookup"><span data-stu-id="a4bde-280">`-in` returns **True** when the left-hand side `<test-object>` matches one of the elements in the set.</span></span> <span data-ttu-id="a4bde-281">`-notin` 改 **为返回 False** 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-281">`-notin` returns **False** instead.</span></span> <span data-ttu-id="a4bde-282">如果测试对象是一个集，则这些运算符使用引用相等性来检查该集的一个元素是否为该测试对象的相同实例。</span><span class="sxs-lookup"><span data-stu-id="a4bde-282">When the test object is a set, these operators use reference equality to check whether one of the set's elements is the same instance of the test object.</span></span>
+<span data-ttu-id="68663-279">`-in`和- `notin` 运算符在 PowerShell 3 中引入，作为和运算符的语法反转 `contains` `-notcontain` 。</span><span class="sxs-lookup"><span data-stu-id="68663-279">The `-in` and -`notin` operators were introduced in PowerShell 3 as the syntactic reverse of the of `contains` and `-notcontain` operators.</span></span> <span data-ttu-id="68663-280">`-in`当左侧 `<test-object>` 与集中的元素之一匹配时，返回 True。</span><span class="sxs-lookup"><span data-stu-id="68663-280">`-in` returns **True** when the left-hand side `<test-object>` matches one of the elements in the set.</span></span> <span data-ttu-id="68663-281">`-notin` 改 **为返回 False** 。</span><span class="sxs-lookup"><span data-stu-id="68663-281">`-notin` returns **False** instead.</span></span> <span data-ttu-id="68663-282">如果测试对象是一个集，则这些运算符使用引用相等性来检查该集的一个元素是否为该测试对象的相同实例。</span><span class="sxs-lookup"><span data-stu-id="68663-282">When the test object is a set, these operators use reference equality to check whether one of the set's elements is the same instance of the test object.</span></span>
 
-<span data-ttu-id="a4bde-283">下面的示例执行与示例相同的操作 `-contain` `-notcontain` ，但它们是用和编写的 `-in` `-notin` 。</span><span class="sxs-lookup"><span data-stu-id="a4bde-283">The following examples do the same thing that the examples for `-contain` and `-notcontain` do, but they are written with `-in` and `-notin` instead.</span></span>
+<span data-ttu-id="68663-283">下面的示例执行与示例相同的操作 `-contain` `-notcontain` ，但它们是用和编写的 `-in` `-notin` 。</span><span class="sxs-lookup"><span data-stu-id="68663-283">The following examples do the same thing that the examples for `-contain` and `-notcontain` do, but they are written with `-in` and `-notin` instead.</span></span>
 
 ```powershell
 "def" -in "abc", "def"                  # Output: True
@@ -524,7 +524,7 @@ $a, "ghi" -contains $a           # Output: True
 "abc", "def" -notin "abc", "def", "ghi" # Output: True
 ```
 
-<span data-ttu-id="a4bde-284">更复杂的示例：</span><span class="sxs-lookup"><span data-stu-id="a4bde-284">More complex examples:</span></span>
+<span data-ttu-id="68663-284">更复杂的示例：</span><span class="sxs-lookup"><span data-stu-id="68663-284">More complex examples:</span></span>
 
 ```powershell
 $DomainServers = "ContosoDC1","ContosoDC2","ContosoFileServer","ContosoDNS",
@@ -539,18 +539,18 @@ $a -in "abc", "def", "ghi" # Output: False
 $a -in $a, "ghi"           # Output: True
 ```
 
-## <a name="type-comparison"></a><span data-ttu-id="a4bde-285">类型比较</span><span class="sxs-lookup"><span data-stu-id="a4bde-285">Type comparison</span></span>
+## <a name="type-comparison"></a><span data-ttu-id="68663-285">类型比较</span><span class="sxs-lookup"><span data-stu-id="68663-285">Type comparison</span></span>
 
-<span data-ttu-id="a4bde-286"> (和) 的类型比较运算符 `-is` `-isnot` 用于确定对象是否为特定类型。</span><span class="sxs-lookup"><span data-stu-id="a4bde-286">The type comparison operators (`-is` and `-isnot`) are used to determine if an object is a specific type.</span></span>
+<span data-ttu-id="68663-286"> (和) 的类型比较运算符 `-is` `-isnot` 用于确定对象是否为特定类型。</span><span class="sxs-lookup"><span data-stu-id="68663-286">The type comparison operators (`-is` and `-isnot`) are used to determine if an object is a specific type.</span></span>
 
-<span data-ttu-id="a4bde-287">语法：</span><span class="sxs-lookup"><span data-stu-id="a4bde-287">Syntax:</span></span>
+<span data-ttu-id="68663-287">语法：</span><span class="sxs-lookup"><span data-stu-id="68663-287">Syntax:</span></span>
 
 ```powershell
 <object> -is <type-reference>
 <object> -isnot <type-reference>
 ```
 
-<span data-ttu-id="a4bde-288">例如：</span><span class="sxs-lookup"><span data-stu-id="a4bde-288">Example:</span></span>
+<span data-ttu-id="68663-288">例如：</span><span class="sxs-lookup"><span data-stu-id="68663-288">Example:</span></span>
 
 ```powershell
 $a = 1
@@ -561,14 +561,14 @@ $b -isnot [int]        # Output: True
 $a -isnot $b.GetType() # Output: True
 ```
 
-## <a name="see-also"></a><span data-ttu-id="a4bde-289">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a4bde-289">SEE ALSO</span></span>
+## <a name="see-also"></a><span data-ttu-id="68663-289">另请参阅</span><span class="sxs-lookup"><span data-stu-id="68663-289">SEE ALSO</span></span>
 
-- [<span data-ttu-id="a4bde-290">about_Operators</span><span class="sxs-lookup"><span data-stu-id="a4bde-290">about_Operators</span></span>](about_Operators.md)
-- [<span data-ttu-id="a4bde-291">about_Regular_Expressions</span><span class="sxs-lookup"><span data-stu-id="a4bde-291">about_Regular_Expressions</span></span>](about_Regular_Expressions.md)
-- [<span data-ttu-id="a4bde-292">about_Wildcards</span><span class="sxs-lookup"><span data-stu-id="a4bde-292">about_Wildcards</span></span>](about_Wildcards.md)
-- [<span data-ttu-id="a4bde-293">Compare-Object</span><span class="sxs-lookup"><span data-stu-id="a4bde-293">Compare-Object</span></span>](xref:Microsoft.PowerShell.Utility.Compare-Object)
-- [<span data-ttu-id="a4bde-294">Foreach-对象</span><span class="sxs-lookup"><span data-stu-id="a4bde-294">Foreach-Object</span></span>](xref:Microsoft.PowerShell.Core.ForEach-Object)
-- [<span data-ttu-id="a4bde-295">Where-Object</span><span class="sxs-lookup"><span data-stu-id="a4bde-295">Where-Object</span></span>](xref:Microsoft.PowerShell.Core.Where-Object)
+- [<span data-ttu-id="68663-290">about_Operators</span><span class="sxs-lookup"><span data-stu-id="68663-290">about_Operators</span></span>](about_Operators.md)
+- [<span data-ttu-id="68663-291">about_Regular_Expressions</span><span class="sxs-lookup"><span data-stu-id="68663-291">about_Regular_Expressions</span></span>](about_Regular_Expressions.md)
+- [<span data-ttu-id="68663-292">about_Wildcards</span><span class="sxs-lookup"><span data-stu-id="68663-292">about_Wildcards</span></span>](about_Wildcards.md)
+- [<span data-ttu-id="68663-293">Compare-Object</span><span class="sxs-lookup"><span data-stu-id="68663-293">Compare-Object</span></span>](xref:Microsoft.PowerShell.Utility.Compare-Object)
+- [<span data-ttu-id="68663-294">Foreach-对象</span><span class="sxs-lookup"><span data-stu-id="68663-294">Foreach-Object</span></span>](xref:Microsoft.PowerShell.Core.ForEach-Object)
+- [<span data-ttu-id="68663-295">Where-Object</span><span class="sxs-lookup"><span data-stu-id="68663-295">Where-Object</span></span>](xref:Microsoft.PowerShell.Core.Where-Object)
 
 [1]: /dotnet/api/system.icomparable
 [2]: /dotnet/api/system.iequatable-1
