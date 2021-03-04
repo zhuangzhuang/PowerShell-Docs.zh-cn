@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
-ms.openlocfilehash: 9017d2352f1d2735f21343f4c1194c5e97ce2848
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+ms.openlocfilehash: 83ddac1e157f26d6a437716e9ae95e258aa1eecb
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "93198912"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685872"
 ---
 # Read-Host
 
@@ -25,9 +25,12 @@ ms.locfileid: "93198912"
 Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 `Read-Host`Cmdlet 从控制台读取一行输入。 可使用它来提示用户输入数据。 因为可以将输入保存为安全字符串，所以可以使用此 cmdlet 来提示用户输入安全数据（如密码）以及共享的数据。
+
+> [!NOTE]
+> `Read-Host` 的长度限制为8190个字符，它可以接受用户的输入。
 
 ## 示例
 
@@ -51,7 +54,7 @@ $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
 
 ### -AsSecureString
 
-指示该 cmdlet 显示星号 (`*`) 用户键入作为输入的字符。 使用此参数时，该 cmdlet 的输出 `Read-Host` 是 **SecureString** 对象， ( **SecureString** ) 。
+指示该 cmdlet 显示星号 (`*`) 用户键入作为输入的字符。 使用此参数时，该 cmdlet 的输出 `Read-Host` 是 **SecureString** 对象， (**SecureString**) 。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -67,10 +70,7 @@ Accept wildcard characters: False
 
 ### -Prompt
 
-指定提示的文本。
-键入一个字符串。
-如果该字符串包含空格，请将其括在引号中。
-PowerShell 将向你输入的文本追加一个冒号 (`:`) 。
+指定提示的文本。 键入一个字符串。 如果该字符串包含空格，请将其括在引号中。 PowerShell 将向你输入的文本追加一个冒号 (`:`) 。
 
 ```yaml
 Type: System.Object
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 
 ## 输入
 
-### 无
+### None
 
 不能通过管道将输入传递给此 cmdlet。
 
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 
 ### System.String 或 System.Security.SecureString
 
-如果使用 **AsSecureString** 参数，则 `Read-Host` 将返回 **SecureString** 。 否则，它将返回一个字符串。
+如果使用 **AsSecureString** 参数，则 `Read-Host` 将返回 **SecureString**。 否则，它将返回一个字符串。
 
 ## 注释
 

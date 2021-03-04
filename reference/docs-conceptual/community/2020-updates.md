@@ -2,14 +2,14 @@
 title: PowerShell 文档在 2020 年第 4 季度的新变化
 description: PowerShell 文档在 2020 年第 4 季度所作更改的列表
 ms.date: 01/05/2021
-ms.openlocfilehash: 823338560adbfecd6e17ad6b2e82681f5db35405
-ms.sourcegitcommit: fa1a84c81e15f1ffac962110b0b4c850c1b173a0
+ms.openlocfilehash: 2ac4a2e23ebed7cf1d371c29ceada661bc9a9bc3
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99595845"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685540"
 ---
-# <a name="whats-new-in-powershell-docs-for-2020-q4"></a>PowerShell 文档在 2020 年第 4 季度的新变化
+# <a name="whats-new-in-powershell-docs-for-2020"></a>2020的 PowerShell 文档中的新增功能
 
 本文列出了上个月对文档进行的一些主要更改，同时表彰社区的积极参与。
 
@@ -19,7 +19,7 @@ ms.locfileid: "99595845"
 [contrib]: contributing/overview.md
 <!-- --------------- -->
 
-## <a name="2020-december-highlights"></a>2020-12 月要点
+## <a name="2020-december"></a>2020-12 月
 
 - 更新的参与者指南
   - 已记录 `&preserve_view=true` 超链接的查询参数
@@ -49,7 +49,7 @@ ms.locfileid: "99595845"
 | Cwilson-dataselfcom |            |       5       |
 | bobbybatatina       |            |       2       |
 
-## <a name="2020-november-highlights"></a>2020-11 月亮点
+## <a name="2020-november"></a>2020-11 月
 
 - PowerShell 7.1 GA 版本
   - PowerShell 7.1 中的新增功能
@@ -96,7 +96,7 @@ ms.locfileid: "99595845"
 | stephenrgentry  |            |       2       |
 | Vixb1122        |            |       2       |
 
-## <a name="2020-october-highlights"></a>2020 年 10 月要点
+## <a name="2020-october"></a>2020-10 月
 
 - 新文章
   - [about_Character_Encoding](/powershell/module/microsoft.powershell.core/about/about_character_encoding)
@@ -129,7 +129,7 @@ ms.locfileid: "99595845"
 | mklement0    |            |       3       |
 | Abdullah0820 |            |       2       |
 
-## <a name="2020-september-highlights"></a>2020 年 9 月要点
+## <a name="2020-september"></a>2020-九月
 
 - 文档维护
   - 7\.1 预览版内容的更新
@@ -160,7 +160,7 @@ ms.locfileid: "99595845"
 | mklement0        |            |      13       |
 | setpeetrike      |            |       2       |
 
-## <a name="2020-august-highlights"></a>2020 年 8 月亮点
+## <a name="2020-august"></a>2020-8 月
 
 - 新的 PowerShell 文档
   - [About_Calculated_Properties](/powershell/module/microsoft.powershell.core/about/about_calculated_properties)
@@ -190,7 +190,7 @@ ms.locfileid: "99595845"
 | joshSi           |     1      |               |
 | kmoad            |     1      |               |
 
-## <a name="2020-july-highlights"></a>2020 年 7 月亮点
+## <a name="2020-july"></a>2020-7 月
 
 - 新的 PowerShell 文档
   - 恢复了旧的 [ETS 文档](/powershell/scripting/developer/ets/overview) - 添加了 7 篇文章
@@ -227,7 +227,7 @@ ms.locfileid: "99595845"
 | sharpninja     |            |       2       |
 | XuHeng1021     |            |       2       |
 
-## <a name="2020-june-highlights"></a>2020 年 6 月亮点
+## <a name="2020-june"></a>2020-六月
 
 - 新的 PowerShell 文档
   - 发布了新的 [PowerShell 101](../learn/ps101/00-introduction.md) 内容（由 Mike F. Robbins 提供）
@@ -269,7 +269,7 @@ ms.locfileid: "99595845"
 | mklement0     |            |       2       |
 | Sagatboy33    |            |       4       |
 
-## <a name="2020-may-highlights"></a>2020 年 5 月亮点
+## <a name="2020-may"></a>2020-可能
 
 - 新的 PowerShell 文档
   - 创建了新的[深入探讨](../learn/deep-dives/overview.md)部分，包含社区参与者 Kevin Marquette 提供的内容
@@ -322,7 +322,7 @@ ms.locfileid: "99595845"
 | JustinGrote    |            |       2       |
 | peetrike       |            |       2       |
 
-## <a name="2020-april-highlights"></a>2020 年 4 月亮点
+## <a name="2020-april"></a>2020-四月
 
 - 新文档
   - PowerShell 文档
@@ -370,7 +370,7 @@ ms.locfileid: "99595845"
 
 ## <a name="2020-march"></a>2020 年 3 月
 
-### <a name="highlights"></a>亮点
+###
 
 - 新文档
   - PowerShell 文档社区页面
@@ -409,7 +409,7 @@ ms.locfileid: "99595845"
 
 ## <a name="2020-february"></a>2020 年 2 月
 
-### <a name="highlights"></a>亮点
+###
 
 - 新文档
   - [about_Parameter_Sets](/powershell/module/microsoft.powershell.core/about/about_parameter_sets)
@@ -435,7 +435,7 @@ ms.locfileid: "99595845"
 
 ## <a name="2020-january"></a>2020 年 1 月
 
-### <a name="highlights"></a>亮点
+###
 
 - 新文档
   - [about_Windows_PowerShell_Compatibility](/powershell/module/microsoft.powershell.core/about/about_Windows_PowerShell_Compatibility)

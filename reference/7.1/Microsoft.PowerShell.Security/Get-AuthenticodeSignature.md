@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.openlocfilehash: 44608ba9fa2324f9d6d381801876c831ed8b3db8
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: b1b470fb1dd23cd404b7f5fea4981b39f206ae87
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94347289"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685335"
 ---
 # Get-AuthenticodeSignature
 
@@ -39,9 +39,11 @@ Get-AuthenticodeSignature -LiteralPath <String[]> [<CommonParameters>]
 Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
-`Get-AuthenticodeSignature`Cmdlet 获取有关作为字节数组的文件或文件内容的 Authenticode 签名信息。 如果文件未签名，则将检索信息，但字段为空。
+`Get-AuthenticodeSignature`Cmdlet 获取有关作为字节数组的文件或文件内容的 Authenticode 签名信息。
+如果该文件同时为嵌入签名和 Windows 目录签名，则使用 Windows 目录签名。
+如果文件未签名，则将检索信息，但字段为空。
 
 ## 示例
 
@@ -119,7 +121,7 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-指定要检查的文件的路径。 与 **FilePath** 不同， **LiteralPath** 参数的值严格按照所键入的形式使用。 不会将任何字符解释为通配符。 如果路径包括转义符，请将其括在单引号中。 单引号告诉 PowerShell 不要将任何字符解释为转义符。
+指定要检查的文件的路径。 与 **FilePath** 不同，**LiteralPath** 参数的值严格按照所键入的形式使用。 不会将任何字符解释为通配符。 如果路径包括转义符，请将其括在单引号中。 单引号告诉 PowerShell 不要将任何字符解释为转义符。
 
 ```yaml
 Type: System.String[]

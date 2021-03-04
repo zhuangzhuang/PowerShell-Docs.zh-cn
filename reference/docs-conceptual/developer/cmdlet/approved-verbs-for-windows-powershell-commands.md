@@ -1,14 +1,14 @@
 ---
-ms.date: 09/07/2018
+ms.date: 03/01/2021
 ms.topic: reference
 title: PowerShell 命令的已批准谓词
 description: PowerShell 命令的已批准谓词
-ms.openlocfilehash: fc1ff989ae86862e0f9cc24d8bcba2ff02ef68cc
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 277472f141eb1ef2b7b0f19801c622a899e93665
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "93355096"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686075"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell 命令的已批准谓词
 
@@ -57,7 +57,7 @@ PowerShell 对 cmdlet 的名称及其派生的 .NET 类使用谓词-名词对。
 
 ### <a name="invoke-vs-start"></a>Invoke 与开始
 
-使用谓词 `Invoke` 执行同步操作，例如运行命令并等待命令结束。 使用谓词 `Start` 进行异步操作，例如启动自治流程。
+使用谓词 `Invoke` 执行同步操作，例如运行命令并等待命令结束。 使用 `Start` 谓词开始异步操作，如启动自治进程。
 
 ### <a name="ping-vs-test"></a>Ping 与测试
 

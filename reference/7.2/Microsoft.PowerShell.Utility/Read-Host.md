@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/04/2020
+ms.date: 03/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
-ms.openlocfilehash: 2efe75730ef7d35618dc0d1fbf7a8d6f8a5db5ae
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 5563413400abd28ce376265970631ad1206ca518
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99597049"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685263"
 ---
 # Read-Host
 
@@ -32,9 +32,12 @@ Read-Host [[-Prompt] <Object>] [-MaskInput] [<CommonParameters>]
 Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 `Read-Host`Cmdlet 从控制台读取一行输入。 可使用它来提示用户输入数据。 因为可以将输入保存为安全字符串，所以可以使用此 cmdlet 来提示用户输入安全数据（如密码）以及共享的数据。
+
+> [!NOTE]
+> `Read-Host` 的长度限制为1022个字符，它可以接受用户的输入。
 
 ## 示例
 
@@ -99,10 +102,7 @@ Accept wildcard characters: False
 
 ### -Prompt
 
-指定提示的文本。
-键入一个字符串。
-如果该字符串包含空格，请将其括在引号中。
-PowerShell 将向你输入的文本追加一个冒号 (`:`) 。
+指定提示的文本。 键入一个字符串。 如果该字符串包含空格，请将其括在引号中。 PowerShell 将向你输入的文本追加一个冒号 (`:`) 。
 
 ```yaml
 Type: System.Object
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 
 ## 输入
 
-### 无
+### None
 
 不能通过管道将输入传递给此 cmdlet。
 

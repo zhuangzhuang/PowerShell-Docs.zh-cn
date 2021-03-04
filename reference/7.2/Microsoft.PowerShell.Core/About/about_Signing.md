@@ -5,12 +5,12 @@ ms.date: 07/31/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Signing
-ms.openlocfilehash: 560ecc385e970224a23af7a1195c99d8423f503f
-ms.sourcegitcommit: 021ea294327dec542ec040619dac0d2171397a90
+ms.openlocfilehash: 209028dd9f07f4efee7b31da0a1c6fd2b29d544a
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "99597076"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685384"
 ---
 # <a name="about-signing"></a>关于签名
 
@@ -107,7 +107,7 @@ from trusted publishers.
 
 若要在 Windows 的早期版本中创建自签名证书，请使用证书创建工具 `MakeCert.exe` 。 此工具包含在 Microsoft .NET SDK (版本1.1 及更高版本) 和 Microsoft Windows SDK 中。
 
-有关 MakeCert.exe 工具的语法和参数说明的详细信息，请参阅 [# A1)  ( 证书创建工具 ](/previous-versions/dotnet/netframework-2.0/bfsktky3(v=vs.80))。
+有关 MakeCert.exe 工具的语法和参数说明的详细信息，请参阅 [ (MakeCert.exe) 的证书创建工具 ](/previous-versions/dotnet/netframework-2.0/bfsktky3(v=vs.80))。
 
 若要使用 MakeCert.exe 工具创建证书，请在 "SDK 命令提示符" 窗口中运行以下命令。
 
@@ -154,7 +154,7 @@ Thumbprint                                Subject
 下面的示例脚本对 `Add-Signature.ps1` 脚本进行签名。 但是，如果使用的是 **AllSigned** 执行策略，则必须在 `Add-Signature.ps1` 运行脚本之前对脚本进行签名。
 
 > [!IMPORTANT]
-> 必须使用 ASCII 或 UTF8NoBOM 编码保存脚本。你可以对使用其他编码的脚本文件进行签名。 但脚本运行失败或包含脚本的模块导入失败。
+> 必须使用 ASCII 或 UTF8NoBOM 编码保存脚本。 你可以对使用其他编码的脚本文件进行签名。 但脚本运行失败或包含脚本的模块导入失败。
 
 若要使用此脚本，请将以下文本复制到文本文件中，并将其命名为 `Add-Signature.ps1` 。
 
@@ -215,7 +215,7 @@ At line:1 char:15
 
 由于大多数签名证书仅在一年内有效，因此使用时间戳服务器可确保用户可以使用您的脚本多年。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [about_Execution_Policies](about_Execution_Policies.md)
 

@@ -5,12 +5,12 @@ ms.date: 11/23/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: 关于 PSReadLine
-ms.openlocfilehash: b0c5950b2af6a866d0ffcfdd6ce7ad92a1763778
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: ddc88dda3514e4279b6d91b023e26da88f645af7
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500206"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685212"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -114,13 +114,19 @@ Set-PSReadLineOption -PredictionSource None
 - Vi 插入模式： `<Backspace>`
 - Vi 命令模式： `<X>` ， `<d,h>`
 
+### <a name="backwarddeleteinput"></a>BackwardDeleteInput
+
+Like BackwardKillInput-从点到输入的开头删除文本，但不将已删除的文本放入 kill 循环中。
+
+- Cmd：`<Ctrl+Home>`
+- Vi 插入模式： `<Ctrl+u>` ， `<Ctrl+Home>`
+- Vi 命令模式： `<Ctrl+u>` ， `<Ctrl+Home>`
+
 ### <a name="backwarddeleteline"></a>BackwardDeleteLine
 
 与 BackwardKillLine 一样，从点到行的开头删除文本，但不会将删除的文本放入 kill 循环中。
 
-- Cmd：`<Ctrl+Home>`
-- Vi 插入模式： `<Ctrl+u>` ， `<Ctrl+Home>`
-- Vi 命令模式： `<Ctrl+u>` 、 `<Ctrl+Home>` 、 `<d,0>`
+- Vi 命令模式： `<d,0>`
 
 ### <a name="backwarddeleteword"></a>BackwardDeleteWord
 
@@ -128,11 +134,17 @@ Set-PSReadLineOption -PredictionSource None
 
 - Vi 命令模式： `<Ctrl+w>` ， `<d,b>`
 
-### <a name="backwardkillline"></a>BackwardKillLine
+### <a name="backwardkillinput"></a>BackwardKillInput
 
-清除输入从输入开始到光标。 清除的文本会置于 kill 循环中。
+清除从输入开始到光标的文本。 清除的文本会置于 kill 循环中。
 
 - Emacs： `<Ctrl+u>` ， `<Ctrl+x,Backspace>`
+
+### <a name="backwardkillline"></a>BackwardKillLine
+
+清除从当前逻辑行的开头到光标的文本。 清除的文本会置于 kill 循环中。
+
+- 函数未绑定。
 
 ### <a name="backwardkillword"></a>BackwardKillWord
 
@@ -243,13 +255,19 @@ Set-PSReadLineOption -PredictionSource None
 
 - Vi 命令模式： `<d,w>`
 
-### <a name="forwarddeleteline"></a>ForwardDeleteLine
+### <a name="forwarddeleteinput"></a>ForwardDeleteInput
 
-与 ForwardKillLine 一样，从点到行尾删除文本，但不会将删除的文本放入 kill 循环中。
+Like KillLine-从点到输入的末尾删除文本，但不将已删除的文本放入 kill 循环中。
 
 - Cmd：`<Ctrl+End>`
 - Vi 插入模式： `<Ctrl+End>`
 - Vi 命令模式： `<Ctrl+End>`
+
+### <a name="forwarddeleteline"></a>ForwardDeleteLine
+
+删除从当前逻辑行的点到末尾的文本，但不将已删除的文本放入 kill 循环中。
+
+- 函数未绑定
 
 ### <a name="insertlineabove"></a>InsertLineAbove
 
@@ -1029,7 +1047,9 @@ Yank 从上一历史记录行) 命令后 (第一个参数。
 
 ### <a name="showcommandhelp"></a>ShowCommandHelp
 
-提供有关使用来自 **Microsoft PowerShell** 的页导航的替代屏幕缓冲区的完整 cmdlet 帮助视图。
+提供完整的 cmdlet 帮助视图。 当光标位于完全展开的参数的末尾时，命中 `<F1>` 该键会将帮助的显示位置显示在该参数的位置。
+
+该帮助将使用来自 **Microsoft PowerShell** 的寻呼程序在备用屏幕缓冲区中显示。 退出寻呼后，将返回到原始屏幕上的原始光标位置。 此寻呼仅适用于新式终端应用程序，如 [Windows 终端](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701)。
 
 - Cmd：`<F1>`
 - Emacs `<F1>`
@@ -1046,7 +1066,7 @@ Yank 从上一历史记录行) 命令后 (第一个参数。
 
 ### <a name="showparameterhelp"></a>ShowParameterHelp
 
-提供参数的动态帮助，方法是将其显示在当前命令行（如）下面 `MenuComplete` 。
+提供参数的动态帮助，方法是将其显示在当前命令行（如）下面 `MenuComplete` 。 当按下键时，光标必须位于完全展开的参数名称的末尾 `<Alt+h>` 。
 
 - Cmd：`<Alt+h>`
 - Emacs `<Alt+h>`
@@ -1125,6 +1145,15 @@ Yank 从上一历史记录行) 命令后 (第一个参数。
 
 - Cmd：`<Shift+Ctrl+LeftArrow>`
 - Emacs `<Alt+B>`
+
+### <a name="selectcommandargument"></a>SelectCommandArgument
+
+对命令自变量进行直观选择。 自变量的选择范围在脚本块内。 根据游标位置，它会从最内层的脚本块搜索到最外部投影脚本块，并在脚本块范围中找到任何参数时停止。
+
+此函数用于 DigitArgument。 它将正值或负值参数值视为当前所选参数的正向或后向偏移量，如果未选择任何自变量，则将其视为当前光标位置。
+
+- Cmd：`<Alt+a>`
+- Emacs `<Alt+a>`
 
 ### <a name="selectforwardchar"></a>SelectForwardChar
 

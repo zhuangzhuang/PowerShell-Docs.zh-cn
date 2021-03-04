@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-EventLog
-ms.openlocfilehash: 695a13d4fbbf60caadeed994c1aa9c36432be917
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: af1c808b22a812700857e756136fd570fa0acc35
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93198321"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685911"
 ---
 # Clear-EventLog
 
@@ -25,13 +25,11 @@ ms.locfileid: "93198321"
 Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
-`Clear-EventLog`Cmdlet 将删除本地计算机或远程计算机上指定事件日志中的所有条目。
-若要使用 `Clear-EventLog` ，您必须是受影响计算机上 Administrators 组的成员。
+`Clear-EventLog`Cmdlet 将删除本地计算机或远程计算机上指定事件日志中的所有条目。 若要使用 `Clear-EventLog` ，您必须是受影响计算机上 Administrators 组的成员。
 
- (EventLog cmdlet 包含 **eventlog** 名词的 cmdlet) 仅适用于经典事件日志。
-若要从使用 windows Vista 和更高版本 Windows 中的 Windows 事件日志技术的日志中获取事件，请使用 Get-WinEvent cmdlet。
+ (EventLog cmdlet 包含 **eventlog** 名词的 cmdlet) 仅适用于经典事件日志。 若要从使用 windows Vista 和更高版本 Windows 中的 Windows 事件日志技术的日志中获取事件，请使用 Get-WinEvent cmdlet。
 
 ## 示例
 
@@ -96,14 +94,11 @@ Max(K) Retain OverflowAction        Entries Log
 
 ### -ComputerName
 
-指定远程计算机。
-默认为本地计算机。
+指定远程计算机。 默认为本地计算机。
 
-键入远程计算机的 NetBIOS 名称、Internet 协议 (IP) 地址或完全限定的域名。
-若要指定本地计算机，请键入该计算机名称、句点 (.) 或“localhost”。
+键入远程计算机的 NetBIOS 名称、Internet 协议 (IP) 地址或完全限定的域名。 若要指定本地计算机，请键入该计算机名称、句点 (.) 或“localhost”。
 
-此参数不依赖于 Windows PowerShell 远程处理。
-**ComputerName** `Get-EventLog` 即使你的计算机未配置为运行远程命令，你也可以使用 ComputerName 参数。
+此参数不依赖于 Windows PowerShell 远程处理。  `Get-EventLog` 即使你的计算机未配置为运行远程命令，你也可以使用 ComputerName 参数。
 
 ```yaml
 Type: System.String[]
@@ -119,10 +114,10 @@ Accept wildcard characters: False
 
 ### -LogName
 
-指定事件日志。
-输入一个或多个事件日志的日志名称（Log 属性的值；而非 LogDisplayName），名称之间用逗号分隔。
-不允许使用通配符。
-此参数是必需的。
+指定事件日志。 输入日志名称 (**日志** 属性的值，而不是由逗号分隔的一个或多个事件日志的 **LogDisplayName**) 。 不允许使用通配符。 此参数是必需的。
+
+> [!IMPORTANT]
+> 此参数应按属性名称接受管道中的值。 但是，有一个 bug 阻止了此操作。 必须直接使用参数传递值。
 
 ```yaml
 Type: System.String[]
@@ -155,7 +150,7 @@ Accept wildcard characters: False
 ### -WhatIf
 
 显示运行该 cmdlet 时会发生什么情况。
-此 cmdlet 未运行。
+cmdlet 未运行。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -175,13 +170,13 @@ Accept wildcard characters: False
 
 ## 输入
 
-### 无
+### None
 
 不能通过管道将对象传递给 `Clear-EventLog` 。
 
 ## 输出
 
-### 无
+### None
 
 此 cmdlet 将不生成任何输出。
 

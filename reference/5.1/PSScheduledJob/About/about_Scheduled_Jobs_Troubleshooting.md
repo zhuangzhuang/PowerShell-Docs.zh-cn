@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_troubleshooting?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Scheduled_Jobs_Troubleshooting
-ms.openlocfilehash: 924205edb9d44724cfef201d84baa304ecde67ad
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: aac2133cee4abdd7e50e7b433104b9578d74b0a8
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93199910"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685850"
 ---
 # <a name="about-scheduled-jobs-troubleshooting"></a>关于计划作业故障排除
 
@@ -56,7 +56,7 @@ Id     Name         PSJobTypeName   State         HasMoreData     Location
 50     ProcessJob   PSScheduledJob  Completed     False           localhost
 ```
 
-`Get-Job`Cmdlet 将 **ProcessJob** 对象向下发送管道。 `Format-Table`Cmdlet 将在表中显示计划作业实例的 **Name** 、 **ID** 和 **PSBeginTime** 属性。
+`Get-Job`Cmdlet 将 **ProcessJob** 对象向下发送管道。 `Format-Table`Cmdlet 将在表中显示计划作业实例的 **Name**、 **ID** 和 **PSBeginTime** 属性。
 
 ```powershell
 Get-Job ProcessJob | Format-Table -Property Name, ID, PSBeginTime -Auto
@@ -149,7 +149,7 @@ Import-Module PSScheduledJob
 
 如果不 `Receive-Job` 返回作业实例结果，则可能是因为 `Receive-Job` 在没有 **Keep** 参数的情况下，已在当前会话中为该作业实例运行了一个命令。
 
-在不使用 `Receive-Job` **Keep** 参数的情况下，将 `Receive-Job` 返回作业结果，并将作业实例的 **HasMoreData** 属性设置为 **False** 。 **False** 值表示 `Receive-Job` 返回了作业的结果，并且实例没有更多要返回的结果。 此设置适用于标准后台作业，但不适用于保存在磁盘上的计划作业的实例。
+在不使用 `Receive-Job` **Keep** 参数的情况下，将 `Receive-Job` 返回作业结果，并将作业实例的 **HasMoreData** 属性设置为 **False**。 **False** 值表示 `Receive-Job` 返回了作业的结果，并且实例没有更多要返回的结果。 此设置适用于标准后台作业，但不适用于保存在磁盘上的计划作业的实例。
 
 若要再次获取作业实例结果，请通过键入启动新的 PowerShell 会话 `PowerShell` 。 导入 **PSScheduledJob** 模块，然后重试该 `Receive-Job` 命令。
 
@@ -273,7 +273,7 @@ Get-ScheduledJob ProcessJob | Set-ScheduledJob -ClearExecutionHistory
 
 如果作业触发或计划作业处于禁用状态，则计划作业不会自动运行。
 
-使用 `Get-ScheduledJob` cmdlet 来获取计划作业。 验证计划作业的 **Enabled** 属性的值是否为 **True** 。
+使用 `Get-ScheduledJob` cmdlet 来获取计划作业。 验证计划作业的 **Enabled** 属性的值是否为 **True**。
 
 ```powershell
 Get-ScheduledJob ProcessJob
@@ -294,7 +294,7 @@ True
 ```
 
 使用 `Get-JobTrigger` cmdlet 可获取计划作业的作业触发器。
-验证作业触发器的 **Enabled** 属性的值是否为 **True** 。
+验证作业触发器的 **Enabled** 属性的值是否为 **True**。
 
 ```powershell
 Get-ScheduledJob ProcessJob | Get-JobTrigger
@@ -332,7 +332,7 @@ Id Enabled
 使用 `Get-ScheduledJobOption` cmdlet 检查作业选项及其值。
 
 ```powershell
-Get-ScheduledJob -Name ProcessJob
+Get-ScheduledJobOption -Name ProcessJob
 ```
 
 ```Output

@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/08/2020
+ms.date: 02/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: c54efeb79f4129b55e078a1ccf9d46afc2e754ab
-ms.sourcegitcommit: fb9bafd041e3615b9dc9fb77c9245581b705cd02
+ms.openlocfilehash: 584ca877cedfe1494f8386af75f9f1911a5b8f15
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97725164"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685652"
 ---
 # ForEach-Object
 
@@ -129,7 +129,7 @@ Get-ItemProperty -Path HKCU:\Network\* |
 **网络** 密钥中的每个子项表示在登录时重新连接的映射网络驱动器。 **RemotePath** 项包含连接的驱动器的 UNC 路径。 例如，如果将 E：驱动器映射到 `\\Server\Share` ，则会在中创建一个 **e** 子项， `HKCU:\Network` 并将 **RemotePath** 注册表值设置为 `\\Server\Share` 。
 
 该命令使用 `Get-ItemProperty` cmdlet 来获取 **网络** 密钥的所有子项，并使用 `Set-ItemProperty` cmdlet 来更改每个密钥中的 **RemotePath** 注册表项的值。
-在 `Set-ItemProperty` 命令中，路径是注册表项的 **PSPath** 属性的值。 这是表示注册表项的 Microsoft .NET Framework 对象的属性，而不是注册表项。 该命令使用 **RemotePath** 值的 **ToUpper ( # B1** 方法，这是 REG_SZ)  (字符串。
+在 `Set-ItemProperty` 命令中，路径是注册表项的 **PSPath** 属性的值。 这是表示注册表项的 Microsoft .NET Framework 对象的属性，而不是注册表项。 该命令使用 **RemotePath** 值的 **ToUpper ()** 方法，该方法是 REG_SZ) 的字符串 (。
 
 由于 `Set-ItemProperty` 正在更改每个键的属性，因此 `ForEach-Object` 需要使用 cmdlet 来访问属性。
 
@@ -383,6 +383,44 @@ Output: 5
 
 `Output: 3` 永远不会编写，因为该迭代的并行 scriptblock 已终止。
 
+### 示例17：在嵌套并行脚本中传递变量 ScriptBlockSet
+
+可以在作用域的 scriptblock 之外创建变量 `Foreach-Object -Parallel` ，并在 scriptblock 中使用 `$using` 关键字。
+
+```powershell
+$test1 = 'TestA'
+1..2 | Foreach-Object -Parallel {
+    $using:test1
+}
+```
+
+```Output
+TestA
+TestA
+```
+
+```powershell
+# You CANNOT create a variable inside a scoped scriptblock
+# to be used in a nested foreach parallel scriptblock.
+$test1 = 'TestA'
+1..2 | Foreach-Object -Parallel {
+    $using:test1
+    $test2 = 'TestB'
+    1..2 | Foreach-Object -Parallel {
+        $using:test2
+    }
+}
+```
+
+```Output
+Line |
+   2 |  1..2 | Foreach-Object -Parallel {
+     |         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | The value of the using variable '$using:test2' cannot be retrieved because it has not been set in the local session.
+```
+
+嵌套的 scriptblock 无法访问该 `$test2` 变量，并引发错误。
+
 ## 参数
 
 ### -ArgumentList
@@ -531,7 +569,7 @@ Accept wildcard characters: False
 
 ### -ThrottleLimit
 
-指定并行的脚本块的数量。 在正在运行的脚本块计数低于 **ThrottleLimit** 之前，输入对象将被阻止。 默认值是 `5`。
+指定并行的脚本块的数量。 在正在运行的脚本块计数低于 **ThrottleLimit** 之前，输入对象将被阻止。 默认值为 `5`。
 
 此参数是在 PowerShell 7.0 中引入的。
 
@@ -601,7 +639,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-显示运行该 cmdlet 时会发生什么情况。 此 cmdlet 未运行。
+显示运行该 cmdlet 时会发生什么情况。 cmdlet 未运行。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -625,7 +663,7 @@ Accept wildcard characters: False
 
 你可以通过管道将任何对象传递给此 cmdlet。
 
-## 输出
+## Outputs
 
 ### System.Management.Automation.PSObject
 

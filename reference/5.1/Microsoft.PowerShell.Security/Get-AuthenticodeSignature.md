@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.openlocfilehash: 910897ae1e41b2e4bd082977ac2904388f924769
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: cf19973acf799b25b8b598fad70f84943f958e1d
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93197999"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685894"
 ---
 # Get-AuthenticodeSignature
 
@@ -39,9 +39,11 @@ Get-AuthenticodeSignature -LiteralPath <String[]> [<CommonParameters>]
 Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
-`Get-AuthenticodeSignature`Cmdlet 获取有关作为字节数组的文件或文件内容的 Authenticode 签名信息。 如果文件未签名，则将检索信息，但字段为空。
+`Get-AuthenticodeSignature`Cmdlet 获取有关作为字节数组的文件或文件内容的 Authenticode 签名信息。
+如果该文件同时为嵌入签名和 Windows 目录签名，则使用 Windows 目录签名。
+如果文件未签名，则将检索信息，但字段为空。
 
 ## 示例
 
@@ -59,7 +61,7 @@ Get-AuthenticodeSignature -FilePath "C:\Test\NewScript.ps1"
 Get-AuthenticodeSignature test.ps1, test1.ps1, sign-file.ps1, makexml.ps1
 ```
 
-此命令获取有关命令行中列出的四个文件的 Authenticode 签名的信息。 在此示例中，省略了 FilePath  参数（可选）的名称。
+此命令获取有关命令行中列出的四个文件的 Authenticode 签名的信息。 在此示例中，省略了 FilePath 参数（可选）的名称。
 
 ### 示例 3：仅获取多个文件的有效 Authenticode 签名
 
@@ -119,7 +121,7 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-指定要检查的文件的路径。 与 **FilePath** 不同， **LiteralPath** 参数的值严格按照所键入的形式使用。 不会将任何字符解释为通配符。 如果路径包括转义符，请将其括在单引号中。 单引号告诉 PowerShell 不要将任何字符解释为转义符。
+指定要检查的文件的路径。 与 **FilePath** 不同，**LiteralPath** 参数的值严格按照所键入的形式使用。 不会将任何字符解释为通配符。 如果路径包括转义符，请将其括在单引号中。 单引号告诉 PowerShell 不要将任何字符解释为转义符。
 
 ```yaml
 Type: System.String[]

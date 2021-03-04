@@ -3,12 +3,12 @@ title: 关于哈希表的各项须知内容
 description: 哈希表在 PowerShell 中非常重要，因此最好对它们进行全面深入的了解。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: e386e2aa2f7b85bee4bf622fd9251ef7642cf16a
-ms.sourcegitcommit: 57e577097085dc621bd797ef4a7e2854ea7d4e29
+ms.openlocfilehash: a471c0fe2c48820d6c1d152e2850b1e431d28f23
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "97980495"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686067"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>关于哈希表的各项须知内容
 
@@ -360,7 +360,7 @@ $property = @{
 
 ```powershell
 $drives = Get-PSDrive | Where Used
-$drives | Select-Object -Properties name, $property
+$drives | Select-Object -Property name, $property
 
 Name     totalSpaceGB
 ----     ------------
@@ -370,7 +370,7 @@ C    238.472652435303
 我将它放在一个变量中，但它可以很容易地在内联中定义，并且你可以顺便将 `name` 缩写为 `n`，将 `expression` 缩写为 `e`。
 
 ```powershell
-$drives | Select-Object -properties name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
+$drives | Select-Object -property name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
 ```
 
 我个人不喜欢命令执行的时间太长，而且它经常会引发一些我不会涉及的不良行为。 我更有可能使用所需的所有字段和属性创建新的哈希表或 `pscustomobject`，而不是在脚本中使用这种方法。 但有很多代码可以做到这一点，希望你能了解。 稍后我会讨论如何创建 `pscustomobject`。

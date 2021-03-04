@@ -1,14 +1,14 @@
 ---
 title: 关于 switch 语句的各项须知内容
 description: PowerShell 中的 switch 语句提供了其他语言没有的功能。
-ms.date: 05/23/2020
+ms.date: 03/01/2021
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: c2e77aa5fb36d04fec1bc86f751291205120c729
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.openlocfilehash: f6baa624285557452a2b95150b2c4de1ab274f27
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93355113"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686009"
 ---
 # <a name="everything-you-ever-wanted-to-know-about-the-switch-statement"></a>关于 switch 语句的各项须知内容
 
@@ -169,7 +169,7 @@ Configure SQL
 
 ## <a name="parameters"></a>参数
 
-PowerShell `switch` 的一项独特特性是它有许多可更改其执行方式的[开关参数][]。
+PowerShell `switch` 的一项独特特性是它有许多可更改其执行方式的开关参数。
 
 ### <a name="-casesensitive"></a>-CaseSensitive
 
@@ -738,6 +738,5 @@ switch 语句表面上看起来很简单，但它提供了一些大多数人都�
 [powershellexplained.com]: https://powershellexplained.com/
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [switch]: /powershell/module/microsoft.powershell.core/about/about_switch
-[开关参数]: https://www.powershellmagazine.com/2013/12/20/using-powershell-switch-vs-boolean-parameters-in-sma-runbooks/
 [使用正则表达式的多种方式]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression
 [哈希表]: everything-about-hashtable.md
