@@ -1,14 +1,14 @@
 ---
-ms.date: 09/13/2016
+ms.date: 03/09/2021
 ms.topic: reference
 title: 如何支持作业
 description: 如何支持作业
-ms.openlocfilehash: d755093e941aa660032f8d283cb43ba5eeec8c4b
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 1528f5d934605caa4009688845a6caa7b95b86a3
+ms.sourcegitcommit: e679533f966f4e97cddae24531a22436da13610c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92666971"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102532112"
 ---
 # <a name="how-to-support-jobs"></a>如何支持作业
 
@@ -32,7 +32,7 @@ ms.locfileid: "92666971"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06AsJobParam](msh_samplesGetProc06#GetProc06AsJobParam)]  -->
 
-2. 创建一个派生自 [system.object](/dotnet/api/System.Management.Automation.Job) 类的对象。 此对象可以是自定义作业对象，也可以是 Windows PowerShell 提供的作业对象之一，如 [Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) 对象。
+1. 创建一个派生自 [system.object](/dotnet/api/System.Management.Automation.Job) 类的对象。 此对象可以是自定义作业对象，也可以是 Windows PowerShell 提供的作业对象之一，如 [Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) 对象。
 
     下面的示例演示一个自定义作业对象。
 
@@ -42,7 +42,7 @@ ms.locfileid: "92666971"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. 在记录处理方法中，添加 `if` 语句以检测 cmdlet 是否应作为作业运行。 下面的代码使用 [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) 方法来实现。
+1. 在记录处理方法中，添加 `if` 语句以检测 cmdlet 是否应作为作业运行。 下面的代码使用 [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) 方法来实现。
 
     ```csharp
     protected override void ProcessRecord()
@@ -69,7 +69,7 @@ ms.locfileid: "92666971"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06ProcessRecord](msh_samplesGetProc06#GetProc06ProcessRecord)]  -->
 
-4. 对于自定义作业对象，请实现 job 类。
+1. 对于自定义作业对象，请实现 job 类。
 
     ```csharp
     private class SampleJob : Job
@@ -126,7 +126,7 @@ ms.locfileid: "92666971"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. 如果该 cmdlet 执行工作，请调用 [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) 方法，以将进程对象返回到管道。 如果以作业的形式执行工作，请将子作业添加到作业。
+1. 如果该 cmdlet 执行工作，请调用 [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) 方法，以将进程对象返回到管道。 如果以作业的形式执行工作，请将子作业添加到作业。
 
     ```csharp
     void DoProcessLogic(bool asJob)
@@ -209,6 +209,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// Specify the AsJob parameter. This parameter indicates
     /// whether the cmdlet should retrieve the processes internally
     /// or return a Job object that retrieves the processes.
+    /// </summary>
     [Parameter()]
     public SwitchParameter AsJob
     {
