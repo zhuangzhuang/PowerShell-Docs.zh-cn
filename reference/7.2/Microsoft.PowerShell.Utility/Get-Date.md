@@ -6,12 +6,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: 6f5c76faafa2c68a6d9dfc604238c514489aa717
-ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
+ms.openlocfilehash: bb3c3686310440d9f75d36ca1c83fb60066f5d6a
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99975050"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771490"
 ---
 # Get-Date
 
@@ -52,7 +52,7 @@ Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>
  -UFormat <String> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 该 `Get-Date` cmdlet 将获取表示当前日期或指定日期的 **DateTime** 对象。 `Get-Date` 可以采用多种 .NET 和 UNIX 格式设置日期和时间的格式。 您可以使用 `Get-Date` 生成日期或时间字符串，然后将字符串发送到其他 cmdlet 或程序。
 
@@ -190,7 +190,7 @@ Wednesday, June 26, 2019 17:45:26
 
 `Get-Date` 使用带有格式说明符的 **UFormat** 参数显示当前系统日期和时间。 格式说明符 **% Z** 表示 UTC 偏移量 **07**。
 
-`$Time`变量存储当前的系统日期和时间。 `$Time` 使用 **ToUniversalTime ( # B1** 方法，根据计算机的 UTC 偏移量转换时间。
+`$Time`变量存储当前的系统日期和时间。 `$Time` 使用 **ToUniversalTime ()** 方法基于计算机的 UTC 偏移量转换时间。
 
 ### 示例8：创建时间戳
 
@@ -513,7 +513,7 @@ Accept wildcard characters: False
 
 ### 管道输入
 
-`Get-Date` 接受管道输入。 例如，`Get-ChildItem | Get-Date` 。
+`Get-Date` 接受管道输入。 例如，`Get-ChildItem | Get-Date`。
 
 ## 输出
 
@@ -526,7 +526,7 @@ Accept wildcard characters: False
 方法 `(Get-Date).ToString()` 将 **DateTime** 对象转换为 **String** 对象。
 
 若要显示对象的属性和方法，请将对象向下发送到 `Get-Member` 。
-例如，`Get-Date | Get-Member` 。
+例如，`Get-Date | Get-Member`。
 
 ## 注释
 
@@ -544,10 +544,10 @@ Accept wildcard characters: False
 | `%c` | 日期和时间-缩写                                             | Thu 27 08:44:18 2019 年6月 |
 | `%D` | 日期采用 mm/dd/yy 格式                                                 | 06/27/19                 |
 | `%d` | 每月的第几天-2 位数                                             | 05                       |
-| `%e` | 月份中的第几天，如果只有单个数字，则以空格开头           | \<space\>5               |
+| `%e` | 月份中的第几天，如果只有单个数字，则以空格开头           | \<space\>5                |
 | `%F` | 采用 YYYY-MM-DD 格式的日期，等于% Y-% m-% d (ISO 8601 日期格式)  | 2019-06-27               |
-| `%G` | 与 "Y" 相同                                                             |                          |
-| `%g` | 与 "y" 相同                                                             |                          |
+| `%G` | ISO week 日期年份 (包含每周星期四的年份)                |                          |
+| `%g` | 与 "G" 相同-2 位数字                                                  |                          |
 | `%H` | 24小时制格式的小时                                                  | 17                       |
 | `%h` | 与 "b" 相同                                                             |                          |
 | `%I` | 12小时制格式                                                  | 05                       |

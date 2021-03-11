@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/09/2020
+ms.date: 03/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
-ms.openlocfilehash: aea54dfa2ade8a9b7b67ca82fb0d6365e6eea3c4
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: bada911409d227a56ba53d44b0a64bcdf73c8959
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94391334"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771437"
 ---
 # Set-StrictMode
 
@@ -33,7 +33,7 @@ Set-StrictMode -Version <Version> [<CommonParameters>]
 Set-StrictMode [-Off] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 `Set-StrictMode`Cmdlet 将为当前作用域和所有子作用域配置严格模式，并将其打开或关闭。 当 strict 模式处于开启状态时，如果表达式、脚本或脚本块的内容违反了基本的最佳实践编码规则，PowerShell 将生成终止错误。
 
@@ -203,11 +203,11 @@ Accept wildcard characters: False
   - 禁止引用对象的不存在的属性。
   - 禁止使用语法调用方法的函数调用。
   - 禁止范围外或无法解析的数组索引。
-- 最新
+- 最晚
   - 选择可用的最新版本。 最新版本最严格。 使用此值以确保脚本使用最严格的可用版本，即使在将新版本添加到 PowerShell 时也是如此。
 
 > [!CAUTION]
-> 使用脚本中的 **最新****版本** 。 **最** 新的含义在 PowerShell 的新版本中可能会发生变化。 因此，在较新版本的 PowerShell 中运行时，为使用的较旧版本的 PowerShell 编写的脚本 `Set-StrictMode -Version Latest` 将受到更严格的规则的限制。
+> 使用脚本中的 **最新****版本**。 **最** 新的含义在 PowerShell 的新版本中可能会发生变化。 因此，在较新版本的 PowerShell 中运行时，为使用的较旧版本的 PowerShell 编写的脚本 `Set-StrictMode -Version Latest` 将受到更严格的规则的限制。
 
 ```yaml
 Type: System.Version
@@ -238,6 +238,8 @@ Accept wildcard characters: False
 此 cmdlet 不返回任何输出。
 
 ## 注释
+
+虽然 `Set-StrictMode` **Version** 参数将接受大于的值 `3.0` ，但当前没有为高于的任何内容定义其他规则 `3.0` 。
 
 `Set-StrictMode` 仅在设置它的范围及其子范围内有效。 有关 PowerShell 中的作用域的详细信息，请参阅 [about_Scopes](about/about_Scopes.md)。
 
