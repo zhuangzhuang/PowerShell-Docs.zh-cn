@@ -1,16 +1,17 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/01/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-experimentalfeature?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExperimentalFeature
-ms.openlocfilehash: 18a7163a2f67c22013fb607c3b90f3c350a0d797
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 22e1b21f304129d6912557a5dbc825bc4e6202a1
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93198473"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193919"
 ---
 # Get-ExperimentalFeature
 
@@ -23,7 +24,7 @@ ms.locfileid: "93198473"
 Get-ExperimentalFeature [[-Name] <String[]>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 `Get-ExperimentalFeature`Cmdlet 将返回 PowerShell 发现的所有实验性功能。
 实验功能可以来自模块或 PowerShell 引擎。 利用实验功能，用户可以安全地测试新功能，并通过 GitHub) 提供反馈 (在将设计视为已完成之前，任何更改都可能会成为重大更改。

@@ -1,16 +1,16 @@
 ---
 description: 介绍如何为函数和脚本编写基于注释的帮助主题。
-keywords: powershell,cmdlet
+Locale: en-US
 ms.date: 06/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comment_Based_Help
-ms.openlocfilehash: c3e02edd6ca33f373b1632160e4a18dc4fb744f2
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: cc19b11322e8b2062f9659c3fbce92ad5c6eded0
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94386965"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194221"
 ---
 # <a name="about-comment-based-help"></a>关于基于注释的帮助
 
@@ -21,7 +21,7 @@ ms.locfileid: "94386965"
 
 您可以使用特殊的帮助注释关键字为函数和脚本编写基于注释的帮助主题。
 
-[Get-help](xref:Microsoft.PowerShell.Core.Get-Help) cmdlet 显示基于注释的帮助，其格式与用于显示 XML 文件中生成的 cmdlet 帮助主题的格式相同。 用户可以使用的所有参数 `Get-Help` ，如 **详细** 、 **完整** 、 **示例** 和 **联机** ，以显示基于注释的帮助的内容。
+[Get-help](xref:Microsoft.PowerShell.Core.Get-Help) cmdlet 显示基于注释的帮助，其格式与用于显示 XML 文件中生成的 cmdlet 帮助主题的格式相同。 用户可以使用的所有参数 `Get-Help` ，如 **详细**、 **完整**、 **示例** 和 **联机**，以显示基于注释的帮助的内容。
 
 还可以为函数和脚本编写基于 XML 的帮助文件。 若要使 `Get-Help` cmdlet 能够查找函数或脚本的基于 XML 的帮助文件，请使用 `.ExternalHelp` 关键字。 如果没有此关键字，则 `Get-Help` 无法找到函数或脚本的基于 XML 的帮助主题。
 
@@ -38,7 +38,7 @@ ms.locfileid: "94386965"
 # <help content>
 ```
 
-或
+or
 
 ```
 <#
@@ -307,11 +307,11 @@ Cmdlet 自动生成名称、语法、参数列表、参数属性表、通用参�
 
 ### <a name="parameter-attribute-table"></a>参数属性表
 
-`Get-Help` 生成在使用的 **完整** 参数或 **参数** 参数时显示的参数属性表 `Get-Help` 。 " **必需** "、" **位置** " 和 " **默认** 值" 属性的值取自函数或脚本语法。
+`Get-Help` 生成在使用的 **完整** 参数或 **参数** 参数时显示的参数属性表 `Get-Help` 。 " **必需**"、" **位置**" 和 " **默认** 值" 属性的值取自函数或脚本语法。
 
 即使在函数或脚本中定义了默认值和 " **接受通配符** " 的值，也不会显示在参数属性表中。 若要帮助用户，请在参数说明中提供此信息。
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 "帮助" 主题的 " **备注** " 部分是从函数或脚本名称自动生成的。 不能更改或影响其内容。
 
@@ -743,7 +743,7 @@ Displays information about PowerShell cmdlets and concepts.
 ...
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [about_Functions](about_Functions.md)
 

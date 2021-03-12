@@ -1,16 +1,16 @@
 ---
 description: 描述 PowerShell 如何确定要运行哪个命令。
-keywords: powershell,cmdlet
+Locale: en-US
 ms.date: 02/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Command_Precedence
-ms.openlocfilehash: 288c01af2d66aca786cf1b97ad844dd91cac45ca
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 5dd1a5ab88d9049d6da7a221d0020567a3631ba4
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200132"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194580"
 ---
 # <a name="about-command-precedence"></a>关于命令优先级
 
@@ -165,7 +165,7 @@ Cmdlet          Get-Date                  Microsoft.PowerShell.Utility
 
 #### <a name="qualified-names"></a>限定名称
 
-使用 cmdlet 的模块限定名称，可运行由具有相同名称的项隐藏的命令。 例如，你可以 `Get-Date` 通过使用其模块名称 " **Microsoft PowerShell** " 来对其进行限定来运行 cmdlet。
+使用 cmdlet 的模块限定名称，可运行由具有相同名称的项隐藏的命令。 例如，你可以 `Get-Date` 通过使用其模块名称 " **Microsoft PowerShell**" 来对其进行限定来运行 cmdlet。
 
 编写要分发的脚本时，请使用此首选方法。 您无法预测运行脚本的会话中可能出现哪些命令。
 
@@ -215,7 +215,7 @@ Microsoft.PowerShell.Utility
 &(Get-Command -Name Map -CommandType Function)
 ```
 
-或
+or
 
 ```powershell
 &(dir Function:\map)

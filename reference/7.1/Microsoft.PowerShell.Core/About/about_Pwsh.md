@@ -1,15 +1,16 @@
 ---
 description: 说明如何使用 `pwsh` 命令行界面。 显示命令行参数并描述语法。
+Locale: en-US
 ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pwsh
-ms.openlocfilehash: 6f6e7ea66aa04eaeea2b9da7c07864180210131c
-ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
+ms.openlocfilehash: a3420af2f46c7946d6282ca639117e4104d2bd17
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97692987"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195954"
 ---
 # <a name="about-pwsh"></a>关于 pwsh
 
@@ -239,7 +240,7 @@ pwsh -encodedcommand $encodedCommand
 
 ### <a name="-sta"></a>-STA
 
-使用单线程单元启动 PowerShell。 这是默认值。 此开关仅在 Windows 上可用。
+使用单线程单元启动 PowerShell。 这是默认设置。 此开关仅在 Windows 上可用。
 
 ### <a name="-version---v"></a>-版本 |-v
 

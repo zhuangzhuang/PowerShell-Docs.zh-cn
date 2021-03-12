@@ -1,17 +1,15 @@
 ---
 description: 提供有关基于 PowerShell 线程的作业的信息。 线程作业是一种后台作业，它在当前会话进程中的单独线程中运行命令或表达式。
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/11/2020
-online version: 1.0.0
 schema: 2.0.0
 title: about_Thread_Jobs
-ms.openlocfilehash: ba6251a195d3efdebd427b3f705386336b069211
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: 67f3fc585a8c2d1c3ca98c7336a7e367ed6c66c7
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524835"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194242"
 ---
 # <a name="about-thread-jobs"></a>关于线程作业
 

@@ -1,15 +1,16 @@
 ---
 description: 介绍如何为函数和脚本编写基于注释的帮助主题。
+Locale: en-US
 ms.date: 06/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comment_Based_Help
-ms.openlocfilehash: 055f2358a8e9d3868c9fd1024be1f6adf5520356
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: b676870c5d8879700b84339f9f0b74a18b079692
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99598261"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195718"
 ---
 # <a name="about-comment-based-help"></a>关于基于注释的帮助
 
@@ -37,7 +38,7 @@ ms.locfileid: "99598261"
 # <help content>
 ```
 
-或
+or
 
 ```
 <#
@@ -742,7 +743,7 @@ Displays information about PowerShell cmdlets and concepts.
 ...
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [about_Functions](about_Functions.md)
 

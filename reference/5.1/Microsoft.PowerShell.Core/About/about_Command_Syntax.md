@@ -1,16 +1,16 @@
 ---
 description: 描述在 PowerShell 中使用的语法关系图。
-keywords: powershell,cmdlet
+Locale: en-US
 ms.date: 06/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_syntax?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Command_Syntax
-ms.openlocfilehash: 180df88bb41b98bc308f192f7c4caf38aa7445ad
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: ff7a243a584ee336c0356200f5ba68fde55e0836
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93200131"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194621"
 ---
 # <a name="about-command-syntax"></a>关于命令语法
 
@@ -53,7 +53,7 @@ New-Alias [-Name] <string> [-Value] <string> [-Description <string>]
 
 命令始终以命令名称开头，例如 `New-Alias` 。 键入命令名称或其别名，如的 "gcm" `Get-Command` 。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>Parameters
 
 命令的参数是确定命令用途的选项。
 某些参数采用一个 "值"，它是命令的用户输入。

@@ -1,15 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption?view=powershell-7&WT.mc_id=ps-gethelp
 ms.date: 01/30/2020
+online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: f39add03a3b0250172cbb117a4233bb01958d9d3
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+title: Get-MarkdownOption
+ms.openlocfilehash: b4dec8766b283dd16ccee0e73dd893582ed5fc8e
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "93198918"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194475"
 ---
 # Get-MarkdownOption
 
@@ -22,7 +24,7 @@ ms.locfileid: "93198918"
 Get-MarkdownOption [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 返回用于在控制台中呈现 Markdown 内容的当前颜色和样式。 此 cmdlet 的输出中显示的字符串包含用于更改呈现的 Markdown 文本的颜色和样式的 ANSI 转义码。
 

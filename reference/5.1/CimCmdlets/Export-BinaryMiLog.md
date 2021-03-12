@@ -4,15 +4,15 @@ keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 02/20/2019
-online version: https://docs.microsoft.com/powershell/module/cimcmdlets/export-binarymilog?WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/cimcmdlets/export-binarymilog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-BinaryMiLog
-ms.openlocfilehash: cf03ad884121c6cf8cf65cdb791cbdc4e587c3b9
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 1d202b7bbda359f859838475eb9f37730506bd1f
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93197544"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194367"
 ---
 # Export-BinaryMiLog
 
@@ -25,7 +25,7 @@ ms.locfileid: "93197544"
 Export-BinaryMiLog [-InputObject <CimInstance>] [-Path] <String> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 `Export-BinaryMILog`Cmdlet 创建对象或对象的基于二进制的表示形式，并将其存储在文件中。 然后，可以使用 `Import-BinaryMiLog` cmdlet 基于该文件的内容重新创建已保存的对象。
 

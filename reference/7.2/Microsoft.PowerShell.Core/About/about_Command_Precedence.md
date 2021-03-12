@@ -1,15 +1,16 @@
 ---
 description: 描述 PowerShell 如何确定要运行哪个命令。
+Locale: en-US
 ms.date: 02/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Command_Precedence
-ms.openlocfilehash: 0b1ad7dc0fae9c6c0ec16929b3d538e5db4aea55
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 8b8a27a47c454b59b5dd4bb2d6e8a8cc3cec78c8
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99603405"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196240"
 ---
 # <a name="about-command-precedence"></a>关于命令优先级
 
@@ -214,7 +215,7 @@ Microsoft.PowerShell.Utility
 &(Get-Command -Name Map -CommandType Function)
 ```
 
-或
+or
 
 ```powershell
 &(dir Function:\map)
@@ -253,7 +254,7 @@ Import-Module -Name DateFunctions -Prefix ZZ
 
 有关详细信息，请参阅 `Import-Module` 和 `Import-PSSession` 下面的。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [about_Path_Syntax](about_Path_Syntax.md)
 - [about_Aliases](about_Aliases.md)

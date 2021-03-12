@@ -7,18 +7,18 @@ Module Name: PSReadLine
 ms.date: 02/10/2020
 schema: 2.0.0
 title: PSReadLine
-ms.openlocfilehash: da71d4ef896befaadd7ed64f9a013dc19508a54c
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 9425f72ce4002fa871ef6b687d76f92ddf6b489e
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99595817"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193908"
 ---
 # PSReadLine 模块
 
-## 说明
+## 描述
 
-PSReadLine 模块包含可用于在 PowerShell 中自定义命令行编辑环境的 cmdlet。 这些文章介绍了 PSReadLine v2.0。 此版本随附于 PowerShell v6 和 Windows 10 10 月2018更新 (生成 1809) 。
+PSReadLine 模块包含可用于在 PowerShell 中自定义命令行编辑环境的 cmdlet。 这些文章介绍了 PSReadLine v 2.2.0 的当前 beta 版本。
 
 > [!NOTE]
 > 从 PowerShell 7.0 开始，如果检测到屏幕阅读器程序，PowerShell 会跳过在 Windows 上自动加载 PSReadLine。 目前，PSReadLine 不能与屏幕阅读器很好地配合使用。 Windows 上 PowerShell 7.0 的默认呈现和格式设置正常。 如有必要，可以手动加载模块。

@@ -4,15 +4,15 @@ keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 02/03/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unprotect-CmsMessage
-ms.openlocfilehash: 394e8c1b18d7ba0f4b65e1681faffe795592b97d
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 4c66b1785da53b3bf351e4377fef0e99076e3fcf
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94347663"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194647"
 ---
 # Unprotect-CmsMessage
 
@@ -47,7 +47,7 @@ Unprotect-CmsMessage [-LiteralPath] <String> [-IncludeContext] [[-To] <CmsMessag
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 `Unprotect-CmsMessage`Cmdlet 将使用加密消息语法加密的内容解密 (CMS) 格式。
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-指定要解密的加密内容的路径。 不同于 **Path** ， **LiteralPath** 的值严格按照所键入的形式使用。 不会将任何字符解释为通配字符。 如果路径包括转义符，请将其括在单引号中。 单引号指示 PowerShell 不要将任何字符解释为转义序列。
+指定要解密的加密内容的路径。 不同于 **Path**，**LiteralPath** 的值严格按照所键入的形式使用。 不会将任何字符解释为通配字符。 如果路径包括转义符，请将其括在单引号中。 单引号指示 PowerShell 不要将任何字符解释为转义序列。
 
 ```yaml
 Type: System.String

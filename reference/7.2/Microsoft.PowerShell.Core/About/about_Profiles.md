@@ -1,15 +1,16 @@
 ---
 description: 介绍如何创建和使用 PowerShell 配置文件。
+Locale: en-US
 ms.date: 11/30/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Profiles
-ms.openlocfilehash: 3c739d6fd65714d5b6ef0f45990b614486d4e5ff
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 7604b8058a731939524769b6e1469b072a7eb2fe
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99597848"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196170"
 ---
 # <a name="about-profiles"></a>关于配置文件
 
@@ -24,7 +25,7 @@ PowerShell 配置文件是在 PowerShell 启动时运行的脚本。 你可以�
 
 PowerShell 支持多个用户和主机程序配置文件。 但是，它不会为你创建配置文件。 本主题介绍了配置文件，并介绍了如何在计算机上创建和维护配置文件。
 
-它说明了如何使用 PowerShell 控制台的 **NoProfile** 参数 ( # A0) 在不使用任何配置文件的情况下启动 PowerShell。 而且，它还说明了 PowerShell 执行策略对配置文件的影响。
+它说明了如何使用 PowerShell 控制台的 **NoProfile** 参数 (PowerShell.exe) 在不使用任何配置文件的情况下启动 powershell。 而且，它还说明了 PowerShell 执行策略对配置文件的影响。
 
 ## <a name="the-profile-files"></a>配置文件
 
@@ -63,7 +64,7 @@ PowerShell 支持多个配置文件。 此外，PowerShell 主机程序还可以
 
 例如，在 `$PROFILE` Windows PowerShell 控制台中，变量具有以下值。
 
-|说明                |名称                              |
+|描述                |名称                              |
 |---------------------------|----------------------------------|
 |当前用户、当前主机 |`$PROFILE`                        |
 |当前用户、当前主机 |`$PROFILE.CurrentUserCurrentHost` |
