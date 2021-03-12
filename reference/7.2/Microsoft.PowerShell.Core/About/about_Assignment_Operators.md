@@ -1,15 +1,16 @@
 ---
 description: 介绍如何使用运算符为变量赋值。
+Locale: en-US
 ms.date: 04/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_assignment_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Assignment_Operators
-ms.openlocfilehash: 4e21c9d0f2b0a47cd4db10ee515ceb07548eb971
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: adc54dd045fdffbb6605554b535c92680ee0d525
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99598488"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195253"
 ---
 # <a name="about-assignment-operators"></a>关于赋值运算符
 
@@ -22,7 +23,7 @@ ms.locfileid: "99598488"
 
 PowerShell 支持以下赋值运算符。
 
-|操作员|说明                                                  |
+|运算符|描述                                                  |
 |--------|-------------------------------------------------------------|
 |=       |将变量的值设置为指定值。         |
 |+=      |将变量的值增加指定的值，或 |
@@ -707,7 +708,7 @@ $a = $b = $c = $d = "three"
 Set-Variable -Name a -Value 1, 2, 3
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [about_Arrays](about_Arrays.md)
 
@@ -719,5 +720,5 @@ Set-Variable -Name a -Value 1, 2, 3
 
 [Remove-Variable](xref:Microsoft.PowerShell.Utility.Remove-Variable)
 
-[Set-Variable](xref:Microsoft.PowerShell.Utility.Set-Variable)
+[集-变量](xref:Microsoft.PowerShell.Utility.Set-Variable)
 

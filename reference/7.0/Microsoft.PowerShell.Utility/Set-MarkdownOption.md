@@ -1,15 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption?view=powershell-7&WT.mc_id=ps-gethelp
 ms.date: 01/30/2020
+online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: e18cc8e0f5e547c4418f59b6f55109052b69c220
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+title: Set-MarkdownOption
+ms.openlocfilehash: 1f25d8c63ceacb5edc00fd0c2155799f9a8d844d
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "93198919"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195536"
 ---
 # Set-MarkdownOption
 
@@ -40,7 +42,7 @@ Set-MarkdownOption [-PassThru] -Theme <String> [<CommonParameters>]
 Set-MarkdownOption [-PassThru] [-InputObject] <PSObject> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 设置用于在控制台中呈现 Markdown 内容的颜色和样式。 使用 ANSI 转义代码定义这些样式，这些代码将更改要呈现的 Markdown 文本的颜色和样式。
 
@@ -313,7 +315,7 @@ Accept wildcard characters: False
 
 ### -主题
 
-选择包含预定义颜色设置的主题。 可能的值为 **深色** 和 **浅色** 。
+选择包含预定义颜色设置的主题。 可能的值为 **深色** 和 **浅色**。
 
 ```yaml
 Type: System.String

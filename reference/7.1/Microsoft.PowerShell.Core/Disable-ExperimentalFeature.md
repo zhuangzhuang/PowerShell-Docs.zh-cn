@@ -1,16 +1,17 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/06/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-experimentalfeature?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-ExperimentalFeature
-ms.openlocfilehash: 3260b3d8333e8a79fdf603c372d1e3e50aa0dabc
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 2e20db5d35c2bee98ba4ded0bd13aa672d79ea70
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93198874"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195508"
 ---
 # Disable-ExperimentalFeature
 
@@ -23,7 +24,7 @@ ms.locfileid: "93198874"
 Disable-ExperimentalFeature [-Name] <String[]> [-Scope <ConfigScope>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 `Disable-ExperimentalFeature`Cmdlet 将通过从 `powershell.config.json` PowerShell 启动时读取的设置文件中删除命名实验功能，来禁用实验性功能。
 
@@ -101,7 +102,7 @@ Accept wildcard characters: False
 ### -WhatIf
 
 显示运行该 cmdlet 时会发生什么情况。
-此 cmdlet 未运行。
+cmdlet 未运行。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

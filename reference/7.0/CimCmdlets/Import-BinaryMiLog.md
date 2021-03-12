@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 02/20/2019
-online version: https://docs.microsoft.com/powershell/module/cimcmdlets/import-binarymilog?WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/cimcmdlets/import-binarymilog?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-BinaryMiLog
-ms.openlocfilehash: ce5dd31170bc47edaa04ca3c31deab62dc4ec354
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 800cd9ea24bad09f532db26c5091735cd987eef0
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93200679"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195034"
 ---
 # Import-BinaryMiLog
 
@@ -25,7 +24,7 @@ ms.locfileid: "93200679"
 Import-BinaryMiLog [-Path] <String> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 使用此 cmdlet 可根据创建的导出文件的内容重新创建已保存的对象 `Export-BinaryMILog` 。 此 cmdlet 类似于 `Import-Clixml` ，不同之处在于将 `Export-BinaryMILog` 生成的对象存储在二进制编码的文件中。
 

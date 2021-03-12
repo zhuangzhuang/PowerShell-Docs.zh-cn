@@ -1,16 +1,17 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
+Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-host?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Host
-ms.openlocfilehash: de7dc6027653db063311bd34e1282e3cb5294e92
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 6b7541fba77c4160cf8d5c2dd36a4bad0bf99c5f
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99597869"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195182"
 ---
 # Clear-Host
 
@@ -24,7 +25,7 @@ ms.locfileid: "99597869"
 Clear-Host [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 `Clear-Host`函数将从当前显示内容中删除所有文本，包括可能已累积的命令和输出。 删除完成后，它将显示命令提示符。 您可以使用函数名称或其别名 `cls` 。
 

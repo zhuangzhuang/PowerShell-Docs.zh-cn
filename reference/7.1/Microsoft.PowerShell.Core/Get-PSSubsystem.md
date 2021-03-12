@@ -1,15 +1,17 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 10/15/2020
-online version: ''
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-pssubsystem?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 34998e7c4a6876821df949019970dc1d87297397
-ms.sourcegitcommit: c9e56ec489522c706b8d6b8733f3f015d6d7e893
+title: Get-PSSubsystem
+ms.openlocfilehash: 1e08715562ab5a5b52193dacdd2c48cacb4540e8
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93200562"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195529"
 ---
 # Get-PSSubsystem
 
@@ -36,12 +38,12 @@ Get-PSSubsystem -Kind <SubsystemKind> [<CommonParameters>]
 Get-PSSubsystem -SubsystemType <Type> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## 说明
 
 检索有关在 PowerShell 中注册的子系统的信息。
 
 > [!NOTE]
-> 这是一项实验性功能。 只有启用此功能时，此 cmdlet 才可用 `PSSubsystemPluginModel` 。 有关详细信息，请参阅 [使用实验性功能](/powershell/scripting/learn/experimental-features)。
+> 这是一项实验性功能。 只有启用此功能时，此 cmdlet 才可用 `PSSubsystemPluginModel` 。 有关详细信息，请参阅[使用实验性功能](/powershell/scripting/learn/experimental-features)。
 
 利用此功能，可以将 `System.Management.Automation.dll` 的组件分隔到驻留在自己的程序集中的各个子系统。 这种隔离可减少核心 PowerShell 引擎的磁盘占用，并支持这些组件成为最小 PowerShell 安装的可选功能。
 
