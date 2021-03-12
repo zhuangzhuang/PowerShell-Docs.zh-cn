@@ -1,45 +1,46 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-uptime?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Uptime
-ms.openlocfilehash: d06dbc66d9674b59df4d75f8ae333d4fe24aa7eb
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 225172868e0a011d89974a399e372515f531ac3d
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93197684"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196278"
 ---
-# <span data-ttu-id="233e4-102">Get-Uptime</span><span class="sxs-lookup"><span data-stu-id="233e4-102">Get-Uptime</span></span>
+# <span data-ttu-id="27c21-102">Get-Uptime</span><span class="sxs-lookup"><span data-stu-id="27c21-102">Get-Uptime</span></span>
 
-## <span data-ttu-id="233e4-103">摘要</span><span class="sxs-lookup"><span data-stu-id="233e4-103">SYNOPSIS</span></span>
-<span data-ttu-id="233e4-104">获取自上次启动以来的时间 **跨度** 。</span><span class="sxs-lookup"><span data-stu-id="233e4-104">Get the **TimeSpan** since last boot.</span></span>
+## <span data-ttu-id="27c21-103">摘要</span><span class="sxs-lookup"><span data-stu-id="27c21-103">SYNOPSIS</span></span>
+<span data-ttu-id="27c21-104">获取自上次启动以来的时间 **跨度** 。</span><span class="sxs-lookup"><span data-stu-id="27c21-104">Get the **TimeSpan** since last boot.</span></span>
 
-## <span data-ttu-id="233e4-105">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="233e4-105">SYNTAX</span></span>
+## <span data-ttu-id="27c21-105">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="27c21-105">SYNTAX</span></span>
 
-### <span data-ttu-id="233e4-106">Timespan (默认值) </span><span class="sxs-lookup"><span data-stu-id="233e4-106">Timespan (Default)</span></span>
+### <span data-ttu-id="27c21-106">Timespan (默认值) </span><span class="sxs-lookup"><span data-stu-id="27c21-106">Timespan (Default)</span></span>
 
 ```
 Get-Uptime [<CommonParameters>]
 ```
 
-### <span data-ttu-id="233e4-107">因此</span><span class="sxs-lookup"><span data-stu-id="233e4-107">Since</span></span>
+### <span data-ttu-id="27c21-107">因此</span><span class="sxs-lookup"><span data-stu-id="27c21-107">Since</span></span>
 
 ```
 Get-Uptime [-Since] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="233e4-108">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="233e4-108">DESCRIPTION</span></span>
+## <span data-ttu-id="27c21-108">说明</span><span class="sxs-lookup"><span data-stu-id="27c21-108">DESCRIPTION</span></span>
 
-<span data-ttu-id="233e4-109">此 cmdlet 将返回自上次启动操作系统后所经过的时间。</span><span class="sxs-lookup"><span data-stu-id="233e4-109">This cmdlet returns the time elapsed since the last boot of the operating system.</span></span>
+<span data-ttu-id="27c21-109">此 cmdlet 将返回自上次启动操作系统后所经过的时间。</span><span class="sxs-lookup"><span data-stu-id="27c21-109">This cmdlet returns the time elapsed since the last boot of the operating system.</span></span>
 
-<span data-ttu-id="233e4-110">`Get-Uptime`Cmdlet 是在 PowerShell 6.0 中引入的。</span><span class="sxs-lookup"><span data-stu-id="233e4-110">The `Get-Uptime` cmdlet was introduced in PowerShell 6.0.</span></span>
+<span data-ttu-id="27c21-110">`Get-Uptime`Cmdlet 是在 PowerShell 6.0 中引入的。</span><span class="sxs-lookup"><span data-stu-id="27c21-110">The `Get-Uptime` cmdlet was introduced in PowerShell 6.0.</span></span>
 
-## <span data-ttu-id="233e4-111">示例</span><span class="sxs-lookup"><span data-stu-id="233e4-111">EXAMPLES</span></span>
+## <span data-ttu-id="27c21-111">示例</span><span class="sxs-lookup"><span data-stu-id="27c21-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="233e4-112">示例 1-显示自上次启动以来的时间</span><span class="sxs-lookup"><span data-stu-id="233e4-112">Example 1 - Show time since last boot</span></span>
+### <span data-ttu-id="27c21-112">示例 1-显示自上次启动以来的时间</span><span class="sxs-lookup"><span data-stu-id="27c21-112">Example 1 - Show time since last boot</span></span>
 
 ```powershell
 Get-Uptime
@@ -59,7 +60,7 @@ TotalSeconds      : 778185
 TotalMilliseconds : 778185000
 ```
 
-### <span data-ttu-id="233e4-113">示例 2-显示上次启动的时间</span><span class="sxs-lookup"><span data-stu-id="233e4-113">Example 2 - Show the time of the last boot</span></span>
+### <span data-ttu-id="27c21-113">示例 2-显示上次启动的时间</span><span class="sxs-lookup"><span data-stu-id="27c21-113">Example 2 - Show the time of the last boot</span></span>
 
 ```powershell
 Get-Uptime -Since
@@ -69,11 +70,11 @@ Get-Uptime -Since
 Tuesday, June 18, 2019 2:34:56 PM
 ```
 
-## <span data-ttu-id="233e4-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="233e4-114">PARAMETERS</span></span>
+## <span data-ttu-id="27c21-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="27c21-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="233e4-115">-自</span><span class="sxs-lookup"><span data-stu-id="233e4-115">-Since</span></span>
+### <span data-ttu-id="27c21-115">-自</span><span class="sxs-lookup"><span data-stu-id="27c21-115">-Since</span></span>
 
-<span data-ttu-id="233e4-116">导致 cmdlet 返回表示操作系统上次启动时间的 **DateTime** 对象。</span><span class="sxs-lookup"><span data-stu-id="233e4-116">Cause the cmdlet to return a **DateTime** object representing the last time that the operating system was booted.</span></span>
+<span data-ttu-id="27c21-116">导致 cmdlet 返回表示操作系统上次启动时间的 **DateTime** 对象。</span><span class="sxs-lookup"><span data-stu-id="27c21-116">Cause the cmdlet to return a **DateTime** object representing the last time that the operating system was booted.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -87,34 +88,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="233e4-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="233e4-117">CommonParameters</span></span>
+### <span data-ttu-id="27c21-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="27c21-117">CommonParameters</span></span>
 
-<span data-ttu-id="233e4-118">此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="233e4-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="233e4-119">有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="233e4-119">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="27c21-118">此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="27c21-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="27c21-119">有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="27c21-119">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="233e4-120">输入</span><span class="sxs-lookup"><span data-stu-id="233e4-120">INPUTS</span></span>
+## <span data-ttu-id="27c21-120">输入</span><span class="sxs-lookup"><span data-stu-id="27c21-120">INPUTS</span></span>
 
-### <span data-ttu-id="233e4-121">无</span><span class="sxs-lookup"><span data-stu-id="233e4-121">None</span></span>
+### <span data-ttu-id="27c21-121">无</span><span class="sxs-lookup"><span data-stu-id="27c21-121">None</span></span>
 
-## <span data-ttu-id="233e4-122">输出</span><span class="sxs-lookup"><span data-stu-id="233e4-122">OUTPUTS</span></span>
+## <span data-ttu-id="27c21-122">输出</span><span class="sxs-lookup"><span data-stu-id="27c21-122">OUTPUTS</span></span>
 
-### <span data-ttu-id="233e4-123">System.TimeSpan</span><span class="sxs-lookup"><span data-stu-id="233e4-123">System.TimeSpan</span></span>
+### <span data-ttu-id="27c21-123">System.TimeSpan</span><span class="sxs-lookup"><span data-stu-id="27c21-123">System.TimeSpan</span></span>
 
-<span data-ttu-id="233e4-124">这是未使用任何参数时的默认返回类型。</span><span class="sxs-lookup"><span data-stu-id="233e4-124">This is the default return type when no parameters are used.</span></span>
+<span data-ttu-id="27c21-124">这是未使用任何参数时的默认返回类型。</span><span class="sxs-lookup"><span data-stu-id="27c21-124">This is the default return type when no parameters are used.</span></span>
 
-### <span data-ttu-id="233e4-125">System.DateTime</span><span class="sxs-lookup"><span data-stu-id="233e4-125">System.DateTime</span></span>
+### <span data-ttu-id="27c21-125">System.DateTime</span><span class="sxs-lookup"><span data-stu-id="27c21-125">System.DateTime</span></span>
 
-<span data-ttu-id="233e4-126">使用 **自** 参数时返回此类型。</span><span class="sxs-lookup"><span data-stu-id="233e4-126">This type is returned when using the **Since** parameter.</span></span>
+<span data-ttu-id="27c21-126">使用 **自** 参数时返回此类型。</span><span class="sxs-lookup"><span data-stu-id="27c21-126">This type is returned when using the **Since** parameter.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="233e4-127">如果启用了 Windows 快速启动，则 Windows 不会更新存储在 **LastBootUpTime** 中的值。</span><span class="sxs-lookup"><span data-stu-id="233e4-127">If Windows fast startup is enabled, Windows does not update the value stored in **LastBootUpTime** .</span></span> <span data-ttu-id="233e4-128">若要禁用快速启动，请运行以下命令： `Powercfg -h off` 。</span><span class="sxs-lookup"><span data-stu-id="233e4-128">To disable fast startup, run the following command: `Powercfg -h off`.</span></span>
+> <span data-ttu-id="27c21-127">如果启用了 Windows 快速启动，则 Windows 不会更新存储在 **LastBootUpTime** 中的值。</span><span class="sxs-lookup"><span data-stu-id="27c21-127">If Windows fast startup is enabled, Windows does not update the value stored in **LastBootUpTime**.</span></span> <span data-ttu-id="27c21-128">若要禁用快速启动，请运行以下命令： `Powercfg -h off` 。</span><span class="sxs-lookup"><span data-stu-id="27c21-128">To disable fast startup, run the following command: `Powercfg -h off`.</span></span>
 >
-> <span data-ttu-id="233e4-129">有关 Windows 快速启动的详细信息，请参阅将 [快速启动从休眠状态中唤醒](/windows-hardware/drivers/kernel/distinguishing-fast-startup-from-wake-from-hibernation)。</span><span class="sxs-lookup"><span data-stu-id="233e4-129">For more information about Windows fast startup, see [Distinguishing Fast Startup from Wake-from-Hibernation](/windows-hardware/drivers/kernel/distinguishing-fast-startup-from-wake-from-hibernation).</span></span>
+> <span data-ttu-id="27c21-129">有关 Windows 快速启动的详细信息，请参阅将 [快速启动从休眠状态中唤醒](/windows-hardware/drivers/kernel/distinguishing-fast-startup-from-wake-from-hibernation)。</span><span class="sxs-lookup"><span data-stu-id="27c21-129">For more information about Windows fast startup, see [Distinguishing Fast Startup from Wake-from-Hibernation](/windows-hardware/drivers/kernel/distinguishing-fast-startup-from-wake-from-hibernation).</span></span>
 
-## <span data-ttu-id="233e4-130">注释</span><span class="sxs-lookup"><span data-stu-id="233e4-130">NOTES</span></span>
+## <span data-ttu-id="27c21-130">注释</span><span class="sxs-lookup"><span data-stu-id="27c21-130">NOTES</span></span>
 
-<span data-ttu-id="233e4-131">在 Windows 上，返回的值与 WMI 中 **Win32_OperatingSystem** 类的 **LastBootUpTime** 属性相同。</span><span class="sxs-lookup"><span data-stu-id="233e4-131">On Windows, the value returned is the same as the **LastBootUpTime** property of the **Win32_OperatingSystem** class in WMI.</span></span>
+<span data-ttu-id="27c21-131">在 Windows 上，返回的值与 WMI 中 **Win32_OperatingSystem** 类的 **LastBootUpTime** 属性相同。</span><span class="sxs-lookup"><span data-stu-id="27c21-131">On Windows, the value returned is the same as the **LastBootUpTime** property of the **Win32_OperatingSystem** class in WMI.</span></span>
 
-## <span data-ttu-id="233e4-132">相关链接</span><span class="sxs-lookup"><span data-stu-id="233e4-132">RELATED LINKS</span></span>
+## <span data-ttu-id="27c21-132">相关链接</span><span class="sxs-lookup"><span data-stu-id="27c21-132">RELATED LINKS</span></span>
 
-[<span data-ttu-id="233e4-133">Win32_OperatingSystem</span><span class="sxs-lookup"><span data-stu-id="233e4-133">Win32_OperatingSystem</span></span>](/windows/win32/cimwin32prov/win32-operatingsystem#properties)
+[<span data-ttu-id="27c21-133">Win32_OperatingSystem</span><span class="sxs-lookup"><span data-stu-id="27c21-133">Win32_OperatingSystem</span></span>](/windows/win32/cimwin32prov/win32-operatingsystem#properties)
 

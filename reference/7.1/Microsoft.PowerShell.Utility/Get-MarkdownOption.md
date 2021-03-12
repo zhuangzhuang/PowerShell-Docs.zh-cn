@@ -1,36 +1,38 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption?view=powershell-7.x.0&WT.mc_id=ps-gethelp
 ms.date: 01/30/2020
+online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 52c0a94304156a7c1cf89bbc5ae98a0668789bd2
-ms.sourcegitcommit: 23ea4a36ee85f923684657de5313a5adf0b6b094
+title: Get-MarkdownOption
+ms.openlocfilehash: 4fac43c411fd91575c7169baca3e2ea86bb64e18
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "93194624"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196305"
 ---
-# <span data-ttu-id="3d15c-101">Get-MarkdownOption</span><span class="sxs-lookup"><span data-stu-id="3d15c-101">Get-MarkdownOption</span></span>
+# <span data-ttu-id="4d92a-102">Get-MarkdownOption</span><span class="sxs-lookup"><span data-stu-id="4d92a-102">Get-MarkdownOption</span></span>
 
-## <span data-ttu-id="3d15c-102">摘要</span><span class="sxs-lookup"><span data-stu-id="3d15c-102">SYNOPSIS</span></span>
-<span data-ttu-id="3d15c-103">返回用于在控制台中呈现 Markdown 内容的当前颜色和样式。</span><span class="sxs-lookup"><span data-stu-id="3d15c-103">Returns the current colors and styles used for rendering Markdown content in the console.</span></span>
+## <span data-ttu-id="4d92a-103">摘要</span><span class="sxs-lookup"><span data-stu-id="4d92a-103">SYNOPSIS</span></span>
+<span data-ttu-id="4d92a-104">返回用于在控制台中呈现 Markdown 内容的当前颜色和样式。</span><span class="sxs-lookup"><span data-stu-id="4d92a-104">Returns the current colors and styles used for rendering Markdown content in the console.</span></span>
 
-## <span data-ttu-id="3d15c-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="3d15c-104">SYNTAX</span></span>
+## <span data-ttu-id="4d92a-105">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="4d92a-105">SYNTAX</span></span>
 
 ```
 Get-MarkdownOption [<CommonParameters>]
 ```
 
-## <span data-ttu-id="3d15c-105">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="3d15c-105">DESCRIPTION</span></span>
+## <span data-ttu-id="4d92a-106">说明</span><span class="sxs-lookup"><span data-stu-id="4d92a-106">DESCRIPTION</span></span>
 
-<span data-ttu-id="3d15c-106">返回用于在控制台中呈现 Markdown 内容的当前颜色和样式。</span><span class="sxs-lookup"><span data-stu-id="3d15c-106">Returns the current colors and styles used for rendering Markdown content in the console.</span></span> <span data-ttu-id="3d15c-107">此 cmdlet 的输出中显示的字符串包含用于更改呈现的 Markdown 文本的颜色和样式的 ANSI 转义码。</span><span class="sxs-lookup"><span data-stu-id="3d15c-107">The strings displayed in the output of this cmdlet contain the ANSI escape codes used to change the color and style of the Markdown text being rendered.</span></span>
+<span data-ttu-id="4d92a-107">返回用于在控制台中呈现 Markdown 内容的当前颜色和样式。</span><span class="sxs-lookup"><span data-stu-id="4d92a-107">Returns the current colors and styles used for rendering Markdown content in the console.</span></span> <span data-ttu-id="4d92a-108">此 cmdlet 的输出中显示的字符串包含用于更改呈现的 Markdown 文本的颜色和样式的 ANSI 转义码。</span><span class="sxs-lookup"><span data-stu-id="4d92a-108">The strings displayed in the output of this cmdlet contain the ANSI escape codes used to change the color and style of the Markdown text being rendered.</span></span>
 
-<span data-ttu-id="3d15c-108">有关 Markdown 的详细信息，请参阅 [CommonMark](https://commonmark.org/) 网站。</span><span class="sxs-lookup"><span data-stu-id="3d15c-108">For more information about Markdown, see the [CommonMark](https://commonmark.org/) website.</span></span>
+<span data-ttu-id="4d92a-109">有关 Markdown 的详细信息，请参阅 [CommonMark](https://commonmark.org/) 网站。</span><span class="sxs-lookup"><span data-stu-id="4d92a-109">For more information about Markdown, see the [CommonMark](https://commonmark.org/) website.</span></span>
 
-## <span data-ttu-id="3d15c-109">示例</span><span class="sxs-lookup"><span data-stu-id="3d15c-109">EXAMPLES</span></span>
+## <span data-ttu-id="4d92a-110">示例</span><span class="sxs-lookup"><span data-stu-id="4d92a-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="3d15c-110">示例 1-获取当前颜色和样式</span><span class="sxs-lookup"><span data-stu-id="3d15c-110">Example 1 - Get the current colors and style</span></span>
+### <span data-ttu-id="4d92a-111">示例 1-获取当前颜色和样式</span><span class="sxs-lookup"><span data-stu-id="4d92a-111">Example 1 - Get the current colors and style</span></span>
 
 ```powershell
 Get-MarkdownOption
@@ -51,33 +53,33 @@ EmphasisItalics : [36m
 ```
 
 > [!NOTE]
-> <span data-ttu-id="3d15c-111">输出中显示的字符串值为 ANSI 转义序列 () 后面 **的字符** `[char]0x1B` 。</span><span class="sxs-lookup"><span data-stu-id="3d15c-111">The string values shown in the output are the characters that follow the **Escape** character (`[char]0x1B`) for the ANSI escape sequence.</span></span> <span data-ttu-id="3d15c-112">有关 ANSI 转义代码工作的详细信息，请参阅 [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)。</span><span class="sxs-lookup"><span data-stu-id="3d15c-112">For more information about ANSI escape codes work, see [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).</span></span>
+> <span data-ttu-id="4d92a-112">输出中显示的字符串值为 ANSI 转义序列 () 后面 **的字符** `[char]0x1B` 。</span><span class="sxs-lookup"><span data-stu-id="4d92a-112">The string values shown in the output are the characters that follow the **Escape** character (`[char]0x1B`) for the ANSI escape sequence.</span></span> <span data-ttu-id="4d92a-113">有关 ANSI 转义代码工作的详细信息，请参阅 [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)。</span><span class="sxs-lookup"><span data-stu-id="4d92a-113">For more information about ANSI escape codes work, see [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).</span></span>
 
-## <span data-ttu-id="3d15c-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="3d15c-113">PARAMETERS</span></span>
+## <span data-ttu-id="4d92a-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="4d92a-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="3d15c-114">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3d15c-114">CommonParameters</span></span>
+### <span data-ttu-id="4d92a-115">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="4d92a-115">CommonParameters</span></span>
 
-<span data-ttu-id="3d15c-115">此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="3d15c-115">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3d15c-116">有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="3d15c-116">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="4d92a-116">此 cmdlet 支持以下常见参数：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="4d92a-116">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="4d92a-117">有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="4d92a-117">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="3d15c-117">输入</span><span class="sxs-lookup"><span data-stu-id="3d15c-117">INPUTS</span></span>
+## <span data-ttu-id="4d92a-118">输入</span><span class="sxs-lookup"><span data-stu-id="4d92a-118">INPUTS</span></span>
 
-### <span data-ttu-id="3d15c-118">无</span><span class="sxs-lookup"><span data-stu-id="3d15c-118">None</span></span>
+### <span data-ttu-id="4d92a-119">无</span><span class="sxs-lookup"><span data-stu-id="4d92a-119">None</span></span>
 
-## <span data-ttu-id="3d15c-119">输出</span><span class="sxs-lookup"><span data-stu-id="3d15c-119">OUTPUTS</span></span>
+## <span data-ttu-id="4d92a-120">输出</span><span class="sxs-lookup"><span data-stu-id="4d92a-120">OUTPUTS</span></span>
 
-### <span data-ttu-id="3d15c-120">MarkdownRender. PSMarkdownOptionInfo</span><span class="sxs-lookup"><span data-stu-id="3d15c-120">Microsoft.PowerShell.MarkdownRender.PSMarkdownOptionInfo</span></span>
+### <span data-ttu-id="4d92a-121">MarkdownRender. PSMarkdownOptionInfo</span><span class="sxs-lookup"><span data-stu-id="4d92a-121">Microsoft.PowerShell.MarkdownRender.PSMarkdownOptionInfo</span></span>
 
-## <span data-ttu-id="3d15c-121">注释</span><span class="sxs-lookup"><span data-stu-id="3d15c-121">NOTES</span></span>
+## <span data-ttu-id="4d92a-122">注释</span><span class="sxs-lookup"><span data-stu-id="4d92a-122">NOTES</span></span>
 
-## <span data-ttu-id="3d15c-122">相关链接</span><span class="sxs-lookup"><span data-stu-id="3d15c-122">RELATED LINKS</span></span>
+## <span data-ttu-id="4d92a-123">相关链接</span><span class="sxs-lookup"><span data-stu-id="4d92a-123">RELATED LINKS</span></span>
 
-[<span data-ttu-id="3d15c-123">Set-MarkdownOption</span><span class="sxs-lookup"><span data-stu-id="3d15c-123">Set-MarkdownOption</span></span>](Set-MarkdownOption.md)
+[<span data-ttu-id="4d92a-124">Set-MarkdownOption</span><span class="sxs-lookup"><span data-stu-id="4d92a-124">Set-MarkdownOption</span></span>](Set-MarkdownOption.md)
 
-[<span data-ttu-id="3d15c-124">ConvertFrom-Markdown</span><span class="sxs-lookup"><span data-stu-id="3d15c-124">ConvertFrom-Markdown</span></span>](ConvertFrom-Markdown.md)
+[<span data-ttu-id="4d92a-125">ConvertFrom-Markdown</span><span class="sxs-lookup"><span data-stu-id="4d92a-125">ConvertFrom-Markdown</span></span>](ConvertFrom-Markdown.md)
 
-[<span data-ttu-id="3d15c-125">Show-Markdown</span><span class="sxs-lookup"><span data-stu-id="3d15c-125">Show-Markdown</span></span>](Show-Markdown.md)
+[<span data-ttu-id="4d92a-126">Show-Markdown</span><span class="sxs-lookup"><span data-stu-id="4d92a-126">Show-Markdown</span></span>](Show-Markdown.md)
 
-[<span data-ttu-id="3d15c-126">ANSI_escape_code</span><span class="sxs-lookup"><span data-stu-id="3d15c-126">ANSI_escape_code</span></span>](https://en.wikipedia.org/wiki/ANSI_escape_code)
+[<span data-ttu-id="4d92a-127">ANSI_escape_code</span><span class="sxs-lookup"><span data-stu-id="4d92a-127">ANSI_escape_code</span></span>](https://en.wikipedia.org/wiki/ANSI_escape_code)
 
-[<span data-ttu-id="3d15c-127">CommonMark</span><span class="sxs-lookup"><span data-stu-id="3d15c-127">CommonMark</span></span>](https://commonmark.org/)
+[<span data-ttu-id="4d92a-128">CommonMark</span><span class="sxs-lookup"><span data-stu-id="4d92a-128">CommonMark</span></span>](https://commonmark.org/)
 
