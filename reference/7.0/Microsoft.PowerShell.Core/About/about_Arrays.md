@@ -1,17 +1,16 @@
 ---
 description: 介绍数组，数组是设计用于存储项集合的数据结构。
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
-ms.openlocfilehash: 2283c36d899c3ea743f6c379dc686ec583d7a36c
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 2febf96d49003263cbcfd3f605db60b6c1d2437b
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93199679"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412924"
 ---
 # <a name="about-arrays"></a>关于数组
 
@@ -52,13 +51,13 @@ $C = 5..8
 
 因此， `$C` 包含四个值：5、6、7和8。
 
-如果未指定数据类型，则 PowerShell 会将每个数组作为对象数组创建 ( **system.object []** ) 。 若要确定数组的数据类型，请使用 **GetType ( # B1** 方法。 例如，若要确定数组的数据类型 `$A` ，请键入：
+如果未指定数据类型，则 PowerShell 会将每个数组作为对象数组创建 (**system.object []**) 。 若要确定数组的数据类型，请使用 **GetType ()** 方法。 例如，若要确定数组的数据类型 `$A` ，请键入：
 
 ```powershell
 $A.GetType()
 ```
 
-若要创建强类型化数组（即，只可包含特定类型的值的数组），请将该变量强制转换为数组类型，如 **string []** 、 **long []** 或 **int32 []** 。 若要强制转换数组，请在变量名称之前加上括号内的数组类型。 例如，若要创建一个名为的32位整数数组，该数组 `$ia` 包含四个整数 (1500、2230、3350和 4000) ，请键入：
+若要创建强类型化数组（即，只可包含特定类型的值的数组），请将该变量强制转换为数组类型，如 **string []**、 **long []** 或 **int32 []**。 若要强制转换数组，请在变量名称之前加上括号内的数组类型。 例如，若要创建一个名为的32位整数数组，该数组 `$ia` 包含四个整数 (1500、2230、3350和 4000) ，请键入：
 
 ```powershell
 [int32[]]$ia = 1500,2230,3350,4000
@@ -321,7 +320,7 @@ $a.Length
 
 ### <a name="rank"></a>级别
 
-返回数组中的维数。 PowerShell 中的大多数数组仅具有一个维度。 即使您认为要生成多维数组，类似于以下示例：
+返回数组中的维数。 PowerShell 中的大多数数组仅具有一个维度。 即使您认为生成多维数组，如以下示例中所示：
 
 ```powershell
 $a = @(
@@ -330,23 +329,72 @@ $a = @(
   @(Get-Process)
 )
 
-[int]$r = $a.Rank
-"`$a rank: $r"
+"`$a rank: $($a.Rank)"
+"`$a length: $($a.Length)"
+"`$a length: $($a.Length)"
+"Process `$a[2][1]: $($a[2][1].ProcessName)"
 ```
+
+在此示例中，您将创建一个包含其他数组的一维数组。 这也称为 _交错数组_。 **Rank** 属性证明这是一维的。 若要访问交错数组中的项，索引必须位于单独的方括号中 (`[]`) 。
 
 ```Output
 $a rank: 1
+$a length: 3
+$a[2] length: 348
+Process $a[2][1]: AcroRd32
 ```
 
-下面的示例演示如何使用 .Net Framework 创建一个真正的多维数组。
+多维数组按 [行顺序](https://wikipedia.org/wiki/Row-_and_column-major_order)存储。 下面的示例演示如何创建一个真正的多维数组。
 
 ```powershell
-[int[,]]$rank2 = [int[,]]::new(5,5)
+[string[,]]$rank2 = [string[,]]::New(3,2)
 $rank2.rank
+$rank2.Length
+$rank2[0,0] = 'a'
+$rank2[0,1] = 'b'
+$rank2[1,0] = 'c'
+$rank2[1,1] = 'd'
+$rank2[2,0] = 'e'
+$rank2[2,1] = 'f'
+$rank2[1,1]
 ```
 
 ```Output
 2
+6
+d
+```
+
+若要访问多维数组中的项，请使用逗号分隔索引 (`,`)  () 的一组方括号中 `[]` 。
+
+对多维数组的某些运算（例如复制和串联）要求对数组进行平展。 平展将数组转换为不受约束的类型的一维数组。 生成的数组按行主顺序使用所有元素。 请看下面的示例：
+
+```powershell
+$a = "red",$true
+$b = (New-Object 'int[,]' 2,2)
+$b[0,0] = 10
+$b[0,1] = 20
+$b[1,0] = 30
+$b[1,1] = 40
+$c = $a + $b
+$a.GetType().Name
+$b.GetType().Name
+$c.GetType().Name
+$c
+```
+
+输出显示的 `$c` 是包含和中的项的1维数组， `$a` `$b` 按行主顺序排列。
+
+```output
+Object[]
+Int32[,]
+Object[]
+red
+True
+10
+20
+30
+40
 ```
 
 ## <a name="methods-of-arrays"></a>数组方法
@@ -354,7 +402,7 @@ $rank2.rank
 ### <a name="clear"></a>清除
 
 将所有元素值设置为数组元素类型的 _默认值_ 。
-Clear ( # A1 方法不会重置数组的大小。
+Clear () 方法不会重置数组的大小。
 
 在下面的示例中 `$a` ，是一个对象数组。
 
@@ -480,7 +528,7 @@ THREE
 > [!NOTE]
 > 从 Windows PowerShell 3.0 中开始，还可以使用 "标量对象和集合的方法" 来完成为集合中的每个项检索属性和执行方法的操作，可以在此处 [about_methods](about_methods.md)获取详细信息。
 
-### <a name="where"></a>其中
+### <a name="where"></a>Where
 
 允许筛选或选择数组的元素。 脚本的计算结果必须为：零 (0) ，空字符串，或要 `$false` 在 `$null``Where`
 
@@ -559,7 +607,7 @@ $logs.Where({$_.CreationTime -gt $h}, 'Last', 5)
 
 #### <a name="skipuntil"></a>跳到
 
-`SkipUntil`模式将跳过集合中的所有对象，直到对象传递脚本块表达式筛选器。 然后，它将返回 **所有** 剩余的集合项而不测试它们。 _仅测试一个传递项_ 。
+`SkipUntil`模式将跳过集合中的所有对象，直到对象传递脚本块表达式筛选器。 然后，它将返回 **所有** 剩余的集合项而不测试它们。 _仅测试一个传递项_。
 
 这意味着返回的集合包含未经过测试的 _传递_ 和 _非传递_ 项。
 
@@ -575,11 +623,11 @@ $computers.Where({ Test-Connection $_ }, 'SkipUntil', 1)
 localhost
 ```
 
-#### <a name="until"></a>Until
+#### <a name="until"></a>生效
 
 `Until`模式反转 `SkipUntil` 模式。  它将返回集合中的 **所有** 项，直到某个项通过脚本块表达式。 在项 _传递_ scriptblock 表达式后，该 `Where` 方法将停止处理项。
 
-这意味着从方法接收第一组 _非传递_ 项 `Where` 。 一项通过 _后_ ，就不会测试或返回其余的项。
+这意味着从方法接收第一组 _非传递_ 项 `Where` 。 一项通过 _后_，就不会测试或返回其余的项。
 
 通过将值传递给参数，可以限制返回的项数 `numberToReturn` 。
 

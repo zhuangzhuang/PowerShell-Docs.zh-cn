@@ -5,12 +5,12 @@ ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
-ms.openlocfilehash: 2e7cf9c8f7d4e6f1d5bc66310f56d3de9461e592
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 4ec216a502f0031bc35cc7b04aacf5d262fd696d
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99598705"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412839"
 ---
 # <a name="about-arrays"></a>关于数组
 
@@ -51,7 +51,7 @@ $C = 5..8
 
 因此， `$C` 包含四个值：5、6、7和8。
 
-如果未指定数据类型，则 PowerShell 会将每个数组作为对象数组创建 (**system.object []**) 。 若要确定数组的数据类型，请使用 **GetType ( # B1** 方法。 例如，若要确定数组的数据类型 `$A` ，请键入：
+如果未指定数据类型，则 PowerShell 会将每个数组作为对象数组创建 (**system.object []**) 。 若要确定数组的数据类型，请使用 **GetType ()** 方法。 例如，若要确定数组的数据类型 `$A` ，请键入：
 
 ```powershell
 $A.GetType()
@@ -320,7 +320,7 @@ $a.Length
 
 ### <a name="rank"></a>级别
 
-返回数组中的维数。 PowerShell 中的大多数数组仅具有一个维度。 即使您认为要生成多维数组，类似于以下示例：
+返回数组中的维数。 PowerShell 中的大多数数组仅具有一个维度。 即使您认为生成多维数组，如以下示例中所示：
 
 ```powershell
 $a = @(
@@ -329,23 +329,72 @@ $a = @(
   @(Get-Process)
 )
 
-[int]$r = $a.Rank
-"`$a rank: $r"
+"`$a rank: $($a.Rank)"
+"`$a length: $($a.Length)"
+"`$a length: $($a.Length)"
+"Process `$a[2][1]: $($a[2][1].ProcessName)"
 ```
+
+在此示例中，您将创建一个包含其他数组的一维数组。 这也称为 _交错数组_。 **Rank** 属性证明这是一维的。 若要访问交错数组中的项，索引必须位于单独的方括号中 (`[]`) 。
 
 ```Output
 $a rank: 1
+$a length: 3
+$a[2] length: 348
+Process $a[2][1]: AcroRd32
 ```
 
-下面的示例演示如何使用 .Net Framework 创建一个真正的多维数组。
+多维数组按 [行顺序](https://wikipedia.org/wiki/Row-_and_column-major_order)存储。 下面的示例演示如何创建一个真正的多维数组。
 
 ```powershell
-[int[,]]$rank2 = [int[,]]::new(5,5)
+[string[,]]$rank2 = [string[,]]::New(3,2)
 $rank2.rank
+$rank2.Length
+$rank2[0,0] = 'a'
+$rank2[0,1] = 'b'
+$rank2[1,0] = 'c'
+$rank2[1,1] = 'd'
+$rank2[2,0] = 'e'
+$rank2[2,1] = 'f'
+$rank2[1,1]
 ```
 
 ```Output
 2
+6
+d
+```
+
+若要访问多维数组中的项，请使用逗号分隔索引 (`,`)  () 的一组方括号中 `[]` 。
+
+对多维数组的某些运算（例如复制和串联）要求对数组进行平展。 平展将数组转换为不受约束的类型的一维数组。 生成的数组按行主顺序使用所有元素。 请看下面的示例：
+
+```powershell
+$a = "red",$true
+$b = (New-Object 'int[,]' 2,2)
+$b[0,0] = 10
+$b[0,1] = 20
+$b[1,0] = 30
+$b[1,1] = 40
+$c = $a + $b
+$a.GetType().Name
+$b.GetType().Name
+$c.GetType().Name
+$c
+```
+
+输出显示的 `$c` 是包含和中的项的1维数组， `$a` `$b` 按行主顺序排列。
+
+```output
+Object[]
+Int32[,]
+Object[]
+red
+True
+10
+20
+30
+40
 ```
 
 ## <a name="methods-of-arrays"></a>数组方法
@@ -353,7 +402,7 @@ $rank2.rank
 ### <a name="clear"></a>清除
 
 将所有元素值设置为数组元素类型的 _默认值_ 。
-Clear ( # A1 方法不会重置数组的大小。
+Clear () 方法不会重置数组的大小。
 
 在下面的示例中 `$a` ，是一个对象数组。
 
@@ -479,7 +528,7 @@ THREE
 > [!NOTE]
 > 从 Windows PowerShell 3.0 中开始，还可以使用 "标量对象和集合的方法" 来完成为集合中的每个项检索属性和执行方法的操作，可以在此处 [about_methods](about_methods.md)获取详细信息。
 
-### <a name="where"></a>其中
+### <a name="where"></a>Where
 
 允许筛选或选择数组的元素。 脚本的计算结果必须为：零 (0) ，空字符串，或要 `$false` 在 `$null``Where`
 
@@ -574,7 +623,7 @@ $computers.Where({ Test-Connection $_ }, 'SkipUntil', 1)
 localhost
 ```
 
-#### <a name="until"></a>Until
+#### <a name="until"></a>生效
 
 `Until`模式反转 `SkipUntil` 模式。  它将返回集合中的 **所有** 项，直到某个项通过脚本块表达式。 在项 _传递_ scriptblock 表达式后，该 `Where` 方法将停止处理项。
 
@@ -772,7 +821,7 @@ test
 
 有关详细信息，请参阅 [system.object](/dotnet/api/system.tuple)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [about_Assignment_Operators](about_Assignment_Operators.md)
 - [about_Hash_Tables](about_Hash_Tables.md)

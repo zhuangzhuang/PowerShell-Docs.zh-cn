@@ -1,16 +1,16 @@
 ---
-description: PowerShell Core 的配置文件，替换注册表配置。
+description: PowerShell 的配置文件，替换注册表配置。
 Locale: en-US
-ms.date: 11/02/2018
+ms.date: 03/12/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PowerShell_Config
-ms.openlocfilehash: 7190484832958e778a21e6d2cc91771587bffdbf
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: e6688e91f0cf14ae54a0585ae199f098e98e1146
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99596032"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412958"
 ---
 # <a name="about-powershell-config"></a>关于 PowerShell 配置
 
@@ -22,11 +22,7 @@ PowerShell Core 的配置文件，替换注册表配置。
 此 `powershell.config.json` 文件包含 PowerShell Core 的配置设置。 PowerShell 会在启动时加载此配置。 还可以在运行时修改这些设置。 以前，这些设置存储在 PowerShell 的 Windows 注册表中，但现在包含在文件中，可在 macOS 和 Linux 上启用配置。
 
 > [!WARNING]
-> 如果 `powershell.config.json` 文件包含无效的 JSON PowerShell，则无法启动交互式会话。
-> 如果出现这种情况，则必须修复配置文件。
-
-> [!NOTE]
-> 无法识别的密钥或配置文件中的无效值将被自动忽略。
+> 无法识别的密钥或配置文件中的无效值将以无提示方式忽略。 如果 `powershell.config.json` 文件包含无效的 JSON，则 PowerShell 无法启动交互式会话。 如果出现这种情况，则必须修复配置文件。
 
 ### <a name="allusers-shared-configuration"></a>AllUsers (共享) 配置
 
@@ -60,9 +56,7 @@ PowerShell Core 的配置文件，替换注册表配置。
 
 其中：
 
-- `<shell-id>` 引用当前 PowerShell 主机的 ID。
-  对于普通的 PowerShell 核心，这是 `Microsoft.PowerShell` 。
-  在任何 PowerShell 会话中，你都可以通过发现它 `$ShellId` 。
+- `<shell-id>` 引用当前 PowerShell 主机的 ID。 对于普通的 PowerShell 核心，这是 `Microsoft.PowerShell` 。 在任何 PowerShell 会话中，你都可以通过发现它 `$ShellId` 。
 - `<execution-policy>` 引用有效的执行策略名称。
 
 下面的示例将 PowerShell 的执行策略设置为 `RemoteSigned` 。
@@ -77,15 +71,14 @@ PowerShell Core 的配置文件，替换注册表配置。
 
 ### <a name="psmodulepath"></a>PSModulePath
 
-覆盖此 PowerShell 会话的 PSModulePath 组件。 如果配置针对当前用户，则设置 CurrentUser 模块路径。 如果配置适用于所有用户，则设置 AllUser 模块路径。
+替代 `PSModulePath` 此 PowerShell 会话的设置。 如果配置针对当前用户，则设置 **CurrentUser** 模块路径。 如果为所有用户配置，则会设置 **AllUsers** 模块路径。
 
 > [!WARNING]
-> 在此处配置 AllUsers 或 CurrentUser 模块路径将不会更改 PowerShellGet 模块的作用域安装位置，如 [安装模块](/powershell/module/powershellget/install-module)。
-> 这些 cmdlet 始终使用 *默认* 模块路径。
+> 如果在此处配置 **AllUsers** 或 **CurrentUser** 模块路径，则不会更改 PowerShellGet cmdlet （如 [Install-module）](/powershell/module/powershellget/install-module)的作用域安装位置。 这些 cmdlet 始终使用 _默认_ 模块路径。
 
-如果未设置任何值，则将使用各自模块路径组件的默认值。 有关这些默认设置的详细信息，请参阅 [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath) 。
+如果未设置任何值，则 PowerShell 将使用各自模块路径设置的默认值。 有关这些默认设置的详细信息，请参阅 [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath)。
 
-此设置允许使用环境变量，方法是在字符之间嵌入这些 `%` 字符，如 `"%HOME%\Documents\PowerShell\Modules"` ，与 CMD 允许的方式相同。 此语法还适用于 Linux 和 macOS。 有关示例，请参阅下面的示例。
+此设置允许使用环境变量，方法是在字符之间嵌入它们 `%` ，就像使用 `"%HOME%\Documents\PowerShell\Modules"` CMD 所允许的相同方式。 此语法还适用于 Linux 和 macOS。 有关示例，请参阅下面的示例。
 
 ```Schema
 "PSModulePath": "<ps-module-path>"
@@ -95,7 +88,7 @@ PowerShell Core 的配置文件，替换注册表配置。
 
 - `<ps-module-path>` 模块目录的绝对路径。 对于所有用户配置，这是 AllUsers 共享模块目录。 对于当前用户配置，此为 CurrentUser 模块目录。
 
-此示例显示 Windows 环境的 PSModulePath 配置：
+此示例演示 `PSModulePath` Windows 环境的配置：
 
 ```json
 {
@@ -103,7 +96,7 @@ PowerShell Core 的配置文件，替换注册表配置。
 }
 ```
 
-此示例显示 macOS 或 Linux 环境的 PSModulePath 配置：
+此示例显示了 `PSModulePath` macOS 或 Linux 环境的配置：
 
 ```json
 {
@@ -111,7 +104,7 @@ PowerShell Core 的配置文件，替换注册表配置。
 }
 ```
 
-此示例演示如何在 PSModulePath 配置中嵌入环境变量。 请注意，使用 `HOME` 环境变量和 `/` 目录分隔符时，这将适用于 Windows、MacOS 和 Linux。
+此示例演示如何在配置中嵌入环境变量 `PSModulePath` 。 请注意，使用 `HOME` 环境变量和 `/` 目录分隔符时，这将适用于 Windows、MacOS 和 Linux。
 
 ```json
 {
@@ -119,7 +112,7 @@ PowerShell Core 的配置文件，替换注册表配置。
 }
 ```
 
-此示例演示如何将环境变量嵌入到仅适用于 macOS 和 Linux 的 PSModulePath 配置中：
+此示例演示如何将环境变量嵌入到 `PSModulePath` 仅适用于 macOS 和 Linux 的配置中：
 
 ```json
 {
@@ -128,14 +121,12 @@ PowerShell Core 的配置文件，替换注册表配置。
 ```
 
 > [!NOTE]
-> PowerShell 变量不能嵌入到 PSModulePath 配置中。
-> Linux 和 macOS 上的 PSModulePath 配置区分大小写。 PSModulePath 配置必须为平台使用有效的目录分隔符。 在 macOS 和 Linux 上，这表示 `/` 。 在 Windows 上， `/` 和都 `\` 适用。
+> PowerShell 变量不能嵌入到 `PSModulePath` 配置中。
+> `PSModulePath` Linux 和 macOS 上的配置区分大小写。 `PSModulePath`配置必须为平台使用有效的目录分隔符。 在 macOS 和 Linux 上，这表示 `/` 。 在 Windows 上， `/` 和都 `\` 适用。
 
 ### <a name="experimentalfeatures"></a>ExperimentalFeatures
 
-要在 PowerShell 中启用的实验功能的名称。
-默认情况下，不启用实验性功能。
-默认值为空数组。
+要在 PowerShell 中启用的实验功能的名称。 默认情况下，不启用实验性功能。 默认值为空数组。
 
 ```Schema
 "ExperimentalFeatures": ["<experimental-feature-name>", ...]
@@ -156,7 +147,7 @@ PowerShell Core 的配置文件，替换注册表配置。
 }
 ```
 
-有关实验功能的详细信息，请参阅 [POWERSHELL RFC 29][RFC0029]。
+有关实验功能的详细信息，请参阅 [使用实验性功能](/powershell/scripting/learn/experimental-features)。
 
 ## <a name="non-windows-logging-configuration"></a>非 Windows 日志记录配置
 
@@ -206,7 +197,7 @@ PowerShell Core 的配置文件，替换注册表配置。
 其中：
 
 - `<log-level>` 是下列项之一：
-  - Always
+  - 始终
   - 严重
   - 错误
   - 警告
@@ -278,8 +269,7 @@ PowerShell Core 的配置文件，替换注册表配置。
   - ManagedPlugin-WSMan 插件
 
 > [!NOTE]
-> 通常建议不要设置此值，除非您尝试在 PowerShell 的已知部分中诊断特定行为。
-> 更改此值只会减少记录的信息量。
+> 通常建议不要设置此值，除非您尝试在 PowerShell 的已知部分中诊断特定行为。 更改此值只会减少记录的信息量。
 
 此示例将日志记录限制为运行空间操作、管道逻辑和 cmdlet 使用。 将忽略所有其他日志记录。
 
@@ -344,11 +334,8 @@ PowerShell Core 的配置文件，替换注册表配置。
 }
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [关于执行策略](./about_Execution_Policies.md)
 
 [关于自动变量](./about_Automatic_Variables.md)
-
-[RFC0029]: https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md
-

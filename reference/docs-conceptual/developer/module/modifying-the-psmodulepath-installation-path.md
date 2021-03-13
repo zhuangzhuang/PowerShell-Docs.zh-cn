@@ -1,14 +1,14 @@
 ---
-ms.date: 09/13/2016
+ms.date: 03/12/2021
 ms.topic: reference
 title: 修改 PSModulePath 安装路径
 description: 修改 PSModulePath 安装路径
-ms.openlocfilehash: b802492bf9b49e8165e296817e3f80b9ae8265a6
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 1bea1e8ed20f55352cc9b4270e95cf7f0f7e2faa
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92661943"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412874"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>修改 PSModulePath 安装路径
 
@@ -33,7 +33,7 @@ ms.locfileid: "92661943"
 
   `$env:PSModulePath = $env:PSModulePath + "$([System.IO.Path]::PathSeparator)$MyModulePath"`
 
-- 若要添加在会话打开时可用的永久值，请将上述命令添加到 PowerShell 配置文件 (`$PROFILE`) # A0
+- 若要添加在会话打开时可用的永久值，请将上述命令添加到 PowerShell 配置文件 (`$PROFILE`) >
 
   有关配置文件的详细信息，请参阅 [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)。
 
@@ -47,9 +47,12 @@ ms.locfileid: "92661943"
 
   ```
 
+您还可以 `PSModulePath` 在配置文件中设置这些值 `powershell.config.json` 。 有关详细信息，请参阅 [about_PowerShell_Config](/powershell/module/microsoft.powershell.core/about/about_powershell_config#psmodulepath)。
+
 ## <a name="to-remove-locations-from-the-psmodulepath"></a>从 PSModulePath 删除位置
 
-您可以使用类似的方法从变量中移除路径：例如， `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"` 将从当前会话中删除 **c:\ModulePath** 路径。
+您可以使用类似的方法从变量中移除路径：例如， `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"`
+将从当前会话中删除 **c:\ModulePath** 路径。
 
 ## <a name="see-also"></a>另请参阅
 
