@@ -325,11 +325,11 @@ PowerShell 每天查询一次联机服务，以确定是否提供较新版本。
 
 可以使用 `$Env:POWERSHELL_UPDATECHECK` 环境变量更改更新通知行为。 支持以下值：
 
-- “默认”即与不定义 `$Env:POWERSHELL_UPDATECHECK` 相同
+- `Default` 即与不定义 `$Env:POWERSHELL_UPDATECHECK` 相同
   - GA 版本通知 GA 版本的更新
   - 预览版/RC 版本通知 GA 版本和预览版的更新
-- “关闭”即关闭更新通知功能
-- “LTS”仅通知长期服务 (LTS) GA 版本的更新
+- `Off` 即关闭更新通知功能
+- `LTS` 仅通知长期服务 (LTS) GA 版本的更新
 
 > [!NOTE]
 > 环境变量 `$Env:POWERSHELL_UPDATECHECK` 在首次设置之前不存在。
